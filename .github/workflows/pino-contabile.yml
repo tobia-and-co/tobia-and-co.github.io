@@ -1,0 +1,21 @@
+name: Pino il Contabile
+on:
+  schedule:
+    - cron: "41 7 * * *"   # ogni giorno
+  workflow_dispatch:
+  push:
+    paths: [".github/workflows/pino-contabile.yml", "scripts/pino_cassa.py"]
+permissions:
+  contents: write
+jobs:
+  conti:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/pino_cassa.py
+      - name: Salva i conti
+        run: |
+          git config user.name "Pino il Contabile (Tobia & Co.)"
+          git config user.email "tobia.and.co@proton.me"
+          git add data/cassa.json
+          git diff --cached --quiet || (git commit -m "Pino: conti della cassa aggiornati" && git pull --rebase -q && git push)

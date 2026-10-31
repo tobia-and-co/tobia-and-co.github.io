@@ -24,7 +24,7 @@ for vecchia in base.iterdir():
     if vecchia.is_dir():
         shutil.rmtree(vecchia)
 
-indirizzi = [SITO + "/", SITO + "/scadenze/", SITO + "/farmaci/", SITO + "/diario/"]
+indirizzi = [SITO + "/", SITO + "/scadenze/", SITO + "/farmaci/", SITO + "/diario/", SITO + "/sostieni/"]
 elenco = []
 for principio, gruppi in sorted(per_principio.items(), key=lambda x: slug(x[0])):
     s = slug(principio)

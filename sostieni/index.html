@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sostieni Tobia & Co.</title>
+<meta name="description" content="Gli strumenti di Tobia & Co. sono gratuiti e senza pubblicità. Se ti sono stati utili, puoi offrire un caffè a Tobia.">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+<style>
+.qr{background:#fff;border-radius:14px;padding:12px;width:220px;margin:8px auto}
+.qr img{width:100%;display:block}
+.addr{font-family:ui-monospace,Menlo,Consolas,monospace;word-break:break-all;background:var(--bg);border-radius:10px;padding:10px;font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-contento.svg" alt=""><a href="../">Tobia &amp; Co.</a></header>
+  <h1>☕ Offri un caffè a Tobia</h1>
+  <p class="lead">Gli strumenti di Tobia &amp; Co. sono e resteranno <b>gratuiti e senza pubblicità</b>. Se ti hanno fatto risparmiare tempo o soldi, un piccolo contributo aiuta a tenerli aggiornati e a costruirne di nuovi.</p>
+
+  <div class="card" style="text-align:center">
+    <h2 style="margin-top:0">🪙 Con le criptovalute</h2>
+    <div class="qr"><img src="../img/cassa-qr.svg" alt="QR code dell'indirizzo per le donazioni"></div>
+    <div class="addr notranslate" translate="no" id="addr">0xd1d91ed385ae794992f048f17e99e6d830cf48e1</div>
+    <p><button type="button" id="copia">📋 Copia l'indirizzo</button></p>
+    <p class="note" style="text-align:left">Accettiamo <b>USDC</b> (vale circa 1 dollaro) o <b>ETH</b> sulle reti <b>Base</b> o <b>Polygon</b> (commissioni di pochi centesimi) oppure Ethereum. Controlla sempre l'indirizzo prima di inviare: i pagamenti in criptovalute non si possono annullare.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">💳 Con carta o PayPal</h2>
+    <p>In arrivo a breve.</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · Grazie! Ogni contributo viene registrato nel <a href="../diario/">diario di Tobia</a>.</footer>
+</div>
+<script>
+document.getElementById('copia').onclick=async e=>{
+  const t=document.getElementById('addr').textContent;
+  try{await navigator.clipboard.writeText(t);e.target.textContent='✓ Copiato!';}
+  catch{const r=document.createRange();r.selectNodeContents(document.getElementById('addr'));getSelection().removeAllRanges();getSelection().addRange(r);e.target.textContent='Selezionato: copialo';}
+};
+</script>
+</body>
+</html>
