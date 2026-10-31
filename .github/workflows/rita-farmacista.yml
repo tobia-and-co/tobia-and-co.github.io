@@ -1,0 +1,23 @@
+name: Rita la Farmacista
+on:
+  schedule:
+    - cron: "17 6 3,18 * *"   # due volte al mese (AIFA aggiorna le liste ogni mese)
+  workflow_dispatch:
+  push:
+    paths: [".github/workflows/rita-farmacista.yml", "scripts/rita_scarica.py"]
+permissions:
+  contents: write
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python scripts/rita_scarica.py
+      - name: Salva i dati nuovi
+        run: |
+          git config user.name "Rita la Farmacista (Tobia & Co.)"
+          git config user.email "tobia.and.co@proton.me"
+          git add data
+          git diff --cached --quiet || (git commit -m "Rita: dati AIFA aggiornati" && git push)
