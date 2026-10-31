@@ -30,3 +30,4 @@ footer a,.wrap a{color:var(--blu)}
 nav.briciole{font-size:15px;margin:2px 0 6px;color:var(--muted)}
 nav.briciole a{color:var(--blu);text-decoration:none;font-weight:600}
 nav.briciole a:hover{text-decoration:underline}
+td,.sub,h1,h2,p{overflow-wrap:anywhere}
