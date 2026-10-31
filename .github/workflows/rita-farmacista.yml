@@ -4,7 +4,7 @@ on:
     - cron: "17 6 3,18 * *"   # due volte al mese (AIFA aggiorna le liste ogni mese)
   workflow_dispatch:
   push:
-    paths: [".github/workflows/rita-farmacista.yml", "scripts/rita_scarica.py"]
+    paths: [".github/workflows/rita-farmacista.yml", "scripts/rita_*.py"]
 permissions:
   contents: write
 jobs:
@@ -15,9 +15,30 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: python scripts/rita_scarica.py
+      - run: python scripts/rita_pagine.py
       - name: Salva i dati nuovi
+        id: salva
         run: |
           git config user.name "Rita la Farmacista (Tobia & Co.)"
           git config user.email "tobia.and.co@proton.me"
-          git add data
-          git diff --cached --quiet || (git commit -m "Rita: dati AIFA aggiornati" && git push)
+          git add -A data farmaci sitemap.xml
+          if git diff --cached --quiet; then echo "nuovo=no" >> "$GITHUB_OUTPUT"; else
+            git commit -m "Rita: dati AIFA e pagine dei farmaci aggiornati" && git push && echo "nuovo=si" >> "$GITHUB_OUTPUT"; fi
+      - name: Avvisa i motori di ricerca (IndexNow)
+        if: steps.salva.outputs.nuovo == 'si' || github.event_name != 'schedule'
+        run: |
+          sleep 120
+          KEY=$(ls *.txt | grep -E '^[0-9a-f]{32}\.txt$' | head -1 | cut -d. -f1)
+          python - "$KEY" <<'PY'
+          import json, sys, urllib.request
+          key = sys.argv[1]
+          urls = [u for u in open("data/indirizzi.txt").read().split() if u][:10000]
+          body = json.dumps({"host": "tobia-and-co.github.io", "key": key,
+                             "keyLocation": f"https://tobia-and-co.github.io/{key}.txt", "urlList": urls}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          try:
+              print("IndexNow:", urllib.request.urlopen(req, timeout=60).status, len(urls), "indirizzi")
+          except Exception as e:
+              print("IndexNow non ha risposto bene:", e)
+          PY
