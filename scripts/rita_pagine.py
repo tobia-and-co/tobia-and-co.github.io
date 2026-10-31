@@ -71,7 +71,7 @@ for principio, gruppi in sorted(per_principio.items(), key=lambda x: slug(x[0]))
   {''.join(blocchi)}
   <div class="card"><p class="note">⚠️ Prima di cambiare farmaco <b>chiedi sempre al farmacista o al medico</b>. Dati: liste di trasparenza AIFA (prezzi al {e(d['prezzi_al'])}, aggiornati il {e(d['aggiornato'])}). Pagina informativa, non un consiglio medico.</p>
   <a class="btn" href="../">🔎 Cerca un altro farmaco</a></div>
-  <footer><a href="../../">← Tutti gli strumenti</a> · Dati aggiornati automaticamente da Rita la Farmacista, il robottino di Tobia (un'intelligenza artificiale, Claude). Può contenere errori: verifica sempre in farmacia.</footer>
+  <footer><a href="../../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Dati aggiornati automaticamente da Rita la Farmacista, il robottino di Tobia (un'intelligenza artificiale, Claude). Può contenere errori: verifica sempre in farmacia.</footer>
 </div>
 </body>
 </html>
