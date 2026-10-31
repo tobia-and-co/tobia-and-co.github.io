@@ -27,3 +27,6 @@ td{padding:8px 4px;border-bottom:1px solid var(--line);vertical-align:top}
 footer{margin-top:40px;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
 footer a,.wrap a{color:var(--blu)}
 .wrap a.tool{color:inherit}
+nav.briciole{font-size:15px;margin:2px 0 6px;color:var(--muted)}
+nav.briciole a{color:var(--blu);text-decoration:none;font-weight:600}
+nav.briciole a:hover{text-decoration:underline}

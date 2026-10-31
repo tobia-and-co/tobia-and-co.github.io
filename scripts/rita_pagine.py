@@ -66,6 +66,7 @@ for principio, gruppi in sorted(per_principio.items(), key=lambda x: slug(x[0]))
 <body>
 <div class="wrap">
   <header class="top"><img src="../../img/tobia-lavoro.svg" alt=""><a href="../../">Tobia &amp; Co.</a></header>
+  <nav class="briciole"><a href="../../">🏠 Home</a> › <a href="../">Farmaci</a> › {e(principio)}</nav>
   <h1>💊 {e(principio)}: farmaci equivalenti e prezzi</h1>
   <p class="lead">{e(descr)} Con la ricetta il Servizio sanitario paga fino al prezzo di riferimento: se scegli una confezione che costa di più, la differenza la paghi tu.</p>
   {''.join(blocchi)}
