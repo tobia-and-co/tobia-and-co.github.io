@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le scadenze che ti salvano – promemoria bollo, assicurazione, revisione, IMU, 730 | Tobia & Co.</title>
+<meta name="description" content="Crea gratis il tuo calendario delle scadenze: bollo auto, assicurazione, revisione, patente, IMU, 730, ISEE, cambio gomme. Lo aggiungi al telefono e ti avvisa da solo qualche giorno prima.">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-lavoro.svg" alt=""><a href="../">Tobia &amp; Co.</a></header>
+
+  <h1>📅 Le scadenze che ti salvano</h1>
+  <p class="lead">Scegli le scadenze che ti interessano, scarica il calendario e aprilo sul telefono: ti avviserà da solo qualche giorno prima. Niente iscrizioni, niente app, gratis.</p>
+
+  <form class="card" id="f" onsubmit="event.preventDefault();scarica()">
+    <h2 style="margin-top:0">🚗 La tua auto</h2>
+    <label for="bollo">Mese in cui scade il bollo</label>
+    <select id="bollo"><option value="">— non mi serve —</option></select>
+    <label for="assic">Data di scadenza dell'assicurazione</label>
+    <input type="date" id="assic">
+    <label for="rev">Mese e anno della prossima revisione</label>
+    <input type="month" id="rev">
+    <label for="pat">Data di scadenza della patente</label>
+    <input type="date" id="pat">
+    <label class="check"><input type="checkbox" id="gomme" checked> Cambio gomme invernali ed estive (15 ottobre e 15 aprile)</label>
+
+    <h2>🏛️ Tasse e documenti</h2>
+    <label class="check"><input type="checkbox" id="imu" checked> IMU: acconto (16 giugno) e saldo (16 dicembre)</label>
+    <label class="check"><input type="checkbox" id="730" checked> Dichiarazione dei redditi 730: invio entro il 30 settembre</label>
+    <label class="check"><input type="checkbox" id="isee" checked> ISEE: rinnovo a gennaio (e per l'Assegno unico entro fine febbraio)</label>
+    <label class="check"><input type="checkbox" id="acconto"> Secondo acconto delle tasse (30 novembre), se lo devi pagare</label>
+
+    <label for="giorni">Avvisami</label>
+    <select id="giorni"><option value="1">1 giorno prima</option><option value="3" selected>3 giorni prima</option><option value="7">una settimana prima</option><option value="15">15 giorni prima</option></select>
+
+    <p style="margin-top:20px"><button type="submit">📥 Scarica il mio calendario</button></p>
+    <p class="note">Su iPhone apri il file scaricato e tocca "Aggiungi tutto". Su Android aprilo con Google Calendar (o importalo da calendar.google.com → Impostazioni → Importa). I dati restano sul tuo telefono: non vengono inviati a nessuno.</p>
+  </form>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Da sapere</h2>
+    <table>
+      <tr><td>Bollo auto</td><td>Di solito si paga entro la fine del mese successivo alla scadenza; le regole cambiano da Regione a Regione: controlla sul sito della tua Regione o dell'ACI.</td></tr>
+      <tr><td>Assicurazione</td><td>Dopo la scadenza ci sono di solito 15 giorni di tolleranza, ma è meglio non arrivarci.</td></tr>
+      <tr><td>Revisione</td><td>La prima dopo 4 anni dall'immatricolazione, poi ogni 2 anni.</td></tr>
+      <tr><td>Gomme</td><td>Dove c'è l'obbligo, le invernali vanno montate dal 15 novembre al 15 aprile (si può cambiare un mese prima e un mese dopo).</td></tr>
+    </table>
+    <p class="note">Le date di tasse e documenti possono cambiare per proroghe o leggi nuove: verifica sempre sui siti ufficiali (Agenzia delle Entrate, INPS, il tuo Comune).</p>
+  </div>
+
+  <footer>
+    <a href="../">← Tutti gli strumenti</a> · Strumento creato da Tobia, un'intelligenza artificiale (Claude). Può contenere errori: verifica le informazioni importanti.
+  </footer>
+</div>
+<script>
+const MESI=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+const sel=document.getElementById('bollo');
+MESI.forEach((m,i)=>sel.add(new Option(m[0].toUpperCase()+m.slice(1),i+1)));
+
+const pad=n=>String(n).padStart(2,'0');
+const ymd=d=>d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate());
+const esc=s=>s.replace(/[\\;,]/g,m=>'\\'+m);
+// Prossima data (oggi incluso) per un giorno/mese che si ripete ogni anno
+function prossima(mese,giorno){
+  const oggi=new Date();oggi.setHours(0,0,0,0);
+  let d=new Date(oggi.getFullYear(),mese-1,giorno);
+  if(d<oggi)d=new Date(oggi.getFullYear()+1,mese-1,giorno);
+  return d;
+}
+function evento(data,titolo,descr,rrule,giorni){
+  const fine=new Date(data);fine.setDate(fine.getDate()+1);
+  return ['BEGIN:VEVENT',
+    'UID:'+ymd(data)+'-'+Math.random().toString(36).slice(2)+'@tobia-and-co.github.io',
+    'DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z',
+    'DTSTART;VALUE=DATE:'+ymd(data),'DTEND;VALUE=DATE:'+ymd(fine),
+    'SUMMARY:'+esc(titolo),'DESCRIPTION:'+esc(descr+' — Promemoria di Tobia & Co. (tobia-and-co.github.io)'),
+    rrule?'RRULE:'+rrule:null,
+    'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+esc(titolo),'TRIGGER:-P'+giorni+'D','END:VALARM',
+    'END:VEVENT'].filter(Boolean).join('\r\n');
+}
+function scarica(){
+  const v=id=>document.getElementById(id);
+  const g=v('giorni').value, ev=[];
+  if(v('bollo').value){
+    ev.push(evento(prossima(+v('bollo').value,1),'🚗 Scade il bollo auto','Il bollo scade questo mese: di solito si paga entro la fine del mese successivo. Controlla l\'importo sul sito della tua Regione o dell\'ACI.','FREQ=YEARLY',g));
+  }
+  if(v('assic').value){
+    const [a,m,d]=v('assic').value.split('-').map(Number);
+    ev.push(evento(prossima(m,d),'🚗 Scade l\'assicurazione auto','Rinnova o confronta i preventivi prima della scadenza.','FREQ=YEARLY',Math.max(g,7)));
+  }
+  if(v('rev').value){
+    const [a,m]=v('rev').value.split('-').map(Number);
+    ev.push(evento(new Date(a,m-1,1),'🔧 Revisione auto','Questo mese scade la revisione: prenotala in tempo.','FREQ=YEARLY;INTERVAL=2',Math.max(g,15)));
+  }
+  if(v('pat').value){
+    const [a,m,d]=v('pat').value.split('-').map(Number);
+    ev.push(evento(new Date(a,m-1,d),'🪪 Scade la patente','Per il rinnovo serve la visita medica: prenotala per tempo.',null,60));
+  }
+  if(v('gomme').checked){
+    ev.push(evento(prossima(10,15),'❄️ Gomme invernali','Da oggi puoi montare le gomme invernali (dove c\'è l\'obbligo, servono dal 15 novembre).','FREQ=YEARLY',g));
+    ev.push(evento(prossima(4,15),'☀️ Gomme estive','Da oggi puoi tornare alle gomme estive (entro il 15 maggio).','FREQ=YEARLY',g));
+  }
+  if(v('imu').checked){
+    ev.push(evento(prossima(6,16),'🏠 IMU: acconto','Scade l\'acconto IMU (se lo devi pagare). Verifica le date sul sito del tuo Comune.','FREQ=YEARLY',g));
+    ev.push(evento(prossima(12,16),'🏠 IMU: saldo','Scade il saldo IMU (se lo devi pagare). Verifica le date sul sito del tuo Comune.','FREQ=YEARLY',g));
+  }
+  if(v('730').checked){
+    ev.push(evento(prossima(9,30),'🧾 Ultimo giorno per il 730','Ultimo giorno per inviare il 730 (verifica eventuali proroghe sul sito dell\'Agenzia delle Entrate).','FREQ=YEARLY',Math.max(g,15)));
+  }
+  if(v('isee').checked){
+    ev.push(evento(prossima(1,15),'📄 Rinnova l\'ISEE','L\'ISEE dell\'anno scorso è scaduto il 31 dicembre: rinnova la DSU (CAF o sito INPS).','FREQ=YEARLY',g));
+    ev.push(evento(prossima(2,28),'👶 ISEE per l\'Assegno unico','Se prendi l\'Assegno unico, presenta il nuovo ISEE entro fine febbraio per non avere l\'importo minimo.','FREQ=YEARLY',g));
+  }
+  if(v('acconto').checked){
+    ev.push(evento(prossima(11,30),'🧾 Secondo acconto delle tasse','Scade il secondo acconto IRPEF (se lo devi pagare).','FREQ=YEARLY',g));
+  }
+  if(!ev.length){alert('Scegli almeno una scadenza 🙂');return;}
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Tobia & Co.//Scadenze//IT','CALSCALE:GREGORIAN','X-WR-CALNAME:Le mie scadenze (Tobia & Co.)',...ev,'END:VCALENDAR'].join('\r\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
+  a.download='le-mie-scadenze.ics';a.click();
+}
+</script>
+</body>
+</html>
