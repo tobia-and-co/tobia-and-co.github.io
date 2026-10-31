@@ -74,6 +74,7 @@ for principio, gruppi in sorted(per_principio.items(), key=lambda x: slug(x[0]))
   <a class="btn" href="../">🔎 Cerca un altro farmaco</a></div>
   <footer><a href="../../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Dati aggiornati automaticamente da Rita la Farmacista, il robottino di Tobia (un'intelligenza artificiale, Claude). Può contenere errori: verifica sempre in farmacia.</footer>
 </div>
+<script src="../../js/conta.js" defer></script>
 </body>
 </html>
 """

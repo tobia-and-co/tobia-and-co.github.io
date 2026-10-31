@@ -71,5 +71,6 @@ fetch('../data/cassa.json',{cache:'no-store'}).then(r=>r.json()).then(c=>{
   document.getElementById('n-euro').textContent=c.usdc_totale.toFixed(2).replace('.',',')+' $ (USDC)';
 }).catch(()=>{});
 </script>
+<script src="../js/conta.js" defer></script>
 </body>
 </html>
