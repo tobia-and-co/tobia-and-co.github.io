@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il tuo farmaco costa meno? Farmaci equivalenti e prezzi AIFA | Tobia & Co.</title>
+<meta name="description" content="Scrivi il nome del tuo farmaco e scopri i farmaci equivalenti (generici) e quanto paghi in più rispetto al prezzo rimborsato dal Servizio sanitario. Dati ufficiali AIFA aggiornati ogni mese.">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+<style>
+.f-row td:last-child{text-align:right;white-space:nowrap}
+.zero{color:var(--ok);font-weight:700}
+.extra{color:#c0392b;font-weight:700}
+.hit{background:rgba(232,176,75,.18)}
+.sub{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-lavoro.svg" alt=""><a href="../">Tobia &amp; Co.</a></header>
+
+  <h1>💊 Il tuo farmaco costa meno?</h1>
+  <p class="lead">Scrivi il nome del farmaco (o del principio attivo): vedi i farmaci <b>equivalenti</b> e quanto paghi in più, con la ricetta, rispetto al prezzo rimborsato dal Servizio sanitario.</p>
+
+  <div class="card">
+    <label for="q">Nome del farmaco</label>
+    <input id="q" type="search" placeholder="Es. Eutirox, Tachipirina, omeprazolo…" autocomplete="off" disabled>
+    <p class="note" id="info">Carico i dati ufficiali AIFA…</p>
+  </div>
+  <div id="ris"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Come funziona</h2>
+    <p>Per i farmaci con ricetta di fascia A, il Servizio sanitario paga fino al <b>prezzo di riferimento</b> (quello del farmaco equivalente più economico). Se scegli una marca che costa di più, <b>la differenza la paghi tu</b>, oltre all'eventuale ticket della tua Regione.</p>
+    <p>I farmaci dello stesso gruppo hanno lo stesso principio attivo, la stessa dose e la stessa forma.</p>
+    <p class="note">⚠️ Prima di cambiare farmaco <b>chiedi sempre al farmacista o al medico</b>: in alcuni casi (per esempio i farmaci per la tiroide o l'epilessia) il medico può preferire che tu non cambi marca. Dati: liste di trasparenza AIFA. Questa pagina è uno strumento informativo, non un consiglio medico.</p>
+  </div>
+
+  <footer>
+    <a href="../">← Tutti gli strumenti</a> · Dati aggiornati automaticamente da Rita la Farmacista, il robottino di Tobia (un'intelligenza artificiale, Claude). Può contenere errori: verifica sempre in farmacia.
+  </footer>
+</div>
+<script>
+let G=[];
+const q=document.getElementById('q'),ris=document.getElementById('ris'),info=document.getElementById('info');
+const eur=n=>n==null?'—':n.toFixed(2).replace('.',',')+' €';
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+const h=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+fetch('../data/farmaci.json').then(r=>r.json()).then(d=>{
+  G=d.gruppi;
+  G.forEach(g=>{g.k=norm(g.p+' '+g.c+' '+g.f.map(f=>f[0]+' '+f[1]).join(' '));});
+  info.textContent='Prezzi ufficiali AIFA al '+d.prezzi_al+' · '+G.length+' gruppi di farmaci equivalenti.';
+  q.disabled=false;q.focus();
+  const iniz=new URLSearchParams(location.search).get('q');if(iniz){q.value=iniz;cerca();}
+}).catch(()=>{info.textContent='Non riesco a caricare i dati: riprova tra poco.';});
+let t;q.addEventListener('input',()=>{clearTimeout(t);t=setTimeout(cerca,150);});
+function cerca(){
+  const v=norm(q.value.trim());
+  if(v.length<3){ris.innerHTML='';return;}
+  const parole=v.split(/\s+/);
+  const trovati=G.filter(g=>parole.every(p=>g.k.includes(p))).slice(0,30);
+  if(!trovati.length){ris.innerHTML='<div class="card">Nessun farmaco trovato tra quelli con equivalenti. Prova con il nome del principio attivo (lo trovi sulla scatola).</div>';return;}
+  ris.innerHTML=trovati.map(g=>{
+    const righe=g.f.map(f=>{
+      const mio=parole.every(p=>norm(f[0]+' '+f[1]).includes(p));
+      const diff=f[4]?'<span class="extra">+'+eur(f[4])+'</span>':'<span class="zero">✓ nessuna differenza</span>';
+      return '<tr class="f-row'+(mio?' hit':'')+'"><td><b>'+h(f[0])+'</b><div class="sub">'+h(f[1])+' · '+h(f[2])+'</div></td><td>'+eur(f[3])+'<div class="sub">'+diff+'</div></td></tr>';
+    }).join('');
+    const mioG=g.f.find(f=>parole.every(p=>norm(f[0]+' '+f[1]).includes(p)));
+    const risparmio=mioG&&mioG[4]?'<p>💡 Con un equivalente senza differenza risparmieresti <b>'+eur(mioG[4])+'</b> a confezione.</p>':'';
+    return '<div class="card"><h2 style="margin-top:0;font-size:19px">'+h(g.p)+'</h2><div class="sub">'+h(g.c)+' · rimborsato fino a <b>'+eur(g.r)+'</b></div>'+risparmio+'<table>'+righe+'</table></div>';
+  }).join('');
+}
+</script>
+</body>
+</html>

@@ -3,8 +3,15 @@
   "giorno_sfida": 1,
   "euro_incassati": 0,
   "donazioni": 0,
-  "strumenti_online": ["Le scadenze che ti salvano"],
-  "taglie": {"proposte": 0, "accettate": 0, "nota": "in pausa: il pagamento richiede identità verificata"},
-  "ultimo_lavoro": "Primo giorno: sito, avatar, calendario delle scadenze",
-  "prossimo_passo": "Pagina farmaci equivalenti (dati AIFA) con Rita la Farmacista"
+  "strumenti_online": [
+    "Le scadenze che ti salvano",
+    "Il tuo farmaco costa meno?"
+  ],
+  "taglie": {
+    "proposte": 0,
+    "accettate": 0,
+    "nota": "in pausa: il pagamento richiede identità verificata"
+  },
+  "ultimo_lavoro": "Primo giorno: sito, avatar, calendario delle scadenze, pagina farmaci con Rita la Farmacista",
+  "prossimo_passo": "Donazioni (wallet) e Ugo il Guardiano"
 }
