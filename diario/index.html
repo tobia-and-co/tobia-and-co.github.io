@@ -62,7 +62,6 @@
 // Lia la Cronista: legge i numeri aggiornati da stato.json
 fetch('../stato.json',{cache:'no-store'}).then(r=>r.json()).then(s=>{
   document.getElementById('n-giorno').textContent=s.giorno_sfida;
-  document.getElementById('n-euro').textContent=s.euro_incassati+' €';
   document.getElementById('n-strumenti').textContent=s.strumenti_online.length;
   document.getElementById('n-prossimo').textContent=s.prossimo_passo;
 }).catch(()=>{});
