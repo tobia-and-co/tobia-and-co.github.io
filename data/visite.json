@@ -1,12 +1,15 @@
 {
-  "controllato": "2026-10-31",
+  "controllato": "2026-11-01",
   "visite": {
-    "totale": 0,
-    "home": 0,
+    "totale": 2,
+    "home": 1,
     "scadenze": 0,
     "farmaci": 0,
     "farmaci-pagine": 0,
-    "diario": 0,
-    "sostieni": 0
+    "diario": 1,
+    "sostieni": 0,
+    "calendari-scaricati": 0,
+    "ricerche-farmaci": 0,
+    "clic-kofi": 0
   }
 }
