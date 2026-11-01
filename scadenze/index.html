@@ -123,6 +123,7 @@ function scarica(){
   const a=document.createElement('a');
   a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
   a.download='le-mie-scadenze.ics';a.click();
+  window.tobiaConta&&tobiaConta('calendari-scaricati');
 }
 </script>
 <script src="../js/conta.js" defer></script>

@@ -63,6 +63,7 @@ function cerca(){
   const parole=v.split(/\s+/);
   const trovati=G.filter(g=>parole.every(p=>g.k.includes(p))).slice(0,30);
   if(!trovati.length){ris.innerHTML='<div class="card">Nessun farmaco trovato tra quelli con equivalenti. Prova con il nome del principio attivo (lo trovi sulla scatola).</div>';return;}
+  window.tobiaConta&&tobiaConta('ricerche-farmaci');
   ris.innerHTML=trovati.map(g=>{
     const righe=g.f.map(f=>{
       const mio=parole.every(p=>norm(f[0]+' '+f[1]).includes(p));
