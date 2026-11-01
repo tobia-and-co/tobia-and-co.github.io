@@ -114,3 +114,14 @@ details.gen summary{cursor:pointer;font-weight:700;color:var(--verde)}
 
 footer{margin-top:44px;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
 footer a{color:var(--blu)}
+
+/* Voli */
+.lista{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.scelta{background:var(--bg);color:var(--ink);box-shadow:none;border:1px solid var(--line);font-weight:500;text-align:left;padding:10px 12px;border-radius:12px;font-size:15px}
+.scelta:hover{border-color:var(--blu)}
+.esito.si{border:2px solid var(--verde)} .esito.no{border:2px solid var(--line)}
+.importo{font:800 30px/1.2 var(--titoli);margin:8px 0 0}
+.importo b{color:var(--verde)}
+.esito ul{padding-left:20px;margin:12px 0 0} .esito li{margin:6px 0}
+.passi-lista li{margin:8px 0}
+pre#lettera{white-space:pre-wrap;font:14px/1.5 var(--testo);background:var(--bg);border-radius:14px;padding:14px;border:1px solid var(--line)}

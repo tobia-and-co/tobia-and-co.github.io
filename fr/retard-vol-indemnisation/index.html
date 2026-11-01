@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vol retardé ou annulé ? Calculez votre indemnisation (jusqu&#x27;à 600 €) | Tobia & Co.</title>
+<meta name="description" content="Calculateur gratuit pour les vols retardés, annulés ou en surréservation selon le règlement UE 261/2004 : jusqu&#x27;à 600 € par passager. Distance entre aéroports et guide pour réclamer vous-même.">
+<link rel="canonical" href="https://tobia-and-co.github.io/fr/retard-vol-indemnisation/">
+<link rel="alternate" hreflang="it" href="https://tobia-and-co.github.io/voli/">
+<link rel="alternate" hreflang="en" href="https://tobia-and-co.github.io/en/flight-delay-compensation/">
+<link rel="alternate" hreflang="es" href="https://tobia-and-co.github.io/es/retraso-vuelo-indemnizacion/">
+<link rel="alternate" hreflang="fr" href="https://tobia-and-co.github.io/fr/retard-vol-indemnisation/">
+<link rel="alternate" hreflang="de" href="https://tobia-and-co.github.io/de/flugverspaetung-entschaedigung/">
+<link rel="icon" href="../../img/tobia-base.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../../img/tobia-base.svg" alt=""><a href="../../">Tobia &amp; Co.</a><nav class="menu"><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ko-fi</a></nav></header>
+  <nav class="briciole"><a href="../../">🏠 Accueil</a> › Retard de vol</nav>
+  <span class="occhiello">Règlement UE 261/2004</span>
+  <h1>✈️ Vol retardé ? Voici ce qui vous est dû</h1>
+  <p class="lead">Selon le droit européen, si votre vol est arrivé avec plus de 3 heures de retard, a été annulé ou si l&#x27;embarquement vous a été refusé, vous pouvez avoir droit à 250, 400 ou 600 € par personne. Calculez-le en 30 secondes.</p>
+
+  <form class="card" id="modulo" autocomplete="off">
+    <label for="da">Aéroport de départ</label>
+    <input id="da" placeholder="Ville ou code (ex. Paris, CDG)"><div id="da-lista" class="lista"></div>
+    <label for="a">Aéroport d&#x27;arrivée</label>
+    <input id="a" placeholder="Ville ou code (ex. Paris, CDG)"><div id="a-lista" class="lista"></div>
+    <label class="check"><input type="checkbox" id="ue" checked> La compagnie aérienne est européenne (ou britannique)</label>
+    <label for="evento">Que s&#x27;est-il passé ?</label>
+    <select id="evento"><option value="ritardo">Le vol est arrivé en retard</option><option value="cancellato">Le vol a été annulé</option><option value="negato">On m&#x27;a refusé l&#x27;embarquement (surréservation)</option></select>
+    <div id="box-ritardo"><label for="ritardo">Retard à l&#x27;arrivée</label>
+    <select id="ritardo"><option value="4">plus de 4 heures</option><option value="3">entre 3 et 4 heures</option><option value="2">entre 2 et 3 heures</option><option value="0">moins de 2 heures</option></select></div>
+    <div id="box-avviso" hidden><label for="avviso">Quand avez-vous été prévenu de l&#x27;annulation ?</label>
+    <select id="avviso"><option value="0">moins de 7 jours avant</option><option value="7">entre 7 et 13 jours avant</option><option value="14">14 jours avant ou plus</option></select></div>
+    <label for="causa">Motif donné</label>
+    <select id="causa"><option value="tecnico">Problème technique, aucun motif ou autre</option><option value="sciopero">Grève du personnel de la compagnie</option><option value="meteo">Mauvais temps</option><option value="atc">Grève des contrôleurs aériens ou de l&#x27;aéroport</option><option value="sicurezza">Raisons de sécurité ou autres événements extraordinaires</option></select>
+    <p style="margin-top:20px"><button type="submit">✈️ Calculer mon indemnisation</button></p>
+  </form>
+  <div id="esito"></div>
+
+  <p class="note">📚 <a href="https://europa.eu/youreurope/citizens/travel/passenger-rights/air/index_fr.htm" rel="noopener">Officiel : droits des passagers aériens sur le portail de l&#x27;UE</a></p>
+  <p class="note">🌍 Disponible aussi en: <a href="../../voli/" hreflang="it">Italiano</a> · <a href="../../en/flight-delay-compensation/" hreflang="en">English</a> · <a href="../../es/retraso-vuelo-indemnizacion/" hreflang="es">Español</a> · <a href="../../de/flugverspaetung-entschaedigung/" hreflang="de">Deutsch</a></p>
+  <footer><a href="../../">← Tobia &amp; Co.</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ko-fi</a> · Outil d&#x27;information créé par Tobia, une intelligence artificielle (Claude) : ce n&#x27;est pas un conseil juridique. Vérifiez toujours les sources officielles.</footer>
+</div>
+<script>window.T={"percorso": "fr/retard-vol-indemnisation/", "home": "Accueil", "sezione": "Retard de vol", "title": "Vol retardé ou annulé ? Calculez votre indemnisation (jusqu'à 600 €)", "description": "Calculateur gratuit pour les vols retardés, annulés ou en surréservation selon le règlement UE 261/2004 : jusqu'à 600 € par passager. Distance entre aéroports et guide pour réclamer vous-même.", "occhiello": "Règlement UE 261/2004", "h1": "✈️ Vol retardé ? Voici ce qui vous est dû", "lead": "Selon le droit européen, si votre vol est arrivé avec plus de 3 heures de retard, a été annulé ou si l'embarquement vous a été refusé, vous pouvez avoir droit à 250, 400 ou 600 € par personne. Calculez-le en 30 secondes.", "da": "Aéroport de départ", "a": "Aéroport d'arrivée", "segnaposto": "Ville ou code (ex. Paris, CDG)", "ue": "La compagnie aérienne est européenne (ou britannique)", "evento": "Que s'est-il passé ?", "e_ritardo": "Le vol est arrivé en retard", "e_cancellato": "Le vol a été annulé", "e_negato": "On m'a refusé l'embarquement (surréservation)", "ritardo": "Retard à l'arrivée", "r_0": "moins de 2 heures", "r_2": "entre 2 et 3 heures", "r_3": "entre 3 et 4 heures", "r_4": "plus de 4 heures", "avviso": "Quand avez-vous été prévenu de l'annulation ?", "a_14": "14 jours avant ou plus", "a_7": "entre 7 et 13 jours avant", "a_0": "moins de 7 jours avant", "causa": "Motif donné", "c_tecnico": "Problème technique, aucun motif ou autre", "c_sciopero": "Grève du personnel de la compagnie", "c_meteo": "Mauvais temps", "c_atc": "Grève des contrôleurs aériens ou de l'aéroport", "c_sicurezza": "Raisons de sécurité ou autres événements extraordinaires", "calcola": "Calculer mon indemnisation", "km": "Distance", "spetta": "Il vous est dû", "a_persona": "par personne, enfants compris", "no_regola": "Le règlement européen ne s'applique pas à ce vol : il ne part pas de l'UE et n'arrive pas dans l'UE avec une compagnie européenne. Vérifiez les lois du pays de départ.", "no_ritardo": "L'indemnisation exige un retard d'au moins 3 heures à l'arrivée. Vous avez quand même droit à une prise en charge (repas et boissons) pendant l'attente.", "no_avviso": "Si vous avez été prévenu au moins 14 jours avant, aucune indemnisation n'est due, mais vous avez droit au remboursement ou à un vol de remplacement.", "forse_avviso": "Elle vous est due, sauf si la compagnie vous a proposé un vol de remplacement avec des horaires très proches de ceux d'origine (le montant peut alors être réduit ou non dû).", "forse_causa": "Avec ce motif, la compagnie pourrait refuser (« circonstances extraordinaires »), mais c'est à elle de le prouver. Cela vaut la peine de réclamer.", "meta": "Réduit de 50 % car le retard sur les vols long-courriers est compris entre 3 et 4 heures.", "uk": "Vol couvert par le droit britannique (UK261) : montants en livres.", "extra": "En plus de l'indemnisation, vous avez toujours droit à une prise en charge (repas, hôtel si nécessaire) et, si vous renoncez au vol, au remboursement du billet.", "come_t": "Comment réclamer vous-même, gratuitement", "passo1": "Écrivez à la compagnie via le formulaire de réclamation de son site : numéro de vol, date, ce qui s'est passé et demande d'indemnisation « en vertu du règlement (CE) 261/2004 ». Joignez carte d'embarquement et réservation.", "passo2": "Sans réponse sous 6 à 8 semaines ou en cas de refus, saisissez l'organisme national du pays de départ (en France, la DGAC) ou un médiateur.", "passo3": "En dernier recours, le tribunal ou la procédure européenne de règlement des petits litiges.", "lettera_t": "La lettre toute prête", "copia": "📋 Copier la lettre", "copiato": "✓ Copiée !", "lettera": "Madame, Monsieur,\nj'étais passager du vol [NUMÉRO DE VOL] du [DATE] de {DA} à {A}. {EVENTO}\nEn vertu du règlement (CE) n° 261/2004, je demande une indemnisation de {IMPORTO} par passager, ainsi que le remboursement des frais engagés.\nVous trouverez ci-joint ma carte d'embarquement et ma réservation. Dans l'attente de votre réponse sous 30 jours,\nveuillez agréer mes salutations distinguées.\n[NOM ET PRÉNOM]", "l_ritardo": "Le vol est arrivé à destination avec plus de 3 heures de retard.", "l_cancellato": "Le vol a été annulé.", "l_negato": "L'embarquement m'a été refusé contre ma volonté.", "affiliato_t": "Pas le temps de vous en occuper ?", "affiliato_p": "Certaines sociétés gèrent la réclamation à votre place et ne prennent un pourcentage que si elles gagnent.", "affiliato_b": "Confier la demande à un expert ›", "fonte": "Officiel : droits des passagers aériens sur le portail de l'UE", "fonte_url": "https://europa.eu/youreurope/citizens/travel/passenger-rights/air/index_fr.htm", "avvertenza": "Outil d'information créé par Tobia, une intelligence artificielle (Claude) : ce n'est pas un conseil juridique. Vérifiez toujours les sources officielles.", "lingue": "Disponible aussi en", "nessuno": "Aucun aéroport trouvé", "scegli": "Choisissez les aéroports de départ et d'arrivée dans la liste."};window.BASE="../../";</script>
+<script src="../../js/voli.js" defer></script>
+<script src="../../js/conta.js" defer></script>
+</body>
+</html>

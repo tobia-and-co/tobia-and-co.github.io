@@ -31,7 +31,7 @@ print(json.dumps(uscita, indent=2))
 
 # Visite contate da js/conta.js (servizio Abacus, nessun account)
 visite = {}
-for chiave in ["totale", "home", "scadenze", "farmaci", "farmaci-pagine", "diario", "sostieni", "calendari-scaricati", "ricerche-farmaci", "clic-kofi"]:
+for chiave in ["totale", "home", "scadenze", "farmaci", "farmaci-pagine", "diario", "sostieni", "calendari-scaricati", "ricerche-farmaci", "clic-kofi", "voli", "en", "es", "fr", "de", "calcoli-voli", "lettere-voli", "clic-affiliato-voli"]:
     try:
         req = urllib.request.Request(f"https://abacus.jasoncameron.dev/get/tobiaandco/{chiave}", headers={"User-Agent": "TobiaAndCo/1.0"})
         visite[chiave] = json.load(urllib.request.urlopen(req, timeout=30)).get("value", 0)

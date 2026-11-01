@@ -17,7 +17,8 @@ const server = http.createServer((req, res) => {
 (async () => {
   const farmaci = fs.readdirSync(path.join(radice, 'farmaci')).filter(d => fs.statSync(path.join(radice, 'farmaci', d)).isDirectory());
   const campione = farmaci.sort(() => Math.random() - 0.5).slice(0, 15).map(d => `/farmaci/${d}/`);
-  const pagine = ['/', '/scadenze/', '/farmaci/', '/diario/', '/sostieni/', ...campione];
+  const voli = Object.values(JSON.parse(fs.readFileSync(path.join(radice, 'data/voli_testi.json'), 'utf8'))).map(t => '/' + t.percorso);
+  const pagine = ['/', '/scadenze/', '/farmaci/', '/diario/', '/sostieni/', ...voli, ...campione];
   const browser = await chromium.launch();
   const problemi = [];
   for (const url of pagine) {

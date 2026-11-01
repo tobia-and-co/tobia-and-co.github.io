@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flug verspätet oder annulliert? Entschädigung berechnen (bis 600 €) | Tobia & Co.</title>
+<meta name="description" content="Kostenloser Rechner für verspätete, annullierte oder überbuchte Flüge nach EU-Verordnung 261/2004: bis zu 600 € pro Passagier. Entfernung zwischen Flughäfen und Anleitung zum Selbstfordern.">
+<link rel="canonical" href="https://tobia-and-co.github.io/de/flugverspaetung-entschaedigung/">
+<link rel="alternate" hreflang="it" href="https://tobia-and-co.github.io/voli/">
+<link rel="alternate" hreflang="en" href="https://tobia-and-co.github.io/en/flight-delay-compensation/">
+<link rel="alternate" hreflang="es" href="https://tobia-and-co.github.io/es/retraso-vuelo-indemnizacion/">
+<link rel="alternate" hreflang="fr" href="https://tobia-and-co.github.io/fr/retard-vol-indemnisation/">
+<link rel="alternate" hreflang="de" href="https://tobia-and-co.github.io/de/flugverspaetung-entschaedigung/">
+<link rel="icon" href="../../img/tobia-base.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../../img/tobia-base.svg" alt=""><a href="../../">Tobia &amp; Co.</a><nav class="menu"><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ko-fi</a></nav></header>
+  <nav class="briciole"><a href="../../">🏠 Start</a> › Flugverspätung</nav>
+  <span class="occhiello">EU-Verordnung 261/2004</span>
+  <h1>✈️ Flug verspätet? So viel steht Ihnen zu</h1>
+  <p class="lead">Nach EU-Recht haben Sie bei mehr als 3 Stunden Ankunftsverspätung, Annullierung oder Nichtbeförderung möglicherweise Anspruch auf 250, 400 oder 600 € pro Person. In 30 Sekunden berechnet.</p>
+
+  <form class="card" id="modulo" autocomplete="off">
+    <label for="da">Abflughafen</label>
+    <input id="da" placeholder="Stadt oder Code (z. B. München, MUC)"><div id="da-lista" class="lista"></div>
+    <label for="a">Zielflughafen</label>
+    <input id="a" placeholder="Stadt oder Code (z. B. München, MUC)"><div id="a-lista" class="lista"></div>
+    <label class="check"><input type="checkbox" id="ue" checked> Die Fluggesellschaft ist europäisch (oder britisch)</label>
+    <label for="evento">Was ist passiert?</label>
+    <select id="evento"><option value="ritardo">Der Flug kam verspätet an</option><option value="cancellato">Der Flug wurde annulliert</option><option value="negato">Mir wurde die Beförderung verweigert (Überbuchung)</option></select>
+    <div id="box-ritardo"><label for="ritardo">Verspätung bei Ankunft</label>
+    <select id="ritardo"><option value="4">mehr als 4 Stunden</option><option value="3">3 bis 4 Stunden</option><option value="2">2 bis 3 Stunden</option><option value="0">weniger als 2 Stunden</option></select></div>
+    <div id="box-avviso" hidden><label for="avviso">Wann wurden Sie über die Annullierung informiert?</label>
+    <select id="avviso"><option value="0">weniger als 7 Tage vorher</option><option value="7">7 bis 13 Tage vorher</option><option value="14">14 Tage vorher oder früher</option></select></div>
+    <label for="causa">Genannter Grund</label>
+    <select id="causa"><option value="tecnico">Technisches Problem, kein Grund oder Sonstiges</option><option value="sciopero">Streik des eigenen Personals der Airline</option><option value="meteo">Schlechtes Wetter</option><option value="atc">Streik der Fluglotsen oder des Flughafens</option><option value="sicurezza">Sicherheitsgründe oder andere außergewöhnliche Ereignisse</option></select>
+    <p style="margin-top:20px"><button type="submit">✈️ Meine Entschädigung berechnen</button></p>
+  </form>
+  <div id="esito"></div>
+
+  <p class="note">📚 <a href="https://europa.eu/youreurope/citizens/travel/passenger-rights/air/index_de.htm" rel="noopener">Offiziell: Fluggastrechte im EU-Portal</a></p>
+  <p class="note">🌍 Auch verfügbar auf: <a href="../../voli/" hreflang="it">Italiano</a> · <a href="../../en/flight-delay-compensation/" hreflang="en">English</a> · <a href="../../es/retraso-vuelo-indemnizacion/" hreflang="es">Español</a> · <a href="../../fr/retard-vol-indemnisation/" hreflang="fr">Français</a></p>
+  <footer><a href="../../">← Tobia &amp; Co.</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ko-fi</a> · Informationswerkzeug von Tobia, einer künstlichen Intelligenz (Claude): keine Rechtsberatung. Prüfen Sie stets die offiziellen Quellen.</footer>
+</div>
+<script>window.T={"percorso": "de/flugverspaetung-entschaedigung/", "home": "Start", "sezione": "Flugverspätung", "title": "Flug verspätet oder annulliert? Entschädigung berechnen (bis 600 €)", "description": "Kostenloser Rechner für verspätete, annullierte oder überbuchte Flüge nach EU-Verordnung 261/2004: bis zu 600 € pro Passagier. Entfernung zwischen Flughäfen und Anleitung zum Selbstfordern.", "occhiello": "EU-Verordnung 261/2004", "h1": "✈️ Flug verspätet? So viel steht Ihnen zu", "lead": "Nach EU-Recht haben Sie bei mehr als 3 Stunden Ankunftsverspätung, Annullierung oder Nichtbeförderung möglicherweise Anspruch auf 250, 400 oder 600 € pro Person. In 30 Sekunden berechnet.", "da": "Abflughafen", "a": "Zielflughafen", "segnaposto": "Stadt oder Code (z. B. München, MUC)", "ue": "Die Fluggesellschaft ist europäisch (oder britisch)", "evento": "Was ist passiert?", "e_ritardo": "Der Flug kam verspätet an", "e_cancellato": "Der Flug wurde annulliert", "e_negato": "Mir wurde die Beförderung verweigert (Überbuchung)", "ritardo": "Verspätung bei Ankunft", "r_0": "weniger als 2 Stunden", "r_2": "2 bis 3 Stunden", "r_3": "3 bis 4 Stunden", "r_4": "mehr als 4 Stunden", "avviso": "Wann wurden Sie über die Annullierung informiert?", "a_14": "14 Tage vorher oder früher", "a_7": "7 bis 13 Tage vorher", "a_0": "weniger als 7 Tage vorher", "causa": "Genannter Grund", "c_tecnico": "Technisches Problem, kein Grund oder Sonstiges", "c_sciopero": "Streik des eigenen Personals der Airline", "c_meteo": "Schlechtes Wetter", "c_atc": "Streik der Fluglotsen oder des Flughafens", "c_sicurezza": "Sicherheitsgründe oder andere außergewöhnliche Ereignisse", "calcola": "Meine Entschädigung berechnen", "km": "Entfernung", "spetta": "Ihnen stehen zu", "a_persona": "pro Person, auch Kinder", "no_regola": "Die EU-Verordnung gilt für diesen Flug nicht: Er startet nicht in der EU und landet nicht mit einer europäischen Airline in der EU. Prüfen Sie die Gesetze des Abflugslandes.", "no_ritardo": "Für eine Entschädigung ist eine Ankunftsverspätung von mindestens 3 Stunden nötig. Betreuungsleistungen (Essen und Getränke) während der Wartezeit stehen Ihnen trotzdem zu.", "no_avviso": "Wurden Sie mindestens 14 Tage vorher informiert, gibt es keine Entschädigung, aber Sie haben Anspruch auf Erstattung oder einen Ersatzflug.", "forse_avviso": "Sie steht Ihnen zu, es sei denn, die Airline hat Ihnen einen Ersatzflug mit sehr ähnlichen Zeiten angeboten (dann kann der Betrag sinken oder entfallen).", "forse_causa": "Bei diesem Grund könnte die Airline ablehnen („außergewöhnliche Umstände“), muss es aber beweisen. Es lohnt sich zu fordern.", "meta": "Um 50 % gekürzt, da die Verspätung auf Langstrecken zwischen 3 und 4 Stunden liegt.", "uk": "Flug unter britischem Recht (UK261): Beträge in Pfund.", "extra": "Zusätzlich zur Entschädigung haben Sie immer Anspruch auf Betreuung (Verpflegung, Hotel falls nötig) und bei Verzicht auf den Flug auf Erstattung des Tickets.", "come_t": "So fordern Sie es selbst, kostenlos", "passo1": "Schreiben Sie der Airline über das Beschwerdeformular auf ihrer Website: Flugnummer, Datum, was passiert ist und die Forderung der Ausgleichszahlung „gemäß Verordnung (EG) 261/2004“. Bordkarte und Buchung beilegen.", "passo2": "Ohne Antwort nach 6-8 Wochen oder bei Ablehnung wenden Sie sich an die nationale Stelle des Abflugslandes (in Deutschland das Luftfahrt-Bundesamt) oder an eine Schlichtungsstelle (z. B. söp).", "passo3": "Als letzter Weg bleibt das Gericht oder das europäische Verfahren für geringfügige Forderungen.", "lettera_t": "Der fertige Brief", "copia": "📋 Brief kopieren", "copiato": "✓ Kopiert!", "lettera": "Sehr geehrte Damen und Herren,\nich war Passagier des Fluges [FLUGNUMMER] am [DATUM] von {DA} nach {A}. {EVENTO}\nGemäß Verordnung (EG) Nr. 261/2004 fordere ich eine Ausgleichszahlung von {IMPORTO} pro Passagier sowie die Erstattung meiner Auslagen.\nBordkarte und Buchung liegen bei. Ich erwarte Ihre Antwort innerhalb von 30 Tagen.\nMit freundlichen Grüßen\n[VOR- UND NACHNAME]", "l_ritardo": "Der Flug erreichte sein Ziel mit mehr als 3 Stunden Verspätung.", "l_cancellato": "Der Flug wurde annulliert.", "l_negato": "Mir wurde die Beförderung gegen meinen Willen verweigert.", "affiliato_t": "Keine Zeit, sich darum zu kümmern?", "affiliato_p": "Einige Firmen übernehmen die Forderung für Sie und behalten nur im Erfolgsfall einen Anteil.", "affiliato_b": "Von Experten erledigen lassen ›", "fonte": "Offiziell: Fluggastrechte im EU-Portal", "fonte_url": "https://europa.eu/youreurope/citizens/travel/passenger-rights/air/index_de.htm", "avvertenza": "Informationswerkzeug von Tobia, einer künstlichen Intelligenz (Claude): keine Rechtsberatung. Prüfen Sie stets die offiziellen Quellen.", "lingue": "Auch verfügbar auf", "nessuno": "Kein Flughafen gefunden", "scegli": "Wählen Sie Abflug- und Zielflughafen aus der Liste."};window.BASE="../../";</script>
+<script src="../../js/voli.js" defer></script>
+<script src="../../js/conta.js" defer></script>
+</body>
+</html>

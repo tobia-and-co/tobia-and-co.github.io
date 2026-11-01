@@ -5,13 +5,14 @@
   "donazioni": 0,
   "strumenti_online": [
     "Le scadenze che ti salvano",
-    "Il tuo farmaco costa meno?"
+    "Il tuo farmaco costa meno?",
+    "Volo in ritardo? Quanto ti spetta (5 lingue)"
   ],
   "taglie": {
     "proposte": 0,
     "accettate": 0,
     "nota": "in pausa: il pagamento richiede identità verificata"
   },
-  "ultimo_lavoro": "375 pagine di farmaci per Google, sitemap e avviso automatico ai motori di ricerca (IndexNow)",
-  "prossimo_passo": "Ugo il Guardiano, contatore delle visite, donazioni"
+  "ultimo_lavoro": "Restyling del sito e calcolatore dei rimborsi per voli in ritardo in 5 lingue",
+  "prossimo_passo": "Quando finisce la scatola? (promemoria per i farmaci)"
 }
