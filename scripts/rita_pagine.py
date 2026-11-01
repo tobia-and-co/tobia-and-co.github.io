@@ -43,14 +43,23 @@ for principio, gruppi in sorted(per_principio.items(), key=lambda x: slug(x[0]))
              + (f" e risparmia fino a {eur(massimo)} a confezione" if massimo else "")
              + ". Dati ufficiali AIFA al " + d["prezzi_al"] + ".")
     blocchi = []
+    def riga(f):
+        return (f'<tr><td><b>{e(f[0])}</b><div class="sub">{e(f[1])} · {e(f[2])}</div></td>'
+                f'<td class="prezzo">{eur(f[3])}<div class="sub">'
+                + (f'<span class="extra">+{eur(f[4])}</span>' if f[4] else '<span class="zero">✓ nessuna differenza</span>')
+                + "</div></td></tr>")
     for g in gruppi:
-        righe = "".join(
-            f'<tr><td><b>{e(f[0])}</b><div class="sub">{e(f[1])} · {e(f[2])}</div></td>'
-            f'<td style="text-align:right;white-space:nowrap">{eur(f[3])}<div class="sub">'
-            + (f'<span class="extra">+{eur(f[4])}</span>' if f[4] else '<span class="zero">✓ nessuna differenza</span>')
-            + "</div></td></tr>" for f in g["f"])
-        blocchi.append(f'<div class="card"><h2 style="margin-top:0;font-size:18px">{e(g["c"])}</h2>'
-                       f'<div class="sub">Rimborsato dal Servizio sanitario fino a <b>{eur(g["r"])}</b></div><table>{righe}</table></div>')
+        care = sorted([f for f in g["f"] if f[4]], key=lambda f: -(f[4] or 0))
+        zero = [f for f in g["f"] if not f[4]]
+        html_care = f'<table>{"".join(riga(f) for f in care)}</table>' if care else '<p class="zero">✓ Tutte le confezioni costano uguale: nessuna differenza da pagare.</p>'
+        html_zero = (f'<details class="gen"><summary>✓ {len(zero)} equivalent{"e" if len(zero)==1 else "i"} senza differenza da pagare ›</summary>'
+                     f'<table>{"".join(riga(f) for f in zero)}</table></details>') if zero and care else (f'<table>{"".join(riga(f) for f in zero)}</table>' if zero else "")
+        risparmio = f'<div><span class="sub">Risparmi fino a</span><b class="extra">{eur(max(f[4] for f in care))}</b></div>' if care else ''
+        blocchi.append(f'<div class="card"><h2 style="margin-top:0;font-size:19px">{e(g["c"])}</h2>'
+                       f'<div class="riassunto"><div><span class="sub">Rimborsato fino a</span><b>{eur(g["r"])}</b></div>'
+                       f'<div><span class="sub">Equivalenti senza differenza</span><b class="zero">{len(zero)}</b></div>{risparmio}</div>'
+                       + (f'<p class="sub" style="margin:4px 0 0">Marche che costano di più (la differenza la paghi tu):</p>' if care else '')
+                       + html_care + html_zero + '</div>')
     pagina = f"""<!doctype html>
 <html lang="it">
 <head>
@@ -61,13 +70,13 @@ for principio, gruppi in sorted(per_principio.items(), key=lambda x: slug(x[0]))
 <link rel="canonical" href="{SITO}/farmaci/{s}/">
 <link rel="icon" href="../../img/tobia-base.svg">
 <link rel="stylesheet" href="../../style.css">
-<style>.zero{{color:var(--ok);font-weight:700}}.extra{{color:#c0392b;font-weight:700}}.sub{{font-size:13px;color:var(--muted)}}</style>
 </head>
 <body>
 <div class="wrap">
-  <header class="top"><img src="../../img/tobia-lavoro.svg" alt=""><a href="../../">Tobia &amp; Co.</a></header>
+  <header class="top"><img src="../../img/tobia-base.svg" alt=""><a href="../../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../../#strumenti">Strumenti</a><a class="nasc" href="../../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
   <nav class="briciole"><a href="../../">🏠 Home</a> › <a href="../">Farmaci</a> › {e(principio)}</nav>
-  <h1>💊 {e(principio)}: farmaci equivalenti e prezzi</h1>
+  <span class="occhiello">💊 Farmaci equivalenti</span>
+  <h1>{e(principio)}: equivalenti e prezzi</h1>
   <p class="lead">{e(descr)} Con la ricetta il Servizio sanitario paga fino al prezzo di riferimento: se scegli una confezione che costa di più, la differenza la paghi tu.</p>
   {''.join(blocchi)}
   <div class="card"><p class="note">⚠️ Prima di cambiare farmaco <b>chiedi sempre al farmacista o al medico</b>. Dati: liste di trasparenza AIFA (prezzi al {e(d['prezzi_al'])}, aggiornati il {e(d['aggiornato'])}). Pagina informativa, non un consiglio medico.</p>

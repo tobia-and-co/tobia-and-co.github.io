@@ -7,19 +7,13 @@
 <meta name="description" content="Scrivi il nome del tuo farmaco e scopri i farmaci equivalenti (generici) e quanto paghi in più rispetto al prezzo rimborsato dal Servizio sanitario. Dati ufficiali AIFA aggiornati ogni mese.">
 <link rel="icon" href="../img/tobia-base.svg">
 <link rel="stylesheet" href="../style.css">
-<style>
-.f-row td:last-child{text-align:right;white-space:nowrap}
-.zero{color:var(--ok);font-weight:700}
-.extra{color:#c0392b;font-weight:700}
-.hit{background:rgba(232,176,75,.18)}
-.sub{font-size:13px;color:var(--muted)}
-</style>
 </head>
 <body>
 <div class="wrap">
-  <header class="top"><img src="../img/tobia-lavoro.svg" alt=""><a href="../">Tobia &amp; Co.</a></header>
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
   <nav class="briciole"><a href="../">🏠 Home</a> › Farmaci</nav>
 
+  <span class="occhiello">Dati ufficiali AIFA</span>
   <h1>💊 Il tuo farmaco costa meno?</h1>
   <p class="lead">Scrivi il nome del farmaco (o del principio attivo): vedi i farmaci <b>equivalenti</b> e quanto paghi in più, con la ricetta, rispetto al prezzo rimborsato dal Servizio sanitario.</p>
 
@@ -65,14 +59,14 @@ function cerca(){
   if(!trovati.length){ris.innerHTML='<div class="card">Nessun farmaco trovato tra quelli con equivalenti. Prova con il nome del principio attivo (lo trovi sulla scatola).</div>';return;}
   window.tobiaConta&&tobiaConta('ricerche-farmaci');
   ris.innerHTML=trovati.map(g=>{
-    const righe=g.f.map(f=>{
-      const mio=parole.every(p=>norm(f[0]+' '+f[1]).includes(p));
-      const diff=f[4]?'<span class="extra">+'+eur(f[4])+'</span>':'<span class="zero">✓ nessuna differenza</span>';
-      return '<tr class="f-row'+(mio?' hit':'')+'"><td><b>'+h(f[0])+'</b><div class="sub">'+h(f[1])+' · '+h(f[2])+'</div></td><td>'+eur(f[3])+'<div class="sub">'+diff+'</div></td></tr>';
-    }).join('');
-    const mioG=g.f.find(f=>parole.every(p=>norm(f[0]+' '+f[1]).includes(p)));
-    const risparmio=mioG&&mioG[4]?'<p>💡 Con un equivalente senza differenza risparmieresti <b>'+eur(mioG[4])+'</b> a confezione.</p>':'';
-    return '<div class="card"><h2 style="margin-top:0;font-size:19px"><a href="'+slug(g.p)+'/">'+h(g.p)+'</a></h2><div class="sub">'+h(g.c)+' · rimborsato fino a <b>'+eur(g.r)+'</b></div>'+risparmio+'<table>'+righe+'</table></div>';
+    const mia=f=>parole.every(p=>norm(f[0]+' '+f[1]).includes(p));
+    const riga=f=>'<tr'+(mia(f)?' class="hit"':'')+'><td><b>'+h(f[0])+'</b><div class="sub">'+h(f[1])+' · '+h(f[2])+'</div></td><td class="prezzo">'+eur(f[3])+'<div class="sub">'+(f[4]?'<span class="extra">+'+eur(f[4])+'</span>':'<span class="zero">✓ nessuna differenza</span>')+'</div></td></tr>';
+    const care=g.f.filter(f=>f[4]).sort((a,b)=>b[4]-a[4]), zero=g.f.filter(f=>!f[4]);
+    const mioG=g.f.find(mia);
+    const consiglio=mioG&&mioG[4]?'<p>💡 Con un equivalente senza differenza risparmi <b class="extra">'+eur(mioG[4])+'</b> a confezione.</p>':(mioG?'<p class="zero">✓ Il tuo farmaco non ha differenze da pagare.</p>':'');
+    const tCare=care.length?'<table>'+care.map(riga).join('')+'</table>':'';
+    const tZero=zero.length?(care.length?'<details class="gen"'+(mioG&&!mioG[4]?' open':'')+'><summary>✓ '+zero.length+' equivalent'+(zero.length==1?'e':'i')+' senza differenza ›</summary><table>'+zero.map(riga).join('')+'</table></details>':'<table>'+zero.map(riga).join('')+'</table>'):'';
+    return '<div class="card"><h2 style="margin-top:0;font-size:19px"><a href="'+slug(g.p)+'/">'+h(g.p)+'</a></h2><div class="sub">'+h(g.c)+' · rimborsato fino a <b>'+eur(g.r)+'</b></div>'+consiglio+tCare+tZero+'</div>';
   }).join('');
 }
 </script>
