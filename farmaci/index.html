@@ -63,7 +63,9 @@ function cerca(){
     const riga=f=>'<tr'+(mia(f)?' class="hit"':'')+'><td><b>'+h(f[0])+'</b><div class="sub">'+h(f[1])+' · '+h(f[2])+'</div></td><td class="prezzo">'+eur(f[3])+'<div class="sub">'+(f[4]?'<span class="extra">+'+eur(f[4])+'</span>':'<span class="zero">✓ nessuna differenza</span>')+'</div></td></tr>';
     const care=g.f.filter(f=>f[4]).sort((a,b)=>b[4]-a[4]), zero=g.f.filter(f=>!f[4]);
     const mioG=g.f.find(mia);
-    const consiglio=mioG&&mioG[4]?'<p>💡 Con un equivalente senza differenza risparmi <b class="extra">'+eur(mioG[4])+'</b> a confezione.</p>':(mioG?'<p class="zero">✓ Il tuo farmaco non ha differenze da pagare.</p>':'');
+    const unita=+((g.c.match(/^\s*(\d+)\s*UNITA/)||[])[1]||0);
+    const anno=mioG&&mioG[4]&&unita>=5?'<p class="anno">💶 Se ne prendi una al giorno risparmi circa <b>'+eur(mioG[4]*365/unita)+'</b> all\'anno.</p>':'';
+    const consiglio=mioG&&mioG[4]?'<p>💡 Con un equivalente senza differenza risparmi <b class="extra">'+eur(mioG[4])+'</b> a confezione.</p>'+anno:(mioG?'<p class="zero">✓ Il tuo farmaco non ha differenze da pagare.</p>':'');
     const tCare=care.length?'<table>'+care.map(riga).join('')+'</table>':'';
     const tZero=zero.length?(care.length?'<details class="gen"'+(mioG&&!mioG[4]?' open':'')+'><summary>✓ '+zero.length+' equivalent'+(zero.length==1?'e':'i')+' senza differenza ›</summary><table>'+zero.map(riga).join('')+'</table></details>':'<table>'+zero.map(riga).join('')+'</table>'):'';
     return '<div class="card"><h2 style="margin-top:0;font-size:19px"><a href="'+slug(g.p)+'/">'+h(g.p)+'</a></h2><div class="sub">'+h(g.c)+' · rimborsato fino a <b>'+eur(g.r)+'</b></div>'+consiglio+tCare+tZero+'</div>';

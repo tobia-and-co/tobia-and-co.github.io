@@ -28,6 +28,7 @@
 
   fetch(window.BASE + 'data/aeroporti.json').then(function (r) { return r.json(); }).then(function (d) {
     A = d.map(function (a) { a.c = ' ' + (norm(a[2]) + ' ' + alias(a[2] + ' ' + a[1])).replace(/[^a-z0-9]+/g, ' ') + ' '; a.k = norm(a[0] + ' ' + a[1] + ' ' + a[2]) + a.c; return a; });
+    precompila();
   });
 
   function cerca(campo) {
@@ -53,6 +54,14 @@
     });
   }
   cerca('da'); cerca('a');
+  // pagine delle tratte: aeroporti già scelti
+  function precompila() {
+    if (!window.PREFILL || !A.length) return;
+    ['da', 'a'].forEach(function (c, i) {
+      var x = A.filter(function (a) { return a[0] === window.PREFILL[i]; })[0];
+      if (x) { scelto[c] = x; $(c).value = nome(x); }
+    });
+  }
 
   function km(p, q) {
     var R = 6371, r = Math.PI / 180, dLat = (q[4] - p[4]) * r, dLon = (q[5] - p[5]) * r;

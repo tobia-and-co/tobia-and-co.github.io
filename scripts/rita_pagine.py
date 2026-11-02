@@ -24,7 +24,7 @@ for vecchia in base.iterdir():
     if vecchia.is_dir():
         shutil.rmtree(vecchia)
 
-indirizzi = [SITO + "/", SITO + "/scadenze/", SITO + "/farmaci/", SITO + "/diario/", SITO + "/sostieni/"] + [SITO + "/" + t["percorso"] for t in json.load(open("data/voli_testi.json", encoding="utf-8")).values()]
+indirizzi = [SITO + "/", SITO + "/scadenze/", SITO + "/farmaci/", SITO + "/diario/", SITO + "/sostieni/", SITO + "/scatola/"] + [SITO + "/" + t for t in (json.load(open("data/tratte.json")) if pathlib.Path("data/tratte.json").exists() else [])] + [SITO + "/" + t["percorso"] for t in json.load(open("data/voli_testi.json", encoding="utf-8")).values()]
 elenco = []
 for principio, gruppi in sorted(per_principio.items(), key=lambda x: slug(x[0])):
     s = slug(principio)
@@ -55,11 +55,15 @@ for principio, gruppi in sorted(per_principio.items(), key=lambda x: slug(x[0]))
         html_zero = (f'<details class="gen"><summary>✓ {len(zero)} equivalent{"e" if len(zero)==1 else "i"} senza differenza da pagare ›</summary>'
                      f'<table>{"".join(riga(f) for f in zero)}</table></details>') if zero and care else (f'<table>{"".join(riga(f) for f in zero)}</table>' if zero else "")
         risparmio = f'<div><span class="sub">Risparmi fino a</span><b class="extra">{eur(max(f[4] for f in care))}</b></div>' if care else ''
+        m = re.match(r"\s*(\d+)\s*UNITA", g["c"])
+        unita = int(m.group(1)) if m else 0
+        anno = (f'<p class="anno">💶 Se ne prendi una al giorno, con un equivalente senza differenza risparmi fino a <b>{eur(max(f[4] for f in care) * 365 / unita)}</b> all\'anno.</p>'
+                if care and unita >= 5 else '')
         blocchi.append(f'<div class="card"><h2 style="margin-top:0;font-size:19px">{e(g["c"])}</h2>'
                        f'<div class="riassunto"><div><span class="sub">Rimborsato fino a</span><b>{eur(g["r"])}</b></div>'
                        f'<div><span class="sub">Equivalenti senza differenza</span><b class="zero">{len(zero)}</b></div>{risparmio}</div>'
                        + (f'<p class="sub" style="margin:4px 0 0">Marche che costano di più (la differenza la paghi tu):</p>' if care else '')
-                       + html_care + html_zero + '</div>')
+                       + anno + html_care + html_zero + '</div>')
     pagina = f"""<!doctype html>
 <html lang="it">
 <head>
@@ -80,7 +84,7 @@ for principio, gruppi in sorted(per_principio.items(), key=lambda x: slug(x[0]))
   <p class="lead">{e(descr)} Con la ricetta il Servizio sanitario paga fino al prezzo di riferimento: se scegli una confezione che costa di più, la differenza la paghi tu.</p>
   {''.join(blocchi)}
   <div class="card"><p class="note">⚠️ Prima di cambiare farmaco <b>chiedi sempre al farmacista o al medico</b>. Dati: liste di trasparenza AIFA (prezzi al {e(d['prezzi_al'])}, aggiornati il {e(d['aggiornato'])}). Pagina informativa, non un consiglio medico.</p>
-  <a class="btn" href="../">🔎 Cerca un altro farmaco</a></div>
+  <div class="azioni"><a class="btn" href="../">🔎 Cerca un altro farmaco</a><a class="btn chiaro" href="../../scatola/">⏰ Promemoria: quando finisce la scatola</a></div></div>
   <footer><a href="../../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Dati aggiornati automaticamente da Rita la Farmacista, il robottino di Tobia (un'intelligenza artificiale, Claude). Può contenere errori: verifica sempre in farmacia.</footer>
 </div>
 <script src="../../js/conta.js" defer></script>
