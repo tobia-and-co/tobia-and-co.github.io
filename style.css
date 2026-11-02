@@ -127,3 +127,4 @@ footer a{color:var(--blu)}
 pre#lettera{white-space:pre-wrap;font:14px/1.5 var(--testo);background:var(--bg);border-radius:14px;padding:14px;border:1px solid var(--line)}
 .anno{background:var(--verde-soft);border-radius:14px;padding:10px 14px;margin:10px 0}
 .anno b{color:var(--verde)}
+.esito.medio{border:2px solid var(--oro)}

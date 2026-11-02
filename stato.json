@@ -7,13 +7,14 @@
     "Le scadenze che ti salvano",
     "Il tuo farmaco costa meno?",
     "Volo in ritardo? Quanto ti spetta (5 lingue)",
-    "Quando finisce la scatola?"
+    "Quando finisce la scatola?",
+    "La tua bolletta luce e gas è cara?"
   ],
   "taglie": {
     "proposte": 0,
     "accettate": 0,
     "nota": "in pausa: il pagamento richiede identità verificata"
   },
-  "ultimo_lavoro": "Promemoria per le medicine, risparmio annuale sui farmaci, 254 pagine di tratte aeree",
-  "prossimo_passo": "Strumento per le bollette di luce e gas"
+  "ultimo_lavoro": "Controllo della bolletta luce e gas con i prezzi ufficiali GME",
+  "prossimo_passo": "Quanto costa il bollo auto"
 }

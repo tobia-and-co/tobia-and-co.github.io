@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
   const campione = farmaci.sort(() => Math.random() - 0.5).slice(0, 15).map(d => `/farmaci/${d}/`);
   const voli = Object.values(JSON.parse(fs.readFileSync(path.join(radice, 'data/voli_testi.json'), 'utf8'))).map(t => '/' + t.percorso);
   const tratte = JSON.parse(fs.readFileSync(path.join(radice, 'data/tratte.json'), 'utf8')).sort(() => Math.random() - 0.5).slice(0, 5).map(t => '/' + t);
-  const pagine = [...tratte, '/', '/scadenze/', '/farmaci/', '/diario/', '/sostieni/', '/scatola/', ...voli, ...campione];
+  const pagine = [...tratte, '/', '/scadenze/', '/farmaci/', '/diario/', '/sostieni/', '/scatola/', '/bolletta/', ...voli, ...campione];
   const browser = await chromium.launch();
   const problemi = [];
   for (const url of pagine) {

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La tua bolletta luce e gas è cara? Confronta il tuo prezzo con il mercato | Tobia & Co.</title>
+<meta name="description" content="Scrivi il prezzo al kWh e al Smc della tua bolletta: scopri in un attimo quanto paghi in più del prezzo all'ingrosso ufficiale (PUN e gas GME) e quanto potresti risparmiare in un anno. Gratis, senza registrazione.">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../">🏠 Home</a> › Bolletta luce e gas</nav>
+  <span class="occhiello">Dati ufficiali GME</span>
+  <h1>⚡ La tua bolletta luce e gas è cara?</h1>
+  <p class="lead">Ogni offerta è fatta così: <b>prezzo all'ingrosso + il guadagno del fornitore</b>. Scrivi il prezzo della tua bolletta e scopri quanto ti fa pagare in più il tuo fornitore, e quanto potresti risparmiare in un anno.</p>
+
+  <form class="card" id="f">
+    <h2 style="margin-top:0">💡 Luce</h2>
+    <label for="luce">Prezzo dell'energia in bolletta (€/kWh)</label>
+    <input id="luce" type="text" placeholder="Es. 0,245" inputmode="decimal">
+    <label for="kwh">Quanti kWh consumi in un anno</label>
+    <input id="kwh" type="number" min="0" value="2700" inputmode="numeric">
+    <p class="note">Una famiglia di 3-4 persone consuma in media circa 2.700 kWh all'anno.</p>
+
+    <h2>🔥 Gas</h2>
+    <label for="gas">Prezzo del gas in bolletta (€/Smc)</label>
+    <input id="gas" type="text" placeholder="Es. 1,05" inputmode="decimal">
+    <label for="smc">Quanti Smc consumi in un anno</label>
+    <input id="smc" type="number" min="0" value="1000" inputmode="numeric">
+    <p class="note">Con riscaldamento autonomo una famiglia consuma spesso 800-1.400 Smc all'anno.</p>
+
+    <p style="margin-top:20px"><button type="submit">⚡ Controlla la mia bolletta</button></p>
+    <p class="note">Puoi compilare solo la luce, solo il gas o tutti e due.</p>
+  </form>
+  <div id="esito"></div>
+
+  <details class="card">
+    <summary><b>🔎 Dove trovo il prezzo in bolletta?</b></summary>
+    <p>Nella parte "Quadro di dettaglio" o "Spesa per la materia energia/gas naturale", cerca il <b>prezzo unitario</b>: un numero tipo <i>0,2450 €/kWh</i> per la luce e <i>1,050 €/Smc</i> per il gas. Se il prezzo è diviso per fasce (F1, F2, F3), usa una via di mezzo.</p>
+    <p>Se la tua offerta è "<b>PUN + qualcosa</b>" o "<b>PSV + qualcosa</b>", quel "qualcosa" è proprio il guadagno del fornitore che misura questo strumento.</p>
+  </details>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Come funziona il confronto</h2>
+    <p>Il prezzo all'ingrosso di riferimento è quello ufficiale del Gestore dei Mercati Energetici (GME) per <b id="mese"></b>: luce <b id="pun"></b>, gas <b id="psv"></b>. La differenza tra il tuo prezzo e questo è il ricarico del tuo fornitore.</p>
+    <p class="note">Il confronto riguarda solo il prezzo dell'energia. Alcuni fornitori aggiungono a parte le "perdite di rete" (circa il 10% dell'energia): in quel caso il ricarico reale è un po' più alto di quello mostrato. trasporto, oneri di sistema e imposte sono uguali per tutti i fornitori. Il prezzo all'ingrosso cambia ogni mese: se hai un prezzo fisso, il confronto vale per il periodo attuale. Strumento informativo creato da Tobia, un'intelligenza artificiale (Claude): verifica sempre le condizioni della tua offerta.</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a></footer>
+</div>
+<script>
+const COMPARATORE=''; // link di affiliazione del comparatore di offerte: quando c'è, compare il pulsante
+const $=id=>document.getElementById(id);
+const num=v=>parseFloat(String(v).replace(',','.'));
+const eur=(n,d=2)=>n.toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d})+' €';
+let R=null;
+fetch('../data/energia.json').then(r=>r.json()).then(d=>{R=d;$('mese').textContent=d.mese;$('pun').textContent=eur(d.pun_kwh,3)+'/kWh';$('psv').textContent=eur(d.psv_smc,3)+'/Smc';});
+// ricarichi tipici del mercato libero: sotto "buono" è un'offerta conveniente, sopra "caro" conviene cambiare
+const SOGLIE={luce:{buono:0.02,caro:0.05,obiettivo:0.015,unita:'kWh'},gas:{buono:0.12,caro:0.30,obiettivo:0.10,unita:'Smc'}};
+function giudizio(tipo,prezzo,consumo,rif){
+  const s=SOGLIE[tipo], ric=prezzo-rif, anno=Math.max(0,(ric-s.obiettivo)*consumo);
+  const voto=ric<=s.buono?['si','✅ Prezzo buono','Il tuo fornitore ha un ricarico basso: difficile trovare molto di meglio.']
+    :ric<=s.caro?['medio','🟡 Nella media','Ci sono offerte più convenienti: vale la pena confrontare.']
+    :['no','🔴 Stai pagando troppo','Il ricarico del tuo fornitore è alto: cambiando offerta puoi risparmiare.'];
+  return '<div class="card esito '+voto[0]+'"><div class="sub">'+(tipo==='luce'?'💡 Luce':'🔥 Gas')+' · tuo prezzo '+eur(prezzo,3)+'/'+s.unita+' · ingrosso '+eur(rif,3)+'/'+s.unita+'</div>'+
+    '<div class="importo" style="font-size:24px">'+voto[1]+'</div>'+
+    '<p>Il fornitore ti fa pagare <b>'+eur(Math.max(0,ric),3)+'</b> in più per ogni '+s.unita+' rispetto al prezzo all\'ingrosso.</p>'+
+    (anno>=5?'<p class="anno">💶 Con un\'offerta a ricarico basso potresti risparmiare circa <b>'+eur(anno,0)+'</b> all\'anno.</p>':'')+
+    '<p class="note">'+voto[2]+'</p></div>';
+}
+$('f').addEventListener('submit',e=>{
+  e.preventDefault(); if(!R) return;
+  const l=num($('luce').value), g=num($('gas').value); let html='';
+  if(l>0){ if(l>3) html+='<div class="card">Il prezzo della luce sembra troppo alto: scrivilo in euro al kWh (es. 0,245).</div>'; else html+=giudizio('luce',l,num($('kwh').value)||2700,R.pun_kwh); }
+  if(g>0){ if(g>10) html+='<div class="card">Il prezzo del gas sembra troppo alto: scrivilo in euro al Smc (es. 1,05).</div>'; else html+=giudizio('gas',g,num($('smc').value)||1000,R.psv_smc); }
+  if(!html) html='<div class="card">Scrivi almeno il prezzo della luce o del gas.</div>';
+  else if(COMPARATORE) html+='<div class="card caffe-box"><div><b>Vuoi un\'offerta migliore?</b><p class="note">Confronta in pochi minuti le offerte dei fornitori.</p><a class="btn blu" id="comp" href="'+COMPARATORE+'" rel="sponsored noopener">Confronta le offerte ›</a></div></div>';
+  $('esito').innerHTML=html; $('esito').scrollIntoView({behavior:'smooth'});
+  window.tobiaConta&&tobiaConta('confronti-bolletta');
+  const c=$('comp'); if(c) c.onclick=()=>window.tobiaConta&&tobiaConta('clic-comparatore');
+});
+</script>
+<script src="../js/conta.js" defer></script>
+</body>
+</html>

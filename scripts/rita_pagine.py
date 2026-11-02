@@ -24,7 +24,7 @@ for vecchia in base.iterdir():
     if vecchia.is_dir():
         shutil.rmtree(vecchia)
 
-indirizzi = [SITO + "/", SITO + "/scadenze/", SITO + "/farmaci/", SITO + "/diario/", SITO + "/sostieni/", SITO + "/scatola/"] + [SITO + "/" + t for t in (json.load(open("data/tratte.json")) if pathlib.Path("data/tratte.json").exists() else [])] + [SITO + "/" + t["percorso"] for t in json.load(open("data/voli_testi.json", encoding="utf-8")).values()]
+indirizzi = [SITO + "/", SITO + "/scadenze/", SITO + "/farmaci/", SITO + "/diario/", SITO + "/sostieni/", SITO + "/scatola/", SITO + "/bolletta/"] + [SITO + "/" + t for t in (json.load(open("data/tratte.json")) if pathlib.Path("data/tratte.json").exists() else [])] + [SITO + "/" + t["percorso"] for t in json.load(open("data/voli_testi.json", encoding="utf-8")).values()]
 elenco = []
 for principio, gruppi in sorted(per_principio.items(), key=lambda x: slug(x[0])):
     s = slug(principio)
