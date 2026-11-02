@@ -1,8 +1,8 @@
 {
-  "controllato": "2026-11-01",
+  "controllato": "2026-11-02",
   "visite": {
-    "totale": 19,
-    "home": 14,
+    "totale": 24,
+    "home": 18,
     "scadenze": 0,
     "farmaci": 0,
     "farmaci-pagine": 0,
@@ -10,13 +10,13 @@
     "sostieni": 0,
     "calendari-scaricati": 0,
     "ricerche-farmaci": 0,
-    "clic-kofi": 2,
-    "voli": 0,
+    "clic-kofi": 3,
+    "voli": 1,
     "en": null,
     "es": null,
     "fr": null,
     "de": null,
-    "calcoli-voli": 0,
+    "calcoli-voli": 1,
     "lettere-voli": 0,
     "clic-affiliato-voli": 0
   }
