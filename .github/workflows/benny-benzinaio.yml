@@ -1,10 +1,8 @@
 name: Benny il Benzinaio
+# In pausa: il sito del Ministero non risponde ai server di GitHub (esteri).
+# I dati arriveranno dal mini PC in Italia; per ora si avvia solo a mano.
 on:
-  schedule:
-    - cron: "23 7 * * *"   # ogni mattina, dopo la pubblicazione dei "prezzi alle 8"
   workflow_dispatch:
-  push:
-    paths: [".github/workflows/benny-benzinaio.yml", "scripts/benny_carburanti.py", "scripts/benny_pagine.py"]
 permissions:
   contents: write
 jobs:

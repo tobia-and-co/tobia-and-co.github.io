@@ -43,7 +43,7 @@ for r in prezzi[1:]:
     tipo = next((k for k, v in TIPI.items() if desc == v), None)
     if not tipo or not prezzo or not (0.3 < prezzo < 5): continue
     try:
-        d = datetime.datetime.strptime(data[:10], "%d/%m/%Y").date()
+        d = (datetime.datetime.strptime(data[:10], "%Y-%m-%d") if data[4:5] == "-" else datetime.datetime.strptime(data[:10], "%d/%m/%Y")).date()
         if (oggi - d).days > 8: continue          # prezzi vecchi: scartati
     except ValueError:
         pass
