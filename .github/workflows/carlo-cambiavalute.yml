@@ -1,0 +1,21 @@
+name: Carlo il Cambiavalute
+on:
+  schedule:
+    - cron: "37 15 * * 1-5"   # ogni giorno lavorativo, dopo la pubblicazione BCE delle 16:00 (ora di Francoforte)
+  workflow_dispatch:
+  push:
+    paths: [".github/workflows/carlo-cambiavalute.yml", "scripts/carlo_cambi.py"]
+permissions:
+  contents: write
+jobs:
+  cambi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/carlo_cambi.py
+      - name: Salva i cambi
+        run: |
+          git config user.name "Carlo il Cambiavalute (Tobia & Co.)"
+          git config user.email "tobia.and.co@proton.me"
+          git add data/cambi.json
+          git diff --cached --quiet || (git commit -m "Carlo: cambi BCE aggiornati" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)
