@@ -2,12 +2,23 @@
 di tutti i distributori e li divide per provincia in data/carburanti/<PROV>.json."""
 import csv, io, json, math, pathlib, re, sys, unicodedata, urllib.request, datetime
 
-BASE = "https://www.mimit.gov.it/images/exportCSV/"
+BASI = ["https://www.mimit.gov.it/images/exportCSV/", "https://mimit.gov.it/images/exportCSV/", "https://www.mise.gov.it/images/exportCSV/"]
 UA = {"User-Agent": "Mozilla/5.0 (Tobia & Co.; tobia-and-co.github.io)"}
 OUT = pathlib.Path("data/carburanti"); OUT.mkdir(parents=True, exist_ok=True)
 
+def leggi(nome):
+    import time
+    for tentativo in range(2):
+        for base in BASI:
+            try:
+                return urllib.request.urlopen(urllib.request.Request(base + nome, headers=UA), timeout=60).read().decode("utf-8", "replace")
+            except Exception as e:
+                print("non raggiungibile:", base + nome, e)
+        time.sleep(20)
+    sys.exit(2)
+
 def scarica(nome):
-    testo = urllib.request.urlopen(urllib.request.Request(BASE + nome, headers=UA), timeout=180).read().decode("utf-8", "replace")
+    testo = leggi(nome)
     righe = testo.splitlines()
     estrazione = righe[0]
     sep = "|" if righe[1].count("|") > righe[1].count(";") else ";"
