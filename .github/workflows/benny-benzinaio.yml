@@ -1,0 +1,22 @@
+name: Benny il Benzinaio
+on:
+  schedule:
+    - cron: "23 7 * * *"   # ogni mattina, dopo la pubblicazione dei "prezzi alle 8"
+  workflow_dispatch:
+  push:
+    paths: [".github/workflows/benny-benzinaio.yml", "scripts/benny_carburanti.py", "scripts/benny_pagine.py"]
+permissions:
+  contents: write
+jobs:
+  prezzi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/benny_carburanti.py
+      - run: if [ -f scripts/benny_pagine.py ]; then python3 scripts/benny_pagine.py; fi
+      - name: Salva i prezzi
+        run: |
+          git config user.name "Benny il Benzinaio (Tobia & Co.)"
+          git config user.email "tobia.and.co@proton.me"
+          git add data/carburanti carburante 2>/dev/null || git add data/carburanti
+          git diff --cached --quiet || (git commit -m "Benny: prezzi dei carburanti aggiornati" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)
