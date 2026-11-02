@@ -24,6 +24,15 @@
     "tratte": 0,
     "bolletta": 0,
     "confronti-bolletta": 0,
-    "clic-comparatore": 0
+    "clic-comparatore": 0,
+    "mutuo": 0,
+    "calcoli-mutuo": 0,
+    "clic-mutuo": 0,
+    "banca": 0,
+    "calcoli-banca": 0,
+    "clic-banca": 0,
+    "cambio": null,
+    "calcoli-cambio": null,
+    "clic-cambio": null
   }
 }
