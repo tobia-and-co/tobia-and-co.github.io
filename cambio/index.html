@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quanto ti fa pagare la banca sul cambio? Confronto con il cambio ufficiale BCE | Tobia & Co.</title>
+<meta name="description" content="Hai pagato all'estero o in un'altra valuta? Inserisci l'importo e quanto ti hanno addebitato in euro: scopri la commissione nascosta rispetto al cambio ufficiale della Banca Centrale Europea, aggiornato ogni giorno.">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../">🏠 Home</a> › Cambio valuta</nav>
+  <span class="occhiello">Cambio ufficiale BCE</span>
+  <h1>💱 Quanto ti fa pagare la banca sul cambio?</h1>
+  <p class="lead">Quando paghi in dollari, sterline o un'altra valuta, la banca usa un cambio peggiore di quello ufficiale e tiene la differenza. Scopri quanto ti è costato davvero.</p>
+
+  <form class="card" id="f" autocomplete="off">
+    <label for="valuta">Valuta in cui hai pagato</label>
+    <select id="valuta"></select>
+    <label for="importo">Importo pagato in quella valuta</label>
+    <input id="importo" type="text" inputmode="decimal" placeholder="Es. 100">
+    <label for="addebito">Quanto ti hanno addebitato in euro (sull'estratto conto)</label>
+    <input id="addebito" type="text" inputmode="decimal" placeholder="Es. 95,40">
+    <p style="margin-top:20px"><button type="submit">💱 Calcola la commissione nascosta</button></p>
+    <p class="note" id="info">Carico i cambi ufficiali…</p>
+  </form>
+  <div id="esito"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Da sapere</h2>
+    <p>Le carte delle banche tradizionali applicano spesso dall'1 al 3% in più del cambio ufficiale, a volte con una commissione fissa in aggiunta. Il cambio di riferimento è quello pubblicato ogni giorno lavorativo dalla <b>Banca Centrale Europea</b>, e lo aggiorna da solo il nostro robottino Carlo.</p>
+    <p class="note">⚠️ Quando un negozio o un bancomat all'estero ti chiede "pagare in euro o in valuta locale?", scegli quasi sempre la <b>valuta locale</b>: la conversione proposta sul posto è di solito più cara. Strumento informativo creato da Tobia, un'intelligenza artificiale (Claude).</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a></footer>
+</div>
+<script>
+const AFFILIATO=''; // link di affiliazione di un servizio di pagamenti in valuta a basso costo: quando c'è, compare il pulsante
+const NOMI={USD:'Dollaro USA',GBP:'Sterlina britannica',CHF:'Franco svizzero',JPY:'Yen giapponese',CNY:'Yuan cinese',TRY:'Lira turca',PLN:'Zloty polacco',CZK:'Corona ceca',HUF:'Fiorino ungherese',SEK:'Corona svedese',NOK:'Corona norvegese',DKK:'Corona danese',RON:'Leu rumeno',AUD:'Dollaro australiano',CAD:'Dollaro canadese',BRL:'Real brasiliano',INR:'Rupia indiana',THB:'Baht thailandese',MXN:'Peso messicano',ZAR:'Rand sudafricano',KRW:'Won sudcoreano',SGD:'Dollaro di Singapore',HKD:'Dollaro di Hong Kong',NZD:'Dollaro neozelandese',ISK:'Corona islandese',IDR:'Rupia indonesiana',PHP:'Peso filippino',MYR:'Ringgit malese',ILS:'Shekel israeliano'};
+const $=id=>document.getElementById(id);
+const num=v=>parseFloat(String(v).replace(/\s/g,'').replace(',','.'));
+const eur=(n,d=2)=>n.toLocaleString('it-IT',{useGrouping:'always',minimumFractionDigits:d,maximumFractionDigits:d})+' €';
+let C=null;
+fetch('../data/cambi.json').then(r=>r.json()).then(d=>{
+  C=d;const prime=['USD','GBP','CHF','JPY','TRY'];
+  const tutte=Object.keys(d.eur).sort((a,b)=>(prime.indexOf(a)+1||99)-(prime.indexOf(b)+1||99)||a.localeCompare(b));
+  $('valuta').innerHTML=tutte.map(v=>'<option value="'+v+'">'+v+(NOMI[v]?' – '+NOMI[v]:'')+'</option>').join('');
+  $('info').textContent='Cambi ufficiali BCE del '+new Date(d.data).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})+'.';
+}).catch(()=>{$('info').textContent='Cambi non disponibili in questo momento: riprova più tardi.';});
+$('f').addEventListener('submit',e=>{
+  e.preventDefault();if(!C)return;
+  const v=$('valuta').value, imp=num($('importo').value), add=num($('addebito').value);
+  if(!(imp>0&&add>0)){$('esito').innerHTML='<div class="card">Scrivi l\'importo in valuta e quanto ti hanno addebitato in euro.</div>';return;}
+  const giusto=imp/C.eur[v], diff=add-giusto, pct=diff/giusto*100;
+  const voto=pct<=0.5?['si','✅ Cambio onesto','La tua carta ha applicato un cambio vicinissimo a quello ufficiale.']
+    :pct<=2?['medio','🟡 Commissione nella media','Esistono carte e conti che fanno pagare meno sul cambio.']
+    :['no','🔴 Commissione alta','Stai pagando parecchio sul cambio: per i prossimi viaggi conviene una carta senza commissioni in valuta.'];
+  let html='<div class="card esito '+voto[0]+'"><div class="sub">'+imp.toLocaleString('it-IT')+' '+v+' al cambio BCE ('+C.eur[v].toLocaleString('it-IT')+' '+v+' per 1 €) = '+eur(giusto)+'</div>'+
+    '<div class="importo" style="font-size:24px">'+voto[1]+'</div>'+
+    (diff>0?'<p>Hai pagato <b class="extra">'+eur(diff)+'</b> in più, cioè il <b>'+pct.toLocaleString('it-IT',{maximumFractionDigits:1})+'%</b> sopra il cambio ufficiale.</p>':'<p>Hai pagato meno o uguale al cambio ufficiale del giorno: probabilmente la banca ha usato il cambio di un altro giorno.</p>')+
+    (pct>0.5?'<p class="anno">💶 Se spendi 2.000 € all\'anno in valuta estera, con questa commissione perdi circa <b>'+eur(2000*pct/100,0)+'</b> all\'anno.</p>':'')+
+    '<p class="note">'+voto[2]+' Il cambio ufficiale cambia ogni giorno: il confronto è più preciso se usi i cambi del giorno del pagamento.</p></div>';
+  if(pct>0.5&&AFFILIATO) html+='<div class="card caffe-box"><div><b>Paga in valuta senza ricarichi</b><p class="note">Ci sono conti e carte che usano il cambio reale.</p><a class="btn blu" id="aff" href="'+AFFILIATO+'" rel="sponsored noopener">Scopri come ›</a></div></div>';
+  $('esito').innerHTML=html;$('esito').scrollIntoView({behavior:'smooth'});
+  window.tobiaConta&&tobiaConta('calcoli-cambio');
+  const a=$('aff');if(a)a.onclick=()=>window.tobiaConta&&tobiaConta('clic-cambio');
+});
+</script>
+<script src="../js/conta.js" defer></script>
+</body>
+</html>

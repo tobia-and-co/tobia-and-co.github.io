@@ -54,7 +54,7 @@
 const COMPARATORE=''; // link di affiliazione del comparatore di offerte: quando c'è, compare il pulsante
 const $=id=>document.getElementById(id);
 const num=v=>parseFloat(String(v).replace(',','.'));
-const eur=(n,d=2)=>n.toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d})+' €';
+const eur=(n,d=2)=>n.toLocaleString('it-IT',{useGrouping:'always',minimumFractionDigits:d,maximumFractionDigits:d})+' €';
 let R=null;
 fetch('../data/energia.json').then(r=>r.json()).then(d=>{R=d;$('mese').textContent=d.mese;$('pun').textContent=eur(d.pun_kwh,3)+'/kWh';$('psv').textContent=eur(d.psv_smc,3)+'/Smc';});
 // ricarichi tipici del mercato libero: sotto "buono" è un'offerta conveniente, sopra "caro" conviene cambiare

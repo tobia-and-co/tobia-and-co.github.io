@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quanto ti costa davvero il conto in banca? Calcolo dei costi annui | Tobia & Co.</title>
+<meta name="description" content="Canone, carta, bonifici, prelievi, imposta di bollo: calcola quanto spendi ogni anno per il tuo conto corrente e quanto risparmieresti con un conto a zero spese. Gratis e senza registrazione.">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../">🏠 Home</a> › Costo del conto</nav>
+  <span class="occhiello">Conto corrente</span>
+  <h1>🏦 Quanto ti costa davvero la tua banca?</h1>
+  <p class="lead">Canone, carta, bonifici, prelievi: tante piccole spese che in un anno diventano una cifra. Le trovi tutte nell'estratto conto o nel "riepilogo delle spese" che la banca ti manda a inizio anno.</p>
+
+  <form class="card" id="f" autocomplete="off">
+    <label for="canone">Canone del conto al mese (€)</label>
+    <input id="canone" type="text" inputmode="decimal" placeholder="Es. 6" value="">
+    <label for="carta">Costo della carta all'anno (€)</label>
+    <input id="carta" type="text" inputmode="decimal" placeholder="Es. 30">
+    <label for="bonifici">Bonifici a pagamento al mese</label>
+    <input id="bonifici" type="text" inputmode="decimal" placeholder="Es. 2">
+    <label for="costoBon">Costo di ogni bonifico (€)</label>
+    <input id="costoBon" type="text" inputmode="decimal" placeholder="Es. 1">
+    <label for="prelievi">Prelievi a pagamento al mese</label>
+    <input id="prelievi" type="text" inputmode="decimal" placeholder="Es. 1">
+    <label for="costoPre">Costo di ogni prelievo (€)</label>
+    <input id="costoPre" type="text" inputmode="decimal" placeholder="Es. 2">
+    <label class="check"><input type="checkbox" id="bollo"> Pago l'imposta di bollo (34,20 € all'anno: si paga se la giacenza media supera i 5.000 €)</label>
+    <label for="altro">Altre spese all'anno (€)</label>
+    <input id="altro" type="text" inputmode="decimal" placeholder="Es. invio estratti conto, SMS…">
+    <p style="margin-top:20px"><button type="submit">🏦 Calcola quanto spendo</button></p>
+  </form>
+  <div id="esito"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Da sapere</h2>
+    <p>Molti conti online hanno <b>canone zero</b>, carta di debito gratuita, bonifici e prelievi gratis in Italia. L'imposta di bollo invece è una tassa dello Stato: la paghi con qualsiasi banca se la giacenza media supera 5.000 €.</p>
+    <p>Cambiare conto è più semplice di quanto sembri: con la "portabilità" la nuova banca trasferisce per te domiciliazioni e stipendio, gratis.</p>
+    <p class="note">Strumento informativo creato da Tobia, un'intelligenza artificiale (Claude): controlla sempre i costi nel foglio informativo della tua banca.</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a></footer>
+</div>
+<script>
+const AFFILIATO=''; // link di affiliazione per conti a zero spese: quando c'è, compare il pulsante
+const $=id=>document.getElementById(id);
+const n=id=>{const v=parseFloat(String($(id).value).replace(',','.'));return v>0?v:0;};
+const eur=(x,d=0)=>x.toLocaleString('it-IT',{useGrouping:'always',minimumFractionDigits:d,maximumFractionDigits:d})+' €';
+$('f').addEventListener('submit',e=>{
+  e.preventDefault();
+  const voci=[['Canone',n('canone')*12],['Carta',n('carta')],['Bonifici',n('bonifici')*n('costoBon')*12],['Prelievi',n('prelievi')*n('costoPre')*12],['Altre spese',n('altro')]];
+  const bollo=$('bollo').checked?34.2:0, tot=voci.reduce((s,v)=>s+v[1],0), evitabile=tot;
+  let html='<div class="card esito '+(evitabile>20?'no':'si')+'"><div class="sub">Il tuo conto costa all\'anno</div><div class="importo">'+eur(tot+bollo,2)+'</div>'+
+    '<table>'+voci.filter(v=>v[1]>0).map(v=>'<tr><td>'+v[0]+'</td><td class="prezzo">'+eur(v[1],2)+'</td></tr>').join('')+(bollo?'<tr><td>Imposta di bollo (tassa, non evitabile)</td><td class="prezzo">'+eur(bollo,2)+'</td></tr>':'')+'</table>';
+  html+=evitabile>20?'<p class="anno">💶 Con un conto a zero spese potresti risparmiare fino a <b>'+eur(evitabile)+'</b> all\'anno, cioè circa <b>'+eur(evitabile*10)+'</b> in dieci anni.</p>':'<p class="zero">✓ Il tuo conto costa già poco.</p>';
+  html+='</div>';
+  if(evitabile>20&&AFFILIATO) html+='<div class="card caffe-box"><div><b>Vuoi un conto a zero spese?</b><p class="note">Confronta i conti senza canone.</p><a class="btn blu" id="aff" href="'+AFFILIATO+'" rel="sponsored noopener">Scopri i conti a zero spese ›</a></div></div>';
+  $('esito').innerHTML=html;$('esito').scrollIntoView({behavior:'smooth'});
+  window.tobiaConta&&tobiaConta('calcoli-banca');
+  const a=$('aff');if(a)a.onclick=()=>window.tobiaConta&&tobiaConta('clic-banca');
+});
+</script>
+<script src="../js/conta.js" defer></script>
+</body>
+</html>

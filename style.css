@@ -128,3 +128,4 @@ pre#lettera{white-space:pre-wrap;font:14px/1.5 var(--testo);background:var(--bg)
 .anno{background:var(--verde-soft);border-radius:14px;padding:10px 14px;margin:10px 0}
 .anno b{color:var(--verde)}
 .esito.medio{border:2px solid var(--oro)}
+.r-carlo{filter:hue-rotate(40deg) saturate(1.4)}

@@ -8,13 +8,16 @@
     "Il tuo farmaco costa meno?",
     "Volo in ritardo? Quanto ti spetta (5 lingue)",
     "Quando finisce la scatola?",
-    "La tua bolletta luce e gas è cara?"
+    "La tua bolletta luce e gas è cara?",
+    "La rata del mutuo è troppo alta?",
+    "Quanto ti costa la tua banca?",
+    "Quanto ti costa il cambio?"
   ],
   "taglie": {
     "proposte": 0,
     "accettate": 0,
     "nota": "in pausa: il pagamento richiede identità verificata"
   },
-  "ultimo_lavoro": "Controllo della bolletta luce e gas con i prezzi ufficiali GME",
+  "ultimo_lavoro": "Sezione Soldi di casa: mutuo (surroga), costo del conto, cambio valuta con i cambi BCE",
   "prossimo_passo": "Quanto costa il bollo auto"
 }
