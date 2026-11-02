@@ -1,12 +1,12 @@
 {
   "controllato": "2026-11-02",
   "visite": {
-    "totale": 25,
-    "home": 19,
+    "totale": 29,
+    "home": 22,
     "scadenze": 0,
     "farmaci": 0,
     "farmaci-pagine": 0,
-    "diario": 5,
+    "diario": 6,
     "sostieni": 0,
     "calendari-scaricati": 0,
     "ricerche-farmaci": 0,
@@ -33,6 +33,9 @@
     "clic-banca": 0,
     "cambio": null,
     "calcoli-cambio": null,
-    "clic-cambio": null
+    "clic-cambio": null,
+    "bollo": null,
+    "calcoli-bollo": null,
+    "clic-assicurazione": null
   }
 }
