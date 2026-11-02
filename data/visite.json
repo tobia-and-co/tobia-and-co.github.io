@@ -1,8 +1,8 @@
 {
   "controllato": "2026-11-02",
   "visite": {
-    "totale": 24,
-    "home": 18,
+    "totale": 25,
+    "home": 19,
     "scadenze": 0,
     "farmaci": 0,
     "farmaci-pagine": 0,
@@ -18,6 +18,9 @@
     "de": null,
     "calcoli-voli": 1,
     "lettere-voli": 0,
-    "clic-affiliato-voli": 0
+    "clic-affiliato-voli": 0,
+    "scatola": 0,
+    "promemoria-scatola": 0,
+    "tratte": 0
   }
 }
