@@ -11,13 +11,14 @@
     "La tua bolletta luce e gas è cara?",
     "La rata del mutuo è troppo alta?",
     "Quanto ti costa la tua banca?",
-    "Quanto ti costa il cambio?"
+    "Quanto ti costa il cambio?",
+    "Quanto costa il bollo auto?"
   ],
   "taglie": {
     "proposte": 0,
     "accettate": 0,
     "nota": "in pausa: il pagamento richiede identità verificata"
   },
-  "ultimo_lavoro": "Sezione Soldi di casa: mutuo (surroga), costo del conto, cambio valuta con i cambi BCE",
-  "prossimo_passo": "Quanto costa il bollo auto"
+  "ultimo_lavoro": "Calcolo del bollo auto con superbollo",
+  "prossimo_passo": "Assegno unico e bonus sociale bollette"
 }

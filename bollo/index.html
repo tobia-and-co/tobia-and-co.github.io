@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quanto costa il bollo auto? Calcolo per kW e classe Euro, con superbollo | Tobia & Co.</title>
+<meta name="description" content="Calcola in un attimo il bollo della tua auto in base ai kW e alla classe Euro (tariffe nazionali), con il superbollo per le auto oltre 185 kW. E fatti avvisare dal telefono prima della scadenza. Gratis.">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../">🏠 Home</a> › Bollo auto</nav>
+  <span class="occhiello">Tariffe nazionali</span>
+  <h1>🚗 Quanto costa il bollo della tua auto?</h1>
+  <p class="lead">Bastano i <b>kW</b> e la <b>classe Euro</b>, che trovi sul libretto (riquadri P.2 e V.9). In più calcolo anche il superbollo per le auto potenti.</p>
+
+  <form class="card" id="f" autocomplete="off">
+    <label for="kw">Potenza in kW (libretto, riquadro P.2)</label>
+    <input id="kw" type="text" inputmode="numeric" placeholder="Es. 51">
+    <p class="note">Hai solo i cavalli (CV)? Dividi per 1,36: 70 CV ≈ 51 kW.</p>
+    <label for="euro">Classe ambientale (libretto, riquadro V.9)</label>
+    <select id="euro"><option value="4">Euro 4, 5 o 6</option><option value="3">Euro 3</option><option value="2">Euro 2</option><option value="1">Euro 1</option><option value="0">Euro 0</option></select>
+    <label for="anno">Anno di costruzione (serve solo sopra 185 kW)</label>
+    <input id="anno" type="text" inputmode="numeric" placeholder="Es. 2019">
+    <p style="margin-top:20px"><button type="submit">🚗 Calcola il bollo</button></p>
+  </form>
+  <div id="esito"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Da sapere</h2>
+    <p>Le tariffe sono quelle <b>nazionali</b>: un tanto per ogni kW fino a 100 kW, e un po' di più per ogni kW oltre. Alcune Regioni applicano tariffe proprie (per esempio Lazio, Campania e Abruzzo un po' più alte, Toscana e Bolzano più basse) e molte hanno <b>esenzioni per auto elettriche e ibride</b>. Per l'importo esatto usa il servizio "Calcolo bollo" sul sito dell'ACI o della tua Regione.</p>
+    <p>Il <b>superbollo</b> è di 20 € per ogni kW oltre 185 e si riduce al 60%, 30% e 15% dopo 5, 10 e 15 anni dalla costruzione; dopo 20 anni non si paga più.</p>
+    <p class="note">Strumento informativo creato da Tobia, un'intelligenza artificiale (Claude): stima indicativa, verifica sempre sui canali ufficiali.</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a></footer>
+</div>
+<script>
+const AFFILIATO=''; // link di affiliazione di un comparatore di assicurazioni auto: quando c'è, compare il pulsante
+const $=id=>document.getElementById(id);
+const eur=(x,d=2)=>x.toLocaleString('it-IT',{useGrouping:'always',minimumFractionDigits:d,maximumFractionDigits:d})+' €';
+// tariffe nazionali €/kW: [fino a 100 kW, oltre 100 kW]
+const T={0:[3.00,4.50],1:[2.90,4.35],2:[2.80,4.20],3:[2.70,4.05],4:[2.58,3.87]};
+$('f').addEventListener('submit',e=>{
+  e.preventDefault();
+  const kw=parseFloat(String($('kw').value).replace(',','.')), cl=$('euro').value, anno=parseInt($('anno').value,10);
+  if(!(kw>0&&kw<2000)){$('esito').innerHTML='<div class="card">Scrivi la potenza in kW (riquadro P.2 del libretto).</div>';return;}
+  const t=T[cl], base=Math.min(kw,100)*t[0]+Math.max(0,kw-100)*t[1];
+  let sb=0, nota='';
+  if(kw>185){
+    const eta=anno>1900?new Date().getFullYear()-anno:0;
+    const f=eta>=20?0:eta>=15?0.15:eta>=10?0.30:eta>=5?0.60:1;
+    sb=(kw-185)*20*f;
+    nota=anno>1900?'':'<p class="note">Non hai indicato l\'anno: il superbollo è calcolato per intero.</p>';
+  }
+  let html='<div class="card esito si"><div class="sub">'+kw.toLocaleString('it-IT')+' kW · '+$('euro').selectedOptions[0].text+'</div>'+
+    '<div class="importo">Circa <b>'+eur(base+sb)+'</b> all\'anno</div>'+
+    '<table><tr><td>Bollo (tariffa nazionale)</td><td class="prezzo">'+eur(base)+'</td></tr>'+(sb?'<tr><td>Superbollo</td><td class="prezzo">'+eur(sb)+'</td></tr>':'')+'</table>'+nota+
+    '<p class="note">Stima con le tariffe nazionali: nella tua Regione l\'importo può essere un po\' diverso, o zero se l\'auto è elettrica.</p></div>'+
+    '<div class="card"><b>📅 Non dimenticarlo più</b><p class="note">Crea il promemoria gratuito: il telefono ti avvisa prima della scadenza del bollo, dell\'assicurazione e della revisione.</p><a class="btn chiaro" href="../scadenze/">Crea il calendario delle scadenze ›</a></div>';
+  if(AFFILIATO) html+='<div class="card caffe-box"><div><b>E l\'assicurazione?</b><p class="note">È la spesa più alta dell\'auto: confrontare i preventivi fa spesso risparmiare.</p><a class="btn blu" id="aff" href="'+AFFILIATO+'" rel="sponsored noopener">Confronta le assicurazioni ›</a></div></div>';
+  $('esito').innerHTML=html;$('esito').scrollIntoView({behavior:'smooth'});
+  window.tobiaConta&&tobiaConta('calcoli-bollo');
+  const a=$('aff');if(a)a.onclick=()=>window.tobiaConta&&tobiaConta('clic-assicurazione');
+});
+</script>
+<script src="../js/conta.js" defer></script>
+</body>
+</html>
