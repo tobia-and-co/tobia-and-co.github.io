@@ -1,8 +1,8 @@
 {
-  "controllato": "2026-11-02",
+  "controllato": "2026-11-03",
   "visite": {
-    "totale": 29,
-    "home": 22,
+    "totale": 45,
+    "home": 35,
     "scadenze": 0,
     "farmaci": 0,
     "farmaci-pagine": 0,
@@ -28,7 +28,7 @@
     "mutuo": 0,
     "calcoli-mutuo": 0,
     "clic-mutuo": 0,
-    "banca": 0,
+    "banca": 1,
     "calcoli-banca": 0,
     "clic-banca": 0,
     "cambio": null,
