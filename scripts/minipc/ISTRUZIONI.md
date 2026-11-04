@@ -11,7 +11,7 @@ Entrando su github.com come **tobia-and-co**: Settings → Developer settings �
 Copiare la chiave (inizia con `github_pat_`) e NON condividerla in chat.
 
 ## 2. Messaggio da incollare in una sessione Claude Code LOCALE sul proprio PC
-> Sul computer di casa c'è un container Debian dove installare Benny.
+> Sul mio server di casa c'è un container Linux (Debian) sempre acceso: ti do io i dettagli per collegarti.
 > Aiutami a: (1) collegarti al container; (2) installare git e python3 se mancano; (3) clonare
 > https://github.com/tobia-and-co/tobia-and-co.github.io in /opt/tobia/sito usando una chiave GitHub che ti
 > darò io al momento (salvala solo nella configurazione git del container, mai in file pubblici);
