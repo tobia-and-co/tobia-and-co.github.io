@@ -1,8 +1,8 @@
 {
   "controllato": "2026-11-04",
   "visite": {
-    "totale": 45,
-    "home": 35,
+    "totale": 46,
+    "home": 36,
     "scadenze": 0,
     "farmaci": 0,
     "farmaci-pagine": 0,
@@ -36,6 +36,8 @@
     "clic-cambio": null,
     "bollo": null,
     "calcoli-bollo": null,
-    "clic-assicurazione": null
+    "clic-assicurazione": null,
+    "assegno-unico": null,
+    "calcoli-assegno": null
   }
 }
