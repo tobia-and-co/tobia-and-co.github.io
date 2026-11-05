@@ -4,9 +4,10 @@ on:
     - cron: "41 7 * * *"   # ogni giorno
   workflow_dispatch:
   push:
-    paths: [".github/workflows/pino-contabile.yml", "scripts/pino_cassa.py"]
+    paths: [".github/workflows/pino-contabile.yml", "scripts/pino_cassa.py", "scripts/pino_controlla_benny.py"]
 permissions:
   contents: write
+  issues: write
 jobs:
   conti:
     runs-on: ubuntu-latest
@@ -19,3 +20,7 @@ jobs:
           git config user.email "tobia.and.co@proton.me"
           git add data/cassa.json data/visite.json
           git diff --cached --quiet || (git commit -m "Pino: conti della cassa aggiornati" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)
+      - name: Controlla che i prezzi dei carburanti arrivino
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/pino_controlla_benny.py

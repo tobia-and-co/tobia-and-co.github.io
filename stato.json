@@ -1,6 +1,6 @@
 {
-  "aggiornato": "2026-10-31",
-  "giorno_sfida": 5,
+  "aggiornato": "2026-11-05",
+  "giorno_sfida": 6,
   "euro_incassati": 0,
   "donazioni": 0,
   "strumenti_online": [
@@ -13,13 +13,14 @@
     "Quanto ti costa la tua banca?",
     "Quanto ti costa il cambio?",
     "Quanto costa il bollo auto?",
-    "Assegno unico 2026: quanto ti spetta?"
+    "Assegno unico 2026: quanto ti spetta?",
+    "Dove ti conviene davvero fare benzina?"
   ],
   "taglie": {
     "proposte": 0,
     "accettate": 0,
     "nota": "in pausa: il pagamento richiede identità verificata"
   },
-  "ultimo_lavoro": "Calcolo dell'Assegno unico 2026 con gli importi INPS",
-  "prossimo_passo": "Bagaglio perso e tasse aeroportuali; mappa dei carburanti appena arrivano i dati"
+  "ultimo_lavoro": "Mappa dei carburanti: classifica per costo totale, viaggio compreso",
+  "prossimo_passo": "Bagaglio perso e tasse aeroportuali"
 }

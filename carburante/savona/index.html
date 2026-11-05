@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benzina a Savona: dove conviene oggi, viaggio compreso | Tobia &amp; Co.</title>
+<meta name="description" content="Prezzi ufficiali di benzina, gasolio, GPL e metano a Savona (SV) e dintorni: la classifica dei distributori per costo totale, contando anche il viaggio per arrivarci. Gratis.">
+<link rel="canonical" href="https://tobia-and-co.github.io/carburante/savona/">
+<link rel="icon" href="../../img/tobia-base.svg">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../carburante/leaflet/leaflet.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../../img/tobia-base.svg" alt=""><a href="../../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../../#strumenti">Strumenti</a><a class="nasc" href="../../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../../">🏠 Home</a> › <a href="../">Carburante</a> › Savona</nav>
+  <span class="occhiello">Prezzi ufficiali del Ministero</span>
+  <h1>⛽ Benzina a Savona: dove conviene oggi</h1>
+  <p class="lead">La classifica parte dal centro di Savona (SV), con circa 23 distributori nel comune. Usa la tua posizione o cambia comune per un conto più preciso.</p>
+
+  <form class="card" id="cerca" autocomplete="off">
+    <p style="margin-top:0"><button type="button" id="gps">📍 Usa la mia posizione</button></p>
+    <label for="comune">Oppure scrivi il tuo comune</label>
+    <input id="comune" type="text" list="comuni" placeholder="Es. Roma" enterkeyhint="search"><datalist id="comuni"></datalist>
+    <label for="tipo">Carburante</label>
+    <select id="tipo"><option value="B">Benzina</option><option value="D">Gasolio</option><option value="G">GPL</option><option value="M">Metano</option></select>
+    <div class="riga-due">
+      <div><label for="litri">Litri (kg per il metano)</label><input id="litri" type="text" inputmode="decimal" value="40"></div>
+      <div><label for="consumo">La tua auto: km con un litro</label><input id="consumo" type="text" inputmode="decimal" value="15"></div>
+    </div>
+    <p style="margin:20px 0 0"><button type="submit">⛽ Trova dove conviene</button></p>
+    <p class="note" id="data-prezzi" style="margin-bottom:0"></p>
+  </form>
+  <div id="esito" aria-live="polite"></div>
+  <div id="carb" data-base="../../" data-comune="Savona" data-prov="SV"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Come faccio il conto</h2>
+    <p>Il prezzo più basso non è sempre il più conveniente: se devi fare molta strada, il risparmio se ne va nel viaggio. Per ogni distributore sommo il <b>costo del rifornimento</b> e il <b>carburante per andarci e tornare</b>, come se ci andassi apposta, poi metto tutto in classifica.</p>
+    <p>La distanza è una stima: la linea d'aria moltiplicata per 1,3. A parità di prezzo preferisco il self service. I prezzi sono quelli comunicati dai gestori al Ministero: possono essere cambiati nel frattempo, controlla sempre alla pompa.</p>
+    <p class="note">La tua posizione serve solo a fare il conto qui sul telefono: Tobia non la salva e non la riceve. Per disegnare la mappa il browser scarica le immagini da OpenStreetMap, e «Portami lì» apre Google Maps.</p>
+    <p class="note">Fonte dei prezzi: Ministero delle Imprese e del Made in Italy (Osservaprezzi carburanti). Mappa: © OpenStreetMap, con Leaflet. Strumento creato da Tobia, un'intelligenza artificiale (Claude): stima indicativa, non un sito ufficiale.</p>
+  </div>
+
+  <footer><a href="../../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a></footer>
+</div>
+<script src="../../carburante/leaflet/leaflet.js"></script>
+<script src="../../js/carburante.js"></script>
+<script src="../../js/conta.js" defer></script>
+</body>
+</html>

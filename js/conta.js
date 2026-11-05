@@ -11,7 +11,7 @@
     try { fetch(base + String(nome).replace(/[^a-z0-9_-]/gi, '').slice(0, 40), { mode: 'cors', keepalive: true }).catch(function () {}); } catch (e) {}
   };
   var p = location.pathname.split('/').filter(Boolean);
-  var sezione = p.length === 0 ? 'home' : (p[0] === 'farmaci' && p.length > 1 ? 'farmaci-pagine' : (p[0] === 'voli' && p.length > 1 ? 'tratte' : p[0]));
+  var sezione = p.length === 0 ? 'home' : (p[0] === 'farmaci' && p.length > 1 ? 'farmaci-pagine' : (p[0] === 'voli' && p.length > 1 ? 'tratte' : (p[0] === 'carburante' && p.length > 1 ? 'carburante-pagine' : p[0])));
   window.tobiaConta('totale');
   window.tobiaConta(sezione);
   // clic su "Offri un caffè" (Ko-fi)

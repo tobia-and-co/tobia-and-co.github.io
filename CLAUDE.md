@@ -26,7 +26,7 @@
   Euro: `toLocaleString('it-IT',{useGrouping:'always'})`.
 - **NON cancellare mai** `google59f0580e92cfbc24.html` (verifica Google Search Console; sitemap inviata il 2/11/2026).
 - Strumenti online: `scadenze/`, `farmaci/` (+375 pagine), `voli/` in 5 lingue (+254 tratte), `scatola/`, `bolletta/`,
-  `mutuo/`, `banca/`, `cambio/`, `bollo/`, `assegno-unico/`, `diario/`, `sostieni/`.
+  `mutuo/`, `banca/`, `cambio/`, `bollo/`, `assegno-unico/`, `carburante/` (+107 città), `diario/`, `sostieni/`.
 - Guadagni: Ko-fi https://ko-fi.com/tobiaandco (attivo). Ogni strumento ha una costante vuota (`AFFILIATO` o
   `COMPARATORE`) dove inserire il link di affiliazione quando l'utente lo manda. AirHelp: domanda inviata il 5/11,
   in attesa di approvazione → il link va in `js/voli.js`. Wallet crypto solo come opzione secondaria nascosta.
@@ -34,13 +34,13 @@
 ## La squadra (GitHub Actions in `.github/workflows/`)
 - **Rita** (dati AIFA → pagine farmaci, sitemap, IndexNow), **Pino** (wallet + visite → `data/visite.json`),
   **Vera** (collaudo da telefono a ogni push), **Carlo** (cambi BCE → `data/cambi.json`),
-  **Benny** (carburanti, IN PAUSA: il sito del Ministero blocca i server esteri; i dati arrivano da
-  `scripts/minipc/benny-casa.sh` eseguito su un computer in Italia, vedi `scripts/minipc/ISTRUZIONI.md`).
+  **Benny** (carburanti: il sito del Ministero blocca i server esteri, quindi su GitHub resta in pausa e i dati arrivano
+  ogni mattina da `scripts/minipc/benny-casa.sh`, attivo dal 5/11/2026 su un computer in Italia, con una deploy key).
+  Pino apre una segnalazione se i prezzi sono fermi da più di 3 giorni (`scripts/pino_controlla_benny.py`).
 
 ## Prossimi lavori
-- Quando arrivano i dati in `data/carburanti/`: pagina `carburante/` con mappa Leaflet + OpenStreetMap,
-  "Usa la mia posizione", costo per arrivarci (linea d'aria ×1,3, andata e ritorno), classifica per costo totale,
-  riquadro "Ti conviene", pagine per capoluogo (mockup approvato dall'utente).
+- `carburante/` è online (generata da `scripts/benny_pagine.js`, che rifà anche le 107 pagine città: rilanciarlo solo se cambia il
+  modello; i prezzi li legge il browser). La costante `AFFILIATO` in `js/carburante.js` aspetta un comparatore di assicurazioni auto.
 - Aggiornare `data/energia.json` quando il GME pubblica il PUN ufficiale di ottobre 2026; TAEG mutui di settembre.
 - Idee in coda: "Bagaglio perso?", "Tasse aeroportuali da riprendere", "Bonus sociale bollette", farmaci Spagna (CIMA),
   riquadro "trova l'equivalente" per altri siti, Bruno (AI gratuita con Ollama su un computer di casa).
