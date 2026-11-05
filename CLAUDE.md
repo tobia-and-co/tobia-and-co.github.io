@@ -51,4 +51,6 @@
   (con il ciclo di riprova: `for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done`).
 - Leggi `registro.md` all'inizio: è il passaggio di consegne tra le sessioni. Alla fine aggiungi in cima 2-3 righe
   (data, cosa hai fatto, cosa resta). Solo cose pubbliche: niente dati privati né strategie interne.
+- Memoria PRIVATA: se hai accesso al repository privato `tobia-memoria`, leggi lì `memoria.md` e `registro.md`
+  all'inizio e aggiornali alla fine. Le cose private vanno SOLO lì, mai in questo repository pubblico.
 - Nuovi insegnamenti dell'utente: aggiungili qui in "Principi" (se pubblicabili), così li vede anche l'altra sessione.
