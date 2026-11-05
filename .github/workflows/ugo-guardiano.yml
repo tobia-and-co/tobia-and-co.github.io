@@ -1,0 +1,19 @@
+name: Ugo il Guardiano
+on:
+  schedule:
+    - cron: "17 11 * * *"   # ogni giorno, dopo Benny e Pino
+  workflow_dispatch:
+  push:
+    paths: [".github/workflows/ugo-guardiano.yml", "scripts/ugo_guardiano.py"]
+permissions:
+  contents: read
+  issues: write
+jobs:
+  guardia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Controlla il sito come un visitatore
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/ugo_guardiano.py

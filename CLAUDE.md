@@ -37,6 +37,9 @@
   **Benny** (carburanti: il sito del Ministero blocca i server esteri, quindi su GitHub resta in pausa e i dati arrivano
   ogni mattina da `scripts/minipc/benny-casa.sh`, attivo dal 5/11/2026 su un computer in Italia, con una deploy key).
   Pino apre una segnalazione se i prezzi sono fermi da più di 3 giorni (`scripts/pino_controlla_benny.py`).
+- **Ugo** il Guardiano (dal 5/11): ogni giorno apre il sito vero (21 pagine + dati di Carlo, Pino, Rita, Benny); se qualcosa non va
+  apre UNA segnalazione e la chiude da solo quando torna a posto (`scripts/ugo_guardiano.py`; nuove pagine importanti → aggiungile a PAGINE).
+- In arrivo: Bruno l'Apprendista (AI gratuita con Ollama). Gino il Cacciatore in pausa.
 
 ## Prossimi lavori
 - `carburante/` è online (generata da `scripts/benny_pagine.js`, che rifà anche le 107 pagine città: rilanciarlo solo se cambia il
