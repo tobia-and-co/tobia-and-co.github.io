@@ -3,7 +3,7 @@
 # Ogni mattina scarica i prezzi ufficiali dei carburanti, li prepara e li carica sul sito di Tobia.
 set -e
 cd /opt/tobia/sito
-git pull -q --rebase
+git fetch -q origin main && git reset -q --hard origin/main  # sempre allineato al sito (anche se la cronologia viene riscritta)
 python3 scripts/benny_carburanti.py
 git add data/carburanti
 if ! git diff --cached --quiet; then
