@@ -1,8 +1,8 @@
 {
   "controllato": "2026-11-05",
   "visite": {
-    "totale": 52,
-    "home": 39,
+    "totale": 58,
+    "home": 41,
     "scadenze": 0,
     "farmaci": 0,
     "farmaci-pagine": 0,
@@ -30,19 +30,20 @@
     "clic-mutuo": 0,
     "banca": 1,
     "calcoli-banca": 0,
-    "clic-banca": null,
-    "cambio": null,
+    "clic-banca": 0,
+    "cambio": 0,
     "calcoli-cambio": 0,
     "clic-cambio": 0,
-    "bollo": null,
+    "bollo": 2,
     "calcoli-bollo": 0,
-    "clic-assicurazione": 0,
-    "assegno-unico": 0,
-    "calcoli-assegno": 0,
-    "carburante": 0,
-    "carburante-pagine": 0,
-    "ricerche-carburante": 0,
-    "posizione-carburante": 0,
-    "clic-navigatore": 0
+    "clic-assicurazione": null,
+    "assegno-unico": null,
+    "calcoli-assegno": null,
+    "carburante": null,
+    "carburante-pagine": null,
+    "ricerche-carburante": null,
+    "posizione-carburante": null,
+    "indirizzo-carburante": null,
+    "clic-navigatore": null
   }
 }
