@@ -42,6 +42,17 @@
     return lista.filter(v => v.prezzo > med * 0.75 && v.prezzo < med * 1.25);
   }
 
+  // Scarta i distributori con coordinate sbagliate: troppo lontani dagli altri dello stesso comune
+  function coordinateBuone(impianti) {
+    const per = {};
+    impianti.forEach(v => (per[v[4]] = per[v[4]] || []).push(v));
+    const med = a => a.slice().sort((x, y) => x - y)[a.length >> 1];
+    return impianti.filter(v => {
+      const g = per[v[4]];
+      return g.length < 3 || km(v[5], v[6], med(g.map(x => x[5])), med(g.map(x => x[6]))) < 25;
+    });
+  }
+
   async function calcola() {
     if (!posizione) return;
     const tipo = $('tipo').value, litri = leggi('litri'), consumo = leggi('consumo');
@@ -55,7 +66,7 @@
       const scelte = vicine.filter((v, i) => i < 2 || (v.d < 70 && i < 6)).map(v => v.p);
       const file = await Promise.all(scelte.map(provincia));
       let tutti = [];
-      file.forEach(f => f.impianti.forEach(v => {
+      file.forEach(f => coordinateBuone(f.impianti).forEach(v => {
         if (!v[7][tipo]) return;
         const linea = km(posizione.lat, posizione.lon, v[5], v[6]), strada = linea * 1.3;
         const prezzo = v[7][tipo][0];
@@ -121,6 +132,7 @@
     if (!window.L) return;
     // Sul telefono un dito fa scorrere la pagina: la mappa si muove con due dita
     mappa = L.map('mappa', { scrollWheelZoom: false, dragging: !L.Browser.mobile });
+    mappa.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(mappa);
     strato = L.featureGroup().addTo(mappa);
     lista.forEach((x, i) => {
