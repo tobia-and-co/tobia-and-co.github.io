@@ -29,8 +29,9 @@ const pagina = ({ base, titolo, descr, canonica, briciole, h1, lead, attr, extra
 
   <form class="card" id="cerca" autocomplete="off">
     <p style="margin-top:0"><button type="button" id="gps">📍 Usa la mia posizione</button></p>
-    <label for="comune">Oppure scrivi il tuo comune</label>
-    <input id="comune" type="text" list="comuni" placeholder="Es. Roma" enterkeyhint="search"><datalist id="comuni"></datalist>
+    <label for="comune">Oppure scrivi dove sei: via, paese o comune</label>
+    <input id="comune" type="text" list="comuni" placeholder="Es. Via Tuscolana 100, Roma" enterkeyhint="search" autocomplete="street-address"><datalist id="comuni"></datalist>
+    <p class="note" id="stato-pos" role="status" hidden style="margin:8px 0 0"></p>
     <label for="tipo">Carburante</label>
     <select id="tipo"><option value="B">Benzina</option><option value="D">Gasolio</option><option value="G">GPL</option><option value="M">Metano</option></select>
     <div class="riga-due">
@@ -47,7 +48,7 @@ ${extra}  <div class="card">
     <h2 style="margin-top:0">ℹ️ Come faccio il conto</h2>
     <p>Il prezzo più basso non è sempre il più conveniente: se devi fare molta strada, il risparmio se ne va nel viaggio. Per ogni distributore sommo il <b>costo del rifornimento</b> e il <b>carburante per andarci e tornare</b>, come se ci andassi apposta, poi metto tutto in classifica.</p>
     <p>La distanza è una stima: la linea d'aria moltiplicata per 1,3. A parità di prezzo preferisco il self service. I prezzi sono quelli comunicati dai gestori al Ministero: possono essere cambiati nel frattempo, controlla sempre alla pompa.</p>
-    <p class="note">La tua posizione serve solo a fare il conto qui sul telefono: Tobia non la salva e non la riceve. Per disegnare la mappa il browser scarica le immagini da OpenStreetMap, e «Portami lì» apre Google Maps.</p>
+    <p class="note">La tua posizione serve solo a fare il conto qui sul telefono: Tobia non la salva e non la riceve. Se scrivi una via, la cerco sulla mappa di OpenStreetMap. Per disegnare la mappa il browser scarica le immagini da OpenStreetMap, e «Portami lì» apre Google Maps.</p>
     <p class="note">Fonte dei prezzi: Ministero delle Imprese e del Made in Italy (Osservaprezzi carburanti). Mappa: © OpenStreetMap, con Leaflet. Strumento creato da Tobia, un'intelligenza artificiale (Claude): stima indicativa, non un sito ufficiale.</p>
   </div>
 

@@ -60,7 +60,9 @@
       $('esito').innerHTML = '<div class="card">Controlla litri e consumo: servono due numeri, per esempio 40 e 15.</div>';
       return;
     }
+    stato('');
     $('esito').innerHTML = '<div class="card">⏳ Cerco i distributori…</div>';
+    if (posizione.scelta) $('esito').scrollIntoView({ behavior: 'smooth', block: 'start' });
     try {
       const vicine = indice.province.map(p => ({ p: p[0], d: km(posizione.lat, posizione.lon, p[1], p[2]) })).sort((a, b) => a.d - b.d);
       const scelte = vicine.filter((v, i) => i < 2 || (v.d < 70 && i < 6)).map(v => v.p);
@@ -76,12 +78,16 @@
       let raggio = 30, lista = tutti.filter(x => x.strada <= raggio);
       if (lista.length < 5) { raggio = 80; lista = tutti.filter(x => x.strada <= raggio); }
       lista = senzaErrori(lista);
+      // Prezzi troppo bassi rispetto alla zona: quasi sempre errori del gestore. Fuori dalla classifica, elencati a parte.
+      const ord = lista.map(x => x.prezzo).sort((a, b) => a - b), tipico = ord[ord.length >> 1];
+      const dubbi = lista.filter(x => x.prezzo < tipico * 0.9);
+      lista = lista.filter(x => x.prezzo >= tipico * 0.9);
       if (!lista.length) {
         $('esito').innerHTML = '<div class="card">Non ho trovato distributori di ' + NOMI[tipo] + ' con un prezzo recente qui vicino. Prova un altro carburante o un altro comune.</div>';
         return;
       }
       lista.sort((a, b) => a.totale - b.totale);
-      mostra(lista, tipo, litri, raggio);
+      mostra(lista, tipo, litri, raggio, dubbi, tipico);
       conta('ricerche-carburante');
     } catch (e) {
       $('esito').innerHTML = '<div class="card">Non riesco a leggere i prezzi in questo momento. Riprova tra poco.</div>';
@@ -91,14 +97,11 @@
   const nomeDi = x => (x.v[1] + ' · ' + x.v[3]).replace(/\s+/g, ' ');
   const navigatore = x => 'https://www.google.com/maps/dir/?api=1&destination=' + x.v[5] + ',' + x.v[6];
 
-  function mostra(lista, tipo, litri, raggio) {
+  function mostra(lista, tipo, litri, raggio, dubbi, tipico) {
     const mig = lista[0];
     const vicino = lista.reduce((a, b) => (b.strada < a.strada ? b : a));
     const economico = lista.reduce((a, b) => (b.prezzo < a.prezzo ? b : a));
     const risparmio = vicino.totale - mig.totale;
-    const prezzi = lista.map(x => x.prezzo).sort((a, b) => a - b), tipico = prezzi[prezzi.length >> 1];
-    const strano = x => x.prezzo < tipico * 0.88;
-    const avviso = '<p class="extra" style="margin:8px 0">⚠️ Prezzo molto più basso di quello tipico della zona (' + num(tipico, 3) + ' €/l): potrebbe essere un errore del gestore. Controlla prima di partire.</p>';
     let frase = risparmio >= 0.05
       ? 'Rispetto al distributore più vicino risparmi <b>' + eur(risparmio) + '</b> a ogni pieno, viaggio compreso (circa ' + eur(risparmio * 24) + ' l\'anno con due pieni al mese).'
       : 'È anche il più vicino: inutile allontanarsi.';
@@ -106,7 +109,7 @@
       frase += '<br><span class="note">Il più economico al litro è ' + testo(economico.v[1]) + ' a ' + testo(economico.v[4]) + ' (' + num(economico.prezzo, 3) + ' €/l), ma con il viaggio ti costa ' + eur(economico.totale - mig.totale) + ' in più.</span>';
     }
     const righe = lista.slice(0, 10).map((x, i) =>
-      '<tr><td><b>' + (i + 1) + '. ' + testo(x.v[1]) + '</b> · ' + num(x.prezzo, 3) + ' €/l' + (x.self ? '' : ' <span class="sub">(servito)</span>') + (strano(x) ? ' <span class="extra" title="Prezzo insolitamente basso: da controllare">⚠️</span>' : '') +
+      '<tr><td><b>' + (i + 1) + '. ' + testo(x.v[1]) + '</b> · ' + num(x.prezzo, 3) + ' €/l' + (x.self ? '' : ' <span class="sub">(servito)</span>') +
       '<div class="sub">' + testo(x.v[3]) + ', ' + testo(x.v[4]) + ' · circa ' + num(x.strada, 1) + ' km · <a class="nav" href="' + navigatore(x) + '" rel="noopener">Portami lì</a></div></td>' +
       '<td class="prezzo">' + eur(x.totale) + '</td></tr>').join('');
     let html = '<div class="card esito si"><div class="sub">Ti conviene · ' + testo(posizione.nome) + ' · ' + litri.toLocaleString('it-IT') + ' litri di ' + NOMI[tipo] + '</div>' +
@@ -115,10 +118,13 @@
       '<table><tr><td>Rifornimento a ' + num(mig.prezzo, 3) + ' €/l</td><td class="prezzo">' + eur(mig.pieno) + '</td></tr>' +
       '<tr><td>Viaggio andata e ritorno (circa ' + num(mig.strada * 2, 1) + ' km)</td><td class="prezzo">' + eur(mig.viaggio) + '</td></tr>' +
       '<tr><td><b>Totale</b></td><td class="prezzo">' + eur(mig.totale) + '</td></tr></table>' +
-      (strano(mig) ? avviso : '') + '<p>' + frase + '</p><a class="btn blu nav" href="' + navigatore(mig) + '" rel="noopener">🧭 Portami lì</a></div>' +
+      '<p>' + frase + '</p><a class="btn blu nav" href="' + navigatore(mig) + '" rel="noopener">🧭 Portami lì</a></div>' +
       '<div class="card" style="padding:8px"><div id="mappa" role="img" aria-label="Mappa dei distributori più convenienti"></div></div>' +
       '<div class="card"><h2 style="margin-top:0">🏆 I 10 più convenienti, viaggio compreso</h2><table>' + righe + '</table>' +
       '<p class="note">Su ' + lista.length + ' distributori entro circa ' + raggio + ' km di strada. A destra il costo totale. La distanza è una stima (linea d\'aria × 1,3).</p></div>';
+    if (dubbi.length) html += '<details class="card"><summary>⚠️ ' + dubbi.length + (dubbi.length > 1 ? ' prezzi troppo bassi: li ho tolti' : ' prezzo troppo basso: l\'ho tolto') + ' dalla classifica</summary>' +
+      '<p class="note">Il prezzo tipico qui è ' + num(tipico, 3) + ' €/l. Prezzi molto più bassi di solito sono errori del gestore nel comunicarli al Ministero: meglio non fare strada per scoprirlo.</p><ul>' +
+      dubbi.sort((a, b) => a.prezzo - b.prezzo).map(x => '<li>' + testo(x.v[1]) + ' · ' + num(x.prezzo, 3) + ' €/l · ' + testo(x.v[3]) + ', ' + testo(x.v[4]) + '</li>').join('') + '</ul></details>';
     if (risparmio >= 0.05) html += '<div class="card caffe-box"><img src="' + BASE + 'img/tobia-base.svg" alt=""><div><b>Ti ho fatto risparmiare ' + eur(risparmio) + '?</b><p class="note" style="margin:4px 0 10px">Un caffè mi aiuta a tenere i prezzi aggiornati ogni giorno.</p><a class="btn" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></div></div>';
     if (AFFILIATO) html += '<div class="card"><b>E l\'assicurazione?</b><p class="note">È la spesa più alta dell\'auto: confrontare i preventivi fa spesso risparmiare.</p><a class="btn blu" href="' + AFFILIATO + '" rel="sponsored noopener">Confronta le assicurazioni ›</a></div>';
     $('esito').innerHTML = html;
@@ -160,18 +166,35 @@
     const scritto = $('comune').value;
     if (!scritto.trim() && posizione) return calcola();
     const c = indice && daComune(scritto);
-    if (!c) { $('esito').innerHTML = '<div class="card">Non trovo questo comune. Scegline uno dall\'elenco mentre scrivi, oppure usa la tua posizione.</div>'; return; }
-    usaComune(c, true);
+    if (c) return usaComune(c, true);
+    if (scritto.trim().length < 3) { stato('Scrivi un indirizzo, un paese o un comune.'); return; }
+    // Non è un comune dell'elenco: cerco l'indirizzo su OpenStreetMap
+    stato('⏳ Cerco «' + testo(scritto.trim()) + '» sulla mappa…');
+    fetch('https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=it&limit=1&accept-language=it&q=' + encodeURIComponent(scritto.trim()))
+      .then(r => r.json()).then(r => {
+        if (!r.length) { stato('Non trovo «' + testo(scritto.trim()) + '». Prova a scrivere anche il comune, per esempio «Via Roma 10, Frascati».'); return; }
+        posizione = { lat: +r[0].lat, lon: +r[0].lon, nome: r[0].display_name.split(',').slice(0, 3).join(',').trim(), scelta: true };
+        conta('indirizzo-carburante');
+        calcola();
+      }).catch(() => stato('Non riesco a cercare l\'indirizzo adesso: scrivi il nome del comune oppure usa la tua posizione.'));
   });
+  // Messaggi subito sotto il pulsante e la casella (l'esito sul telefono è fuori dallo schermo)
+  function stato(t) { $('stato-pos').innerHTML = t; $('stato-pos').hidden = !t; if (t) $('esito').innerHTML = ''; }
   $('gps').addEventListener('click', () => {
-    if (!navigator.geolocation) { $('esito').innerHTML = '<div class="card">Questo browser non dà la posizione: scrivi il tuo comune.</div>'; return; }
-    $('esito').innerHTML = '<div class="card">⏳ Chiedo la posizione al telefono…</div>';
+    if (!navigator.geolocation) { stato('Questo browser non dà la posizione: scrivi il tuo indirizzo o il comune nella casella.'); return; }
+    stato('⏳ Chiedo la posizione al telefono… (se compare la domanda, tocca «Consenti»)');
     navigator.geolocation.getCurrentPosition(p => {
+      stato('');
       posizione = { lat: p.coords.latitude, lon: p.coords.longitude, nome: 'La tua posizione', scelta: true };
       $('comune').value = '';
       conta('posizione-carburante');
       calcola();
-    }, () => { $('esito').innerHTML = '<div class="card">Non ho avuto la posizione (permesso negato o segnale assente). Scrivi il tuo comune: funziona lo stesso.</div>'; }, { timeout: 15000, maximumAge: 300000 });
+    }, err => {
+      const ios = /iPhone|iPad/.test(navigator.userAgent);
+      stato(err.code === 1
+        ? 'Il telefono non mi dà la posizione (permesso negato). ' + (ios ? 'Su iPhone: Impostazioni › Privacy e sicurezza › Localizzazione: deve essere attiva, e in «Siti web di Safari» scegli «Chiedi» o «Consenti». ' : 'Controlla che la localizzazione sia attiva e consentita per questo sito. ') + 'Oppure scrivi l\'indirizzo nella casella qui sopra: funziona lo stesso.'
+        : 'Non riesco ad avere la posizione adesso (segnale debole). Scrivi l\'indirizzo o il comune nella casella qui sopra: funziona lo stesso.');
+    }, { timeout: 20000, maximumAge: 300000 });
   });
   $('tipo').addEventListener('change', () => { if (posizione) calcola(); });
 
