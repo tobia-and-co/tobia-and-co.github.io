@@ -1,5 +1,5 @@
 {
-  "controllato": "2026-11-05",
+  "controllato": "2026-11-06",
   "visite": {
     "totale": 58,
     "home": 41,
@@ -31,11 +31,11 @@
     "banca": 1,
     "calcoli-banca": 0,
     "clic-banca": 0,
-    "cambio": 0,
-    "calcoli-cambio": 0,
-    "clic-cambio": 0,
-    "bollo": 2,
-    "calcoli-bollo": 0,
+    "cambio": null,
+    "calcoli-cambio": null,
+    "clic-cambio": null,
+    "bollo": null,
+    "calcoli-bollo": null,
     "clic-assicurazione": null,
     "assegno-unico": null,
     "calcoli-assegno": null,
