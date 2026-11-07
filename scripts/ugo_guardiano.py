@@ -7,7 +7,7 @@ import os
 SITO = os.environ.get("UGO_SITO", "https://tobia-and-co.github.io/")
 TITOLO = "Ugo: qualcosa non va sul sito"
 PAGINE = ["", "scadenze/", "farmaci/", "farmaci/omeprazolo/", "voli/", "en/flight-delay-compensation/", "scatola/",
-          "bolletta/", "mutuo/", "banca/", "cambio/", "bollo/", "assegno-unico/", "carburante/", "diario/", "sostieni/",
+          "bolletta/", "mutuo/", "banca/", "cambio/", "bollo/", "assegno-unico/", "carburante/", "bagaglio/", "tasse-aeroportuali/", "diario/", "sostieni/",
           "sitemap.xml", "robots.txt", "google59f0580e92cfbc24.html", "style.css", "js/conta.js"]
 # file di dati: (percorso, come leggere la data, giorni massimi, chi lo aggiorna)
 DATI = [("data/cambi.json", lambda d: d["data"], 5, "Carlo"),

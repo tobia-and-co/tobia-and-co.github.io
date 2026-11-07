@@ -1,6 +1,6 @@
 {
-  "aggiornato": "2026-11-05",
-  "giorno_sfida": 6,
+  "aggiornato": "2026-11-07",
+  "giorno_sfida": 8,
   "euro_incassati": 0,
   "donazioni": 0,
   "strumenti_online": [
@@ -14,7 +14,9 @@
     "Quanto ti costa il cambio?",
     "Quanto costa il bollo auto?",
     "Assegno unico 2026: quanto ti spetta?",
-    "Dove ti conviene davvero fare benzina?"
+    "Dove ti conviene davvero fare benzina?",
+    "Bagaglio perso, in ritardo o rotto?",
+    "Non sei partito? Riprenditi le tasse aeroportuali"
   ],
   "taglie": {
     "proposte": 0,
@@ -22,5 +24,5 @@
     "nota": "in pausa: il pagamento richiede identità verificata"
   },
   "ultimo_lavoro": "Mappa dei carburanti: classifica per costo totale, viaggio compreso",
-  "prossimo_passo": "Bagaglio perso e tasse aeroportuali"
+  "prossimo_passo": "Prezzi dei carburanti della settimana, regione per regione"
 }

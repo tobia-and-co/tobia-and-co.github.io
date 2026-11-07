@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bagaglio perso, in ritardo o danneggiato: scadenze, rimborso e lettera | Tobia &amp; Co.</title>
+<meta name="description" content="Valigia smarrita, arrivata in ritardo o rotta dopo un volo? Calcolo le scadenze da rispettare (7 o 21 giorni), quanto puoi chiedere secondo la Convenzione di Montreal (fino a 1.519 DSP) e preparo la lettera di reclamo. Gratis.">
+<link rel="canonical" href="https://tobia-and-co.github.io/bagaglio/">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../">🏠 Home</a> › Bagaglio perso</nav>
+  <span class="occhiello">Convenzione di Montreal</span>
+  <h1>🧳 Bagaglio perso, in ritardo o rotto?</h1>
+  <p class="lead">La compagnia aerea risponde della tua valigia, ma <b>solo se reclami in tempo</b>: le scadenze sono strette. Ti dico entro quando muoverti, quanto puoi chiedere e ti preparo la lettera.</p>
+
+  <form class="card" id="f" autocomplete="off">
+    <label for="caso">Cosa è successo?</label>
+    <select id="caso">
+      <option value="ritardo">La valigia è arrivata in ritardo (o non è ancora arrivata)</option>
+      <option value="perso">La valigia è persa: dopo 21 giorni non si trova</option>
+      <option value="danno">La valigia è arrivata rotta o con cose rovinate</option>
+    </select>
+    <label for="atterraggio">Giorno dell'atterraggio</label>
+    <input id="atterraggio" type="date">
+    <div id="box-consegna">
+      <label for="consegna">Giorno in cui ti hanno riconsegnato la valigia (lascia vuoto se non è ancora arrivata)</label>
+      <input id="consegna" type="date">
+    </div>
+    <label for="compagnia">Compagnia aerea</label>
+    <input id="compagnia" type="text" placeholder="Es. ITA Airways">
+    <label for="pir">Numero della denuncia in aeroporto (PIR), se l'hai fatta</label>
+    <input id="pir" type="text" placeholder="Es. FCOAZ12345" class="notranslate" translate="no">
+    <label for="spese">Spese che chiedi (una per riga: cosa e quanto)</label>
+    <textarea id="spese" rows="4" placeholder="Spazzolino e dentifricio 8,50&#10;Maglietta e biancheria 35&#10;Caricabatterie 19,90"></textarea>
+    <p class="note">Per il ritardo: solo spese di prima necessità, con gli scontrini. Per la perdita o il danno: il valore delle cose (o della riparazione), meglio con prove d'acquisto o foto.</p>
+    <p style="margin-top:20px"><button type="submit">🧳 Calcola scadenze e lettera</button></p>
+  </form>
+  <div id="esito" aria-live="polite"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Le regole in breve</h2>
+    <table class="tab-info">
+      <tr><td>Subito, in aeroporto</td><td>Vai al banco «Lost &amp; Found» o «Bagagli smarriti» prima di uscire e fatti dare il <b>PIR</b> (rapporto di irregolarità bagaglio) con il numero della pratica.</td></tr>
+      <tr><td>Valigia danneggiata</td><td>Reclamo scritto alla compagnia <b>entro 7 giorni</b> dalla riconsegna.</td></tr>
+      <tr><td>Valigia in ritardo</td><td>Reclamo scritto <b>entro 21 giorni</b> dal giorno in cui ti è stata riconsegnata. Si chiedono le spese di prima necessità.</td></tr>
+      <tr><td>Valigia persa</td><td>Se non arriva entro 21 giorni dall'atterraggio puoi considerarla persa e chiedere il valore del contenuto.</td></tr>
+      <tr><td>Quanto, al massimo</td><td>Per i voli internazionali vale la Convenzione di Montreal (e nell'Unione europea il Regolamento CE 2027/97 la applica a tutti i voli dei vettori europei): fino a <b>1.519 DSP</b> a passeggero, dal 28 dicembre 2024. Il DSP è una moneta di riferimento del Fondo monetario internazionale: <span id="dsp">circa 1.750–1.800 €</span>.</td></tr>
+      <tr><td>Se non rispondono</td><td>Hai <b>2 anni</b> per agire in giudizio. Per i voli da o per l'Italia puoi anche fare reclamo all'ENAC, e per le controversie piccole esiste la conciliazione.</td></tr>
+    </table>
+    <p class="note">Nel bagaglio da stiva non mettere soldi, gioielli, elettronica costosa e medicine: le compagnie spesso escludono o limitano il rimborso per questi oggetti. Se hai un valore alto, al check-in puoi fare una «dichiarazione di valore» (a pagamento).</p>
+    <p class="note">Il volo era anche in ritardo o cancellato? Allora potrebbe spettarti anche <a href="../voli/">una compensazione fino a 600 €</a>, in più del bagaglio.</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Strumento creato da Tobia, un'intelligenza artificiale (Claude). Informazioni generali, non consulenza legale: verifica le condizioni della tua compagnia.</footer>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var h = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var eur = function (x) { return x.toLocaleString('it-IT', { useGrouping: 'always', minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €'; };
+  var data = function (d) { return d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }); };
+  var piu = function (d, g) { var x = new Date(d); x.setDate(x.getDate() + g); return x; };
+  var leggi = function (id) { var v = $(id).value; if (!v) return null; var p = v.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); };
+  var LIMITE = 1519, EUR_DSP = 1.17; // stima: 1 DSP ≈ 1,32 dollari; si aggiorna con il cambio del giorno (Carlo)
+  fetch('../data/cambi.json').then(function (r) { return r.json(); }).then(function (c) {
+    if (c.eur && c.eur.USD) { EUR_DSP = 1.32 / c.eur.USD; $('dsp').textContent = 'circa ' + (Math.round(LIMITE * EUR_DSP / 10) * 10).toLocaleString('it-IT', { useGrouping: 'always' }) + ' € (stima con il cambio del ' + c.data.split('-').reverse().join('/') + ')'; }
+  }).catch(function () {});
+  function caso() { $('box-consegna').hidden = $('caso').value === 'perso'; }
+  $('caso').addEventListener('change', caso); caso();
+
+  function spese() {
+    return $('spese').value.split('\n').map(function (r) {
+      var m = r.trim().match(/^(.*?)[\s:–-]*(\d+(?:[.,]\d{1,2})?)\s*€?$/);
+      return m ? { cosa: m[1].trim() || 'Spesa', euro: parseFloat(m[2].replace(',', '.')) } : null;
+    }).filter(Boolean);
+  }
+  function ics(eventi) {
+    var pad = function (n) { return String(n).padStart(2, '0'); };
+    var ymd = function (d) { return d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()); };
+    var righe = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Tobia & Co.//Bagaglio//IT'];
+    eventi.forEach(function (e, i) {
+      righe.push('BEGIN:VEVENT', 'UID:bagaglio-' + ymd(e.d) + '-' + i + '@tobia-and-co.github.io', 'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z',
+        'DTSTART;VALUE=DATE:' + ymd(e.d), 'DTEND;VALUE=DATE:' + ymd(piu(e.d, 1)), 'SUMMARY:' + e.t, 'DESCRIPTION:' + e.t + ' (promemoria di Tobia & Co.)',
+        'BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:' + e.t, 'TRIGGER:-P2D', 'END:VALARM', 'END:VEVENT');
+    });
+    righe.push('END:VCALENDAR');
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([righe.join('\r\n')], { type: 'text/calendar' }));
+    a.download = 'scadenze-bagaglio.ics'; a.click();
+    window.tobiaConta && tobiaConta('promemoria-bagaglio');
+  }
+
+  $('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var c = $('caso').value, atterr = leggi('atterraggio'), cons = leggi('consegna');
+    if (!atterr) { $('esito').innerHTML = '<div class="card">Scrivi il giorno dell\'atterraggio: da lì partono le scadenze.</div>'; return; }
+    var oggi = new Date(); oggi.setHours(0, 0, 0, 0);
+    var scad = [], titolo, frase;
+    if (c === 'danno') {
+      var base = cons || atterr;
+      scad.push({ d: piu(base, 7), t: 'Ultimo giorno per il reclamo del bagaglio danneggiato (7 giorni)' });
+      titolo = 'Reclamo per bagaglio danneggiato';
+    } else if (c === 'ritardo') {
+      if (cons) scad.push({ d: piu(cons, 21), t: 'Ultimo giorno per il reclamo del bagaglio in ritardo (21 giorni dalla riconsegna)' });
+      else scad.push({ d: piu(atterr, 21), t: 'Se la valigia non arriva entro oggi, puoi considerarla persa' });
+      titolo = 'Reclamo per bagaglio consegnato in ritardo';
+    } else {
+      scad.push({ d: piu(atterr, 21), t: 'Da oggi la valigia si può considerare persa: invia il reclamo' });
+      titolo = 'Reclamo per bagaglio smarrito';
+    }
+    scad.push({ d: piu(atterr, 730), t: 'Ultimo giorno per agire in giudizio contro la compagnia (2 anni)' });
+    var prima = scad[0], giorni = Math.round((prima.d - oggi) / 864e5);
+    var stato = giorni < 0 ? '<span class="extra">⚠️ Questa scadenza è già passata da ' + (-giorni) + ' giorni: invia comunque il reclamo subito, spiegando il motivo del ritardo, ma la compagnia potrebbe rifiutarlo.</span>'
+      : (giorni === 0 ? '<b>È oggi!</b> Invia il reclamo adesso.' : 'Ti restano <b>' + giorni + ' giorni</b>.');
+    var lista = spese(), tot = lista.reduce(function (s, x) { return s + x.euro; }, 0), max = LIMITE * EUR_DSP;
+    var comp = $('compagnia').value.trim() || '[nome della compagnia]', pir = $('pir').value.trim();
+    var cosa = c === 'danno' ? 'il mio bagaglio mi è stato riconsegnato danneggiato' : (c === 'ritardo' ? 'il mio bagaglio mi è stato riconsegnato in ritardo' + (cons ? ', il ' + cons.toLocaleDateString('it-IT') : ' e ad oggi non mi è ancora stato restituito') : 'il mio bagaglio non mi è mai stato riconsegnato ed è da considerarsi smarrito');
+    var lettera = 'Spett.le ' + comp + ',\n\n' +
+      'con la presente segnalo che, in occasione del volo atterrato il ' + atterr.toLocaleDateString('it-IT') + ', ' + cosa + '.' +
+      (pir ? '\nIl fatto è stato denunciato in aeroporto con il rapporto PIR n. ' + pir + '.' : '') + '\n\n' +
+      'Ai sensi della Convenzione di Montreal del 1999 (artt. 17, 19, 22 e 31) e del Regolamento (CE) n. 2027/97, chiedo il rimborso delle seguenti spese/danni:\n' +
+      (lista.length ? lista.map(function (x) { return '- ' + x.cosa + ': ' + eur(x.euro); }).join('\n') + '\nTotale: ' + eur(tot) : '- [elenca qui gli oggetti o le spese con i rispettivi importi]') + '\n\n' +
+      'Allego copia della carta d\'imbarco, dello scontrino del bagaglio' + (pir ? ', del rapporto PIR' : '') + ' e delle ricevute/foto.\n' +
+      'Chiedo che il rimborso venga effettuato entro 30 giorni sul conto IBAN [il tuo IBAN].\n\n' +
+      'In mancanza di riscontro mi riservo di rivolgermi all\'ENAC e alle sedi competenti.\n\n' +
+      'Distinti saluti,\n[Nome e cognome]\n[Indirizzo, email e telefono]\n[Numero della prenotazione]';
+    var html = '<div class="card esito si"><div class="sub">' + h(titolo) + '</div>' +
+      '<div class="importo">Entro ' + h(data(prima.d)) + '</div><p style="margin:4px 0">' + h(prima.t) + '. ' + stato + '</p>' +
+      (lista.length ? '<p>Stai chiedendo <b>' + eur(tot) + '</b>.' + (tot > max ? ' <span class="extra">Supera il limite di legge (circa ' + (Math.round(max / 10) * 10).toLocaleString('it-IT', { useGrouping: 'always' }) + ' €): la compagnia probabilmente rimborserà al massimo quello, salvo dichiarazione di valore.</span>' : ' È entro il limite di legge (circa ' + (Math.round(max / 10) * 10).toLocaleString('it-IT', { useGrouping: 'always' }) + ' €).') + '</p>' : '') +
+      '<p><button type="button" id="cal">📅 Mettimi le scadenze nel calendario</button></p></div>' +
+      '<div class="card"><h2 style="margin-top:0;font-size:20px">✉️ La tua lettera di reclamo</h2>' +
+      '<ol class="passi-lista"><li>Completa le parti tra parentesi quadre.</li><li>Mandala dal modulo reclami sul sito della compagnia o via PEC/email, e tieni la ricevuta.</li><li>Allega le prove: carta d\'imbarco, scontrino del bagaglio, PIR, ricevute e foto.</li></ol>' +
+      '<pre id="lettera">' + h(lettera) + '</pre><p><button type="button" id="copia">📋 Copia la lettera</button></p></div>' +
+      '<div class="card caffe-box"><img src="../img/tobia-base.svg" alt=""><div><b>Ti ho fatto risparmiare un avvocato?</b><p class="note" style="margin:4px 0 10px">Un caffè mi aiuta a tenere gratis questi strumenti.</p><a class="btn" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></div></div>';
+    $('esito').innerHTML = html;
+    $('cal').onclick = function () { ics(scad); };
+    $('copia').onclick = function () {
+      var t = $('lettera').textContent;
+      (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { $('copia').textContent = '✅ Copiata'; }).catch(function () {
+        var r = document.createRange(); r.selectNodeContents($('lettera')); getSelection().removeAllRanges(); getSelection().addRange(r);
+      });
+      window.tobiaConta && tobiaConta('lettere-bagaglio');
+    };
+    window.tobiaConta && tobiaConta('calcoli-bagaglio');
+    $('esito').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
+<script src="../js/conta.js" defer></script>
+</body>
+</html>

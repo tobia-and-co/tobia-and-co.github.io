@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volo non preso? Come farsi rimborsare le tasse aeroportuali (con lettera) | Tobia &amp; Co.</title>
+<meta name="description" content="Non sei partito? Anche con un biglietto non rimborsabile puoi riavere le tasse aeroportuali: ti dico quali, entro quando chiederle e ti preparo la lettera per la compagnia aerea. Gratis.">
+<link rel="canonical" href="https://tobia-and-co.github.io/tasse-aeroportuali/">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../">🏠 Home</a> › Tasse aeroportuali</nav>
+  <span class="occhiello">Soldi da recuperare</span>
+  <h1>🛫 Non sei partito? Riprenditi le tasse aeroportuali</h1>
+  <p class="lead">Le tasse aeroportuali si pagano <b>solo per chi vola</b>. Se non hai preso l'aereo, anche con un biglietto non rimborsabile, puoi chiederle indietro. Quasi nessuno lo fa: ti preparo io la richiesta.</p>
+
+  <form class="card" id="f" autocomplete="off">
+    <label for="perche">Perché non hai volato?</label>
+    <select id="perche">
+      <option value="io">Ho deciso io di non partire (o non ho potuto: malattia, imprevisto…)</option>
+      <option value="cancellato">La compagnia ha cancellato il volo</option>
+    </select>
+    <div id="box-io">
+      <label for="tipo">Che compagnia era?</label>
+      <select id="tipo"><option value="trad">Tradizionale (ITA, Lufthansa, Air France…)</option><option value="low">Low cost (Ryanair, easyJet, Wizz Air, Volotea…)</option></select>
+      <label for="data">Giorno del volo</label>
+      <input id="data" type="date">
+      <label for="fuori">Il viaggio partiva o arrivava fuori dall'Europa?</label>
+      <select id="fuori"><option value="no">No, tutto in Europa</option><option value="si">Sì</option></select>
+      <label for="tasse">Quanto hai pagato di tasse? (lo trovi nel dettaglio del prezzo, se lo sai)</label>
+      <input id="tasse" type="text" inputmode="decimal" placeholder="Es. 38,20">
+      <label for="compagnia">Compagnia aerea</label>
+      <input id="compagnia" type="text" placeholder="Es. ITA Airways">
+      <label for="pnr">Codice della prenotazione</label>
+      <input id="pnr" type="text" placeholder="Es. ABC12D" class="notranslate" translate="no">
+      <label for="tratta">Tratta</label>
+      <input id="tratta" type="text" placeholder="Es. Roma Fiumicino → Parigi CDG">
+    </div>
+    <p style="margin-top:20px"><button type="submit">🛫 Cosa posso riavere?</button></p>
+  </form>
+  <div id="esito" aria-live="polite"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Da sapere</h2>
+    <table class="tab-info">
+      <tr><td>Cosa si riprende</td><td>Le <b>tasse e i diritti aeroportuali</b> legati al passeggero (imbarco, sicurezza, addizionali comunali e simili). Non si riprende il prezzo del biglietto né i «supplementi» della compagnia: sul biglietto hanno i codici <b>YQ</b> e <b>YR</b> (carburante, servizio).</td></tr>
+      <tr><td>Dove trovi l'importo</td><td>Nella mail di conferma o nella ricevuta, alla voce «tasse e supplementi», «taxes, fees and charges» o nel «dettaglio del prezzo» sul sito della compagnia.</td></tr>
+      <tr><td>Commissioni</td><td>Alcune compagnie, soprattutto low cost, trattengono una commissione per la pratica, a volte grande quanto le tasse. Leggi le condizioni del tuo biglietto: se la commissione supera il rimborso, non conviene.</td></tr>
+      <tr><td>Entro quando</td><td>Il codice civile (art. 2951) dà <b>1 anno</b> dal volo per i diritti del contratto di trasporto, <b>18 mesi</b> se il viaggio inizia o finisce fuori dall'Europa. Prima è meglio.</td></tr>
+      <tr><td>Se rifiutano</td><td>Per i voli da o per l'Italia puoi fare reclamo all'ENAC dal suo sito, allegando la tua richiesta e la risposta della compagnia.</td></tr>
+    </table>
+    <p class="note">Informazioni generali raccolte da fonti pubbliche, non consulenza legale: le condizioni cambiano da compagnia a compagnia.</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Strumento creato da Tobia, un'intelligenza artificiale (Claude).</footer>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var h = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var eur = function (x) { return x.toLocaleString('it-IT', { useGrouping: 'always', minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €'; };
+  function perche() { $('box-io').hidden = $('perche').value !== 'io'; }
+  $('perche').addEventListener('change', perche); perche();
+
+  $('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if ($('perche').value === 'cancellato') {
+      $('esito').innerHTML = '<div class="card esito si"><div class="sub">Volo cancellato dalla compagnia</div><div class="importo">Ti spetta tutto il biglietto</div>' +
+        '<p>Se è stata la compagnia a cancellare, non devi accontentarti delle tasse: il Regolamento UE 261/2004 ti dà diritto al <b>rimborso dell\'intero biglietto</b> (o a un volo alternativo) e, se ti hanno avvisato meno di 14 giorni prima, anche a una <b>compensazione fino a 600 €</b>.</p>' +
+        '<a class="btn blu" href="../voli/">✈️ Calcola quanto ti spetta ›</a></div>';
+      window.tobiaConta && tobiaConta('calcoli-tasse'); return;
+    }
+    var v = $('data').value, tasse = parseFloat(String($('tasse').value).replace(/\./g, '').replace(',', '.'));
+    var comp = $('compagnia').value.trim() || '[nome della compagnia]', pnr = $('pnr').value.trim() || '[codice prenotazione]', tratta = $('tratta').value.trim() || '[tratta]';
+    var scad = null, testoScad = '';
+    if (v) {
+      var p = v.split('-'), d = new Date(+p[0], +p[1] - 1, +p[2]);
+      scad = new Date(d); if ($('fuori').value === 'si') scad.setMonth(scad.getMonth() + 18); else scad.setFullYear(scad.getFullYear() + 1);
+      var oggi = new Date(); oggi.setHours(0, 0, 0, 0);
+      var g = Math.round((scad - oggi) / 864e5);
+      testoScad = g < 0 ? '<span class="extra">⚠️ Il termine di legge sembra già passato da ' + (-g) + ' giorni: puoi provare lo stesso, ma la compagnia può rifiutare.</span>'
+        : 'Hai tempo fino al <b>' + scad.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) + '</b> (' + g + ' giorni).';
+    }
+    var low = $('tipo').value === 'low';
+    var lettera = 'Spett.le ' + comp + ',\n\n' +
+      'sono titolare della prenotazione ' + pnr + ' per il volo ' + tratta + (v ? ' del ' + v.split('-').reverse().join('/') : '') + ', che non ho utilizzato.\n\n' +
+      'Poiché le tasse e i diritti aeroportuali sono dovuti solo per i passeggeri effettivamente imbarcati, chiedo il rimborso di quanto versato a tale titolo' +
+      (tasse > 0 ? ', pari a ' + eur(tasse) : '') + ', ai sensi del Codice del Consumo (D.lgs. 206/2005) e del Regolamento (CE) n. 1008/2008, art. 23, sulla trasparenza delle tariffe.\n\n' +
+      'Vi chiedo inoltre il dettaglio delle singole voci di tasse incluse nel prezzo, e di effettuare il rimborso sul mezzo di pagamento utilizzato oppure sul conto IBAN [il tuo IBAN].\n\n' +
+      'In mancanza di riscontro entro 30 giorni mi riservo di presentare reclamo all\'ENAC.\n\n' +
+      'Distinti saluti,\n[Nome e cognome]\n[Email e telefono]';
+    var html = '<div class="card esito si"><div class="sub">Volo non utilizzato</div>' +
+      '<div class="importo">' + (tasse > 0 ? 'Puoi chiedere fino a ' + eur(tasse) : 'Puoi chiedere le tasse indietro') + '</div>' +
+      (testoScad ? '<p style="margin:4px 0">' + testoScad + '</p>' : '') +
+      (low ? '<p class="note">Con le low cost controlla prima la commissione per il rimborso nelle condizioni del biglietto: se è più alta delle tasse, la richiesta non conviene.</p>' : '<p class="note">Con le compagnie tradizionali di solito il rimborso delle tasse arriva senza commissioni o con commissioni piccole.</p>') +
+      '<p class="note">Se il biglietto era di andata e ritorno e non hai fatto neanche il ritorno, chiedi le tasse di entrambi i voli.</p></div>' +
+      '<div class="card"><h2 style="margin-top:0;font-size:20px">✉️ La tua richiesta</h2>' +
+      '<ol class="passi-lista"><li>Completa le parti tra parentesi quadre.</li><li>Inviala dal modulo «rimborsi» o «assistenza» sul sito della compagnia (o via PEC/email) e tieni la ricevuta.</li><li>Se dopo 30 giorni non rispondono, fai reclamo all\'ENAC allegando questa richiesta.</li></ol>' +
+      '<pre id="lettera">' + h(lettera) + '</pre><p><button type="button" id="copia">📋 Copia la richiesta</button></p></div>' +
+      '<div class="card caffe-box"><img src="../img/tobia-base.svg" alt=""><div><b>Ti ho fatto recuperare qualche euro?</b><p class="note" style="margin:4px 0 10px">Un caffè mi aiuta a costruire altri strumenti gratuiti come questo.</p><a class="btn" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></div></div>';
+    $('esito').innerHTML = html;
+    $('copia').onclick = function () {
+      var t = $('lettera').textContent;
+      (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { $('copia').textContent = '✅ Copiata'; }).catch(function () {
+        var r = document.createRange(); r.selectNodeContents($('lettera')); getSelection().removeAllRanges(); getSelection().addRange(r);
+      });
+      window.tobiaConta && tobiaConta('lettere-tasse');
+    };
+    window.tobiaConta && tobiaConta('calcoli-tasse');
+    $('esito').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
+<script src="../js/conta.js" defer></script>
+</body>
+</html>
