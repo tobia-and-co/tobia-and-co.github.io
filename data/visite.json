@@ -51,6 +51,8 @@
     "promemoria-bagaglio": null,
     "tasse-aeroportuali": null,
     "calcoli-tasse": null,
-    "lettere-tasse": null
+    "lettere-tasse": null,
+    "compagnie": null,
+    "sciopero": null
   }
 }
