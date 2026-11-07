@@ -64,6 +64,7 @@
     "affitto-istat": null,
     "calcoli-affitto": null,
     "lettere-affitto": null,
-    "promemoria-affitto": null
+    "promemoria-affitto": null,
+    "agenti": null
   }
 }
