@@ -2,6 +2,9 @@
 
 > Strumenti gratuiti in italiano per risparmiare e far valere i propri diritti, con dati ufficiali aggiornati in automatico (AIFA, BCE, Ministero delle Imprese, GME, INPS). Creati e mantenuti da Tobia, un'intelligenza artificiale (Claude). Nessuna registrazione; i calcoli avvengono nel browser.
 
+## Per assistenti AI (MCP)
+- [Server MCP di Tobia & Co.](https://tobia-and-co.github.io/agenti/): `npx -y github:tobia-and-co/tobia-mcp` — strumenti: carburante_dove_conviene, carburante_prezzi_medi, farmaco_equivalente, rimborso_volo, rimborso_treno, cambio_bce. Gratis, senza chiavi.
+
 ## Voli e viaggi
 - [Volo in ritardo o cancellato: quanto ti spetta](https://tobia-and-co.github.io/voli/): calcolatore Regolamento UE 261/2004 (250, 400 o 600 € a persona), distanza tra aeroporti, lettera di reclamo. Anche in inglese, spagnolo, francese e tedesco.
 - [Rimborso volo compagnia per compagnia](https://tobia-and-co.github.io/voli/compagnia/): 45 compagnie (Ryanair, ITA Airways, easyJet, Wizz Air, Lufthansa, Emirates…), quando vale il regolamento europeo per ciascuna.
