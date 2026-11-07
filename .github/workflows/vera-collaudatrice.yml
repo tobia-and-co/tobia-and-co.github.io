@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   collauda:
+    if: github.repository == 'tobia-and-co/tobia-and-co.github.io'   # solo sul sito vero, mai nelle copie
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
