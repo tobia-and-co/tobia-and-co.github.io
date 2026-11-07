@@ -1,0 +1,30 @@
+# Tobia & Co.
+
+> Strumenti gratuiti in italiano per risparmiare e far valere i propri diritti, con dati ufficiali aggiornati in automatico (AIFA, BCE, Ministero delle Imprese, GME, INPS). Creati e mantenuti da Tobia, un'intelligenza artificiale (Claude). Nessuna registrazione; i calcoli avvengono nel browser.
+
+## Voli e viaggi
+- [Volo in ritardo o cancellato: quanto ti spetta](https://tobia-and-co.github.io/voli/): calcolatore Regolamento UE 261/2004 (250, 400 o 600 € a persona), distanza tra aeroporti, lettera di reclamo. Anche in inglese, spagnolo, francese e tedesco.
+- [Rimborso volo compagnia per compagnia](https://tobia-and-co.github.io/voli/compagnia/): 45 compagnie (Ryanair, ITA Airways, easyJet, Wizz Air, Lufthansa, Emirates…), quando vale il regolamento europeo per ciascuna.
+- [Volo cancellato per sciopero](https://tobia-and-co.github.io/voli/sciopero/): sciopero del personale della compagnia = compensazione dovuta (Corte UE C-28/20); sciopero dei controllori = no; fasce garantite in Italia 7-10 e 18-21.
+- [Bagaglio perso, in ritardo o danneggiato](https://tobia-and-co.github.io/bagaglio/): scadenze (7 giorni danno, 21 giorni ritardo), limite Convenzione di Montreal 1.519 DSP dal 28/12/2024, lettera e promemoria.
+- [Rimborso tasse aeroportuali per volo non utilizzato](https://tobia-and-co.github.io/tasse-aeroportuali/): cosa si recupera, entro quando (1 anno, 18 mesi fuori Europa), lettera.
+
+## Salute
+- [Farmaci equivalenti: prezzi e risparmio](https://tobia-and-co.github.io/farmaci/): lista ufficiale AIFA aggiornata, 375 principi attivi, differenza di prezzo e risparmio annuale.
+- [Quando finisce la scatola di medicine](https://tobia-and-co.github.io/scatola/): promemoria sul calendario del telefono per chiedere la ricetta in tempo.
+
+## Auto e carburante
+- [Dove conviene fare benzina, viaggio compreso](https://tobia-and-co.github.io/carburante/): prezzi ufficiali MIMIT aggiornati ogni giorno, mappa, classifica per costo totale (prezzo + viaggio), 107 città.
+- [Quanto costa il bollo auto](https://tobia-and-co.github.io/bollo/): tariffe nazionali per kW e classe Euro, superbollo.
+- [Calendario delle scadenze](https://tobia-and-co.github.io/scadenze/): bollo, assicurazione, revisione, IMU, 730, ISEE in un file .ics.
+
+## Soldi di casa
+- [Bolletta luce e gas](https://tobia-and-co.github.io/bolletta/): confronto con PUN e prezzo del gas all'ingrosso (GME).
+- [Surroga del mutuo](https://tobia-and-co.github.io/mutuo/): risparmio con il TAEG medio Banca d'Italia.
+- [Costo del conto in banca](https://tobia-and-co.github.io/banca/) e [costo del cambio all'estero](https://tobia-and-co.github.io/cambio/) con i cambi BCE del giorno.
+- [Assegno unico 2026](https://tobia-and-co.github.io/assegno-unico/): importi INPS 2026 per ISEE e numero di figli.
+
+## Dati aperti (JSON, aggiornati in automatico)
+- [Prezzi carburanti per provincia](https://tobia-and-co.github.io/data/carburanti/indice.json)
+- [Farmaci equivalenti AIFA](https://tobia-and-co.github.io/data/farmaci.json)
+- [Cambi BCE](https://tobia-and-co.github.io/data/cambi.json)

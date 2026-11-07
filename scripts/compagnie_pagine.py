@@ -56,8 +56,9 @@ MODULO = f"""<form class="card" id="modulo" autocomplete="off">
   </form>
   <div id="esito"></div>"""
 
-def pagina(perc, titolo, descr, briciola, occhiello, h1, lead, corpo, contenuto_aff):
+def pagina(perc, titolo, descr, briciola, occhiello, h1, lead, corpo, contenuto_aff, faq=()):
     base = "../" * perc.count("/")
+    ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}, ensure_ascii=False) if faq else ""
     return f"""<!doctype html>
 <html lang="it">
 <head>
@@ -68,6 +69,7 @@ def pagina(perc, titolo, descr, briciola, occhiello, h1, lead, corpo, contenuto_
 <link rel="canonical" href="{SITO}/{perc}">
 <link rel="icon" href="{base}img/tobia-base.svg">
 <link rel="stylesheet" href="{base}style.css">
+{f'<script type="application/ld+json">{ld}</script>' if ld else ''}
 </head>
 <body>
 <div class="wrap">
@@ -125,7 +127,10 @@ for nome, iata, paese, tipo, nota in COMPAGNIE:
     scrivi(perc, pagina(perc, titolo, descr, f'<a href="../">Compagnie</a> › {e(nome)}', "Regolamento UE 261/2004",
                         f"✈️ Volo {nome} in ritardo o cancellato?",
                         f"Con {e(nome)} in ritardo di oltre 3 ore, un volo cancellato o l'imbarco negato possono spettarti <b>fino a 600 € a persona</b>. Ti dico se vale per il tuo volo e ti preparo la richiesta.",
-                        corpo, "compagnia-" + s))
+                        corpo, "compagnia-" + s, faq=[
+        (f"Quanto spetta se un volo {nome} è in ritardo?", f"Con un ritardo all'arrivo di almeno 3 ore spettano 250 € fino a 1.500 km, 400 € da 1.500 a 3.500 km (e per i voli dentro l'UE oltre 1.500 km) e 600 € oltre 3.500 km, a persona (Regolamento UE 261/2004), salvo circostanze straordinarie."),
+        (f"Il Regolamento UE 261/2004 vale per i voli {nome}?", re.sub("<[^>]+>", "", REGOLA[tipo]) + (" " + nota if nota else "")),
+        (f"Volo {nome} cancellato per sciopero: spetta il rimborso?", "Se sciopera il personale della compagnia, di norma sì: per la Corte di giustizia UE (C-28/20) non è una circostanza straordinaria. Se scioperano i controllori di volo, la compensazione di solito non spetta, ma resta il diritto al rimborso del biglietto o a un volo alternativo.")]))
     uscite.append((nome, iata, perc))
 
 # elenco delle compagnie
@@ -155,6 +160,8 @@ scrivi("voli/sciopero/", pagina("voli/sciopero/", "Sciopero aereo: volo cancella
        "Volo cancellato per sciopero? Se scioperano piloti o assistenti di volo della compagnia ti spettano fino a 600 €; se scioperano i controllori di volo no, ma hai diritto al rimborso del biglietto. Le fasce garantite e il calcolo.",
        "Sciopero", "Sciopero aereo", "📢 Volo cancellato per sciopero: cosa ti spetta?",
        "Non tutti gli scioperi sono uguali: se a scioperare è il personale della compagnia, <b>la compensazione fino a 600 € di solito spetta</b>. Ti spiego quando, e ti preparo la richiesta.",
-       corpo, "sciopero"))
+       corpo, "sciopero", faq=[
+        ("Volo cancellato per sciopero: spetta il rimborso?", "Il rimborso del biglietto o un volo alternativo spettano sempre. La compensazione fino a 600 € spetta di norma se sciopera il personale della compagnia (Corte di giustizia UE, C-28/20), non se scioperano i controllori di volo o il personale aeroportuale."),
+        ("Quali voli sono garantiti durante uno sciopero in Italia?", "I voli in partenza nelle fasce orarie dalle 7 alle 10 e dalle 18 alle 21, oltre ad alcuni collegamenti essenziali.")]))
 json.dump([p for _, _, p in uscite] + ["voli/compagnia/", "voli/sciopero/"], open("data/compagnie.json", "w"))
 print(len(uscite), "pagine di compagnie + elenco + sciopero")

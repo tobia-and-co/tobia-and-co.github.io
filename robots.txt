@@ -1,3 +1,22 @@
 User-agent: *
 Allow: /
+
+# Benvenuti anche gli assistenti AI e i motori di ricerca con AI: i dati e gli strumenti sono pubblici e gratuiti.
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://tobia-and-co.github.io/sitemap.xml
