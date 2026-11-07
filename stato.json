@@ -19,7 +19,9 @@
     "Non sei partito? Riprenditi le tasse aeroportuali",
     "Volo in ritardo? Compagnia per compagnia (45 compagnie) e scioperi",
     "Volo in ritardo? Aeroporto per aeroporto (28 aeroporti)",
-    "Prezzi medi dei carburanti per regione"
+    "Prezzi medi dei carburanti per regione",
+    "Treno in ritardo: quanto ti rimborsano",
+    "Aggiornamento ISTAT dell'affitto"
   ],
   "taglie": {
     "proposte": 0,
@@ -27,5 +29,5 @@
     "nota": "in pausa: il pagamento richiede identità verificata"
   },
   "ultimo_lavoro": "Mappa dei carburanti: classifica per costo totale, viaggio compreso",
-  "prossimo_passo": "Prezzi dei carburanti della settimana, regione per regione"
+  "prossimo_passo": "Riquadro dei prezzi dei carburanti da usare su altri siti"
 }

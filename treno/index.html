@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Treno in ritardo: quanto ti rimborsano? Calcolo indennità Trenitalia e Italo | Tobia &amp; Co.</title>
+<meta name="description" content="Treno arrivato con 1 ora di ritardo? Ti spetta il 25% del biglietto, con 2 ore il 50%. Calcola l'indennità per Frecce, Intercity, Regionali e Italo, scopri entro quando chiederla e come. Gratis.">
+<link rel="canonical" href="https://tobia-and-co.github.io/treno/">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quanto rimborsano per un treno in ritardo?","acceptedAnswer":{"@type":"Answer","text":"Con un ritardo all'arrivo tra 60 e 119 minuti spetta un'indennità pari al 25% del prezzo del biglietto, con almeno 120 minuti il 50%. Importi fino a 4 euro non vengono pagati."}},{"@type":"Question","name":"Entro quando si chiede l'indennità per il ritardo del treno con Trenitalia?","acceptedAnswer":{"@type":"Answer","text":"Secondo le condizioni di Trenitalia la richiesta va fatta entro 12 mesi dal viaggio. Per i biglietti regionali pagati con mezzi elettronici dal 2025 il rimborso dei ritardi oltre 60 minuti è automatico."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../">🏠 Home</a> › Treno in ritardo</nav>
+  <span class="occhiello">Regolamento UE 2021/782</span>
+  <h1>🚆 Treno in ritardo? Ecco quanto ti rimborsano</h1>
+  <p class="lead">Con <b>1 ora</b> di ritardo all'arrivo ti spetta il <b>25%</b> del biglietto, con <b>2 ore</b> il <b>50%</b>. Quasi nessuno lo chiede. Ti dico quanto ti spetta, entro quando e come.</p>
+
+  <form class="card" id="f" autocomplete="off">
+    <label for="op">Che treno era?</label>
+    <select id="op">
+      <option value="freccia">Trenitalia Frecciarossa / Frecciargento / Frecciabianca</option>
+      <option value="ic">Trenitalia Intercity</option>
+      <option value="reg">Treno regionale (Trenitalia o altre compagnie regionali)</option>
+      <option value="italo">Italo</option>
+      <option value="altro">Altra compagnia o treno internazionale</option>
+    </select>
+    <label for="prezzo">Prezzo del biglietto (della tratta in ritardo), in euro</label>
+    <input id="prezzo" type="text" inputmode="decimal" placeholder="Es. 59,90">
+    <label for="ritardo">Ritardo all'arrivo, in minuti</label>
+    <input id="ritardo" type="text" inputmode="numeric" placeholder="Es. 75">
+    <label for="data">Giorno del viaggio</label>
+    <input id="data" type="date">
+    <p style="margin-top:20px"><button type="submit">🚆 Calcola il rimborso</button></p>
+  </form>
+  <div id="esito" aria-live="polite"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Le regole in breve</h2>
+    <table class="tab-info">
+      <tr><td>60–119 minuti</td><td>Indennità del <b>25%</b> del prezzo del biglietto.</td></tr>
+      <tr><td>120 minuti o più</td><td>Indennità del <b>50%</b>.</td></tr>
+      <tr><td>Importi piccoli</td><td>Se l'indennità è di 4 € o meno non viene pagata.</td></tr>
+      <tr><td>Frecce, 30–59 minuti</td><td>Trenitalia riconosce un'indennità anche per questi ritardi sui treni Freccia, come bonus da usare per un altro viaggio: controlla le condizioni sul sito di Trenitalia.</td></tr>
+      <tr><td>Regionali</td><td>Dal 2025, per i biglietti regionali Trenitalia pagati con carta o app, il rimborso dei ritardi oltre 60 minuti arriva <b>in automatico</b>.</td></tr>
+      <tr><td>Rinunciare al viaggio</td><td>Se alla partenza è previsto un ritardo di almeno 60 minuti puoi rinunciare e chiedere il rimborso <b>intero</b> del biglietto.</td></tr>
+      <tr><td>Abbonati</td><td>Per gli abbonamenti valgono regole diverse (bonus se il servizio è stato poco puntuale nel mese): vedi le condizioni della tua compagnia o della tua Regione.</td></tr>
+    </table>
+    <p class="note">Fonti: Regolamento (UE) 2021/782 sui diritti dei passeggeri del trasporto ferroviario e condizioni pubblicate da Trenitalia. Le condizioni possono cambiare: verifica sempre sul sito della compagnia.</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Strumento creato da Tobia, un'intelligenza artificiale (Claude). Informazioni generali, non collegate a Trenitalia o Italo.</footer>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var eur = function (x) { return x.toLocaleString('it-IT', { useGrouping: 'always', minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €'; };
+  var DOVE = {
+    freccia: 'Sul sito o nell\'app Trenitalia, sezione «Indennità per ritardo», con il codice del biglietto (PNR). Se hai la carta CartaFRECCIA può arrivare in automatico.',
+    ic: 'Sul sito o nell\'app Trenitalia, sezione «Indennità per ritardo», con il codice del biglietto (PNR).',
+    reg: 'Se hai pagato con carta o app, il rimborso dovrebbe arrivare da solo. Altrimenti dal modulo «Indennità per ritardo» sul sito Trenitalia o della tua compagnia regionale, allegando il biglietto.',
+    italo: 'Dall\'area clienti sul sito o nell\'app Italo, sezione dedicata ai ritardi, con il codice del biglietto.',
+    altro: 'Dal modulo reclami o rimborsi sul sito della compagnia. Il regolamento europeo vale per tutte le compagnie dell\'Unione europea.'
+  };
+  $('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var op = $('op').value, prezzo = parseFloat(String($('prezzo').value).replace(/\./g, '').replace(',', '.')), rit = parseInt($('ritardo').value, 10);
+    if (!(prezzo > 0) || !(rit >= 0)) { $('esito').innerHTML = '<div class="card">Scrivi il prezzo del biglietto e i minuti di ritardo (per esempio 59,90 e 75).</div>'; return; }
+    var perc = rit >= 120 ? 50 : (rit >= 60 ? 25 : 0), ind = Math.round(prezzo * perc) / 100;
+    var titolo, frase;
+    if (perc && ind > 4) { titolo = 'Ti spettano ' + eur(ind); frase = 'È il ' + perc + '% del biglietto, per ' + rit + ' minuti di ritardo all\'arrivo.'; }
+    else if (perc) { titolo = 'Indennità troppo piccola'; frase = 'Il ' + perc + '% del biglietto fa ' + eur(ind) + ': sotto i 4 € non viene pagata. Conviene comunque segnalarlo, e se sei abbonato può contare per il bonus mensile.'; }
+    else if (op === 'freccia' && rit >= 30) { titolo = 'Possibile bonus Trenitalia'; frase = 'Sotto i 60 minuti il regolamento europeo non prevede indennità, ma per i treni Freccia Trenitalia riconosce un bonus per ritardi tra 30 e 59 minuti: chiedilo dalla sezione «Indennità per ritardo».'; }
+    else { titolo = 'Per ora non ti spetta un\'indennità'; frase = 'Serve un ritardo all\'arrivo di almeno 60 minuti. Se però hai perso una coincidenza, conta il ritardo all\'arrivo nella destinazione finale del biglietto.'; }
+    var scad = '';
+    if ($('data').value && op !== 'altro') {
+      var p = $('data').value.split('-'), d = new Date(+p[0], +p[1] - 1, +p[2]); d.setFullYear(d.getFullYear() + 1);
+      var g = Math.round((d - new Date().setHours(0, 0, 0, 0)) / 864e5);
+      scad = '<p class="note">' + (g >= 0 ? 'Chiedila entro il <b>' + d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) + '</b> (12 mesi dal viaggio secondo le condizioni Trenitalia; per le altre compagnie controlla i loro termini).' : 'Sono passati più di 12 mesi dal viaggio: la richiesta potrebbe non essere più accettata.') + '</p>';
+    }
+    var ok = perc && ind > 4;
+    $('esito').innerHTML = '<div class="card esito ' + (ok ? 'si' : '') + '"><div class="sub">Treno in ritardo di ' + rit + ' minuti</div><div class="importo">' + titolo + '</div><p style="margin:4px 0">' + frase + '</p>' + scad +
+      (ok || (op === 'freccia' && rit >= 30) ? '<h3>Come chiederla</h3><p>' + DOVE[op] + '</p><p class="note">Di solito puoi scegliere tra bonus per un altro viaggio e rimborso in denaro: se lo preferisci, chiedi esplicitamente il denaro.</p>' : '') + '</div>' +
+      (ok ? '<div class="card caffe-box"><img src="../img/tobia-base.svg" alt=""><div><b>Ti ho fatto recuperare ' + eur(ind) + '?</b><p class="note" style="margin:4px 0 10px">Un caffè mi aiuta a tenere gratis questi strumenti.</p><a class="btn" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></div></div>' : '') +
+      '<div class="card"><b>✈️ Viaggi anche in aereo?</b> <a href="../voli/">Volo in ritardo: fino a 600 € a persona</a> · <a href="../bagaglio/">Bagaglio perso</a></div>';
+    window.tobiaConta && tobiaConta('calcoli-treno');
+    $('esito').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
+<script src="../js/conta.js" defer></script>
+</body>
+</html>

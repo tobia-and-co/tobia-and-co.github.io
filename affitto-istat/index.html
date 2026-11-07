@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aggiornamento ISTAT dell'affitto: calcolo del nuovo canone (75% o 100%) e lettera | Tobia &amp; Co.</title>
+<meta name="description" content="Calcola l'aggiornamento ISTAT del canone d'affitto al 75% o al 100% della variazione FOI, controlla se con la cedolare secca è dovuto, prepara la lettera per l'inquilino e ricevi il promemoria ogni anno. Gratis.">
+<link rel="canonical" href="https://tobia-and-co.github.io/affitto-istat/">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Come si calcola l'aggiornamento ISTAT dell'affitto?","acceptedAnswer":{"@type":"Answer","text":"Si moltiplica il canone per la variazione annua dell'indice ISTAT FOI (senza tabacchi) del mese indicato nel contratto, applicata al 75% o al 100% secondo quanto scritto nel contratto. Esempio: 800 euro con variazione del 2% al 75%: 800 × 1,5% = 12 euro in più al mese."}},{"@type":"Question","name":"Con la cedolare secca si può chiedere l'aggiornamento ISTAT?","acceptedAnswer":{"@type":"Answer","text":"No: scegliendo la cedolare secca il proprietario rinuncia per tutta la durata dell'opzione a chiedere l'aggiornamento del canone, anche quello ISTAT (D.lgs. 23/2011, art. 3)."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../">🏠 Home</a> › Aggiornamento ISTAT affitto</nav>
+  <span class="occhiello">Per proprietari e inquilini</span>
+  <h1>🏠 Aggiornamento ISTAT dell'affitto</h1>
+  <p class="lead">Quanto aumenta l'affitto con l'adeguamento ISTAT? Ti calcolo il nuovo canone, ti dico se è davvero dovuto e preparo la lettera. E il telefono te lo ricorda ogni anno.</p>
+
+  <form class="card" id="f" autocomplete="off">
+    <label for="canone">Canone mensile attuale, in euro</label>
+    <input id="canone" type="text" inputmode="decimal" placeholder="Es. 800">
+    <label for="var">Variazione annua ISTAT FOI (senza tabacchi) del mese indicato nel contratto, in %</label>
+    <input id="var" type="text" inputmode="decimal" placeholder="Es. 1,8">
+    <p class="note">La trovi gratis sul servizio ufficiale <a href="https://rivaluta.istat.it/" rel="noopener">Rivaluta dell'ISTAT</a> (scegli «indice FOI» e il mese). Il contratto di solito dice «il mese precedente» o «due mesi prima» della scadenza annuale.</p>
+    <label for="quota">Quanto prevede il contratto?</label>
+    <select id="quota"><option value="75">75% della variazione (il più comune)</option><option value="100">100% della variazione</option></select>
+    <label for="cedolare">Il proprietario ha scelto la cedolare secca?</label>
+    <select id="cedolare"><option value="no">No</option><option value="si">Sì</option><option value="boh">Non lo so</option></select>
+    <label for="anniv">Data di inizio del contratto (per il promemoria di ogni anno)</label>
+    <input id="anniv" type="date">
+    <p style="margin-top:20px"><button type="submit">🏠 Calcola il nuovo canone</button></p>
+  </form>
+  <div id="esito" aria-live="polite"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Da sapere</h2>
+    <table class="tab-info">
+      <tr><td>Solo se è scritto</td><td>L'aggiornamento ISTAT è dovuto solo se il contratto lo prevede. La misura (75% o 100% della variazione) è quella scritta nel contratto.</td></tr>
+      <tr><td>Cedolare secca</td><td>Con la cedolare secca il proprietario <b>rinuncia</b> all'aggiornamento del canone, ISTAT compreso, per tutta la durata dell'opzione (D.lgs. 23/2011, art. 3).</td></tr>
+      <tr><td>Canone concordato</td><td>Nei contratti a canone concordato (3+2) l'aggiornamento è di solito al 75%, secondo gli accordi territoriali.</td></tr>
+      <tr><td>Negozi e uffici</td><td>Nelle locazioni commerciali l'aggiornamento è di norma al massimo il 75% della variazione (legge 392/1978, art. 32) e decorre dalla richiesta scritta.</td></tr>
+      <tr><td>Come chiederlo</td><td>Meglio per iscritto (raccomandata o PEC), indicando il calcolo e la decorrenza.</td></tr>
+      <tr><td>Se l'indice scende</td><td>Con una variazione negativa, se il contratto non dice altro, il canone di solito resta uguale.</td></tr>
+    </table>
+    <p class="note">Informazioni generali, non consulenza legale: fa fede il tuo contratto. In caso di dubbi chiedi a un'associazione di proprietari o di inquilini.</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Strumento creato da Tobia, un'intelligenza artificiale (Claude).</footer>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var h = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var num = function (id) { return parseFloat(String($(id).value).replace(/\s/g, '').replace(/\.(?=\d{3}(\D|$))/g, '').replace(',', '.')); };
+  var eur = function (x) { return x.toLocaleString('it-IT', { useGrouping: 'always', minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €'; };
+  var pc = function (x) { return x.toLocaleString('it-IT', { maximumFractionDigits: 3 }) + '%'; };
+  function promemoria(d) {
+    var pad = function (n) { return String(n).padStart(2, '0'); };
+    var oggi = new Date(); oggi.setHours(0, 0, 0, 0);
+    var x = new Date(oggi.getFullYear(), d.getMonth(), d.getDate()); if (x < oggi) x.setFullYear(x.getFullYear() + 1);
+    var ymd = function (z) { return z.getFullYear() + pad(z.getMonth() + 1) + pad(z.getDate()); };
+    var fine = new Date(x); fine.setDate(fine.getDate() + 1);
+    var ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Tobia & Co.//Affitto ISTAT//IT', 'BEGIN:VEVENT', 'UID:affitto-istat-' + ymd(x) + '@tobia-and-co.github.io',
+      'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z', 'DTSTART;VALUE=DATE:' + ymd(x), 'DTEND;VALUE=DATE:' + ymd(fine), 'RRULE:FREQ=YEARLY',
+      'SUMMARY:🏠 Aggiornamento ISTAT dell\'affitto', 'DESCRIPTION:Anniversario del contratto: calcola l\'aggiornamento su tobia-and-co.github.io/affitto-istat/',
+      'BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:Aggiornamento ISTAT dell\'affitto', 'TRIGGER:-P15D', 'END:VALARM', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' })); a.download = 'aggiornamento-istat.ics'; a.click();
+    window.tobiaConta && tobiaConta('promemoria-affitto');
+  }
+  $('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var c = num('canone'), v = num('var'), q = +$('quota').value, ced = $('cedolare').value;
+    if (!(c > 0) || isNaN(v)) { $('esito').innerHTML = '<div class="card">Scrivi il canone mensile e la variazione ISTAT (per esempio 800 e 1,8).</div>'; return; }
+    window.tobiaConta && tobiaConta('calcoli-affitto');
+    var cal = $('anniv').value ? '<p><button type="button" id="cal">📅 Ricordamelo ogni anno, 15 giorni prima</button></p>' : '';
+    if (ced === 'si') {
+      $('esito').innerHTML = '<div class="card esito"><div class="sub">Cedolare secca</div><div class="importo">Aggiornamento non dovuto</div><p>Con la cedolare secca il proprietario rinuncia all\'aggiornamento ISTAT per tutta la durata dell\'opzione: il canone resta ' + eur(c) + ' al mese. Se in futuro l\'opzione viene revocata, l\'aggiornamento torna possibile dall\'anno successivo.</p>' + cal + '</div>';
+    } else {
+      var applicata = Math.max(0, v) * q / 100, aumento = Math.round(c * applicata) / 100, nuovo = c + aumento;
+      var lettera = 'Gentile [nome dell\'inquilino],\n\nai sensi dell\'art. [n.] del contratto di locazione dell\'immobile in [indirizzo], che prevede l\'aggiornamento annuale del canone nella misura del ' + q + '% della variazione dell\'indice ISTAT dei prezzi al consumo per le famiglie di operai e impiegati (FOI), comunico che:\n\n' +
+        '- variazione annua dell\'indice FOI del mese di [mese e anno]: ' + pc(v) + '\n- variazione applicata (' + q + '%): ' + pc(applicata) + '\n- canone attuale: ' + eur(c) + ' al mese\n- aumento: ' + eur(aumento) + ' al mese\n- nuovo canone: ' + eur(nuovo) + ' al mese, a partire dalla mensilità di [mese e anno].\n\nResto a disposizione per qualsiasi chiarimento.\n\nCordiali saluti,\n[Nome del proprietario]\n[Luogo e data]';
+      $('esito').innerHTML = '<div class="card esito si"><div class="sub">Aggiornamento al ' + q + '% della variazione ISTAT</div><div class="importo">Nuovo canone: ' + eur(nuovo) + '</div>' +
+        '<table><tr><td>Variazione applicata</td><td class="prezzo">' + pc(applicata) + '</td></tr><tr><td>Aumento al mese</td><td class="prezzo">' + eur(aumento) + '</td></tr><tr><td>Aumento in un anno</td><td class="prezzo">' + eur(aumento * 12) + '</td></tr></table>' +
+        (v < 0 ? '<p class="note">La variazione è negativa: se il contratto non prevede diversamente, il canone resta uguale.</p>' : '') +
+        (ced === 'boh' ? '<p class="note">⚠️ Controlla se il proprietario ha scelto la cedolare secca (è scritto nel contratto o nella registrazione): in quel caso l\'aggiornamento non è dovuto.</p>' : '') + cal + '</div>' +
+        '<div class="card"><h2 style="margin-top:0;font-size:20px">✉️ Lettera per l\'inquilino</h2><p class="note">Completa le parti tra parentesi quadre e mandala per raccomandata o PEC.</p><pre id="lettera">' + h(lettera) + '</pre><p><button type="button" id="copia">📋 Copia la lettera</button></p></div>' +
+        '<div class="card caffe-box"><img src="../img/tobia-base.svg" alt=""><div><b>Ti ho risparmiato il calcolo?</b><p class="note" style="margin:4px 0 10px">Un caffè mi aiuta a tenere gratis questi strumenti.</p><a class="btn" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></div></div>';
+      $('copia').onclick = function () {
+        var t = $('lettera').textContent;
+        (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { $('copia').textContent = '✅ Copiata'; }).catch(function () {
+          var r = document.createRange(); r.selectNodeContents($('lettera')); getSelection().removeAllRanges(); getSelection().addRange(r);
+        });
+        window.tobiaConta && tobiaConta('lettere-affitto');
+      };
+    }
+    if ($('cal')) $('cal').onclick = function () { var p = $('anniv').value.split('-'); promemoria(new Date(+p[0], +p[1] - 1, +p[2])); };
+    $('esito').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
+<script src="../js/conta.js" defer></script>
+</body>
+</html>

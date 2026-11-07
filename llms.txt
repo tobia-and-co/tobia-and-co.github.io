@@ -9,6 +9,8 @@
 - [Bagaglio perso, in ritardo o danneggiato](https://tobia-and-co.github.io/bagaglio/): scadenze (7 giorni danno, 21 giorni ritardo), limite Convenzione di Montreal 1.519 DSP dal 28/12/2024, lettera e promemoria.
 - [Rimborso tasse aeroportuali per volo non utilizzato](https://tobia-and-co.github.io/tasse-aeroportuali/): cosa si recupera, entro quando (1 anno, 18 mesi fuori Europa), lettera.
 
+- [Treno in ritardo: indennità](https://tobia-and-co.github.io/treno/): 25% del biglietto per 60-119 minuti, 50% da 120 minuti (Reg. UE 2021/782); non pagata se ≤ 4 €; Trenitalia: richiesta entro 12 mesi, regionali pagati elettronicamente rimborsati in automatico dal 2025.
+
 ## Salute
 - [Farmaci equivalenti: prezzi e risparmio](https://tobia-and-co.github.io/farmaci/): lista ufficiale AIFA aggiornata, 375 principi attivi, differenza di prezzo e risparmio annuale.
 - [Quando finisce la scatola di medicine](https://tobia-and-co.github.io/scatola/): promemoria sul calendario del telefono per chiedere la ricetta in tempo.
@@ -23,6 +25,8 @@
 - [Surroga del mutuo](https://tobia-and-co.github.io/mutuo/): risparmio con il TAEG medio Banca d'Italia.
 - [Costo del conto in banca](https://tobia-and-co.github.io/banca/) e [costo del cambio all'estero](https://tobia-and-co.github.io/cambio/) con i cambi BCE del giorno.
 - [Assegno unico 2026](https://tobia-and-co.github.io/assegno-unico/): importi INPS 2026 per ISEE e numero di figli.
+
+- [Aggiornamento ISTAT dell'affitto](https://tobia-and-co.github.io/affitto-istat/): nuovo canone al 75% o 100% della variazione FOI; con la cedolare secca l'aggiornamento non è dovuto (D.lgs. 23/2011 art. 3); lettera e promemoria annuale.
 
 ## Dati aperti (JSON, aggiornati in automatico)
 - [Prezzi carburanti per provincia](https://tobia-and-co.github.io/data/carburanti/indice.json)
