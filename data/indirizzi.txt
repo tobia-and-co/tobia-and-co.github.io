@@ -14,6 +14,7 @@ https://tobia-and-co.github.io/carburante/
 https://tobia-and-co.github.io/carburante/prezzi-medi/
 https://tobia-and-co.github.io/bagaglio/
 https://tobia-and-co.github.io/treno/
+https://tobia-and-co.github.io/agenti/
 https://tobia-and-co.github.io/affitto-istat/
 https://tobia-and-co.github.io/tasse-aeroportuali/
 https://tobia-and-co.github.io/carburante/agrigento/
@@ -428,6 +429,9 @@ https://tobia-and-co.github.io/voli/compagnia/delta-air-lines/
 https://tobia-and-co.github.io/voli/compagnia/united-airlines/
 https://tobia-and-co.github.io/voli/compagnia/american-airlines/
 https://tobia-and-co.github.io/voli/compagnia/air-canada/
+https://tobia-and-co.github.io/voli/overbooking/
+https://tobia-and-co.github.io/voli/coincidenza-persa/
+https://tobia-and-co.github.io/voli/volo-cancellato/
 https://tobia-and-co.github.io/voli/compagnia/
 https://tobia-and-co.github.io/voli/sciopero/
 https://tobia-and-co.github.io/voli/aeroporto/roma-fiumicino/
