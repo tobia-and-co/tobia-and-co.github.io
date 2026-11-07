@@ -1,7 +1,7 @@
 {
   "controllato": "2026-11-07",
   "visite": {
-    "totale": 72,
+    "totale": 73,
     "home": 44,
     "scadenze": 2,
     "farmaci": 1,
@@ -54,6 +54,9 @@
     "lettere-tasse": null,
     "compagnie": null,
     "sciopero": null,
+    "overbooking": null,
+    "coincidenza-persa": null,
+    "volo-cancellato": null,
     "aeroporti": null,
     "prezzi-medi": null,
     "treno": null,
