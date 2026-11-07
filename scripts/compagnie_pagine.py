@@ -82,7 +82,7 @@ def pagina(perc, titolo, descr, briciola, occhiello, h1, lead, corpo, contenuto_
   <h2>Calcola il tuo caso</h2>
   {MODULO}
   <div class="card caffe-box"><div><b>Non hai tempo di occupartene?</b><p class="note">AirHelp gestisce la richiesta al posto tuo e trattiene una percentuale solo se vince.</p><a class="btn blu" href="{airhelp(contenuto_aff)}" rel="sponsored noopener" onclick="window.tobiaConta&&tobiaConta('clic-affiliato-voli')">Fallo gestire a un esperto ›</a><p class="note" style="margin:10px 0 0">{e(AVVISO)}</p></div></div>
-  <div class="card"><h2 style="margin-top:0">🧳 Altri problemi col volo?</h2><p><a href="{base}bagaglio/">Bagaglio perso, in ritardo o rotto</a> · <a href="{base}tasse-aeroportuali/">Non sei partito? Riprenditi le tasse</a> · <a href="{base}voli/sciopero/">Sciopero: ti spetta qualcosa?</a> · <a href="{base}voli/compagnia/">Tutte le compagnie</a></p></div>
+  <div class="card"><h2 style="margin-top:0">🧳 Altri problemi col volo?</h2><p><a href="{base}bagaglio/">Bagaglio perso, in ritardo o rotto</a> · <a href="{base}tasse-aeroportuali/">Non sei partito? Riprenditi le tasse</a> · <a href="{base}voli/sciopero/">Sciopero: ti spetta qualcosa?</a> · <a href="{base}voli/compagnia/">Tutte le compagnie</a> · <a href="{base}voli/aeroporto/">Tutti gli aeroporti</a></p></div>
   <p class="note">📚 <a href="{T['fonte_url']}" rel="noopener">{e(T['fonte'])}</a></p>
   <footer><a href="{base}">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Pagina creata da Tobia, un'intelligenza artificiale (Claude). Informazioni generali, non consulenza legale; non siamo collegati alle compagnie aeree citate.</footer>
 </div>

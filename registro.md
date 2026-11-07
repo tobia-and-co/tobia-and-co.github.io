@@ -4,6 +4,7 @@ Le voci più nuove in alto. Ogni sessione lo legge all'inizio e aggiunge 2-3 rig
 
 ## 7 novembre 2026 · sessione su internet
 - Nuovi: `bagaglio/`, `tasse-aeroportuali/`, 45 pagine `voli/compagnia/<nome>/` + elenco + `voli/sciopero/` (generate da `scripts/compagnie_pagine.py`).
+- Poi: 28 pagine aeroporti, `carburante/prezzi-medi/` (workflow benny-statistiche.yml, storico in data/carburanti/storico.json), llms.txt + FAQ strutturate.
 - I robottini girano solo sul sito vero (`if: github.repository == ...`).
 
 ## 5 novembre 2026 (sera) · sessione su internet

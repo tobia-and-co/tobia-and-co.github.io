@@ -154,7 +154,7 @@ json.dump([p for _, _, p, _ in elenco], open("data/tratte.json", "w"))
 # elenco delle tratte in fondo alla pagina italiana dei voli
 voci = "".join(f'<li><a href="{p.replace("voli/", "")}">{e(x)} – {e(y)}</a> <span class="note">fino a {i} €</span></li>' for x, y, p, i in elenco)
 pag = pathlib.Path("voli/index.html"); t = pag.read_text(encoding="utf-8")
-t = t.replace('<p class="note">📚', '<div class="card"><b>🛫 Cerchi la tua compagnia?</b> <a href="compagnia/">Ryanair, ITA Airways, easyJet, Wizz Air e altre 41</a> · <a href="sciopero/">Volo cancellato per sciopero?</a></div>\n  <p class="note">📚', 1)
+t = t.replace('<p class="note">📚', '<div class="card"><b>🛫 Cerchi la tua compagnia?</b> <a href="compagnia/">Ryanair, ITA Airways, easyJet, Wizz Air e altre 41</a> · <a href="sciopero/">Volo cancellato per sciopero?</a> · <a href="aeroporto/">Il tuo aeroporto</a></div>\n  <p class="note">📚', 1)
 t = t.replace('<p class="note">📚', f'<details class="card"><summary><b>🛫 Le tratte più cercate dall\'Italia</b></summary><ul>{voci}</ul></details>\n  <p class="note">📚', 1)
 pag.write_text(t, encoding="utf-8")
 print(len(elenco), "pagine di tratte")

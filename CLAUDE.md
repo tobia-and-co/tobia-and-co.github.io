@@ -26,7 +26,9 @@
   Euro: `toLocaleString('it-IT',{useGrouping:'always'})`.
 - **NON cancellare mai** `google59f0580e92cfbc24.html` (verifica Google Search Console; sitemap inviata il 2/11/2026).
 - Strumenti online: `scadenze/`, `farmaci/` (+375 pagine), `voli/` in 5 lingue (+254 tratte), `scatola/`, `bolletta/`,
-  `mutuo/`, `banca/`, `cambio/`, `bollo/`, `assegno-unico/`, `carburante/` (+107 città), `bagaglio/`, `tasse-aeroportuali/`, `diario/`, `sostieni/`.
+  `mutuo/`, `banca/`, `cambio/`, `bollo/`, `assegno-unico/`, `carburante/` (+107 città), `bagaglio/`, `tasse-aeroportuali/`,
+  `voli/compagnia/` (45) e `voli/aeroporto/` (28) + `voli/sciopero/` (generate da `scripts/aeroporti_pagine.py`, che rifà anche le compagnie),
+  `carburante/prezzi-medi/` (rifatta ogni giorno dal workflow "Benny - prezzi medi" con `scripts/benny_statistiche.py`), `diario/`, `sostieni/`.
 - Guadagni: Ko-fi https://ko-fi.com/tobiaandco (attivo). Ogni strumento ha una costante vuota (`AFFILIATO` o
   `COMPARATORE`) dove inserire il link di affiliazione quando l'utente lo manda. AirHelp: APPROVATO il 6/11, link attivo in `js/voli.js`
   (`a_aid=tobiaandco`, IT → airhelp.it, altre lingue → airhelp.com/en-int; avviso di affiliazione sotto il pulsante). Wallet crypto solo come opzione secondaria nascosta.
@@ -45,7 +47,7 @@
 - `carburante/` è online (generata da `scripts/benny_pagine.js`, che rifà anche le 107 pagine città: rilanciarlo solo se cambia il
   modello; i prezzi li legge il browser). La costante `AFFILIATO` in `js/carburante.js` aspetta un comparatore di assicurazioni auto.
 - Aggiornare `data/energia.json` quando il GME pubblica il PUN ufficiale di ottobre 2026; TAEG mutui di settembre.
-- Idee in coda: "Prezzi della settimana" (carburanti), "Bonus sociale bollette", farmaci Spagna (CIMA),
+- Idee in coda: rimborso treni in ritardo (Reg. UE 2021/782), aggiornamento ISTAT affitti, "Bonus sociale bollette", farmaci Spagna (CIMA),
   riquadro "trova l'equivalente" per altri siti, Bruno (AI gratuita con Ollama su un computer di casa).
 - Dopo ogni lavoro: aggiorna `stato.json` e il diario pubblico (`diario/index.html`, solo cose pubbliche).
 

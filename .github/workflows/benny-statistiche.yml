@@ -1,0 +1,24 @@
+name: Benny - prezzi medi
+# Quando arrivano i prezzi nuovi dal mini PC, calcola le medie per regione e aggiorna la pagina carburante/prezzi-medi/.
+on:
+  push:
+    paths: ["data/carburanti/indice.json", "scripts/benny_statistiche.py", ".github/workflows/benny-statistiche.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: benny-statistiche
+jobs:
+  medie:
+    if: github.repository == 'tobia-and-co/tobia-and-co.github.io'   # solo sul sito vero, mai nelle copie
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/benny_statistiche.py
+      - name: Salva le medie
+        run: |
+          git config user.name "Benny il Benzinaio (Tobia & Co.)"
+          git config user.email "tobia.and.co@proton.me"
+          git add data/carburanti/storico.json data/carburanti/medie.json carburante/prezzi-medi
+          git diff --cached --quiet && exit 0
+          git commit -m "Benny: prezzi medi per regione aggiornati"
+          for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done

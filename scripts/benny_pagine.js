@@ -80,7 +80,7 @@ fs.writeFileSync(path.join(OUT, 'index.html'), pagina({
   h1: '⛽ Dove ti conviene davvero fare benzina?',
   lead: 'Il distributore più economico può costarti di più, se è lontano. Io conto <b>prezzo e viaggio insieme</b> e ti dico dove andare.',
   attr: 'data-base="../"',
-  extra: `  <div class="card">\n    <h2 style="margin-top:0">📍 Prezzi nelle città</h2>\n    <p>${collegamenti}</p>\n  </div>\n\n`,
+  extra: `  <p><a class="btn chiaro" href="prezzi-medi/">📊 Prezzi medi di oggi, regione per regione ›</a></p>\n  <div class="card">\n    <h2 style="margin-top:0">📍 Prezzi nelle città</h2>\n    <p>${collegamenti}</p>\n  </div>\n\n`,
 }));
 
 for (const { nome, prov, quanti } of elenco) {
