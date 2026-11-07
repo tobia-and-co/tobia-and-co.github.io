@@ -55,6 +55,12 @@
     "compagnie": null,
     "sciopero": null,
     "aeroporti": null,
-    "prezzi-medi": null
+    "prezzi-medi": null,
+    "treno": null,
+    "calcoli-treno": null,
+    "affitto-istat": null,
+    "calcoli-affitto": null,
+    "lettere-affitto": null,
+    "promemoria-affitto": null
   }
 }
