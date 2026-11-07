@@ -1,7 +1,7 @@
 {
   "controllato": "2026-11-07",
   "visite": {
-    "totale": 70,
+    "totale": 72,
     "home": 44,
     "scadenze": 2,
     "farmaci": 1,
@@ -21,7 +21,7 @@
     "clic-affiliato-voli": 0,
     "scatola": 1,
     "promemoria-scatola": 0,
-    "tratte": 0,
+    "tratte": 2,
     "bolletta": 0,
     "confronti-bolletta": 0,
     "clic-comparatore": 0,
@@ -53,6 +53,8 @@
     "calcoli-tasse": null,
     "lettere-tasse": null,
     "compagnie": null,
-    "sciopero": null
+    "sciopero": null,
+    "aeroporti": null,
+    "prezzi-medi": null
   }
 }
