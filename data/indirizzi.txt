@@ -13,6 +13,8 @@ https://tobia-and-co.github.io/assegno-unico/
 https://tobia-and-co.github.io/carburante/
 https://tobia-and-co.github.io/carburante/prezzi-medi/
 https://tobia-and-co.github.io/bagaglio/
+https://tobia-and-co.github.io/treno/
+https://tobia-and-co.github.io/affitto-istat/
 https://tobia-and-co.github.io/tasse-aeroportuali/
 https://tobia-and-co.github.io/carburante/agrigento/
 https://tobia-and-co.github.io/carburante/alessandria/
