@@ -2,7 +2,17 @@
 // Usa window.T (testi nella lingua della pagina) e window.BASE (percorso verso la radice del sito).
 (function () {
   var UE = 'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE IS NO CH LI GP MQ GF RE YT MF'.split(' ');
-  var AFFILIATO = ''; // link del programma di affiliazione: quando c'è, compare il riquadro "fallo gestire a un esperto"
+  // Programma di affiliazione AirHelp (approvato il 6/11/2026): link nella lingua della pagina, codice affiliato "tobiaandco".
+  var LINGUA = (document.documentElement.lang || 'it').slice(0, 2);
+  var AH_PAGINA = { it: 'https://www.airhelp.it/' }[LINGUA] || 'https://www.airhelp.com/en-int/';
+  var AFFILIATO = AH_PAGINA + '?utm_medium=affiliate&utm_source=pap&utm_campaign=aff-tobiaandco&utm_content=voli-' + LINGUA + '&a_aid=tobiaandco';
+  var AVVISO_AFF = {
+    it: 'Link di affiliazione: se AirHelp vince la tua pratica ricevo una piccola commissione da loro. A te non costa nulla in più, e puoi sempre fare la richiesta da solo, gratis, con la lettera qui sopra.',
+    en: 'Affiliate link: if AirHelp wins your claim, they pay me a small commission. It costs you nothing extra, and you can always claim yourself for free with the letter above.',
+    es: 'Enlace de afiliado: si AirHelp gana tu reclamación, me paga una pequeña comisión. A ti no te cuesta nada más, y siempre puedes reclamar tú mismo gratis con la carta de arriba.',
+    fr: "Lien d'affiliation : si AirHelp gagne votre dossier, ils me versent une petite commission. Cela ne vous coûte rien de plus, et vous pouvez toujours réclamer vous-même gratuitement avec la lettre ci-dessus.",
+    de: 'Affiliate-Link: Wenn AirHelp Ihren Fall gewinnt, erhalte ich eine kleine Provision. Für Sie entstehen keine Mehrkosten, und Sie können immer selbst kostenlos mit dem Brief oben fordern.'
+  }[LINGUA] || '';
   var T = window.T, A = [], scelto = { da: null, a: null };
   var $ = function (id) { return document.getElementById(id); };
   var norm = function (s) { return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
@@ -114,7 +124,7 @@
         '<h3>' + h(T.lettera_t) + '</h3><pre id="lettera">' + h(lettera) + '</pre>' +
         '<button type="button" id="copia">' + h(T.copia) + '</button></div>';
       if (AFFILIATO) html += '<div class="card caffe-box"><div><b>' + h(T.affiliato_t) + '</b><p class="note">' + h(T.affiliato_p) +
-        '</p><a class="btn blu" id="affiliato" href="' + AFFILIATO + '" rel="sponsored noopener">' + h(T.affiliato_b) + '</a></div></div>';
+        '</p><a class="btn blu" id="affiliato" href="' + AFFILIATO + '" rel="sponsored noopener">' + h(T.affiliato_b) + '</a><p class="note" style="margin:10px 0 0">' + h(AVVISO_AFF) + '</p></div></div>';
     }
     out.innerHTML = html;
     out.scrollIntoView({ behavior: 'smooth', block: 'start' });

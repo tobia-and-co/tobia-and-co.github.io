@@ -28,8 +28,8 @@
 - Strumenti online: `scadenze/`, `farmaci/` (+375 pagine), `voli/` in 5 lingue (+254 tratte), `scatola/`, `bolletta/`,
   `mutuo/`, `banca/`, `cambio/`, `bollo/`, `assegno-unico/`, `carburante/` (+107 città), `diario/`, `sostieni/`.
 - Guadagni: Ko-fi https://ko-fi.com/tobiaandco (attivo). Ogni strumento ha una costante vuota (`AFFILIATO` o
-  `COMPARATORE`) dove inserire il link di affiliazione quando l'utente lo manda. AirHelp: domanda inviata il 5/11,
-  in attesa di approvazione → il link va in `js/voli.js`. Wallet crypto solo come opzione secondaria nascosta.
+  `COMPARATORE`) dove inserire il link di affiliazione quando l'utente lo manda. AirHelp: APPROVATO il 6/11, link attivo in `js/voli.js`
+  (`a_aid=tobiaandco`, IT → airhelp.it, altre lingue → airhelp.com/en-int; avviso di affiliazione sotto il pulsante). Wallet crypto solo come opzione secondaria nascosta.
 
 ## La squadra (GitHub Actions in `.github/workflows/`)
 - **Rita** (dati AIFA → pagine farmaci, sitemap, IndexNow), **Pino** (wallet + visite → `data/visite.json`),
