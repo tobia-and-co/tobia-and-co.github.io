@@ -2,6 +2,10 @@
 
 Le voci più nuove in alto. Ogni sessione lo legge all'inizio e aggiunge 2-3 righe alla fine.
 
+## 7 novembre 2026 · sessione su internet
+- Nuovi: `bagaglio/`, `tasse-aeroportuali/`, 45 pagine `voli/compagnia/<nome>/` + elenco + `voli/sciopero/` (generate da `scripts/compagnie_pagine.py`).
+- I robottini girano solo sul sito vero (`if: github.repository == ...`).
+
 ## 5 novembre 2026 (sera) · sessione su internet
 - Nuovo robottino Ugo il Guardiano (controllo giornaliero del sito vero). Squadra aggiornata in home e nel diario (aggiunti Vera, Benny, Ugo; Gino in pausa; Bruno in arrivo).
 - `benny-casa.sh` ora si allinea con fetch + reset (non più pull).
