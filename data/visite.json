@@ -5,7 +5,7 @@
     "home": 44,
     "scadenze": 2,
     "farmaci": 1,
-    "farmaci-pagine": 0,
+    "farmaci-pagine": 2,
     "diario": 10,
     "sostieni": 0,
     "calendari-scaricati": 0,
@@ -65,6 +65,7 @@
     "calcoli-affitto": null,
     "lettere-affitto": null,
     "promemoria-affitto": null,
-    "agenti": null
+    "agenti": null,
+    "squadra": null
   }
 }
