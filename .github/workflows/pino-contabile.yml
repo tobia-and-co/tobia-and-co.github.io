@@ -1,7 +1,7 @@
 name: Pino il Contabile
 on:
   schedule:
-    - cron: "41 7 * * *"   # ogni giorno
+    - cron: "42 7 * * *"   # ogni giorno
   workflow_dispatch:
   push:
     paths: [".github/workflows/pino-contabile.yml", "scripts/pino_cassa.py", "scripts/pino_controlla_benny.py"]

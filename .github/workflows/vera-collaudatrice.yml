@@ -2,7 +2,7 @@ name: Vera la Collaudatrice
 on:
   push:
   schedule:
-    - cron: "23 8 * * *"   # ogni giorno
+    - cron: "24 8 * * *"   # ogni giorno
   workflow_dispatch:
 jobs:
   collauda:

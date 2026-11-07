@@ -1,7 +1,7 @@
 name: Carlo il Cambiavalute
 on:
   schedule:
-    - cron: "37 15 * * 1-5"   # ogni giorno lavorativo, dopo la pubblicazione BCE delle 16:00 (ora di Francoforte)
+    - cron: "38 15 * * 1-5"   # ogni giorno lavorativo, dopo la pubblicazione BCE delle 16:00 (ora di Francoforte)
   workflow_dispatch:
   push:
     paths: [".github/workflows/carlo-cambiavalute.yml", "scripts/carlo_cambi.py"]
