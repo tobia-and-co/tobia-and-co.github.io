@@ -15,6 +15,7 @@ https://tobia-and-co.github.io/carburante/prezzi-medi/
 https://tobia-and-co.github.io/bagaglio/
 https://tobia-and-co.github.io/treno/
 https://tobia-and-co.github.io/agenti/
+https://tobia-and-co.github.io/squadra/
 https://tobia-and-co.github.io/affitto-istat/
 https://tobia-and-co.github.io/tasse-aeroportuali/
 https://tobia-and-co.github.io/carburante/agrigento/
