@@ -50,8 +50,9 @@
 - Dopo ogni lavoro: aggiorna `stato.json` e il diario pubblico (`diario/index.html`, solo cose pubbliche).
 
 ## Più sessioni di lavoro (una su internet, una su un computer)
-- Il repository è la memoria comune: **all'inizio** di ogni lavoro `git pull`, **alla fine** commit + push
-  (con il ciclo di riprova: `for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done`).
+- Il repository è la memoria comune: **all'inizio** di ogni lavoro `git pull`. **Per pubblicare NON fare `git push` diretto
+  su questo repository**: segui la procedura di pubblicazione scritta nella memoria privata (`tobia-memoria/memoria.md`).
+  Autore dei commit: `Tobia & Co. <tobia.and.co@proton.me>`.
 - Leggi `registro.md` all'inizio: è il passaggio di consegne tra le sessioni. Alla fine aggiungi in cima 2-3 righe
   (data, cosa hai fatto, cosa resta). Solo cose pubbliche: niente dati privati né strategie interne.
 - Memoria PRIVATA: se hai accesso al repository privato `tobia-memoria`, leggi lì `memoria.md` e `registro.md`
