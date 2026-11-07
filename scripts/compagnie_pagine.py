@@ -82,7 +82,7 @@ def pagina(perc, titolo, descr, briciola, occhiello, h1, lead, corpo, contenuto_
   <h2>Calcola il tuo caso</h2>
   {MODULO}
   <div class="card caffe-box"><div><b>Non hai tempo di occupartene?</b><p class="note">AirHelp gestisce la richiesta al posto tuo e trattiene una percentuale solo se vince.</p><a class="btn blu" href="{airhelp(contenuto_aff)}" rel="sponsored noopener" onclick="window.tobiaConta&&tobiaConta('clic-affiliato-voli')">Fallo gestire a un esperto ›</a><p class="note" style="margin:10px 0 0">{e(AVVISO)}</p></div></div>
-  <div class="card"><h2 style="margin-top:0">🧳 Altri problemi col volo?</h2><p><a href="{base}bagaglio/">Bagaglio perso, in ritardo o rotto</a> · <a href="{base}tasse-aeroportuali/">Non sei partito? Riprenditi le tasse</a> · <a href="{base}voli/sciopero/">Sciopero: ti spetta qualcosa?</a> · <a href="{base}voli/compagnia/">Tutte le compagnie</a> · <a href="{base}voli/aeroporto/">Tutti gli aeroporti</a></p></div>
+  <div class="card"><h2 style="margin-top:0">🧳 Altri problemi col volo?</h2><p><a href="{base}bagaglio/">Bagaglio perso, in ritardo o rotto</a> · <a href="{base}tasse-aeroportuali/">Non sei partito? Riprenditi le tasse</a> · <a href="{base}voli/sciopero/">Sciopero</a> · <a href="{base}voli/volo-cancellato/">Volo cancellato</a> · <a href="{base}voli/overbooking/">Overbooking</a> · <a href="{base}voli/coincidenza-persa/">Coincidenza persa</a> · <a href="{base}voli/compagnia/">Tutte le compagnie</a> · <a href="{base}voli/aeroporto/">Tutti gli aeroporti</a></p></div>
   <p class="note">📚 <a href="{T['fonte_url']}" rel="noopener">{e(T['fonte'])}</a></p>
   <footer><a href="{base}">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Pagina creata da Tobia, un'intelligenza artificiale (Claude). Informazioni generali, non consulenza legale; non siamo collegati alle compagnie aeree citate.</footer>
 </div>
@@ -163,5 +163,59 @@ scrivi("voli/sciopero/", pagina("voli/sciopero/", "Sciopero aereo: volo cancella
        corpo, "sciopero", faq=[
         ("Volo cancellato per sciopero: spetta il rimborso?", "Il rimborso del biglietto o un volo alternativo spettano sempre. La compensazione fino a 600 € spetta di norma se sciopera il personale della compagnia (Corte di giustizia UE, C-28/20), non se scioperano i controllori di volo o il personale aeroportuale."),
         ("Quali voli sono garantiti durante uno sciopero in Italia?", "I voli in partenza nelle fasce orarie dalle 7 alle 10 e dalle 18 alle 21, oltre ad alcuni collegamenti essenziali.")]))
+# ---- pagine per caso: overbooking, coincidenza persa, volo cancellato ----
+CASI = [
+ ("voli/overbooking/", "Overbooking: imbarco negato", "Imbarco negato per overbooking? Ti spettano subito fino a 600 €",
+  "Ti hanno negato l'imbarco perché il volo era pieno? Per il Regolamento UE 261/2004 ti spettano subito 250, 400 o 600 € a persona, più il rimborso del biglietto o un volo alternativo. Come chiederli.",
+  "🚫 Imbarco negato per overbooking?",
+  "Se il volo è pieno e ti lasciano a terra contro la tua volontà, la compagnia deve pagarti <b>subito</b> una compensazione <b>fino a 600 €</b>, oltre a un volo alternativo o al rimborso.",
+  """  <div class="card">
+    <h2 style="margin-top:0">✋ Cosa ti spetta</h2>
+    <ol class="passi-lista">
+      <li><b>Compensazione</b> di 250, 400 o 600 € in base alla distanza, se ti negano l'imbarco contro la tua volontà e ti eri presentato in tempo al check-in. Va pagata subito, in aeroporto, o comunque in tempi brevi.</li>
+      <li>A scelta: <b>rimborso del biglietto</b> oppure <b>volo alternativo</b> il prima possibile.</li>
+      <li><b>Assistenza</b> durante l'attesa: pasti, bevande, telefonate e, se serve, albergo e trasferimenti.</li>
+    </ol>
+    <p class="note">Se ti offri volontario per lasciare il posto, vale quello che concordi con la compagnia (buoni, soldi, altro volo): prima di accettare, chiedi per iscritto cosa ti danno. Se ti sposta su un volo che arriva entro 2, 3 o 4 ore dall'orario previsto (in base alla distanza), la compensazione può essere ridotta del 50%.</p>
+  {TABELLA}
+  </div>""", "overbooking",
+  [("Quanto spetta per l'imbarco negato per overbooking?", "Da 250 a 600 € a persona in base alla distanza del volo (Regolamento UE 261/2004), più il rimborso del biglietto o un volo alternativo e l'assistenza durante l'attesa."),
+   ("Se accetto di cedere il posto come volontario ho diritto alla compensazione?", "No: ai volontari spetta quello che concordano con la compagnia, oltre al rimborso o al volo alternativo.")]),
+ ("voli/coincidenza-persa/", "Coincidenza persa", "Coincidenza persa per un ritardo? Ti spettano fino a 600 €",
+  "Hai perso la coincidenza per il ritardo del primo volo? Se avevi un'unica prenotazione e arrivi a destinazione con oltre 3 ore di ritardo, ti spettano fino a 600 € calcolati sulla distanza totale.",
+  "🔁 Hai perso la coincidenza?",
+  "Se il primo volo era in ritardo e hai perso il secondo, conta il <b>ritardo all'arrivo nella destinazione finale</b>: con oltre 3 ore ti spettano <b>fino a 600 €</b>, calcolati sulla distanza dal primo aeroporto all'ultimo.",
+  """  <div class="card">
+    <h2 style="margin-top:0">🔎 Quando ti spetta</h2>
+    <table class="tab-info">
+      <tr><td>Un'unica prenotazione</td><td>I voli devono essere nella <b>stessa prenotazione</b> (un solo codice). Con biglietti separati, il secondo volo non è un problema della prima compagnia.</td></tr>
+      <tr><td>Ritardo finale di 3 ore</td><td>Conta l'arrivo all'aeroporto <b>finale</b> (Corte di giustizia UE, causa C-11/11). La distanza è quella in linea d'aria tra la prima partenza e l'ultimo arrivo.</td></tr>
+      <tr><td>Partenza dall'Europa</td><td>Se il primo volo parte dall'Unione europea vale anche se lo scalo è fuori Europa (causa C-537/17). Se parti da fuori Europa vale solo con una compagnia europea.</td></tr>
+    </table>
+    <p class="note">Nel calcolatore qui sotto metti come partenza il <b>primo</b> aeroporto e come arrivo l'<b>ultimo</b>.</p>
+  </div>""", "coincidenza",
+  [("Ho perso la coincidenza per il ritardo del primo volo: mi spetta un rimborso?", "Sì, se i voli erano in un'unica prenotazione e sei arrivato alla destinazione finale con almeno 3 ore di ritardo: da 250 a 600 € calcolati sulla distanza dalla prima partenza all'ultimo arrivo (Regolamento UE 261/2004, Corte di giustizia UE C-11/11)."),
+   ("Vale anche con biglietti separati?", "No: con prenotazioni separate ogni volo è un contratto a sé e la perdita della coincidenza non dà diritto alla compensazione.")]),
+ ("voli/volo-cancellato/", "Volo cancellato", "Volo cancellato? Rimborso del biglietto e fino a 600 € di compensazione",
+  "Volo cancellato dalla compagnia? Hai diritto al rimborso del biglietto entro 7 giorni o a un volo alternativo, e se ti hanno avvisato meno di 14 giorni prima anche a una compensazione fino a 600 €.",
+  "❌ Volo cancellato: cosa ti spetta?",
+  "Se la compagnia cancella il volo hai sempre diritto al <b>rimborso del biglietto</b> o a un <b>volo alternativo</b>. E se ti ha avvisato meno di 14 giorni prima, spesso anche a una <b>compensazione fino a 600 €</b>.",
+  """  <div class="card">
+    <h2 style="margin-top:0">📋 I tuoi diritti</h2>
+    <table class="tab-info">
+      <tr><td>Sempre</td><td>A scelta: <b>rimborso</b> del biglietto entro 7 giorni (in denaro, non solo buoni) oppure <b>volo alternativo</b>. In attesa: pasti, bevande e, se serve, albergo.</td></tr>
+      <tr><td>Avviso 14 giorni prima o più</td><td>Niente compensazione, ma resta il rimborso.</td></tr>
+      <tr><td>Avviso tra 7 e 13 giorni</td><td>Compensazione dovuta, salvo che il volo alternativo parta al massimo 2 ore prima e arrivi meno di 4 ore dopo l'orario previsto.</td></tr>
+      <tr><td>Avviso meno di 7 giorni prima</td><td>Compensazione dovuta, salvo che il volo alternativo parta al massimo 1 ora prima e arrivi meno di 2 ore dopo.</td></tr>
+      <tr><td>Circostanze straordinarie</td><td>Maltempo, sciopero dei controllori di volo, problemi di sicurezza: niente compensazione, ma rimborso e assistenza restano. Lo sciopero del personale della compagnia invece non la esonera.</td></tr>
+    </table>
+  {TABELLA}
+  </div>""", "cancellato",
+  [("Volo cancellato: entro quanto devono rimborsarmi?", "Entro 7 giorni, in denaro se lo chiedi (Regolamento UE 261/2004, art. 8). I buoni sono validi solo se li accetti."),
+   ("Volo cancellato: quando spetta la compensazione?", "Se la compagnia ti ha avvisato meno di 14 giorni prima e la cancellazione non è dovuta a circostanze straordinarie: da 250 a 600 € a persona, salvo voli alternativi con orari molto vicini a quelli originali.")]),
+]
+for perc, bric, titolo, descr, h1, lead, corpo, aff, faq in CASI:
+    scrivi(perc, pagina(perc, titolo, descr, bric, "Regolamento UE 261/2004", h1, lead, corpo.replace("{TABELLA}", TABELLA), aff, faq=faq))
+    uscite.append((bric, "", perc))
 json.dump([p for _, _, p in uscite] + ["voli/compagnia/", "voli/sciopero/"], open("data/compagnie.json", "w"))
 print(len(uscite), "pagine di compagnie + elenco + sciopero")
