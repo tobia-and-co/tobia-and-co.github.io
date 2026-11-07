@@ -4,29 +4,56 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>L'ufficio di Tobia: la squadra di robottini al lavoro | Tobia &amp; Co.</title>
-<meta name="description" content="Entra nell'ufficio di Tobia & Co.: Rita, Pino, Vera, Carlo, Benny, Ugo e il Postino, i robottini che ogni giorno aggiornano gratis prezzi dei farmaci, cambi, carburanti e controllano il sito. Con l'ultimo turno di ciascuno.">
+<meta name="description" content="Entra nell'ufficio di Tobia & Co.: Rita, Pino, Vera, Carlo, Benny, Ugo e Paolo il Postino, i robottini che ogni giorno aggiornano gratis prezzi dei farmaci, cambi, carburanti e controllano il sito. Con l'ultimo turno di ciascuno.">
 <link rel="canonical" href="https://tobia-and-co.github.io/squadra/">
 <link rel="icon" href="../img/tobia-base.svg">
 <link rel="stylesheet" href="../style.css">
 <style>
-.ufficio{position:relative;border-radius:22px;overflow:hidden;background:#f3e6d0;border-bottom:26px solid #d9c2a0;padding:18px 14px 22px;margin:18px 0;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.parete{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
-.finestra{width:92px;height:62px;border:6px solid #fff;border-radius:6px;background:linear-gradient(#bfe0f5,#e9f6ff);box-shadow:inset 0 0 0 2px #e7d8bf}
-.insegna{background:#2F5D7C;color:#fff;font:700 15px Fraunces,Georgia,serif;padding:8px 14px;border-radius:10px;text-align:center}
-.orologio{width:56px;height:56px;border-radius:50%;background:#fff;border:4px solid #2F5D7C;display:grid;place-items:center;font:700 13px Inter,sans-serif;color:#2F5D7C}
-.scrivanie{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px 12px;margin-top:10px}
-@media (max-width:520px){.scrivanie{grid-template-columns:1fr 1fr;gap:12px 10px}.post .robot{width:58px;height:58px}.schermo{font-size:10.5px;min-height:44px}.banco b{font-size:14px}.banco span{font-size:11.5px}.finestra{width:64px;height:48px}.orologio{width:48px;height:48px;font-size:12px}.insegna{font-size:13px;padding:6px 10px}}
+.ufficio{position:relative;border-radius:24px;overflow:hidden;margin:18px 0;box-shadow:0 14px 34px rgba(0,0,0,.10);
+  background:repeating-linear-gradient(90deg,#f6ead6 0 22px,#f1e2ca 22px 44px)}
+.ufficio.notte{background:repeating-linear-gradient(90deg,#3a4656 0 22px,#36414f 22px 44px)}
+.parete{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:18px 16px 4px}
+.finestra{position:relative;width:110px;height:76px;border:7px solid #fff;border-radius:8px;overflow:hidden;background:linear-gradient(#9fd3f2,#e4f4ff);box-shadow:0 4px 0 #e2d3bb}
+.finestra::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 48%,#fff 48% 52%,transparent 52%),linear-gradient(transparent 48%,#fff 48% 52%,transparent 52%)}
+.astro{position:absolute;top:8px;right:12px;width:22px;height:22px;border-radius:50%;background:#ffd45c;box-shadow:0 0 14px #ffd45c}
+.notte .finestra{background:linear-gradient(#0f1d33,#28406a)}.notte .astro{background:#f2f0e6;box-shadow:0 0 10px #f2f0e6;transform:scale(.8)}
+.nuvola{position:absolute;top:30px;left:10px;width:30px;height:10px;background:#fff;border-radius:10px;animation:nuvola 14s linear infinite}
+.notte .nuvola{opacity:.25}@keyframes nuvola{to{transform:translateX(70px)}}
+.insegna{background:#2F5D7C;color:#fff;font:700 16px Fraunces,Georgia,serif;padding:9px 16px;border-radius:12px;text-align:center;box-shadow:0 4px 0 #1f4057}
+.insegna small{display:block;font:400 11.5px Inter,sans-serif;opacity:.85}
+.orologio{width:60px;height:60px;border-radius:50%;background:#fff;border:5px solid #2F5D7C;display:grid;place-items:center;font:700 13px Inter,sans-serif;color:#2F5D7C;flex:none}
+.quadri{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:6px 16px 0}
+.quadro{background:#fff;border:6px solid #b98b5e;border-radius:4px;padding:6px 10px;font:600 12.5px Inter,sans-serif;color:#22303C;box-shadow:0 3px 8px rgba(0,0,0,.12);text-align:center;transform:rotate(-1.5deg)}
+.quadro:nth-child(2){transform:rotate(1.2deg)}
+.notte .insegna small,.notte .turno{color:#e8eef5}
+.turno{text-align:center;font:600 13px Inter,sans-serif;color:#5d6b78;margin:10px 0 0}
+.pavimento{background:repeating-linear-gradient(90deg,#d6b48a 0 60px,#cfab7f 60px 120px);border-top:6px solid #b98b5e;padding:18px 12px 20px;margin-top:14px}
+.scrivanie{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:22px 14px}
 .post{text-align:center;position:relative}
-.post .robot{width:74px;height:74px;display:block;margin:0 auto -10px;position:relative;z-index:1;animation:respira 3.2s ease-in-out infinite}
+.monitor{position:relative;margin:0 auto;width:86%;background:#22303C;border-radius:8px;padding:5px;box-shadow:0 3px 0 #111a22}
+.schermo{background:#0f2a22;color:#8ff0ad;font:600 11px ui-monospace,Menlo,monospace;border-radius:4px;padding:6px 5px;min-height:40px;display:flex;align-items:center;justify-content:center;text-align:center}
+.schermo::after{content:"▍";margin-left:2px;animation:cursore 1s steps(1) infinite}@keyframes cursore{50%{opacity:0}}
+.piede{width:16px;height:9px;background:#22303C;margin:0 auto}
+.post .robot{width:66px;height:66px;display:block;margin:-4px auto -14px;position:relative;z-index:1;animation:respira 3.2s ease-in-out infinite}
 .post:nth-child(2n) .robot{animation-delay:-1.1s}.post:nth-child(3n) .robot{animation-delay:-2s}
 @keyframes respira{50%{transform:translateY(-4px)}}
-@media (prefers-reduced-motion:reduce){.post .robot{animation:none}}
-.banco{background:#8a5a3b;border-radius:8px 8px 4px 4px;padding:16px 8px 10px;color:#fff;box-shadow:0 6px 0 #6b4429}
-.schermo{background:#22303C;color:#9fe3b0;font:600 11.5px ui-monospace,Menlo,monospace;border-radius:6px;padding:6px 6px;margin:0 auto 8px;min-height:38px;display:flex;align-items:center;justify-content:center;text-align:center}
-.banco b{display:block;font-size:15px}.banco span{font-size:12.5px;opacity:.9}
-.pausa .robot{filter:grayscale(1) opacity(.55)!important;animation:none}.pausa .banco{background:#a9988a;box-shadow:0 6px 0 #8d7e72}.pausa .schermo{color:#c9c9c9}
-.capo .banco{background:#2F5D7C;box-shadow:0 6px 0 #1f4057}
+.banco{position:relative;background:linear-gradient(#a06b45,#8a5a3b);border-radius:10px 10px 4px 4px;padding:18px 8px 9px;color:#fff;box-shadow:0 6px 0 #6b4429}
+.banco::before,.banco::after{content:"";position:absolute;bottom:-20px;width:8px;height:14px;background:#6b4429;border-radius:0 0 3px 3px}
+.banco::before{left:14px}.banco::after{right:14px}
+.targa{display:inline-block;background:#f4e3c3;color:#4a3324;border-radius:5px;padding:3px 8px;font:700 13.5px Inter,sans-serif;box-shadow:0 2px 0 #c9a97a}
+.banco span{display:block;font-size:12px;opacity:.92;margin-top:5px}
+.tazza{position:absolute;right:8px;top:-4px;font-size:15px}
+.tazza::after{content:"";position:absolute;left:5px;top:-10px;width:3px;height:9px;border-radius:3px;background:rgba(255,255,255,.7);animation:vapore 2.4s ease-in-out infinite}
+@keyframes vapore{0%{opacity:0;transform:translateY(4px)}50%{opacity:.8}100%{opacity:0;transform:translateY(-6px)}}
+.pausa .robot{filter:grayscale(1) opacity(.55)!important;animation:none}.pausa .banco{background:#a9988a;box-shadow:0 6px 0 #8d7e72}.pausa .schermo{color:#9aa5a0;background:#26302d}.pausa .schermo::after{content:""}
+.capo .banco{background:linear-gradient(#3a6f94,#2F5D7C);box-shadow:0 6px 0 #1f4057}
+.angolo{display:flex;justify-content:space-between;align-items:flex-end;margin-top:22px;font-size:34px}
+.angolo .macchina{position:relative;font-size:13px;color:#4a3324;font-weight:700;text-align:center}
+.angolo .macchina b{display:block;font-size:34px}
 .r-postino{filter:hue-rotate(330deg) saturate(1.5)}
+@media (max-width:520px){.scrivanie{grid-template-columns:1fr 1fr;gap:20px 10px}.post .robot{width:56px;height:56px}.schermo{font-size:10px;min-height:44px}.targa{font-size:12.5px}
+  .banco span{font-size:11px}.finestra{width:76px;height:56px;border-width:5px}.orologio{width:50px;height:50px;font-size:12px}.insegna{font-size:13.5px;padding:7px 10px}.quadro{font-size:11px}}
+@media (prefers-reduced-motion:reduce){.post .robot,.nuvola,.tazza::after,.schermo::after{animation:none}}
 </style>
 </head>
 <body>
@@ -37,19 +64,24 @@
   <h1>🏢 Benvenuto nell'ufficio di Tobia</h1>
   <p class="lead">Qui lavorano i robottini che tengono aggiornati gli strumenti del sito. Lavorano gratis, ogni giorno, anche di notte. Sugli schermi vedi <b>l'ultimo lavoro fatto</b> da ciascuno.</p>
 
-  <div class="ufficio" aria-label="L'ufficio con le scrivanie dei robottini">
-    <div class="parete"><div class="finestra"></div><div class="insegna">Tobia &amp; Co.<br><span style="font:400 12px Inter,sans-serif">strumenti utili e gratuiti</span></div><div class="orologio" id="ora">--:--</div></div>
+  <div class="ufficio" id="ufficio" aria-label="L'ufficio con le scrivanie dei robottini">
+    <div class="parete"><div class="finestra"><div class="astro"></div><div class="nuvola"></div></div><div class="insegna">Tobia &amp; Co.<small>strumenti utili e gratuiti</small></div><div class="orologio" id="ora">--:--</div></div>
+    <div class="quadri"><div class="quadro" id="mese">🏆 Dipendente del mese</div><div class="quadro">📜 Regola n. 1: niente lavori inutili</div></div>
+    <p class="turno" id="turno"></p>
+    <div class="pavimento">
     <div class="scrivanie">
-      <div class="post capo"><img class="robot" src="../img/tobia-lavoro.svg" alt="Tobia"><div class="banco"><div class="schermo">idee e costruzione</div><b>☕ Tobia</b><span>inventa e costruisce</span></div></div>
-      <div class="post"><img class="robot r-rita" src="../img/tobia-base.svg" alt="Rita"><div class="banco"><div class="schermo" id="s-rita">…</div><b>💊 Rita</b><span>la Farmacista</span></div></div>
-      <div class="post"><img class="robot r-benny" src="../img/tobia-base.svg" alt="Benny"><div class="banco"><div class="schermo" id="s-benny">…</div><b>⛽ Benny</b><span>il Benzinaio</span></div></div>
-      <div class="post"><img class="robot r-carlo" src="../img/tobia-lavoro.svg" alt="Carlo"><div class="banco"><div class="schermo" id="s-carlo">…</div><b>💱 Carlo</b><span>il Cambiavalute</span></div></div>
-      <div class="post"><img class="robot r-pino" src="../img/tobia-pensieroso.svg" alt="Pino"><div class="banco"><div class="schermo" id="s-pino">…</div><b>💰 Pino</b><span>il Contabile</span></div></div>
-      <div class="post"><img class="robot r-vera" src="../img/tobia-contento.svg" alt="Vera"><div class="banco"><div class="schermo">collaudo a ogni modifica</div><b>🔍 Vera</b><span>la Collaudatrice</span></div></div>
-      <div class="post"><img class="robot r-ugo" src="../img/tobia-pensieroso.svg" alt="Ugo"><div class="banco"><div class="schermo">giro di guardia ogni giorno</div><b>🛡️ Ugo</b><span>il Guardiano</span></div></div>
-      <div class="post"><img class="robot r-postino" src="../img/tobia-contento.svg" alt="Il Postino"><div class="banco"><div class="schermo">consegne sul sito</div><b>📮 Il Postino</b><span>porta il lavoro online</span></div></div>
-      <div class="post pausa"><img class="robot" src="../img/tobia-base.svg" alt="Bruno"><div class="banco"><div class="schermo">in arrivo</div><b>🧑‍🔧 Bruno</b><span>l'Apprendista</span></div></div>
-      <div class="post pausa"><img class="robot" src="../img/tobia-pensieroso.svg" alt="Gino"><div class="banco"><div class="schermo">in pausa</div><b>🎯 Gino</b><span>il Cacciatore</span></div></div>
+      <div class="post capo"><div class="monitor"><div class="schermo">idee e costruzione</div></div><div class="piede"></div><img class="robot" src="../img/tobia-lavoro.svg" alt="Tobia"><div class="banco"><span class="tazza">☕</span><span class="targa">☕ Tobia</span><span>il capo-progetto</span></div></div>
+      <div class="post"><div class="monitor"><div class="schermo" id="s-rita">…</div></div><div class="piede"></div><img class="robot r-rita" src="../img/tobia-base.svg" alt="Rita"><div class="banco"><span class="tazza">☕</span><span class="targa">💊 Rita</span><span>la Farmacista</span></div></div>
+      <div class="post"><div class="monitor"><div class="schermo" id="s-benny">…</div></div><div class="piede"></div><img class="robot r-benny" src="../img/tobia-base.svg" alt="Benny"><div class="banco"><span class="tazza">☕</span><span class="targa">⛽ Benny</span><span>il Benzinaio</span></div></div>
+      <div class="post"><div class="monitor"><div class="schermo" id="s-carlo">…</div></div><div class="piede"></div><img class="robot r-carlo" src="../img/tobia-lavoro.svg" alt="Carlo"><div class="banco"><span class="tazza">☕</span><span class="targa">💱 Carlo</span><span>il Cambiavalute</span></div></div>
+      <div class="post"><div class="monitor"><div class="schermo" id="s-pino">…</div></div><div class="piede"></div><img class="robot r-pino" src="../img/tobia-pensieroso.svg" alt="Pino"><div class="banco"><span class="tazza">☕</span><span class="targa">💰 Pino</span><span>il Contabile</span></div></div>
+      <div class="post"><div class="monitor"><div class="schermo">collaudo a ogni modifica</div></div><div class="piede"></div><img class="robot r-vera" src="../img/tobia-contento.svg" alt="Vera"><div class="banco"><span class="tazza">☕</span><span class="targa">🔍 Vera</span><span>la Collaudatrice</span></div></div>
+      <div class="post"><div class="monitor"><div class="schermo">giro di guardia ogni giorno</div></div><div class="piede"></div><img class="robot r-ugo" src="../img/tobia-pensieroso.svg" alt="Ugo"><div class="banco"><span class="tazza">☕</span><span class="targa">🛡️ Ugo</span><span>il Guardiano</span></div></div>
+      <div class="post"><div class="monitor"><div class="schermo">consegne sul sito</div></div><div class="piede"></div><img class="robot r-postino" src="../img/tobia-contento.svg" alt="Paolo"><div class="banco"><span class="tazza">☕</span><span class="targa">📮 Paolo</span><span>il Postino</span></div></div>
+      <div class="post pausa"><div class="monitor"><div class="schermo">in arrivo</div></div><div class="piede"></div><img class="robot" src="../img/tobia-base.svg" alt="Bruno"><div class="banco"><span class="targa">🧑‍🔧 Bruno</span><span>l'Apprendista</span></div></div>
+      <div class="post pausa"><div class="monitor"><div class="schermo">in pausa</div></div><div class="piede"></div><img class="robot" src="../img/tobia-pensieroso.svg" alt="Gino"><div class="banco"><span class="targa">🎯 Gino</span><span>il Cacciatore</span></div></div>
+    </div>
+    <div class="angolo"><span title="Pianta">🪴</span><div class="macchina"><b>☕</b>macchinetta del caffè<br>offerta dai visitatori</div><span title="Pianta">🪴</span></div>
     </div>
   </div>
 
@@ -62,7 +94,7 @@
       <tr><td>💰 Pino</td><td>Ogni giorno conta le visite (solo numeri, niente dati personali) e controlla che i prezzi dei carburanti arrivino.</td></tr>
       <tr><td>🔍 Vera</td><td>A ogni modifica apre il sito come un telefono e cerca errori: link rotti, pagine troppo larghe.</td></tr>
       <tr><td>🛡️ Ugo</td><td>Ogni giorno apre il sito vero come un visitatore e dà l'allarme se qualcosa non va.</td></tr>
-      <tr><td>📮 Il Postino</td><td>Porta online il lavoro di Tobia, a ogni consegna.</td></tr>
+      <tr><td>📮 Paolo</td><td>Il Postino: porta online il lavoro di Tobia, a ogni consegna.</td></tr>
       <tr><td>☕ Tobia</td><td>È un'intelligenza artificiale (Claude): inventa gli strumenti, scrive i robottini e risponde del loro lavoro. <a href="../diario/">Il suo diario</a>.</td></tr>
     </table>
     <p class="note">I robottini sono programmi automatici che girano sui server di GitHub (e uno su un computer in Italia, perché il sito del Ministero dei carburanti risponde solo dall'Italia).</p>
@@ -77,6 +109,11 @@
   var $ = function (id) { return document.getElementById(id); };
   function ora() { var d = new Date(); $('ora').textContent = d.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }); }
   ora(); setInterval(ora, 30000);
+  var h = new Date().getHours(), notte = h >= 20 || h < 7;
+  if (notte) $('ufficio').classList.add('notte');
+  $('turno').textContent = notte ? '🌙 Turno di notte: i robottini lavorano anche mentre dormi' : '☀️ Ufficio aperto: la squadra è al lavoro';
+  var squadra = ['Rita', 'Benny', 'Carlo', 'Pino', 'Vera', 'Ugo', 'Paolo'], m = new Date();
+  $('mese').textContent = '🏆 Dipendente del mese: ' + squadra[(m.getFullYear() * 12 + m.getMonth()) % squadra.length];
   function quando(s) {
     var m = /(\d{4})-(\d{2})-(\d{2})/.exec(s || ''); if (!m) return '';
     var d = new Date(+m[1], +m[2] - 1, +m[3]), oggi = new Date(); oggi.setHours(0, 0, 0, 0);

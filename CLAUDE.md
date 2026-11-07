@@ -41,6 +41,8 @@
   Pino apre una segnalazione se i prezzi sono fermi da più di 3 giorni (`scripts/pino_controlla_benny.py`).
 - **Ugo** il Guardiano (dal 5/11): ogni giorno apre il sito vero (21 pagine + dati di Carlo, Pino, Rita, Benny); se qualcosa non va
   apre UNA segnalazione e la chiude da solo quando torna a posto (`scripts/ugo_guardiano.py`; nuove pagine importanti → aggiungile a PAGINE).
+- **Paolo il Postino**: porta online il lavoro di Tobia (dettagli nella memoria privata). Pagina della squadra: `squadra/` (ufficio disegnato,
+  schermi con l'ultimo lavoro letto dai dati, giorno/notte, dipendente del mese a rotazione).
 - In arrivo: Bruno l'Apprendista (AI gratuita con Ollama). Gino il Cacciatore in pausa.
 
 ## Prossimi lavori
