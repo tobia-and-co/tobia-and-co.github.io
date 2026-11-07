@@ -1,8 +1,8 @@
 {
   "controllato": "2026-11-07",
   "visite": {
-    "totale": 64,
-    "home": 43,
+    "totale": 68,
+    "home": 44,
     "scadenze": 1,
     "farmaci": 1,
     "farmaci-pagine": 0,
@@ -44,6 +44,13 @@
     "ricerche-carburante": null,
     "posizione-carburante": null,
     "indirizzo-carburante": null,
-    "clic-navigatore": null
+    "clic-navigatore": null,
+    "bagaglio": null,
+    "calcoli-bagaglio": null,
+    "lettere-bagaglio": null,
+    "promemoria-bagaglio": null,
+    "tasse-aeroportuali": null,
+    "calcoli-tasse": null,
+    "lettere-tasse": null
   }
 }
