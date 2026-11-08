@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "24 8 * * *"   # ogni giorno
   workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
 jobs:
   collauda:
     if: github.repository == 'tobia-and-co/tobia-and-co.github.io'   # solo sul sito vero, mai nelle copie
@@ -13,4 +16,17 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: "22" }
       - run: npm install --no-save playwright@1.49.1 && npx playwright install --with-deps chromium
-      - run: node scripts/vera_collauda.js
+      - name: Tre giri di controllo (scrivania, telefono, prove degli strumenti)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e; esito=0
+          python3 scripts/vera_controlli.py > r1.txt 2>&1 || esito=1
+          node scripts/vera_collauda.js > r2.txt 2>&1 || esito=1
+          node scripts/vera_prove.js > r3.txt 2>&1 || esito=1
+          cat r1.txt r2.txt r3.txt
+          TITOLO="Vera: ho trovato errori sul sito"
+          aperte=$(gh issue list --state open --search "\"$TITOLO\" in:title" --json number --jq '.[].number')
+          if [ $esito = 1 ] && [ -z "$aperte" ]; then gh issue create --title "$TITOLO" --body "$(cat r1.txt r2.txt r3.txt | head -80)"; fi
+          if [ $esito = 0 ] && [ -n "$aperte" ]; then for n in $aperte; do gh issue close $n --comment "Ricontrollato: tutto a posto."; done; fi
+          exit $esito

@@ -37,7 +37,7 @@
 
 ## La squadra (GitHub Actions in `.github/workflows/`)
 - **Rita** (dati AIFA → pagine farmaci, sitemap, IndexNow), **Pino** (wallet + visite → `data/visite.json`),
-  **Vera** (collaudo da telefono a ogni push), **Carlo** (cambi BCE → `data/cambi.json`),
+  **Vera** (a ogni push e ogni giorno, 3 giri: `scripts/vera_controlli.py` tutti i link/sitemap/JSON/contatori, `scripts/vera_collauda.js` pagine da telefono, `scripts/vera_prove.js` prova gli strumenti; se trova errori apre UNA segnalazione e la chiude quando è a posto; nuovo strumento → aggiungi la sua prova in PROVE), **Carlo** (cambi BCE → `data/cambi.json`),
   **Benny** (carburanti: il sito del Ministero blocca i server esteri, quindi su GitHub resta in pausa e i dati arrivano
   ogni mattina da `scripts/minipc/benny-casa.sh`, attivo dal 5/11/2026 su un computer in Italia, con una deploy key).
   Pino apre una segnalazione se i prezzi sono fermi da più di 3 giorni (`scripts/pino_controlla_benny.py`).
