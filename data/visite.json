@@ -66,6 +66,17 @@
     "lettere-affitto": null,
     "promemoria-affitto": null,
     "agenti": null,
-    "squadra": null
+    "squadra": null,
+    "da-diretto": null,
+    "da-google": null,
+    "da-bing": null,
+    "da-altri-motori": null,
+    "da-chatgpt": null,
+    "da-perplexity": null,
+    "da-claude": null,
+    "da-gemini": null,
+    "da-social": null,
+    "da-github": null,
+    "da-altri-siti": null
   }
 }
