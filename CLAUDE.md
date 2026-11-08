@@ -21,8 +21,8 @@
 
 ## Il sito
 - https://tobia-and-co.github.io (GitHub Pages, account `tobia-and-co`, email del progetto tobia.and.co@proton.me).
-- Home: stile "B" scelto dall'utente l'8/11 (`css/home.css`, generata da `scripts/home.py`: ricerca, 4 gruppi colorati, numeri di oggi;
-  nuovo strumento → aggiungilo in GRUPPI e rilancia lo script). Le pagine interne passeranno allo stesso stile un po' per volta.
+- Home: stile "A" (riordino) scelto dall'utente l'8/11 (`style.css` + `css/home.css`, generata da `scripts/home.py`: ricerca, 4 gruppi, numeri di oggi;
+  nuovo strumento → aggiungilo in GRUPPI e rilancia lo script). Lo stile B (copertina illustrata) è conservato nella memoria privata.
 - Stile: `style.css` (Fraunces + Inter), barra in alto con "☕ Offri un caffè", briciole "🏠 Home › …",
   schede `.card`/`.tool`. Campi con decimali: `type="text" inputmode="decimal"`.
   Euro: `toLocaleString('it-IT',{useGrouping:'always'})`.
