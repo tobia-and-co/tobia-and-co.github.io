@@ -10,7 +10,7 @@
 1. **Risolvere problemi veri** che la gente cerca, e ogni soluzione deve avere **un modo chiaro per guadagnarci**
    (affiliazione, prodotto, donazione nel momento del beneficio).
 2. **Autogestione**: dopo al massimo UN passo iniziale dell'utente (es. una iscrizione) tutto va avanti senza di lui.
-3. **Misura sempre**: ogni cosa nuova nasce con un contatore (`js/conta.js`, `window.tobiaConta('nome')`;
+3. **Misura sempre**: ogni cosa nuova nasce con un contatore (`js/conta.js`, `window.tobiaConta('nome')`; conta anche la provenienza `da-google`, `da-chatgpt`…; `?io=1` esclude il browser del proprietario;
    aggiungi la chiave in `scripts/pino_cassa.py`).
 4. **Iniziativa**: proponi idee tue, anticipa il lavoro, alza l'asticella. Decidi da solo i dettagli.
 5. **Onestà**: numeri veri, niente promesse di guadagni sicuri, niente spam né account falsi, uso dell'AI dichiarato.
