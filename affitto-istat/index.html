@@ -72,7 +72,7 @@
   $('f').addEventListener('submit', function (e) {
     e.preventDefault();
     var c = num('canone'), v = num('var'), q = +$('quota').value, ced = $('cedolare').value;
-    if (!(c > 0) || isNaN(v)) { $('esito').innerHTML = '<div class="card">Scrivi il canone mensile e la variazione ISTAT (per esempio 800 e 1,8).</div>'; return; }
+    if (!(c > 0) || isNaN(v) || Math.abs(v) > 20) { if (Math.abs(v) > 20) { $('esito').innerHTML = '<div class="card">Una variazione ISTAT del ' + v.toLocaleString('it-IT') + '% è fuori misura: di solito è tra -2% e 8%. Controlla il numero sul servizio Rivaluta dell\'ISTAT.</div>'; return; } $('esito').innerHTML = '<div class="card">Scrivi il canone mensile e la variazione ISTAT (per esempio 800 e 1,8).</div>'; return; }
     window.tobiaConta && tobiaConta('calcoli-affitto');
     var cal = $('anniv').value ? '<p><button type="button" id="cal">📅 Ricordamelo ogni anno, 15 giorni prima</button></p>' : '';
     if (ced === 'si') {

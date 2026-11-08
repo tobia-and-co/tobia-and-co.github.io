@@ -24,7 +24,7 @@ for vecchia in base.iterdir():
     if vecchia.is_dir():
         shutil.rmtree(vecchia)
 
-indirizzi = [SITO + "/", SITO + "/scadenze/", SITO + "/farmaci/", SITO + "/diario/", SITO + "/sostieni/", SITO + "/scatola/", SITO + "/bolletta/", SITO + "/mutuo/", SITO + "/banca/", SITO + "/cambio/", SITO + "/bollo/", SITO + "/assegno-unico/", SITO + "/carburante/", SITO + "/carburante/prezzi-medi/", SITO + "/bagaglio/", SITO + "/treno/", SITO + "/agenti/", SITO + "/squadra/", SITO + "/affitto-istat/", SITO + "/tasse-aeroportuali/"] + [SITO + "/carburante/" + c.name + "/" for c in sorted(pathlib.Path("carburante").iterdir()) if c.is_dir() and c.name != "leaflet"] + [SITO + "/" + t for t in (json.load(open("data/tratte.json")) if pathlib.Path("data/tratte.json").exists() else [])] + [SITO + "/" + t["percorso"] for t in json.load(open("data/voli_testi.json", encoding="utf-8")).values()] + [SITO + "/" + t for t in (json.load(open("data/compagnie.json")) if pathlib.Path("data/compagnie.json").exists() else [])]
+indirizzi = [SITO + "/", SITO + "/scadenze/", SITO + "/farmaci/", SITO + "/diario/", SITO + "/sostieni/", SITO + "/scatola/", SITO + "/bolletta/", SITO + "/mutuo/", SITO + "/banca/", SITO + "/cambio/", SITO + "/bollo/", SITO + "/assegno-unico/", SITO + "/carburante/", SITO + "/carburante/prezzi-medi/", SITO + "/bagaglio/", SITO + "/treno/", SITO + "/agenti/", SITO + "/squadra/", SITO + "/affitto-istat/", SITO + "/tasse-aeroportuali/"] + [SITO + "/carburante/" + c.name + "/" for c in sorted(pathlib.Path("carburante").iterdir()) if c.is_dir() and c.name not in ("leaflet", "prezzi-medi")] + [SITO + "/" + t for t in (json.load(open("data/tratte.json")) if pathlib.Path("data/tratte.json").exists() else [])] + [SITO + "/" + t["percorso"] for t in json.load(open("data/voli_testi.json", encoding="utf-8")).values()] + [SITO + "/" + t for t in (json.load(open("data/compagnie.json")) if pathlib.Path("data/compagnie.json").exists() else [])]
 elenco = []
 for principio, gruppi in sorted(per_principio.items(), key=lambda x: slug(x[0])):
     s = slug(principio)
@@ -103,6 +103,7 @@ testo = pag.read_text(encoding="utf-8")
 testo = re.sub(r"<!-- ELENCO -->.*?<!-- /ELENCO -->", lambda _: f'<!-- ELENCO --><div class="card"><h2 style="margin-top:0">📚 Tutti i farmaci</h2><ul>{voci}</ul></div><!-- /ELENCO -->', testo, flags=re.S)
 pag.write_text(testo, encoding="utf-8")
 
+indirizzi = list(dict.fromkeys(indirizzi))   # niente doppioni
 sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
     "".join(f"<url><loc>{u}</loc><lastmod>{oggi}</lastmod></url>\n" for u in indirizzi) + "</urlset>\n"
 pathlib.Path("sitemap.xml").write_text(sitemap, encoding="utf-8")
