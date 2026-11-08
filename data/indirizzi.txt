@@ -95,7 +95,6 @@ https://tobia-and-co.github.io/carburante/pistoia/
 https://tobia-and-co.github.io/carburante/pordenone/
 https://tobia-and-co.github.io/carburante/potenza/
 https://tobia-and-co.github.io/carburante/prato/
-https://tobia-and-co.github.io/carburante/prezzi-medi/
 https://tobia-and-co.github.io/carburante/ragusa/
 https://tobia-and-co.github.io/carburante/ravenna/
 https://tobia-and-co.github.io/carburante/reggio-di-calabria/
@@ -776,7 +775,6 @@ https://tobia-and-co.github.io/farmaci/rupatadina/
 https://tobia-and-co.github.io/farmaci/salbutamolo-ipratropio-bromuro/
 https://tobia-and-co.github.io/farmaci/salmeterolo/
 https://tobia-and-co.github.io/farmaci/salmeterolo-fluticasone/
-https://tobia-and-co.github.io/farmaci/salmeterolo-fluticasone/
 https://tobia-and-co.github.io/farmaci/sapropterina/
 https://tobia-and-co.github.io/farmaci/selegilina/
 https://tobia-and-co.github.io/farmaci/sertralina/
@@ -788,7 +786,6 @@ https://tobia-and-co.github.io/farmaci/sitagliptin/
 https://tobia-and-co.github.io/farmaci/sitagliptin-metformina/
 https://tobia-and-co.github.io/farmaci/sodio-cloruro/
 https://tobia-and-co.github.io/farmaci/sodio-ibandronato/
-https://tobia-and-co.github.io/farmaci/sodio-risedronato/
 https://tobia-and-co.github.io/farmaci/sodio-risedronato/
 https://tobia-and-co.github.io/farmaci/solifenacina/
 https://tobia-and-co.github.io/farmaci/sotalolo/
