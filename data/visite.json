@@ -1,8 +1,8 @@
 {
   "controllato": "2026-11-09",
   "visite": {
-    "totale": 101,
-    "home": 54,
+    "totale": 102,
+    "home": 55,
     "scadenze": 2,
     "farmaci": 1,
     "farmaci-pagine": 3,
@@ -10,6 +10,7 @@
     "sostieni": 0,
     "calendari-scaricati": 0,
     "ricerche-farmaci": 0,
+    "ricerche-carenze": 0,
     "clic-kofi": 3,
     "voli": 2,
     "en": null,
@@ -30,7 +31,7 @@
     "clic-mutuo": 0,
     "banca": 1,
     "calcoli-banca": 0,
-    "clic-banca": 0,
+    "clic-banca": null,
     "cambio": null,
     "calcoli-cambio": null,
     "clic-cambio": null,
