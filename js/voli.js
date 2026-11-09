@@ -66,12 +66,27 @@
   cerca('da'); cerca('a');
   // pagine delle tratte: aeroporti già scelti
   function precompila() {
-    if (!window.PREFILL || !A.length) return;
-    ['da', 'a'].forEach(function (c, i) {
-      var x = A.filter(function (a) { return a[0] === window.PREFILL[i]; })[0];
+    if (!A.length) return;
+    var Q = {}; try { new URLSearchParams(location.search).forEach(function (v, k) { Q[k.toLowerCase()] = v; }); } catch (e) {}
+    var cod = function (v) { return /^[a-z]{3}$/i.test(v || '') ? v.toUpperCase() : null; };
+    var trova = function (c) { return c && A.filter(function (a) { return a[0] === c; })[0]; };
+    var cerca = [trova(cod(Q.da)), trova(cod(Q.a))];
+    var daLink = !!(cerca[0] && cerca[1]);
+    if (window.PREFILL || daLink) ['da', 'a'].forEach(function (c, i) {
+      var x = daLink ? cerca[i] : A.filter(function (a) { return a[0] === window.PREFILL[i]; })[0];
       if (x) { scelto[c] = x; $(c).value = nome(x); }
     });
+    if (!daLink) return;
+    // link diretto (per assistenti AI): campi opzionali e calcolo subito
+    [['evento', 'evento'], ['ritardo', 'ritardo'], ['causa', 'causa']].forEach(function (p) {
+      var v = (Q[p[0]] || '').toLowerCase(), sel = $(p[1]);
+      if (v && Array.prototype.some.call(sel.options, function (o) { return o.value === v; })) sel.value = v;
+    });
+    aggiornaCampi();
+    window.tobiaLinkAgenti();
+    $('modulo').requestSubmit();
   }
+  window.tobiaLinkAgenti = function () { var n = 0; (function p() { if (window.tobiaConta) tobiaConta('link-agenti'); else if (n++ < 30) setTimeout(p, 200); })(); };
 
   function km(p, q) {
     var R = 6371, r = Math.PI / 180, dLat = (q[4] - p[4]) * r, dLon = (q[5] - p[5]) * r;

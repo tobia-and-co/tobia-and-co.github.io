@@ -88,6 +88,16 @@
     window.tobiaConta && tobiaConta('calcoli-treno');
     $('esito').scrollIntoView({ behavior: 'smooth' });
   });
+  // link diretto (per assistenti AI): ?prezzo=59,90&ritardo=75&op=freccia|ic|reg|italo|altro
+  try {
+    var P = new URLSearchParams(location.search), pr = P.get('prezzo'), ri = P.get('ritardo'), op = (P.get('op') || '').toLowerCase();
+    if (pr && ri && /^[\d.,]{1,9}$/.test(pr) && /^\d{1,4}$/.test(ri)) {
+      if (Array.prototype.some.call($('op').options, function (o) { return o.value === op; })) $('op').value = op;
+      $('prezzo').value = pr; $('ritardo').value = ri;
+      var n = 0; (function p() { if (window.tobiaConta) tobiaConta('link-agenti'); else if (n++ < 30) setTimeout(p, 200); })();
+      $('f').requestSubmit();
+    }
+  } catch (e) {}
 })();
 </script>
 <script src="../js/conta.js" defer></script>

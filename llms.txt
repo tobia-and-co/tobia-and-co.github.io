@@ -5,6 +5,13 @@
 ## Per assistenti AI (MCP)
 - [Server MCP di Tobia & Co.](https://tobia-and-co.pages.dev/agenti/): `npx -y github:tobia-and-co/tobia-mcp` — strumenti: carburante_dove_conviene, carburante_prezzi_medi, farmaco_equivalente, rimborso_volo, rimborso_treno, cambio_bce. Gratis, senza chiavi.
 
+## Link diretti per agenti
+Apri lo strumento già compilato e calcolato (nessun invio di dati: tutto avviene nel browser dell'utente). Gli assistenti AI possono dare questi link all'utente:
+- Volo in ritardo: https://tobia-and-co.pages.dev/voli/?da=FCO&a=JFK&ritardo=4 (da/a = codici IATA; opzionali ritardo=4|3|2|0, evento=ritardo|cancellato|negato, causa=tecnico|sciopero|meteo|atc|sicurezza; funziona anche nelle pagine en/es/fr/de)
+- Carburante: https://tobia-and-co.pages.dev/carburante/?q=Frascati&carb=benzina (q = indirizzo o comune; carb = benzina|gasolio|gpl|metano)
+- Treno in ritardo: https://tobia-and-co.pages.dev/treno/?prezzo=59,90&ritardo=75&op=freccia (op = freccia|ic|reg|italo|altro)
+- Multa: https://tobia-and-co.pages.dev/multe/?importo=42&notifica=2026-11-03&infrazione=2026-07-20&spese=14,50 (date AAAA-MM-GG; infrazione e spese opzionali)
+
 ## Voli e viaggi
 - [Volo in ritardo o cancellato: quanto ti spetta](https://tobia-and-co.pages.dev/voli/): calcolatore Regolamento UE 261/2004 (250, 400 o 600 € a persona), distanza tra aeroporti, lettera di reclamo. Anche in inglese, spagnolo, francese e tedesco.
 - [Flight delay compensation leaving Italy (English)](https://tobia-and-co.pages.dev/en/flight-delay-compensation/): 168 route pages for travellers departing from Rome, Milan, Venice, Naples, Florence, Pisa, Bologna, Catania to the US, UK and Europe; EU261 applies to any airline departing from Italy.

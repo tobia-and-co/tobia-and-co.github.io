@@ -17,7 +17,7 @@ CAMPI = [("nome", ["denominazione", "nome medicinale", "medicinale", "specialit"
          ("titolare", ["titolare", "ditta", "azienda"]),
          ("inizio", ["data inizio", "inizio", "dal"]),
          ("fine", ["fine presunta", "presunta", "data fine", "fine", "ripresa"]),
-         ("motivo", ["motivazione", "motivo", "causa"]),
+         ("motivo", ["motivazion", "motivo", "causa", "ragion"]),
          ("suggerimenti", ["suggerimenti", "alternativ", "equivalent", "note"])]
 
 def scarica(url):
@@ -40,6 +40,8 @@ def trova_link(html):
             link.append(u)
     link.sort(key=lambda u: (not re.search(r"\.csv", u, re.I), "medicinal" not in u.lower()))   # meglio csv
     return link
+
+COLONNE = []
 
 def norm(s):
     return re.sub(r"\s+", " ", str(s or "")).strip()
@@ -82,6 +84,8 @@ def estrai(righe):
     else:
         raise SystemExit("Non trovo l'intestazione delle colonne nel file AIFA")
     out = []
+    global COLONNE
+    COLONNE = [norm(x) for x in righe[n]]
     for r in righe[n + 1:]:
         if not any(norm(c) for c in r):
             continue
@@ -115,11 +119,11 @@ def main():
         print("Nessun file AIFA scaricato: lascio il vecchio data/carenze.json", file=sys.stderr)
         sys.exit(1)
     u, carenze = ultimo
-    nuovo = {"aggiornato": datetime.date.today().isoformat(), "fonte": u, "pagina": PAGINA, "carenze": carenze}
+    nuovo = {"aggiornato": datetime.date.today().isoformat(), "fonte": u, "pagina": PAGINA, "colonne": COLONNE, "carenze": carenze}
     # non riscrivere se i dati sono uguali (evita commit inutili col solo cambio di data)
     try:
         vecchio = json.loads(USCITA.read_text(encoding="utf-8"))
-        if vecchio.get("carenze") == carenze and vecchio.get("fonte") == u:
+        if vecchio.get("carenze") == carenze and vecchio.get("fonte") == u and vecchio.get("colonne") == COLONNE:
             print("Nessun cambiamento:", len(carenze), "righe"); return
     except Exception:
         pass

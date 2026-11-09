@@ -87,6 +87,18 @@
     window.tobiaConta && tobiaConta('calcoli-multe');
     $('esito').scrollIntoView({ behavior: 'smooth' });
   });
+  // link diretto (per assistenti AI): ?importo=42&notifica=2026-11-03&infrazione=2026-07-20&spese=14,50
+  try {
+    var P = new URLSearchParams(location.search), im = P.get('importo'), no = P.get('notifica'), inf = P.get('infrazione'), sp = P.get('spese');
+    var dataOk = function (v) { return /^\d{4}-\d{2}-\d{2}$/.test(v || ''); };
+    if (im && /^[\d.,]{1,9}$/.test(im) && dataOk(no)) {
+      $('importo').value = im; $('notifica').value = no;
+      if (dataOk(inf)) $('infrazione').value = inf;
+      if (sp && /^[\d.,]{1,9}$/.test(sp)) $('spese').value = sp;
+      var n = 0; (function p() { if (window.tobiaConta) tobiaConta('link-agenti'); else if (n++ < 30) setTimeout(p, 200); })();
+      $('f').requestSubmit();
+    }
+  } catch (e) {}
 })();
 </script>
 <script src="../js/conta.js" defer></script>

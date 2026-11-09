@@ -8,7 +8,8 @@ Le voci più nuove in alto. Ogni sessione lo legge all'inizio e aggiunge 2-3 rig
 - Sera: 168 pagine voli in inglese per turisti (`en/flight-delay-compensation/<partenza>-<arrivo>/`, generate in fondo a `scripts/voli_pagine.py`, elenco in `data/tratte_en.json`). Regola nuova: pubblicazioni raggruppate (Paolo). `scadenze/`: aggiunte carta d'identità (avviso 90 giorni prima) e passaporto (180).
 - Poi: `bonus-sociale/` e `carburante/riquadro/` (iframe, noindex, conta 'riquadro-viste') + `carburante/riquadro-per-siti/` (codice da copiare).
 - Fabio (`fabio-farmacista.yml`, `farmaci/carenti/`), calendari in abbonamento (`calendari/*.ics`, `scripts/calendari.py`, workflow mensile), report mensile carburanti automatico (`scripts/benny_report.py` dentro benny-statistiche; primo report il 1/12).
-- Restano dal piano: registri MCP (serve accesso dell'account del progetto).
+- Turno sera: link diretti per agenti (voli/?da=FCO&a=JFK&ritardo=4, treno/?prezzo=&ritardo=, multe/?importo=&notifica=, carburante/?q=&carb=; documentati in llms.txt e agenti/). Fabio: letta la colonna delle motivazioni e salvati i nomi delle colonne del file AIFA.
+- Restano: registri MCP (serve accesso dell'account del progetto).
 
 ## 7 novembre 2026 · sessione su internet
 - Nuovi: `bagaglio/`, `tasse-aeroportuali/`, 45 pagine `voli/compagnia/<nome>/` + elenco + `voli/sciopero/` (generate da `scripts/compagnie_pagine.py`).

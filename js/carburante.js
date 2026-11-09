@@ -202,6 +202,18 @@
     indice = d;
     mostraData();
     $('comuni').innerHTML = d.comuni.map(c => '<option value="' + testo(c[0]) + ' (' + c[1] + ')">').join('');
+    // link diretto (per assistenti AI): ?q=indirizzo o comune, ?carb=benzina|gasolio|gpl|metano
+    try {
+      const P = new URLSearchParams(location.search), q = (P.get('q') || '').trim().slice(0, 120);
+      const carb = { benzina: 'B', gasolio: 'D', gpl: 'G', metano: 'M' }[(P.get('carb') || '').toLowerCase()];
+      if (carb) $('tipo').value = carb;
+      if (q.length >= 3) {
+        $('comune').value = q;
+        let n = 0; (function p() { if (window.tobiaConta) conta('link-agenti'); else if (n++ < 30) setTimeout(p, 200); })();
+        $('cerca').requestSubmit();
+        return;
+      }
+    } catch (e) {}
     if (app.dataset.comune) {
       const c = d.comuni.find(x => x[0] === app.dataset.comune && x[1] === app.dataset.prov);
       if (c) usaComune(c, false);
