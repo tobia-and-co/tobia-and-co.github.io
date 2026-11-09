@@ -84,7 +84,7 @@ $('f').addEventListener('submit',e=>{
   const nome=$('nome').value.trim()||'la medicina', n=giorni(), anticipo=$('anticipo').value;
   const primo=new Date($('apertura').value);primo.setDate(primo.getDate()+n);
   const fine=new Date(primo);fine.setDate(fine.getDate()+1);
-  const link=scelto?'https://tobia-and-co.github.io/farmaci/'+slug(scelto.g.p)+'/':'https://tobia-and-co.github.io/farmaci/';
+  const link=scelto?'https://tobia-and-co.pages.dev/farmaci/'+slug(scelto.g.p)+'/':'https://tobia-and-co.pages.dev/farmaci/';
   const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Tobia & Co.//Scatola//IT','CALSCALE:GREGORIAN',
     'BEGIN:VEVENT','UID:scatola-'+Date.now()+'@tobia-and-co.github.io',
     'DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z',

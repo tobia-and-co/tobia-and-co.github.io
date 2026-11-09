@@ -2,7 +2,7 @@
 e la pagina sugli scioperi (voli/sciopero/). Usa i testi italiani del calcolatore (data/voli_testi.json)."""
 import html, json, pathlib, re, unicodedata
 
-SITO = "https://tobia-and-co.github.io"
+SITO = "https://tobia-and-co.pages.dev"
 T = json.load(open("data/voli_testi.json", encoding="utf-8"))["it"]
 e = lambda s: html.escape(s, quote=True)
 def slug(s):

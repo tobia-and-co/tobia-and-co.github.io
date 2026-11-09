@@ -4,7 +4,7 @@ quando torna tutto a posto la chiude da solo. Con l'argomento "prova" stampa sol
 import datetime, json, re, subprocess, sys, urllib.request
 
 import os
-SITO = os.environ.get("UGO_SITO", "https://tobia-and-co.github.io/")
+SITO = os.environ.get("UGO_SITO", "https://tobia-and-co.pages.dev/")
 TITOLO = "Ugo: qualcosa non va sul sito"
 PAGINE = ["", "scadenze/", "farmaci/", "farmaci/omeprazolo/", "voli/", "en/flight-delay-compensation/", "scatola/",
           "bolletta/", "mutuo/", "banca/", "cambio/", "bollo/", "assegno-unico/", "carburante/", "carburante/prezzi-medi/", "bagaglio/", "treno/", "affitto-istat/", "voli/compagnia/ryanair/", "voli/sciopero/", "voli/aeroporto/roma-fiumicino/", "tasse-aeroportuali/", "diario/", "sostieni/",

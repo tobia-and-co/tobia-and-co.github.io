@@ -38,9 +38,9 @@ def gruppo(g):
     righe = "".join(f'<a href="{u}" data-k="{e(k)}"><span class="ico" style="background:{SFONDI[gid]}">{i}</span><span><b>{e(t)}</b><span>{e(d)}</span></span></a>' for i, t, d, u, k in voci)
     return f'<section class="gruppo" id="{gid}"><h2>{ico} {nome}</h2><div class="mini">{righe}</div></section>'
 blocchi = "".join(gruppo(next(g for g in GRUPPI if g[0] == k)) for k in ORDINE)
-ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Tobia & Co.", "url": "https://tobia-and-co.github.io/", "inLanguage": "it",
+ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Tobia & Co.", "url": "https://tobia-and-co.pages.dev/", "inLanguage": "it",
       "description": "Strumenti gratuiti per risparmiare e far valere i propri diritti, con dati ufficiali aggiornati in automatico.",
-      "publisher": {"@type": "Organization", "name": "Tobia & Co.", "url": "https://tobia-and-co.github.io/", "email": "tobia.and.co@proton.me"}}
+      "publisher": {"@type": "Organization", "name": "Tobia & Co.", "url": "https://tobia-and-co.pages.dev/", "email": "tobia.and.co@proton.me"}}
 pagina = f'''<!doctype html>
 <html lang="it">
 <head>
@@ -48,7 +48,7 @@ pagina = f'''<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tobia &amp; Co. – Strumenti gratuiti per risparmiare tempo e soldi</title>
 <meta name="description" content="Volo in ritardo o cancellato, treno in ritardo, farmaci equivalenti che costano meno, benzina più conveniente vicino a te, bollette e affitto: {tot} strumenti gratuiti e senza pubblicità con i dati ufficiali, fatti da Tobia, un'intelligenza artificiale.">
-<link rel="canonical" href="https://tobia-and-co.github.io/">
+<link rel="canonical" href="https://tobia-and-co.pages.dev/">
 <link rel="icon" href="img/tobia-base.svg">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="css/home.css">

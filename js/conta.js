@@ -1,6 +1,8 @@
 // Contatore di Tobia & Co.: conta solo numeri (visite per sezione e azioni importanti),
 // senza cookie e senza dati personali (servizio gratuito Abacus, nessun account).
 (function () {
+  // il sito si è spostato su Cloudflare: chi arriva dal vecchio indirizzo va alla stessa pagina sul nuovo
+  if (location.hostname === 'tobia-and-co.github.io') { location.replace('https://tobia-and-co.pages.dev' + location.pathname + location.search + location.hash); return; }
   var base = 'https://abacus.jasoncameron.dev/hit/tobiaandco/';
   var locale = /localhost|127\.0\.0\.1/.test(location.hostname);
   // le visite del proprietario non si contano: basta aprire una volta una pagina con ?io=1 (si annulla con ?io=0)

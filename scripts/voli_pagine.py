@@ -1,7 +1,7 @@
 """Crea le pagine del calcolatore voli nelle 5 lingue da data/voli_testi.json."""
 import html, json, pathlib
 
-SITO = "https://tobia-and-co.github.io"
+SITO = "https://tobia-and-co.pages.dev"
 TESTI = json.load(open("data/voli_testi.json", encoding="utf-8"))
 NOMI = {"it": "Italiano", "en": "English", "es": "Español", "fr": "Français", "de": "Deutsch"}
 e = lambda s: html.escape(s, quote=True)

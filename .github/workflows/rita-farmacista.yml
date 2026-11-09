@@ -34,8 +34,8 @@ jobs:
           import json, sys, urllib.request
           key = sys.argv[1]
           urls = [u for u in open("data/indirizzi.txt").read().split() if u][:10000]
-          body = json.dumps({"host": "tobia-and-co.github.io", "key": key,
-                             "keyLocation": f"https://tobia-and-co.github.io/{key}.txt", "urlList": urls}).encode()
+          body = json.dumps({"host": "tobia-and-co.pages.dev", "key": key,
+                             "keyLocation": f"https://tobia-and-co.pages.dev/{key}.txt", "urlList": urls}).encode()
           req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
                                        headers={"Content-Type": "application/json; charset=utf-8"})
           try:

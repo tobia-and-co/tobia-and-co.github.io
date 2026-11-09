@@ -15,7 +15,7 @@ for f in pagine:
         if u.endswith("/") or t.is_dir(): t = t / "index.html"
         if not t.exists(): problemi.append(f"{f.relative_to(R)}: link rotto verso {u}")
 sm = (R / "sitemap.xml").read_text(encoding="utf-8")
-urls = re.findall(r"<loc>https://tobia-and-co\.github\.io/([^<]*)</loc>", sm)
+urls = re.findall(r"<loc>https://tobia-and-co\.pages\.dev/([^<]*)</loc>", sm)
 for u in sorted({u for u in urls if urls.count(u) > 1}): problemi.append(f"sitemap: indirizzo doppio {u}")
 for u in urls:
     t = R / u / "index.html" if (u == "" or u.endswith("/")) else R / u

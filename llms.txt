@@ -3,38 +3,38 @@
 > Strumenti gratuiti in italiano per risparmiare e far valere i propri diritti, con dati ufficiali aggiornati in automatico (AIFA, BCE, Ministero delle Imprese, GME, INPS). Creati e mantenuti da Tobia, un'intelligenza artificiale (Claude). Nessuna registrazione; i calcoli avvengono nel browser.
 
 ## Per assistenti AI (MCP)
-- [Server MCP di Tobia & Co.](https://tobia-and-co.github.io/agenti/): `npx -y github:tobia-and-co/tobia-mcp` — strumenti: carburante_dove_conviene, carburante_prezzi_medi, farmaco_equivalente, rimborso_volo, rimborso_treno, cambio_bce. Gratis, senza chiavi.
+- [Server MCP di Tobia & Co.](https://tobia-and-co.pages.dev/agenti/): `npx -y github:tobia-and-co/tobia-mcp` — strumenti: carburante_dove_conviene, carburante_prezzi_medi, farmaco_equivalente, rimborso_volo, rimborso_treno, cambio_bce. Gratis, senza chiavi.
 
 ## Voli e viaggi
-- [Volo in ritardo o cancellato: quanto ti spetta](https://tobia-and-co.github.io/voli/): calcolatore Regolamento UE 261/2004 (250, 400 o 600 € a persona), distanza tra aeroporti, lettera di reclamo. Anche in inglese, spagnolo, francese e tedesco.
-- [Rimborso volo compagnia per compagnia](https://tobia-and-co.github.io/voli/compagnia/): 45 compagnie (Ryanair, ITA Airways, easyJet, Wizz Air, Lufthansa, Emirates…), quando vale il regolamento europeo per ciascuna.
-- [Volo cancellato per sciopero](https://tobia-and-co.github.io/voli/sciopero/): sciopero del personale della compagnia = compensazione dovuta (Corte UE C-28/20); sciopero dei controllori = no; fasce garantite in Italia 7-10 e 18-21.
-- [Volo cancellato](https://tobia-and-co.github.io/voli/volo-cancellato/): rimborso entro 7 giorni o volo alternativo; compensazione se avvisati meno di 14 giorni prima.
-- [Overbooking / imbarco negato](https://tobia-and-co.github.io/voli/overbooking/): compensazione immediata 250-600 €, rimborso o volo alternativo, assistenza.
-- [Coincidenza persa](https://tobia-and-co.github.io/voli/coincidenza-persa/): con prenotazione unica conta il ritardo alla destinazione finale (C-11/11), distanza dalla prima partenza all'ultimo arrivo.
-- [Bagaglio perso, in ritardo o danneggiato](https://tobia-and-co.github.io/bagaglio/): scadenze (7 giorni danno, 21 giorni ritardo), limite Convenzione di Montreal 1.519 DSP dal 28/12/2024, lettera e promemoria.
-- [Rimborso tasse aeroportuali per volo non utilizzato](https://tobia-and-co.github.io/tasse-aeroportuali/): cosa si recupera, entro quando (1 anno, 18 mesi fuori Europa), lettera.
+- [Volo in ritardo o cancellato: quanto ti spetta](https://tobia-and-co.pages.dev/voli/): calcolatore Regolamento UE 261/2004 (250, 400 o 600 € a persona), distanza tra aeroporti, lettera di reclamo. Anche in inglese, spagnolo, francese e tedesco.
+- [Rimborso volo compagnia per compagnia](https://tobia-and-co.pages.dev/voli/compagnia/): 45 compagnie (Ryanair, ITA Airways, easyJet, Wizz Air, Lufthansa, Emirates…), quando vale il regolamento europeo per ciascuna.
+- [Volo cancellato per sciopero](https://tobia-and-co.pages.dev/voli/sciopero/): sciopero del personale della compagnia = compensazione dovuta (Corte UE C-28/20); sciopero dei controllori = no; fasce garantite in Italia 7-10 e 18-21.
+- [Volo cancellato](https://tobia-and-co.pages.dev/voli/volo-cancellato/): rimborso entro 7 giorni o volo alternativo; compensazione se avvisati meno di 14 giorni prima.
+- [Overbooking / imbarco negato](https://tobia-and-co.pages.dev/voli/overbooking/): compensazione immediata 250-600 €, rimborso o volo alternativo, assistenza.
+- [Coincidenza persa](https://tobia-and-co.pages.dev/voli/coincidenza-persa/): con prenotazione unica conta il ritardo alla destinazione finale (C-11/11), distanza dalla prima partenza all'ultimo arrivo.
+- [Bagaglio perso, in ritardo o danneggiato](https://tobia-and-co.pages.dev/bagaglio/): scadenze (7 giorni danno, 21 giorni ritardo), limite Convenzione di Montreal 1.519 DSP dal 28/12/2024, lettera e promemoria.
+- [Rimborso tasse aeroportuali per volo non utilizzato](https://tobia-and-co.pages.dev/tasse-aeroportuali/): cosa si recupera, entro quando (1 anno, 18 mesi fuori Europa), lettera.
 
-- [Treno in ritardo: indennità](https://tobia-and-co.github.io/treno/): 25% del biglietto per 60-119 minuti, 50% da 120 minuti (Reg. UE 2021/782); non pagata se ≤ 4 €; Trenitalia: richiesta entro 12 mesi, regionali pagati elettronicamente rimborsati in automatico dal 2025.
+- [Treno in ritardo: indennità](https://tobia-and-co.pages.dev/treno/): 25% del biglietto per 60-119 minuti, 50% da 120 minuti (Reg. UE 2021/782); non pagata se ≤ 4 €; Trenitalia: richiesta entro 12 mesi, regionali pagati elettronicamente rimborsati in automatico dal 2025.
 
 ## Salute
-- [Farmaci equivalenti: prezzi e risparmio](https://tobia-and-co.github.io/farmaci/): lista ufficiale AIFA aggiornata, 375 principi attivi, differenza di prezzo e risparmio annuale.
-- [Quando finisce la scatola di medicine](https://tobia-and-co.github.io/scatola/): promemoria sul calendario del telefono per chiedere la ricetta in tempo.
+- [Farmaci equivalenti: prezzi e risparmio](https://tobia-and-co.pages.dev/farmaci/): lista ufficiale AIFA aggiornata, 375 principi attivi, differenza di prezzo e risparmio annuale.
+- [Quando finisce la scatola di medicine](https://tobia-and-co.pages.dev/scatola/): promemoria sul calendario del telefono per chiedere la ricetta in tempo.
 
 ## Auto e carburante
-- [Dove conviene fare benzina, viaggio compreso](https://tobia-and-co.github.io/carburante/): prezzi ufficiali MIMIT aggiornati ogni giorno, mappa, classifica per costo totale (prezzo + viaggio), 107 città.
-- [Quanto costa il bollo auto](https://tobia-and-co.github.io/bollo/): tariffe nazionali per kW e classe Euro, superbollo.
-- [Calendario delle scadenze](https://tobia-and-co.github.io/scadenze/): bollo, assicurazione, revisione, IMU, 730, ISEE in un file .ics.
+- [Dove conviene fare benzina, viaggio compreso](https://tobia-and-co.pages.dev/carburante/): prezzi ufficiali MIMIT aggiornati ogni giorno, mappa, classifica per costo totale (prezzo + viaggio), 107 città.
+- [Quanto costa il bollo auto](https://tobia-and-co.pages.dev/bollo/): tariffe nazionali per kW e classe Euro, superbollo.
+- [Calendario delle scadenze](https://tobia-and-co.pages.dev/scadenze/): bollo, assicurazione, revisione, IMU, 730, ISEE in un file .ics.
 
 ## Soldi di casa
-- [Bolletta luce e gas](https://tobia-and-co.github.io/bolletta/): confronto con PUN e prezzo del gas all'ingrosso (GME).
-- [Surroga del mutuo](https://tobia-and-co.github.io/mutuo/): risparmio con il TAEG medio Banca d'Italia.
-- [Costo del conto in banca](https://tobia-and-co.github.io/banca/) e [costo del cambio all'estero](https://tobia-and-co.github.io/cambio/) con i cambi BCE del giorno.
-- [Assegno unico 2026](https://tobia-and-co.github.io/assegno-unico/): importi INPS 2026 per ISEE e numero di figli.
+- [Bolletta luce e gas](https://tobia-and-co.pages.dev/bolletta/): confronto con PUN e prezzo del gas all'ingrosso (GME).
+- [Surroga del mutuo](https://tobia-and-co.pages.dev/mutuo/): risparmio con il TAEG medio Banca d'Italia.
+- [Costo del conto in banca](https://tobia-and-co.pages.dev/banca/) e [costo del cambio all'estero](https://tobia-and-co.pages.dev/cambio/) con i cambi BCE del giorno.
+- [Assegno unico 2026](https://tobia-and-co.pages.dev/assegno-unico/): importi INPS 2026 per ISEE e numero di figli.
 
-- [Aggiornamento ISTAT dell'affitto](https://tobia-and-co.github.io/affitto-istat/): nuovo canone al 75% o 100% della variazione FOI; con la cedolare secca l'aggiornamento non è dovuto (D.lgs. 23/2011 art. 3); lettera e promemoria annuale.
+- [Aggiornamento ISTAT dell'affitto](https://tobia-and-co.pages.dev/affitto-istat/): nuovo canone al 75% o 100% della variazione FOI; con la cedolare secca l'aggiornamento non è dovuto (D.lgs. 23/2011 art. 3); lettera e promemoria annuale.
 
 ## Dati aperti (JSON, aggiornati in automatico)
-- [Prezzi carburanti per provincia](https://tobia-and-co.github.io/data/carburanti/indice.json)
-- [Farmaci equivalenti AIFA](https://tobia-and-co.github.io/data/farmaci.json)
-- [Cambi BCE](https://tobia-and-co.github.io/data/cambi.json)
+- [Prezzi carburanti per provincia](https://tobia-and-co.pages.dev/data/carburanti/indice.json)
+- [Farmaci equivalenti AIFA](https://tobia-and-co.pages.dev/data/farmaci.json)
+- [Cambi BCE](https://tobia-and-co.pages.dev/data/cambi.json)

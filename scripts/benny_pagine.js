@@ -3,7 +3,7 @@
 // data/carburanti/, così restano aggiornati senza rifarle. Da rilanciare solo se cambia questo modello.
 const fs = require('fs'), path = require('path');
 const radice = path.resolve(__dirname, '..');
-const SITO = 'https://tobia-and-co.github.io', OUT = path.join(radice, 'carburante');
+const SITO = 'https://tobia-and-co.pages.dev', OUT = path.join(radice, 'carburante');
 const slug = s => s.normalize('NFKD').replace(/[^\x00-\x7f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 

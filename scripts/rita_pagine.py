@@ -2,7 +2,7 @@
 (farmaci/<nome>/index.html), la sitemap.xml e la lista degli indirizzi per IndexNow."""
 import json, re, html, pathlib, shutil, unicodedata, datetime
 
-SITO = "https://tobia-and-co.github.io"
+SITO = "https://tobia-and-co.pages.dev"
 d = json.load(open("data/farmaci.json", encoding="utf-8"))
 oggi = datetime.date.today().isoformat()
 

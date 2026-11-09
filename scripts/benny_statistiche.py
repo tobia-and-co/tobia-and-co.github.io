@@ -68,9 +68,9 @@ riassunto = (f"Il {quando} la benzina self costa in media {num(b)} €/l in Ital
              f"La benzina è più economica in {ob[0]} ({num(oggi['regioni'][ob[0]]['B'])} €/l) e più cara in {ob[-1]} ({num(oggi['regioni'][ob[-1]]['B'])} €/l).")
 ld = {"@context": "https://schema.org", "@type": "Dataset", "name": "Prezzi medi dei carburanti in Italia per regione",
       "description": "Media giornaliera dei prezzi self service di benzina e gasolio (e di GPL e metano) per regione, calcolata dai prezzi comunicati dai distributori al Ministero delle Imprese e del Made in Italy.",
-      "url": "https://tobia-and-co.github.io/carburante/prezzi-medi/", "dateModified": data, "inLanguage": "it", "isAccessibleForFree": True,
-      "creator": {"@type": "Organization", "name": "Tobia & Co.", "url": "https://tobia-and-co.github.io/"},
-      "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://tobia-and-co.github.io/data/carburanti/storico.json"}]}
+      "url": "https://tobia-and-co.pages.dev/carburante/prezzi-medi/", "dateModified": data, "inLanguage": "it", "isAccessibleForFree": True,
+      "creator": {"@type": "Organization", "name": "Tobia & Co.", "url": "https://tobia-and-co.pages.dev/"},
+      "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://tobia-and-co.pages.dev/data/carburanti/storico.json"}]}
 pagina = f"""<!doctype html>
 <html lang="it">
 <head>
@@ -78,7 +78,7 @@ pagina = f"""<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prezzo medio benzina e gasolio oggi, regione per regione ({quando}) | Tobia &amp; Co.</title>
 <meta name="description" content="{e(riassunto)} Aggiornato ogni giorno con i dati ufficiali del Ministero.">
-<link rel="canonical" href="https://tobia-and-co.github.io/carburante/prezzi-medi/">
+<link rel="canonical" href="https://tobia-and-co.pages.dev/carburante/prezzi-medi/">
 <link rel="icon" href="../../img/tobia-base.svg">
 <link rel="stylesheet" href="../../style.css">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
