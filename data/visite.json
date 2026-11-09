@@ -1,8 +1,8 @@
 {
   "controllato": "2026-11-09",
   "visite": {
-    "totale": 105,
-    "home": 57,
+    "totale": 106,
+    "home": 58,
     "scadenze": 2,
     "farmaci": 1,
     "farmaci-pagine": 4,
@@ -70,6 +70,7 @@
     "agenti": null,
     "squadra": null,
     "ricerca-home": null,
+    "link-agenti": null,
     "bonus-sociale": null,
     "calcoli-bonus-sociale": null,
     "riquadro-viste": null,
