@@ -83,7 +83,7 @@
     var ymd = function (d) { return d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()); };
     var righe = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Tobia & Co.//Bagaglio//IT'];
     eventi.forEach(function (e, i) {
-      righe.push('BEGIN:VEVENT', 'UID:bagaglio-' + ymd(e.d) + '-' + i + '@tobia-and-co.github.io', 'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z',
+      righe.push('BEGIN:VEVENT', 'UID:bagaglio-' + ymd(e.d) + '-' + i + '@tobia-and-co.pages.dev', 'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z',
         'DTSTART;VALUE=DATE:' + ymd(e.d), 'DTEND;VALUE=DATE:' + ymd(piu(e.d, 1)), 'SUMMARY:' + e.t, 'DESCRIPTION:' + e.t + ' (promemoria di Tobia & Co.)',
         'BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:' + e.t, 'TRIGGER:-P2D', 'END:VALARM', 'END:VEVENT');
     });

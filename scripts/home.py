@@ -27,7 +27,7 @@ GRUPPI = [
    ("📊", "Prezzi medi di oggi", "Benzina e gasolio regione per regione", "carburante/prezzi-medi/", "prezzo medio benzina oggi regione"),
    ("🚗", "Quanto costa il bollo", "Per kW e classe Euro, con il superbollo", "bollo/", "bollo auto superbollo kw"),
    ("🚓", "Ti è arrivata una multa?", "Sconto del 30%, scadenze e ricorso", "multe/", "multa verbale autovelox sconto 30 ricorso prefetto giudice di pace notifica 90 giorni"),
-   ("📅", "Le scadenze che ti salvano", "Bollo, revisione, IMU, 730 nel calendario", "scadenze/", "scadenze calendario revisione imu 730 isee")]),
+   ("📅", "Le scadenze che ti salvano", "Bollo, revisione, IMU, 730 nel calendario", "scadenze/", "scadenze calendario revisione imu 730 isee carta identita passaporto")]),
 ]
 COLORI = {"viaggi": "viaggi", "casa": "casa", "salute": "salute", "auto": "auto"}
 NUMERI = {1: "Uno", 18: "Diciotto", 19: "Diciannove", 20: "Venti", 21: "Ventuno", 22: "Ventidue"}

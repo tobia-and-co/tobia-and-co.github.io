@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Le scadenze che ti salvano – promemoria bollo, assicurazione, revisione, IMU, 730 | Tobia & Co.</title>
-<meta name="description" content="Crea gratis il tuo calendario delle scadenze: bollo auto, assicurazione, revisione, patente, IMU, 730, ISEE, cambio gomme. Lo aggiungi al telefono e ti avvisa da solo qualche giorno prima.">
+<meta name="description" content="Crea gratis il tuo calendario delle scadenze: bollo auto, assicurazione, revisione, patente, carta d'identità, passaporto, IMU, 730, ISEE, cambio gomme. Lo aggiungi al telefono e ti avvisa da solo qualche giorno prima.">
 <link rel="icon" href="../img/tobia-base.svg">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -29,6 +29,11 @@
     <label class="check"><input type="checkbox" id="gomme" checked> Cambio gomme invernali ed estive (15 ottobre e 15 aprile)</label>
 
     <h2>🏛️ Tasse e documenti</h2>
+    <label for="cie">Data di scadenza della carta d'identità</label>
+    <input type="date" id="cie">
+    <label for="pass">Data di scadenza del passaporto</label>
+    <input type="date" id="pass">
+    <p class="note">La carta d'identità scade il giorno del tuo compleanno. Ti avviso 3 mesi prima: in molti Comuni l'appuntamento per la carta elettronica richiede settimane, e per molti Paesi il passaporto deve valere ancora 6 mesi dopo il viaggio.</p>
     <label class="check"><input type="checkbox" id="imu" checked> IMU: acconto (16 giugno) e saldo (16 dicembre)</label>
     <label class="check"><input type="checkbox" id="730" checked> Dichiarazione dei redditi 730: invio entro il 30 settembre</label>
     <label class="check"><input type="checkbox" id="isee" checked> ISEE: rinnovo a gennaio (e per l'Assegno unico entro fine febbraio) · <a href="../assegno-unico/">quanto ti spetta?</a></label>
@@ -74,10 +79,10 @@ function prossima(mese,giorno){
 function evento(data,titolo,descr,rrule,giorni){
   const fine=new Date(data);fine.setDate(fine.getDate()+1);
   return ['BEGIN:VEVENT',
-    'UID:'+ymd(data)+'-'+Math.random().toString(36).slice(2)+'@tobia-and-co.github.io',
+    'UID:'+ymd(data)+'-'+Math.random().toString(36).slice(2)+'@tobia-and-co.pages.dev',
     'DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z',
     'DTSTART;VALUE=DATE:'+ymd(data),'DTEND;VALUE=DATE:'+ymd(fine),
-    'SUMMARY:'+esc(titolo),'DESCRIPTION:'+esc(descr+' — Promemoria di Tobia & Co. (tobia-and-co.github.io)'),
+    'SUMMARY:'+esc(titolo),'DESCRIPTION:'+esc(descr+' — Promemoria di Tobia & Co. (tobia-and-co.pages.dev)'),
     rrule?'RRULE:'+rrule:null,
     'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+esc(titolo),'TRIGGER:-P'+giorni+'D','END:VALARM',
     'END:VEVENT'].filter(Boolean).join('\r\n');
@@ -99,6 +104,14 @@ function scarica(){
   if(v('pat').value){
     const [a,m,d]=v('pat').value.split('-').map(Number);
     ev.push(evento(new Date(a,m-1,d),'🪪 Scade la patente','Per il rinnovo serve la visita medica: prenotala per tempo.',null,60));
+  }
+  if(v('cie').value){
+    const [a,m,d]=v('cie').value.split('-').map(Number);
+    ev.push(evento(new Date(a,m-1,d),'🪪 Scade la carta d\'identità','Prenota per tempo l\'appuntamento in Comune per la carta d\'identità elettronica (servono una foto e la vecchia carta).',null,90));
+  }
+  if(v('pass').value){
+    const [a,m,d]=v('pass').value.split('-').map(Number);
+    ev.push(evento(new Date(a,m-1,d),'🛂 Scade il passaporto','Prenota il rinnovo sull\'Agenda passaporti della Polizia. Molti Paesi chiedono un passaporto valido ancora 6 mesi dopo il viaggio.',null,180));
   }
   if(v('gomme').checked){
     ev.push(evento(prossima(10,15),'❄️ Gomme invernali','Da oggi puoi montare le gomme invernali (dove c\'è l\'obbligo, servono dal 15 novembre).','FREQ=YEARLY',g));

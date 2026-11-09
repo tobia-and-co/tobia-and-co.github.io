@@ -62,9 +62,9 @@
     var x = new Date(oggi.getFullYear(), d.getMonth(), d.getDate()); if (x < oggi) x.setFullYear(x.getFullYear() + 1);
     var ymd = function (z) { return z.getFullYear() + pad(z.getMonth() + 1) + pad(z.getDate()); };
     var fine = new Date(x); fine.setDate(fine.getDate() + 1);
-    var ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Tobia & Co.//Affitto ISTAT//IT', 'BEGIN:VEVENT', 'UID:affitto-istat-' + ymd(x) + '@tobia-and-co.github.io',
+    var ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Tobia & Co.//Affitto ISTAT//IT', 'BEGIN:VEVENT', 'UID:affitto-istat-' + ymd(x) + '@tobia-and-co.pages.dev',
       'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z', 'DTSTART;VALUE=DATE:' + ymd(x), 'DTEND;VALUE=DATE:' + ymd(fine), 'RRULE:FREQ=YEARLY',
-      'SUMMARY:🏠 Aggiornamento ISTAT dell\'affitto', 'DESCRIPTION:Anniversario del contratto: calcola l\'aggiornamento su tobia-and-co.github.io/affitto-istat/',
+      'SUMMARY:🏠 Aggiornamento ISTAT dell\'affitto', 'DESCRIPTION:Anniversario del contratto: calcola l\'aggiornamento su tobia-and-co.pages.dev/affitto-istat/',
       'BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:Aggiornamento ISTAT dell\'affitto', 'TRIGGER:-P15D', 'END:VALARM', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
     var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' })); a.download = 'aggiornamento-istat.ics'; a.click();
     window.tobiaConta && tobiaConta('promemoria-affitto');

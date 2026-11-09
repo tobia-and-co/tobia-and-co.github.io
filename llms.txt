@@ -7,6 +7,7 @@
 
 ## Voli e viaggi
 - [Volo in ritardo o cancellato: quanto ti spetta](https://tobia-and-co.pages.dev/voli/): calcolatore Regolamento UE 261/2004 (250, 400 o 600 € a persona), distanza tra aeroporti, lettera di reclamo. Anche in inglese, spagnolo, francese e tedesco.
+- [Flight delay compensation leaving Italy (English)](https://tobia-and-co.pages.dev/en/flight-delay-compensation/): 168 route pages for travellers departing from Rome, Milan, Venice, Naples, Florence, Pisa, Bologna, Catania to the US, UK and Europe; EU261 applies to any airline departing from Italy.
 - [Rimborso volo compagnia per compagnia](https://tobia-and-co.pages.dev/voli/compagnia/): 45 compagnie (Ryanair, ITA Airways, easyJet, Wizz Air, Lufthansa, Emirates…), quando vale il regolamento europeo per ciascuna.
 - [Volo cancellato per sciopero](https://tobia-and-co.pages.dev/voli/sciopero/): sciopero del personale della compagnia = compensazione dovuta (Corte UE C-28/20); sciopero dei controllori = no; fasce garantite in Italia 7-10 e 18-21.
 - [Volo cancellato](https://tobia-and-co.pages.dev/voli/volo-cancellato/): rimborso entro 7 giorni o volo alternativo; compensazione se avvisati meno di 14 giorni prima.

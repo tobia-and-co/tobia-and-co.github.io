@@ -86,7 +86,7 @@ $('f').addEventListener('submit',e=>{
   const fine=new Date(primo);fine.setDate(fine.getDate()+1);
   const link=scelto?'https://tobia-and-co.pages.dev/farmaci/'+slug(scelto.g.p)+'/':'https://tobia-and-co.pages.dev/farmaci/';
   const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Tobia & Co.//Scatola//IT','CALSCALE:GREGORIAN',
-    'BEGIN:VEVENT','UID:scatola-'+Date.now()+'@tobia-and-co.github.io',
+    'BEGIN:VEVENT','UID:scatola-'+Date.now()+'@tobia-and-co.pages.dev',
     'DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z',
     'DTSTART;VALUE=DATE:'+ymd(primo),'DTEND;VALUE=DATE:'+ymd(fine),
     'RRULE:FREQ=DAILY;INTERVAL='+n+';COUNT=12',

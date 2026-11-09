@@ -55,6 +55,12 @@ const PROVE = {
     if (!/600 €/.test(t)) problemi.push('voli/roma-new-york/: il calcolo non dà 600 €');
     if (!(await p.$('#affiliato'))) problemi.push('voli/: manca il pulsante AirHelp dopo il calcolo');
     await p.close(); }
+  // pagina in inglese per i turisti
+  { const p = await ctx.newPage(); await p.goto(B + 'en/flight-delay-compensation/rome-new-york/'); await p.waitForTimeout(1200);
+    await p.$eval('#modulo', f => f.requestSubmit()); await p.waitForTimeout(700);
+    if (!/600 €/.test(await p.$eval('#esito', e => e.innerText).catch(() => ''))) problemi.push('en/.../rome-new-york/: il calcolo non dà 600 €');
+    if (!(await p.$('#affiliato'))) problemi.push('en/: manca il pulsante AirHelp dopo il calcolo');
+    await p.close(); }
   // ricerca dei farmaci
   { const p = await ctx.newPage(); await p.goto(B + 'farmaci/'); await p.waitForTimeout(1500);
     await p.fill('input', 'eutirox'); await p.waitForTimeout(1200);
@@ -75,7 +81,7 @@ const PROVE = {
     if (!v.some(x => /Sciopero/.test(x))) problemi.push('home: la ricerca di "sciopero" non trova lo strumento');
     await p.close(); }
   await browser.close(); server.close();
-  console.log(`Vera (prove degli strumenti): ${Object.keys(PROVE).length + 5} prove. Problemi: ${problemi.length}`);
+  console.log(`Vera (prove degli strumenti): ${Object.keys(PROVE).length + 6} prove. Problemi: ${problemi.length}`);
   problemi.forEach(x => console.log(' - ' + x));
   process.exit(problemi.length ? 1 : 0);
 })();

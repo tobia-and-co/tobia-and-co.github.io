@@ -158,3 +158,83 @@ t = t.replace('<p class="note">📚', '<div class="card"><b>🛫 Cerchi la tua c
 t = t.replace('<p class="note">📚', f'<details class="card"><summary><b>🛫 Le tratte più cercate dall\'Italia</b></summary><ul>{voci}</ul></details>\n  <p class="note">📚', 1)
 pag.write_text(t, encoding="utf-8")
 print(len(elenco), "pagine di tratte")
+
+# ---- Pagine in inglese per i turisti che ripartono dall'Italia (9/11/2026) ----
+# Chi parte da un aeroporto italiano è protetto dal Regolamento 261/2004 con QUALSIASI compagnia.
+TE = TESTI["en"]
+PART_EN = {"FCO": "Rome", "MXP": "Milan", "VCE": "Venice", "NAP": "Naples", "FLR": "Florence", "PSA": "Pisa", "BLQ": "Bologna", "CTA": "Catania"}
+DEST_EN = {"JFK": "New York", "EWR": "Newark", "BOS": "Boston", "ORD": "Chicago", "MIA": "Miami", "LAX": "Los Angeles", "YYZ": "Toronto",
+           "LHR": "London", "DUB": "Dublin", "CDG": "Paris", "AMS": "Amsterdam", "FRA": "Frankfurt", "MUC": "Munich", "BER": "Berlin",
+           "MAD": "Madrid", "BCN": "Barcelona", "ZRH": "Zurich", "VIE": "Vienna", "CPH": "Copenhagen", "DXB": "Dubai", "IST": "Istanbul"}
+elenco_en = []
+for da in PART_EN:
+    for a in DEST_EN:
+        if da not in AER or a not in AER: continue
+        d = km(AER[da], AER[a]); intra = AER[a][3] in UE_PAESI
+        importo = 250 if d <= 1500 else (400 if d <= 3500 or intra else 600)
+        nda, na = PART_EN[da], DEST_EN[a]
+        perc = f"en/flight-delay-compensation/{slug(nda)}-{slug(na)}/"
+        dkm = f"{d:,}"
+        titolo = f"{nda} to {na} flight delayed or cancelled? Claim up to €{importo}"
+        descr = (f"Your flight from {nda} ({da}) to {na} ({a}) is about {dkm} km: if it arrived 3+ hours late, was cancelled or you were denied boarding, "
+                 f"EU Regulation 261/2004 entitles you to up to €{importo} per person, with any airline, because it departs from Italy. Check your case in 30 seconds.")
+        extra = "On flights over 3,500 km, if the arrival delay is between 3 and 4 hours the amount is halved (€300)." if importo == 600 else ""
+        pagina = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{e(titolo)} | Tobia & Co.</title>
+<meta name="description" content="{e(descr)}">
+<link rel="canonical" href="{SITO}/{perc}">
+<link rel="icon" href="../../../img/tobia-base.svg">
+<link rel="stylesheet" href="../../../style.css">
+<script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+ {"@type": "Question", "name": f"How much compensation for a delayed flight from {nda} to {na}?", "acceptedAnswer": {"@type": "Answer", "text": f"The flight is about {dkm} km, so under EU Regulation 261/2004 you can claim up to €{importo} per person if you arrived more than 3 hours late, unless the delay was caused by extraordinary circumstances such as bad weather or air traffic control strikes."}},
+ {"@type": "Question", "name": "Does EU261 apply to non-European airlines leaving Italy?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every flight departing from an airport in the European Union, including Italy, is covered whatever the airline. Flights to the EU are covered only if the airline is European."}},
+ {"@type": "Question", "name": "How long do I have to claim?", "acceptedAnswer": {"@type": "Answer", "text": "For flights departing from Italy, claims are generally possible within 2 years under Italian law; in other countries the deadline can be longer. Claim as soon as possible and keep your boarding pass."}}]}, ensure_ascii=False)}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../../../img/tobia-base.svg" alt=""><a href="../../../">Tobia &amp; Co.</a><nav class="menu"><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ko-fi</a></nav></header>
+  <nav class="briciole"><a href="../">✈️ Flight delay compensation</a> › {e(nda)} – {e(na)}</nav>
+  <span class="occhiello">EU Regulation 261/2004</span>
+  <h1>✈️ {e(nda)} to {e(na)} flight delayed?</h1>
+  <p class="lead">{e(descr)}</p>
+  <div class="card"><div class="riassunto">
+    <div><span class="sub">Distance</span><b>{dkm} km</b></div>
+    <div><span class="sub">You may get up to</span><b class="zero">€{importo}</b></div>
+    <div><span class="sub">Minimum delay</span><b>3 hours</b></div>
+  </div>{f'<p class="note">{e(extra)}</p>' if extra else ''}<p class="note">Applies to every flight departing from Italy, with any airline (Delta, United, American, Emirates, Ryanair, ITA Airways…). Not for delays caused by bad weather or air traffic control strikes.</p></div>
+  <h2>Check your case</h2>
+  <form class="card" id="modulo" autocomplete="off">
+    <label for="da">{e(TE['da'])}</label><input id="da" placeholder="{e(TE['segnaposto'])}"><div id="da-lista" class="lista"></div>
+    <label for="a">{e(TE['a'])}</label><input id="a" placeholder="{e(TE['segnaposto'])}"><div id="a-lista" class="lista"></div>
+    <label class="check"><input type="checkbox" id="ue" checked> {e(TE['ue'])}</label>
+    <label for="evento">{e(TE['evento'])}</label>
+    <select id="evento"><option value="ritardo">{e(TE['e_ritardo'])}</option><option value="cancellato">{e(TE['e_cancellato'])}</option><option value="negato">{e(TE['e_negato'])}</option></select>
+    <div id="box-ritardo"><label for="ritardo">{e(TE['ritardo'])}</label><select id="ritardo"><option value="4">{e(TE['r_4'])}</option><option value="3">{e(TE['r_3'])}</option><option value="2">{e(TE['r_2'])}</option><option value="0">{e(TE['r_0'])}</option></select></div>
+    <div id="box-avviso" hidden><label for="avviso">{e(TE['avviso'])}</label><select id="avviso"><option value="0">{e(TE['a_0'])}</option><option value="7">{e(TE['a_7'])}</option><option value="14">{e(TE['a_14'])}</option></select></div>
+    <label for="causa">{e(TE['causa'])}</label>
+    <select id="causa"><option value="tecnico">{e(TE['c_tecnico'])}</option><option value="sciopero">{e(TE['c_sciopero'])}</option><option value="meteo">{e(TE['c_meteo'])}</option><option value="atc">{e(TE['c_atc'])}</option><option value="sicurezza">{e(TE['c_sicurezza'])}</option></select>
+    <p style="margin-top:20px"><button type="submit">✈️ {e(TE['calcola'])}</button></p>
+  </form>
+  <div id="esito"></div>
+  <p class="note">📚 <a href="{TE['fonte_url']}" rel="noopener">{e(TE['fonte'])}</a> · <a href="../">Other routes ›</a></p>
+  <footer><a href="../">← Flight delay compensation</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ko-fi</a> · {e(TE['avvertenza'])}</footer>
+</div>
+<script>window.T={json.dumps(TE, ensure_ascii=False)};window.BASE="../../../";window.PREFILL={json.dumps([da, a])};</script>
+<script src="../../../js/voli.js" defer></script>
+<script src="../../../js/conta.js" defer></script>
+</body>
+</html>
+"""
+        pathlib.Path(perc).mkdir(parents=True, exist_ok=True)
+        (pathlib.Path(perc) / "index.html").write_text(pagina, encoding="utf-8")
+        elenco_en.append((nda, na, perc, importo))
+json.dump([p for _, _, p, _ in elenco_en], open("data/tratte_en.json", "w"))
+voci = "".join(f'<li><a href="{p.replace("en/flight-delay-compensation/", "")}">{e(x)} – {e(y)}</a> <span class="note">up to €{i}</span></li>' for x, y, p, i in elenco_en)
+pag = pathlib.Path("en/flight-delay-compensation/index.html"); t = pag.read_text(encoding="utf-8")
+t = t.replace('<p class="note">📚', f'<details class="card" open><summary><b>🛫 Leaving Italy? Popular routes</b></summary><ul>{voci}</ul></details>\n  <p class="note">📚', 1)
+pag.write_text(t, encoding="utf-8")
+print(len(elenco_en), "pagine in inglese")
