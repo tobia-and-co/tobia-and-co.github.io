@@ -14,6 +14,7 @@ GRUPPI = [
  ("casa", "🏠", "Casa e soldi", "Bollette, banca, affitto, famiglia", [
    ("⚡", "La bolletta è cara?", "Confronto con il prezzo all'ingrosso ufficiale", "bolletta/", "bolletta luce gas energia"),
    ("🧾", "Maxi conguaglio in bolletta?", "I consumi di più di 2 anni fa non si pagano", "bolletta-prescritta/", "bolletta prescritta conguaglio prescrizione due anni luce gas acqua"),
+   ("💡", "Bonus sociale bollette", "Con ISEE basso lo sconto arriva da solo", "bonus-sociale/", "bonus sociale bollette isee sconto luce gas acqua disagio"),
    ("🏠", "Aggiornamento ISTAT affitto", "Il nuovo canone e la lettera per l'inquilino", "affitto-istat/", "affitto istat canone inquilino cedolare"),
    ("🏦", "Quanto costa la tua banca", "Canone, carte e bonifici in un anno", "banca/", "banca conto corrente costi"),
    ("🏡", "La rata del mutuo è alta?", "Quanto risparmi con la surroga", "mutuo/", "mutuo surroga rata tasso"),
@@ -25,6 +26,7 @@ GRUPPI = [
  ("auto", "⛽", "Auto e benzina", "Carburante, bollo e scadenze", [
    ("⛽", "Dove conviene fare benzina", "Prezzo + viaggio: la mappa dei distributori", "carburante/", "benzina gasolio distributore carburante gpl metano"),
    ("📊", "Prezzi medi di oggi", "Benzina e gasolio regione per regione", "carburante/prezzi-medi/", "prezzo medio benzina oggi regione"),
+   ("🧩", "Prezzi della benzina sul tuo sito", "Riquadro gratuito, aggiornato ogni giorno", "carburante/riquadro-per-siti/", "riquadro widget sito blog comune prezzi benzina"),
    ("🚗", "Quanto costa il bollo", "Per kW e classe Euro, con il superbollo", "bollo/", "bollo auto superbollo kw"),
    ("🚓", "Ti è arrivata una multa?", "Sconto del 30%, scadenze e ricorso", "multe/", "multa verbale autovelox sconto 30 ricorso prefetto giudice di pace notifica 90 giorni"),
    ("📅", "Le scadenze che ti salvano", "Bollo, revisione, IMU, 730 nel calendario", "scadenze/", "scadenze calendario revisione imu 730 isee carta identita passaporto")]),

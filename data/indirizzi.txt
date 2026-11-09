@@ -1,6 +1,7 @@
 https://tobia-and-co.pages.dev/
 https://tobia-and-co.pages.dev/scadenze/
 https://tobia-and-co.pages.dev/multe/
+https://tobia-and-co.pages.dev/bonus-sociale/
 https://tobia-and-co.pages.dev/bolletta-prescritta/
 https://tobia-and-co.pages.dev/farmaci/
 https://tobia-and-co.pages.dev/diario/
@@ -103,6 +104,7 @@ https://tobia-and-co.pages.dev/carburante/reggio-di-calabria/
 https://tobia-and-co.pages.dev/carburante/reggio-nell-emilia/
 https://tobia-and-co.pages.dev/carburante/rieti/
 https://tobia-and-co.pages.dev/carburante/rimini/
+https://tobia-and-co.pages.dev/carburante/riquadro-per-siti/
 https://tobia-and-co.pages.dev/carburante/roma/
 https://tobia-and-co.pages.dev/carburante/rovigo/
 https://tobia-and-co.pages.dev/carburante/salerno/

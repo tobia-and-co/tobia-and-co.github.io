@@ -30,6 +30,8 @@
 
 ## Soldi di casa
 - [Bolletta prescritta / maxi conguaglio](https://tobia-and-co.pages.dev/bolletta-prescritta/): consumi di più di 2 anni prima dell'emissione prescritti per luce (scadenze dal 1/3/2018), gas (dal 1/1/2019), acqua (dal 1/1/2020), L. 205/2017; serve reclamo scritto; calcolo della parte prescritta e lettera pronta.
+- [Bonus sociale bollette](https://tobia-and-co.pages.dev/bonus-sociale/): automatico per luce, gas e acqua con ISEE fino a 9.530 € (20.000 € con almeno 4 figli a carico); basta presentare la DSU; bonus disagio fisico indipendente dall'ISEE.
+- [Riquadro prezzi carburanti per altri siti](https://tobia-and-co.pages.dev/carburante/riquadro-per-siti/): iframe gratuito con le medie self di benzina, gasolio, GPL e metano per regione, aggiornate ogni giorno.
 - [Bolletta luce e gas](https://tobia-and-co.pages.dev/bolletta/): confronto con PUN e prezzo del gas all'ingrosso (GME).
 - [Surroga del mutuo](https://tobia-and-co.pages.dev/mutuo/): risparmio con il TAEG medio Banca d'Italia.
 - [Costo del conto in banca](https://tobia-and-co.pages.dev/banca/) e [costo del cambio all'estero](https://tobia-and-co.pages.dev/cambio/) con i cambi BCE del giorno.

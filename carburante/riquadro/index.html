@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prezzi medi dei carburanti oggi | Tobia &amp; Co.</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://tobia-and-co.pages.dev/carburante/prezzi-medi/">
+<style>
+:root{--bg:#fff;--ink:#1d2733;--muted:#5f6b77;--line:#ece3d3;--blu:#2f74bd;--oro:#fbf0d8}
+@media (prefers-color-scheme:dark){:root:not(.chiaro){--bg:#1b232d;--ink:#eef2f6;--muted:#a3afbb;--line:#2a3440;--blu:#6aa8ec;--oro:#3a2f1a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.r{border:1px solid var(--line);border-radius:14px;padding:12px 14px;max-width:420px}
+h1{font-size:15px;margin:0 0 2px}
+.d{color:var(--muted);font-size:12px;margin-bottom:10px}
+.g{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.g div{background:var(--oro);border-radius:10px;padding:7px 4px;text-align:center}
+.g b{display:block;font-size:16px}.g span{font-size:11.5px;color:var(--muted)}
+.f{margin-top:9px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+a{color:var(--blu);font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="r">
+  <h1 id="t">⛽ Prezzi medi dei carburanti</h1>
+  <div class="d" id="d">Self service, euro al litro (metano al kg)</div>
+  <div class="g" id="g"></div>
+  <div class="f"><span>Dati ufficiali MIMIT</span><a id="l" href="https://tobia-and-co.pages.dev/carburante/" target="_blank" rel="noopener">Dove conviene vicino a te ›</a></div>
+</div>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search), reg = q.get('r') || '';
+  if (q.get('tema') === 'chiaro') document.documentElement.className = 'chiaro';
+  var NOMI = { B: 'Benzina', D: 'Gasolio', G: 'GPL', M: 'Metano' };
+  var f = function (x) { return x ? x.toLocaleString('it-IT', { minimumFractionDigits: 3, maximumFractionDigits: 3 }) : '–'; };
+  fetch('../../data/carburanti/medie.json').then(function (r) { return r.json(); }).then(function (m) {
+    var p = (reg && m.regioni[reg]) || m.italia;
+    document.getElementById('t').textContent = '⛽ Carburanti oggi · ' + (reg && m.regioni[reg] ? reg : 'Italia');
+    var dd = m.data.split('-');
+    document.getElementById('d').textContent = 'Medie self del ' + dd[2] + '/' + dd[1] + '/' + dd[0] + ' · €/l (metano €/kg)';
+    document.getElementById('g').innerHTML = ['B', 'D', 'G', 'M'].map(function (k) { return '<div><b>' + f(p[k]) + '</b><span>' + NOMI[k] + '</span></div>'; }).join('');
+    document.getElementById('l').href = 'https://tobia-and-co.pages.dev/carburante/?utm_source=riquadro';
+  }).catch(function () { document.getElementById('g').textContent = 'Prezzi non disponibili in questo momento.'; });
+  // conta solo quante volte il riquadro viene mostrato sugli altri siti
+  if (!/localhost|127\.0\.0\.1/.test(location.hostname)) { try { fetch('https://abacus.jasoncameron.dev/hit/tobiaandco/riquadro-viste', { mode: 'cors' }).catch(function () {}); } catch (e) {} }
+})();
+</script>
+</body>
+</html>

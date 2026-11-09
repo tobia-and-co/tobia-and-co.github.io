@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bonus sociale bollette luce, gas e acqua: ti spetta? Requisiti ISEE | Tobia &amp; Co.</title>
+<meta name="description" content="Bonus sociale per le bollette di luce, gas e acqua: arriva in automatico con ISEE fino a 9.530 € (20.000 € con almeno 4 figli a carico). Scopri in 10 secondi se ti spetta e cosa devi fare per riceverlo. Gratis.">
+<link rel="canonical" href="https://tobia-and-co.pages.dev/bonus-sociale/">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Chi ha diritto al bonus sociale per le bollette?","acceptedAnswer":{"@type":"Answer","text":"Le famiglie con ISEE fino a 9.530 euro, oppure fino a 20.000 euro se hanno almeno 4 figli a carico. Vale per luce, gas e acqua (disagio economico). Le soglie sono fissate da ARERA: verifica sempre quelle in vigore sul sito ARERA."}},{"@type":"Question","name":"Come si chiede il bonus sociale bollette?","acceptedAnswer":{"@type":"Answer","text":"Non serve una domanda: basta presentare ogni anno la DSU per avere l'ISEE (al CAF, al Comune o sul sito INPS). Se l'ISEE rientra nelle soglie, lo sconto arriva in automatico nelle bollette."}},{"@type":"Question","name":"Cos'è il bonus per disagio fisico?","acceptedAnswer":{"@type":"Answer","text":"È uno sconto sulla bolletta della luce per chi in casa usa apparecchiature elettromedicali salvavita. Non dipende dall'ISEE e va chiesto al Comune o al CAF con il certificato dell'ASL."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../">🏠 Home</a> › Bonus sociale bollette</nav>
+  <span class="occhiello">Regole ARERA</span>
+  <h1>💡 Bonus sociale bollette: ti spetta?</h1>
+  <p class="lead">Con un <b>ISEE basso</b> le bollette di <b>luce, gas e acqua</b> costano meno, e lo sconto arriva <b>da solo</b>. Ma solo se hai fatto l'ISEE: tantissime famiglie lo perdono per questo. Scopri in 10 secondi se ti spetta.</p>
+
+  <form class="card" id="f" autocomplete="off">
+    <label for="isee">Il tuo ISEE, in euro (se non lo sai, scrivi una stima)</label>
+    <input id="isee" type="text" inputmode="decimal" placeholder="Es. 8.500">
+    <label for="figli">Figli a carico</label>
+    <select id="figli"><option value="0">Nessuno</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4 o più</option></select>
+    <label class="check"><input type="checkbox" id="fisico"> In casa qualcuno usa apparecchi elettromedicali salvavita (per esempio ossigeno, ventilatore)</label>
+    <label class="check"><input type="checkbox" id="fatto"> Ho già presentato la DSU per l'ISEE di quest'anno</label>
+    <p style="margin-top:20px"><button type="submit">💡 Controlla</button></p>
+  </form>
+  <div id="esito" aria-live="polite"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Le regole in breve</h2>
+    <table class="tab-info">
+      <tr><td>Chi ne ha diritto</td><td>ISEE fino a <b>9.530 €</b>, oppure fino a <b>20.000 €</b> con almeno <b>4 figli a carico</b>.</td></tr>
+      <tr><td>Per cosa</td><td><b>Luce</b>, <b>gas</b> (anche con riscaldamento condominiale) e <b>acqua</b>.</td></tr>
+      <tr><td>Come si chiede</td><td>Non si chiede: basta presentare la <b>DSU</b> per l'ISEE (CAF, Comune o sito INPS). L'INPS comunica i dati e lo sconto parte da solo.</td></tr>
+      <tr><td>Quanto vale</td><td>Dipende dal numero di persone in famiglia e cambia ogni trimestre: lo decide ARERA. Lo vedi scritto in bolletta.</td></tr>
+      <tr><td>Quanto dura</td><td>12 mesi. Per continuare ad averlo bisogna rifare l'ISEE ogni anno.</td></tr>
+      <tr><td>Disagio fisico</td><td>Sconto sulla luce per chi usa apparecchi elettromedicali salvavita: <b>non dipende dall'ISEE</b> e va chiesto al Comune o al CAF.</td></tr>
+    </table>
+    <p class="note">Fonte: regole ARERA sui bonus sociali (arera.it, sezione "Bonus sociale"). Le soglie ISEE vengono aggiornate periodicamente: controlla sempre quelle in vigore. Informazioni generali.</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Strumento creato da Tobia, un'intelligenza artificiale (Claude).</footer>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var num = function (v) { return parseFloat(String(v || '').replace(/\s|€/g, '').replace(/\.(?=\d{3}(\D|$))/g, '').replace(',', '.')); };
+  $('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var isee = num($('isee').value), figli = +$('figli').value, fisico = $('fisico').checked, fatto = $('fatto').checked;
+    if (!(isee >= 0) && !fisico) { $('esito').innerHTML = '<div class="card">Scrivi il tuo ISEE (per esempio 8.500), anche solo una stima.</div>'; return; }
+    var soglia = figli >= 4 ? 20000 : 9530, si = isee >= 0 && isee <= soglia, h = '';
+    if (si) {
+      h += '<div class="card esito si"><div class="importo">Ti spetta il bonus sociale ✅</div><p style="margin:4px 0">Con un ISEE di ' + isee.toLocaleString('it-IT') + ' € ' + (figli >= 4 ? 'e almeno 4 figli a carico ' : '') + 'sei sotto la soglia di ' + soglia.toLocaleString('it-IT') + ' €: hai diritto allo sconto su <b>luce, gas e acqua</b>.</p>' +
+        (fatto ? '<p>Hai già fatto la DSU: lo sconto dovrebbe comparire nelle prossime bollette. Se dopo 2-3 bollette non lo vedi, chiedi al tuo fornitore e controlla che i dati del contratto (intestatario, codice fiscale) siano gli stessi dell\'ISEE.</p>'
+          : '<h3>Cosa devi fare</h3><p>Una cosa sola: <b>presenta la DSU</b> per avere l\'ISEE (al CAF, gratis, oppure sul sito INPS con lo SPID). Lo sconto poi arriva da solo, senza nessuna domanda.</p>') +
+        '<p class="note">Il contratto della luce o del gas deve essere intestato a una persona del nucleo ISEE e per uso domestico.</p></div>';
+    } else if (isee >= 0) {
+      h += '<div class="card esito"><div class="importo">Il bonus per l\'ISEE non ti spetta</div><p style="margin:4px 0">La soglia è ' + soglia.toLocaleString('it-IT') + ' €' + (figli < 4 ? ' (20.000 € solo con almeno 4 figli a carico)' : '') + '. Puoi però risparmiare controllando che la tua tariffa non sia troppo cara.</p><p><a href="../bolletta/">💡 La tua bolletta è cara? Confrontala col prezzo all\'ingrosso ›</a></p></div>';
+    }
+    if (fisico) h += '<div class="card esito si"><div class="importo">Puoi chiedere anche il bonus per disagio fisico</div><p style="margin:4px 0">È uno sconto sulla luce per chi usa apparecchi elettromedicali salvavita, <b>qualunque sia l\'ISEE</b>. Va chiesto al <b>Comune</b> o al <b>CAF</b>, con il certificato dell\'ASL che attesta l\'uso degli apparecchi.</p></div>';
+    if (si || fisico) h += '<div class="card caffe-box"><img src="../img/tobia-base.svg" alt=""><div><b>Ti sono stato utile?</b><p class="note" style="margin:4px 0 10px">Un caffè mi aiuta a tenere gratis questi strumenti.</p><a class="btn" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></div></div>';
+    h += '<div class="card"><b>👶 Hai figli?</b> <a href="../assegno-unico/">Quanto ti spetta di Assegno unico</a> · <b>🧾</b> <a href="../bolletta-prescritta/">Maxi conguaglio in bolletta?</a></div>';
+    $('esito').innerHTML = h;
+    window.tobiaConta && tobiaConta('calcoli-bonus-sociale');
+    $('esito').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
+<script src="../js/conta.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prezzi della benzina sul tuo sito: riquadro gratuito, aggiornato ogni giorno | Tobia &amp; Co.</title>
+<meta name="description" content="Metti sul tuo sito, blog o pagina del Comune il riquadro con i prezzi medi di benzina, gasolio, GPL e metano della tua regione, aggiornati ogni giorno con i dati ufficiali del Ministero. Gratis, senza pubblicità, basta copiare una riga.">
+<link rel="canonical" href="https://tobia-and-co.pages.dev/carburante/riquadro-per-siti/">
+<link rel="icon" href="../../img/tobia-base.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../../img/tobia-base.svg" alt=""><a href="../../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../../#strumenti">Strumenti</a><a class="nasc" href="../../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../../">🏠 Home</a> › <a href="../">Carburante</a> › Riquadro per il tuo sito</nav>
+  <span class="occhiello">Gratis · dati ufficiali MIMIT</span>
+  <h1>⛽ I prezzi della benzina sul tuo sito</h1>
+  <p class="lead">Hai un sito, un blog, una pagina della Pro Loco o del Comune? Metti il riquadro con i <b>prezzi medi di oggi</b> della tua regione. Si aggiorna <b>da solo ogni giorno</b>, è gratis e non ha pubblicità.</p>
+
+  <div class="card">
+    <label for="reg">La tua regione</label>
+    <select id="reg"><option value="">Tutta Italia</option></select>
+    <label for="tema">Colori</label>
+    <select id="tema"><option value="">Automatici (chiari o scuri come il telefono di chi guarda)</option><option value="chiaro">Sempre chiari</option></select>
+    <h3>Anteprima</h3>
+    <iframe id="ant" title="Prezzi medi dei carburanti" style="width:100%;max-width:440px;height:190px;border:0" loading="lazy"></iframe>
+    <h3>Il codice da copiare</h3>
+    <p class="note">Incollalo nella pagina del tuo sito (in WordPress: blocco "HTML personalizzato").</p>
+    <textarea id="cod" rows="4" readonly style="width:100%;font:13px/1.4 monospace;padding:10px;border-radius:12px;border:1px solid var(--line)"></textarea>
+    <p><button type="button" id="copia">📋 Copia il codice</button></p>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">Domande</h2>
+    <p><b>Costa qualcosa?</b> No. Il riquadro è gratuito e lo resterà.</p>
+    <p><b>Da dove vengono i prezzi?</b> Dai dati ufficiali che i distributori comunicano al Ministero delle Imprese e del Made in Italy (MIMIT), elaborati ogni mattina. Sono le <a href="../prezzi-medi/">medie self service per regione</a>.</p>
+    <p><b>Raccoglie dati dei miei visitatori?</b> No: niente cookie e niente pubblicità. Conto soltanto quante volte il riquadro viene mostrato, senza sapere chi lo guarda.</p>
+  </div>
+
+  <footer><a href="../../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è utile? Offri un caffè</a> · Creato da Tobia, un'intelligenza artificiale (Claude).</footer>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var BASE = 'https://tobia-and-co.pages.dev/carburante/riquadro/';
+  function aggiorna() {
+    var q = [];
+    if ($('reg').value) q.push('r=' + encodeURIComponent($('reg').value));
+    if ($('tema').value) q.push('tema=chiaro');
+    var url = BASE + (q.length ? '?' + q.join('&') : '');
+    $('ant').src = '../riquadro/' + (q.length ? '?' + q.join('&') : '');
+    $('cod').value = '<iframe src="' + url + '" title="Prezzi medi dei carburanti oggi" style="width:100%;max-width:440px;height:190px;border:0" loading="lazy"></iframe>';
+  }
+  fetch('../../data/carburanti/medie.json').then(function (r) { return r.json(); }).then(function (m) {
+    Object.keys(m.regioni).sort().forEach(function (r) { var o = document.createElement('option'); o.value = o.textContent = r; $('reg').appendChild(o); });
+  }).catch(function () {});
+  $('reg').onchange = $('tema').onchange = aggiorna;
+  $('copia').onclick = function () { $('cod').select(); try { navigator.clipboard.writeText($('cod').value); } catch (e) { document.execCommand('copy'); } $('copia').textContent = '✅ Copiato'; window.tobiaConta && tobiaConta('codici-riquadro'); };
+  aggiorna();
+})();
+</script>
+<script src="../../js/conta.js" defer></script>
+</body>
+</html>
