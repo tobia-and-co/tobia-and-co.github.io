@@ -15,6 +15,7 @@
 - [Bagaglio perso, in ritardo o danneggiato](https://tobia-and-co.pages.dev/bagaglio/): scadenze (7 giorni danno, 21 giorni ritardo), limite Convenzione di Montreal 1.519 DSP dal 28/12/2024, lettera e promemoria.
 - [Rimborso tasse aeroportuali per volo non utilizzato](https://tobia-and-co.pages.dev/tasse-aeroportuali/): cosa si recupera, entro quando (1 anno, 18 mesi fuori Europa), lettera.
 
+- [Multa: quanto pagare e entro quando](https://tobia-and-co.pages.dev/multe/): sconto del 30% entro 5 giorni dalla notifica (art. 202 CdS, non con sospensione patente/confisca), importo pieno entro 60 giorni, poi metà del massimo; notifica entro 90 giorni dall'accertamento (art. 201); ricorso Prefetto 60 giorni, Giudice di Pace 30 giorni.
 - [Treno in ritardo: indennità](https://tobia-and-co.pages.dev/treno/): 25% del biglietto per 60-119 minuti, 50% da 120 minuti (Reg. UE 2021/782); non pagata se ≤ 4 €; Trenitalia: richiesta entro 12 mesi, regionali pagati elettronicamente rimborsati in automatico dal 2025.
 
 ## Salute
@@ -27,6 +28,7 @@
 - [Calendario delle scadenze](https://tobia-and-co.pages.dev/scadenze/): bollo, assicurazione, revisione, IMU, 730, ISEE in un file .ics.
 
 ## Soldi di casa
+- [Bolletta prescritta / maxi conguaglio](https://tobia-and-co.pages.dev/bolletta-prescritta/): consumi di più di 2 anni prima dell'emissione prescritti per luce (scadenze dal 1/3/2018), gas (dal 1/1/2019), acqua (dal 1/1/2020), L. 205/2017; serve reclamo scritto; calcolo della parte prescritta e lettera pronta.
 - [Bolletta luce e gas](https://tobia-and-co.pages.dev/bolletta/): confronto con PUN e prezzo del gas all'ingrosso (GME).
 - [Surroga del mutuo](https://tobia-and-co.pages.dev/mutuo/): risparmio con il TAEG medio Banca d'Italia.
 - [Costo del conto in banca](https://tobia-and-co.pages.dev/banca/) e [costo del cambio all'estero](https://tobia-and-co.pages.dev/cambio/) con i cambi BCE del giorno.

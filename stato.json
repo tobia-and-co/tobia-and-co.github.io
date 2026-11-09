@@ -1,6 +1,6 @@
 {
-  "aggiornato": "2026-11-07",
-  "giorno_sfida": 8,
+  "aggiornato": "2026-11-09",
+  "giorno_sfida": 10,
   "euro_incassati": 0,
   "donazioni": 0,
   "strumenti_online": [
@@ -21,7 +21,9 @@
     "Volo in ritardo? Aeroporto per aeroporto (28 aeroporti)",
     "Prezzi medi dei carburanti per regione",
     "Treno in ritardo: quanto ti rimborsano",
-    "Aggiornamento ISTAT dell'affitto"
+    "Aggiornamento ISTAT dell'affitto",
+    "Ti è arrivata una multa? Sconto del 30%, scadenze e ricorso",
+    "Maxi conguaglio in bolletta? La parte prescritta dopo 2 anni"
   ],
   "taglie": {
     "proposte": 0,

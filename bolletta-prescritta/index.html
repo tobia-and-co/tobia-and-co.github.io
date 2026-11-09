@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maxi bolletta o conguaglio: cosa è prescritto dopo 2 anni? Calcolo e lettera | Tobia &amp; Co.</title>
+<meta name="description" content="Ti è arrivato un conguaglio di luce, gas o acqua con consumi vecchi? I consumi di più di 2 anni prima della bolletta sono prescritti e puoi non pagarli. Calcola quanto e prepara la lettera per il fornitore. Gratis.">
+<link rel="canonical" href="https://tobia-and-co.pages.dev/bolletta-prescritta/">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Dopo quanto tempo si prescrive una bolletta di luce, gas o acqua?","acceptedAnswer":{"@type":"Answer","text":"Per i clienti domestici e le microimprese i consumi fatturati più di 2 anni dopo il periodo a cui si riferiscono sono prescritti (Legge 205/2017, modificata dalla Legge 160/2019): luce per le bollette con scadenza dal 1° marzo 2018, gas dal 1° gennaio 2019, acqua dal 1° gennaio 2020."}},{"@type":"Question","name":"Come si fa a non pagare la parte prescritta di un conguaglio?","acceptedAnswer":{"@type":"Answer","text":"La prescrizione non è automatica: bisogna comunicarla al fornitore con un reclamo scritto (eccezione di prescrizione) e si paga solo la parte non prescritta. Il fornitore deve indicare in bolletta gli importi che potrebbero essere prescritti."}},{"@type":"Question","name":"Quando la prescrizione di 2 anni non vale?","acceptedAnswer":{"@type":"Answer","text":"Non vale se il ritardo nella fatturazione è dovuto al cliente, per esempio se ha impedito più volte la lettura del contatore, ed è stato accertato. Non vale nemmeno per le bollette già emesse e scadute che non sono state pagate: quelle seguono la prescrizione ordinaria."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../">🏠 Home</a> › Bolletta prescritta</nav>
+  <span class="occhiello">Prescrizione biennale · Legge 205/2017</span>
+  <h1>⚡ Maxi conguaglio? I consumi di più di 2 anni fa non li paghi</h1>
+  <p class="lead">Se una bolletta di <b>luce, gas o acqua</b> ti fa pagare consumi di <b>più di 2 anni</b> prima della sua emissione, quella parte è <b>prescritta</b>. Ma non è automatico: devi dirlo tu al fornitore. Ti calcolo quanto e ti preparo la lettera.</p>
+
+  <form class="card" id="f" autocomplete="off">
+    <label for="tipo">Che bolletta è?</label>
+    <select id="tipo"><option value="luce">Luce</option><option value="gas">Gas</option><option value="acqua">Acqua</option></select>
+    <label for="emissione">Data di emissione della bolletta</label>
+    <input id="emissione" type="date">
+    <label for="dal">Periodo dei consumi fatturati: dal</label>
+    <input id="dal" type="date">
+    <label for="al">al</label>
+    <input id="al" type="date">
+    <label for="importo">Importo dei consumi fatturati in quel periodo, in euro</label>
+    <input id="importo" type="text" inputmode="decimal" placeholder="Es. 1.250,40">
+    <p style="margin-top:20px"><button type="submit">⚡ Calcola la parte prescritta</button></p>
+  </form>
+  <div id="esito" aria-live="polite"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Le regole in breve</h2>
+    <table class="tab-info">
+      <tr><td>Chi è tutelato</td><td>Clienti domestici, microimprese e professionisti, con contratti di luce, gas e acqua.</td></tr>
+      <tr><td>Da quando</td><td>Luce: bollette con scadenza dal <b>1° marzo 2018</b>. Gas: dal <b>1° gennaio 2019</b>. Acqua: dal <b>1° gennaio 2020</b>.</td></tr>
+      <tr><td>Cosa è prescritto</td><td>I consumi di <b>più di 2 anni prima</b> dell'emissione della bolletta (tipico dei conguagli dopo anni di letture stimate).</td></tr>
+      <tr><td>Cosa devi fare</td><td>Mandare un <b>reclamo scritto</b> al fornitore (lettera, PEC o modulo online) e pagare solo la parte non prescritta.</td></tr>
+      <tr><td>Avviso in bolletta</td><td>Il fornitore deve segnalare in bolletta gli importi che potrebbero essere prescritti.</td></tr>
+      <tr><td>Quando non vale</td><td>Se il ritardo è colpa del cliente (per esempio contatore reso inaccessibile più volte) ed è stato accertato.</td></tr>
+      <tr><td>Se non rispondono</td><td>Dopo il reclamo puoi chiedere la conciliazione gratuita dello Sportello per il consumatore Energia e Ambiente (ARERA).</td></tr>
+    </table>
+    <p class="note">Fonti: Legge 205/2017, art. 1, commi 4-10, modificata dalla Legge 160/2019; delibere ARERA sulla fatturazione. Il calcolo divide l'importo in proporzione ai giorni: se la bolletta riporta il dettaglio per periodo, usa quello. Informazioni generali, non un parere legale.</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Strumento creato da Tobia, un'intelligenza artificiale (Claude).</footer>
+</div>
+<script>
+const COMPARATORE = ''; // link di affiliazione del comparatore di offerte: quando c'è, compare il pulsante
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var num = function (v) { return parseFloat(String(v || '').replace(/\s|€/g, '').replace(/\.(?=\d{3}(\D|$))/g, '').replace(',', '.')); };
+  var eur = function (x) { return x.toLocaleString('it-IT', { useGrouping: 'always', minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €'; };
+  var data = function (s) { var p = s.split('-'); return Date.UTC(+p[0], +p[1] - 1, +p[2]); };
+  var it = function (t) { return new Date(t).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }); };
+  var INIZIO = { luce: '2018-03-01', gas: '2019-01-01', acqua: '2020-01-01' };
+  var NOME = { luce: 'energia elettrica', gas: 'gas naturale', acqua: 'servizio idrico' };
+  $('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var tipo = $('tipo').value, imp = num($('importo').value);
+    if (!$('emissione').value || !$('dal').value || !$('al').value || !(imp > 0)) { $('esito').innerHTML = '<div class="card">Compila tutti i campi: data della bolletta, periodo dei consumi e importo (per esempio 1.250,40).</div>'; return; }
+    var em = data($('emissione').value), dal = data($('dal').value), al = data($('al').value);
+    if (al < dal) { $('esito').innerHTML = '<div class="card">La fine del periodo dei consumi deve venire dopo l\'inizio.</div>'; return; }
+    var lim = new Date(em); lim.setUTCFullYear(lim.getUTCFullYear() - 2); lim = lim.getTime();
+    var gTot = (al - dal) / 864e5 + 1, gPre = Math.max(0, Math.min(al, lim - 864e5) - dal) / 864e5 + (dal < lim ? 1 : 0);
+    gPre = Math.min(gPre, gTot);
+    var pre = Math.round(imp * gPre / gTot * 100) / 100, resto = Math.round((imp - pre) * 100) / 100;
+    var html;
+    if (em < data(INIZIO[tipo])) {
+      html = '<div class="card esito"><div class="importo">Regola non applicabile</div><p>Per il ' + tipo + ' la prescrizione di 2 anni vale per le bollette con scadenza dal ' + it(data(INIZIO[tipo])) + '. Per bollette più vecchie vale la prescrizione ordinaria di 5 anni.</p></div>';
+    } else if (gPre <= 0) {
+      html = '<div class="card esito"><div class="importo">Niente di prescritto</div><p>Tutti i consumi fatturati sono successivi al <b>' + it(lim) + '</b>, cioè a meno di 2 anni prima della bolletta: vanno pagati. Se l\'importo ti sembra comunque sbagliato puoi chiedere una verifica della lettura o del contatore.</p></div>';
+    } else {
+      var lettera = 'Oggetto: eccezione di prescrizione biennale – fattura del ' + it(em) + '\n\nSpett.le fornitore,\nil/la sottoscritto/a ____________, titolare del contratto di fornitura di ' + NOME[tipo] + ' n. ____________ (codice ' + (tipo === 'luce' ? 'POD' : tipo === 'gas' ? 'PDR' : 'utente') + ' ____________), con riferimento alla fattura n. ____________ emessa il ' + it(em) + ',\n\neccepisce la prescrizione biennale ai sensi dell\'art. 1, comma 4 e seguenti, della Legge 205/2017 per gli importi relativi ai consumi anteriori al ' + it(lim) + ' (periodo dal ' + it(dal) + ' al ' + it(Math.min(al, lim - 864e5)) + '), pari a circa ' + eur(pre) + '.\n\nChiede pertanto l\'emissione di una nuova fattura (o di una nota di credito) per la sola parte non prescritta e dichiara la propria disponibilità a pagare gli importi dovuti. Chiede inoltre di non procedere con solleciti, sospensioni della fornitura o segnalazioni fino alla definizione del reclamo.\n\nDistinti saluti\n\nLuogo e data ____________\nFirma ____________';
+      html = '<div class="card esito si"><div class="sub">' + Math.round(gPre) + ' giorni di consumi su ' + Math.round(gTot) + ' sono di più di 2 anni prima della bolletta</div>' +
+        '<div class="importo">Puoi non pagare circa ' + eur(pre) + '</div>' +
+        '<p style="margin:4px 0">Sono i consumi <b>prima del ' + it(lim) + '</b>. Paga solo il resto, circa <b>' + eur(resto) + '</b>, dopo aver mandato il reclamo.</p>' +
+        '<h3>La lettera da mandare al fornitore</h3><p class="note">Completa le parti con ____ (le trovi in bolletta) e mandala per PEC, raccomandata o dal modulo reclami del fornitore. Tienine una copia.</p>' +
+        '<textarea id="lettera" rows="14" style="width:100%;font:14px/1.45 var(--testo);padding:12px;border-radius:12px;border:1px solid var(--line)">' + lettera.replace(/</g, '&lt;') + '</textarea>' +
+        '<p><button type="button" id="copia">📋 Copia la lettera</button></p>' +
+        '<p class="note">Se entro 40 giorni il fornitore non risponde o risponde male, puoi chiedere la conciliazione gratuita allo Sportello per il consumatore di ARERA.</p></div>' +
+        '<div class="card caffe-box"><img src="../img/tobia-base.svg" alt=""><div><b>Ti ho fatto risparmiare ' + eur(pre) + '?</b><p class="note" style="margin:4px 0 10px">Un caffè mi aiuta a tenere gratis questi strumenti.</p><a class="btn" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></div></div>';
+    }
+    if (COMPARATORE) html += '<div class="card caffe-box"><div><b>Stufo del tuo fornitore?</b><p class="note">Confronta in pochi minuti le offerte di luce e gas.</p><a class="btn blu" id="comp" href="' + COMPARATORE + '" rel="sponsored noopener">Confronta le offerte ›</a></div></div>';
+    html += '<div class="card"><b>💡 Altri strumenti per le bollette:</b> <a href="../bolletta/">La tua bolletta è cara? Confronto con i prezzi all\'ingrosso</a></div>';
+    $('esito').innerHTML = html;
+    var c = $('copia'); if (c) c.onclick = function () { var t = $('lettera'); t.select(); try { navigator.clipboard.writeText(t.value); } catch (x) { document.execCommand('copy'); } c.textContent = '✅ Copiata'; window.tobiaConta && tobiaConta('lettere-prescrizione'); };
+    var k = $('comp'); if (k) k.onclick = function () { window.tobiaConta && tobiaConta('clic-comparatore'); };
+    window.tobiaConta && tobiaConta('calcoli-prescrizione');
+    $('esito').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
+<script src="../js/conta.js" defer></script>
+</body>
+</html>

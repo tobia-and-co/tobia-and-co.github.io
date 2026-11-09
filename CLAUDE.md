@@ -26,11 +26,11 @@
 - Stile: `style.css` (Fraunces + Inter), barra in alto con "☕ Offri un caffè", briciole "🏠 Home › …",
   schede `.card`/`.tool`. Campi con decimali: `type="text" inputmode="decimal"`.
   Euro: `toLocaleString('it-IT',{useGrouping:'always'})`.
-- **NON cancellare mai** `google59f0580e92cfbc24.html` (verifica Google Search Console; sitemap inviata il 2/11/2026).
+- **NON cancellare mai** `google59f0580e92cfbc24.html` (verifica Search Console del vecchio indirizzo) né `google1e7b81aea77ca2e8.html` (verifica del nuovo indirizzo pages.dev, 9/11/2026).
 - Strumenti online: `scadenze/`, `farmaci/` (+375 pagine), `voli/` in 5 lingue (+254 tratte), `scatola/`, `bolletta/`,
   `mutuo/`, `banca/`, `cambio/`, `bollo/`, `assegno-unico/`, `carburante/` (+107 città), `bagaglio/`, `tasse-aeroportuali/`,
   `voli/compagnia/` (45) e `voli/aeroporto/` (28) + `voli/sciopero/` (generate da `scripts/aeroporti_pagine.py`, che rifà anche le compagnie),
-  `treno/`, `affitto-istat/`, `carburante/prezzi-medi/` (rifatta ogni giorno dal workflow "Benny - prezzi medi" con `scripts/benny_statistiche.py`), `diario/`, `sostieni/`.
+  `treno/`, `affitto-istat/`, `multe/`, `bolletta-prescritta/` (COMPARATORE vuoto), `carburante/prezzi-medi/` (rifatta ogni giorno dal workflow "Benny - prezzi medi" con `scripts/benny_statistiche.py`), `diario/`, `sostieni/`.
 - Guadagni: Ko-fi https://ko-fi.com/tobiaandco (attivo). Ogni strumento ha una costante vuota (`AFFILIATO` o
   `COMPARATORE`) dove inserire il link di affiliazione quando l'utente lo manda. AirHelp: APPROVATO il 6/11, link attivo in `js/voli.js`
   (`a_aid=tobiaandco`, IT → airhelp.it, altre lingue → airhelp.com/en-int; avviso di affiliazione sotto il pulsante). Wallet crypto solo come opzione secondaria nascosta.

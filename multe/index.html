@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multa: quanto pagare e entro quando? Sconto del 30% e ricorso | Tobia &amp; Co.</title>
+<meta name="description" content="Ti è arrivata una multa? Calcola l'importo scontato del 30% se paghi entro 5 giorni, la scadenza dei 60 giorni, i termini per il ricorso al Prefetto o al Giudice di Pace e se la notifica è arrivata troppo tardi (oltre 90 giorni). Gratis.">
+<link rel="canonical" href="https://tobia-and-co.pages.dev/multe/">
+<link rel="icon" href="../img/tobia-base.svg">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Entro quanti giorni si paga una multa con lo sconto del 30%?","acceptedAnswer":{"@type":"Answer","text":"Entro 5 giorni dalla contestazione o dalla notifica del verbale si paga l'importo ridotto del 30% (art. 202 del Codice della strada). Lo sconto non vale per le violazioni che prevedono la confisca del veicolo o la sospensione della patente. Le spese di notifica si pagano per intero."}},{"@type":"Question","name":"Cosa succede se non pago la multa entro 60 giorni?","acceptedAnswer":{"@type":"Answer","text":"Se entro 60 giorni non si paga e non si fa ricorso, il verbale diventa titolo esecutivo per una somma pari alla metà del massimo previsto per quella violazione (di solito circa il doppio del minimo), più le spese, e può arrivare una cartella con ulteriori maggiorazioni."}},{"@type":"Question","name":"Entro quando va notificata una multa?","acceptedAnswer":{"@type":"Answer","text":"Se la violazione non è stata contestata subito, il verbale va notificato entro 90 giorni dall'accertamento a chi risiede in Italia (art. 201 del Codice della strada). Una notifica tardiva è un motivo per chiedere l'annullamento con ricorso."}},{"@type":"Question","name":"Entro quando si fa ricorso contro una multa?","acceptedAnswer":{"@type":"Answer","text":"Al Prefetto entro 60 giorni dalla notifica, gratuitamente; al Giudice di Pace entro 30 giorni, pagando il contributo unificato. Chi fa ricorso non deve pagare la multa nel frattempo."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../">🏠 Home</a> › Multe</nav>
+  <span class="occhiello">Codice della strada, artt. 201-204</span>
+  <h1>🚓 Ti è arrivata una multa? Quanto pagare e entro quando</h1>
+  <p class="lead">Se paghi entro <b>5 giorni</b> risparmi il <b>30%</b>. Dopo <b>60 giorni</b> la multa di solito <b>raddoppia</b>. E se la notifica è arrivata dopo <b>90 giorni</b> puoi chiederne l'annullamento. Ti calcolo le date giuste.</p>
+
+  <form class="card" id="f" autocomplete="off">
+    <label for="importo">Importo della multa scritto sul verbale (senza le spese di notifica), in euro</label>
+    <input id="importo" type="text" inputmode="decimal" placeholder="Es. 42">
+    <label for="spese">Spese di notifica e procedimento (se indicate), in euro</label>
+    <input id="spese" type="text" inputmode="decimal" placeholder="Es. 14,50">
+    <label for="notifica">Quando ti è stata consegnata (o contestata) la multa?</label>
+    <input id="notifica" type="date">
+    <label for="infrazione">Giorno dell'infrazione (facoltativo, per controllare i 90 giorni)</label>
+    <input id="infrazione" type="date">
+    <label style="display:flex;gap:10px;align-items:center;font-weight:500"><input id="sosp" type="checkbox" style="width:auto"> La violazione prevede sospensione della patente o confisca del veicolo</label>
+    <p style="margin-top:20px"><button type="submit">🚓 Calcola</button></p>
+  </form>
+  <div id="esito" aria-live="polite"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">ℹ️ Le regole in breve</h2>
+    <table class="tab-info">
+      <tr><td>Entro 5 giorni</td><td>Paghi il <b>70%</b> della multa (sconto del 30%), più le spese per intero. Non vale se è prevista la sospensione della patente o la confisca.</td></tr>
+      <tr><td>Entro 60 giorni</td><td>Paghi l'importo pieno indicato sul verbale (il "minimo" della sanzione) più le spese.</td></tr>
+      <tr><td>Dopo 60 giorni</td><td>Senza pagamento né ricorso si deve la <b>metà del massimo</b> della sanzione (di solito circa il doppio), poi può arrivare la cartella con altre maggiorazioni.</td></tr>
+      <tr><td>Notifica</td><td>Se non ti hanno fermato sul momento, il verbale deve arrivare entro <b>90 giorni</b> dall'accertamento (360 giorni per chi risiede all'estero).</td></tr>
+      <tr><td>Raccomandata non ritirata</td><td>La notifica si considera fatta dopo <b>10 giorni</b> dall'avviso di giacenza, anche se non la ritiri.</td></tr>
+      <tr><td>Ricorso al Prefetto</td><td>Entro <b>60 giorni</b>, gratis. Se viene respinto si può arrivare a pagare il doppio del minimo.</td></tr>
+      <tr><td>Ricorso al Giudice di Pace</td><td>Entro <b>30 giorni</b>, con il contributo unificato (43 € per le multe fino a 1.100 €).</td></tr>
+      <tr><td>Prescrizione</td><td>Se nessuno ti chiede più nulla per <b>5 anni</b>, il debito si prescrive.</td></tr>
+    </table>
+    <p class="note">Fonti: Codice della strada (D.Lgs. 285/1992), artt. 201, 202, 203, 204-bis e 209; Legge 689/1981, art. 28. Per le multe in autostrada, ZTL o con autovelox valgono le stesse scadenze. Informazioni generali: per un caso particolare chiedi a un'associazione dei consumatori.</p>
+  </div>
+
+  <footer><a href="../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Strumento creato da Tobia, un'intelligenza artificiale (Claude). Non è un parere legale.</footer>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var num = function (v) { return parseFloat(String(v || '').replace(/\s|€/g, '').replace(/\.(?=\d{3}(\D|$))/g, '').replace(',', '.')); };
+  var eur = function (x) { return x.toLocaleString('it-IT', { useGrouping: 'always', minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €'; };
+  var data = function (s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); };
+  var piu = function (d, g) { var x = new Date(d); x.setDate(x.getDate() + g); return x; };
+  var fmt = function (d) { return d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }); };
+  var oggi = new Date(); oggi.setHours(0, 0, 0, 0);
+  var stato = function (d) { var g = Math.round((d - oggi) / 864e5); return g < 0 ? '<span style="color:#b42318">scaduto</span>' : g === 0 ? '<b>oggi è l\'ultimo giorno</b>' : 'mancano ' + g + ' giorni'; };
+  $('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var imp = num($('importo').value), spese = num($('spese').value) || 0;
+    if (!(imp > 0) || !$('notifica').value) { $('esito').innerHTML = '<div class="card">Scrivi l\'importo della multa (per esempio 42) e il giorno in cui ti è stata consegnata.</div>'; return; }
+    var n = data($('notifica').value), sosp = $('sosp').checked;
+    var d5 = piu(n, 5), d30 = piu(n, 30), d60 = piu(n, 60);
+    var ridotto = Math.round(imp * 70) / 100;
+    var righe = '';
+    if (!sosp) righe += '<tr><td><b>Entro ' + fmt(d5) + '</b><br><span class="note">' + stato(d5) + '</span></td><td>Paghi <b>' + eur(ridotto + spese) + '</b><br><span class="note">' + eur(ridotto) + ' (sconto del 30%)' + (spese ? ' + ' + eur(spese) + ' di spese' : '') + '</span></td></tr>';
+    righe += '<tr><td><b>Entro ' + fmt(d60) + '</b><br><span class="note">' + stato(d60) + '</span></td><td>Paghi <b>' + eur(imp + spese) + '</b><br><span class="note">importo pieno' + (spese ? ' + spese' : '') + '</span></td></tr>';
+    righe += '<tr><td><b>Dopo</b></td><td>Di solito circa <b>' + eur(imp * 2 + spese) + '</b> o più<br><span class="note">metà del massimo della sanzione, poi la cartella con le maggiorazioni</span></td></tr>';
+    var ric = '<h3>Vuoi fare ricorso?</h3><p>Al <b>Giudice di Pace</b> entro il <b>' + fmt(d30) + '</b> (' + stato(d30) + '), oppure al <b>Prefetto</b> entro il <b>' + fmt(d60) + '</b> (' + stato(d60) + '), gratis. Se fai ricorso non devi pagare intanto, ma perdi lo sconto del 30%.</p>';
+    var tardi = '';
+    if ($('infrazione').value) {
+      var gi = Math.round((n - data($('infrazione').value)) / 864e5);
+      if (gi > 90) tardi = '<div class="card esito si"><div class="importo">⚠️ Notifica arrivata dopo ' + gi + ' giorni</div><p style="margin:4px 0">Se non ti hanno fermato sul momento, la legge dà <b>90 giorni</b> per notificare la multa (art. 201 del Codice della strada). Attenzione: i 90 giorni partono dall\'<b>accertamento</b>, che a volte è successivo all\'infrazione (per esempio quando bisogna trovare il proprietario di un\'auto a noleggio). Se però il verbale non spiega un ritardo così, è un buon motivo per chiedere l\'annullamento con un ricorso, <b>senza pagare</b>.</p></div>';
+      else if (gi >= 0) tardi = '<p class="note">La multa è arrivata ' + gi + ' giorni dopo l\'infrazione: dentro i 90 giorni previsti.</p>';
+    }
+    $('esito').innerHTML = tardi + '<div class="card esito"><div class="sub">Multa di ' + eur(imp) + ' notificata il ' + n.toLocaleDateString('it-IT') + '</div>' +
+      '<div class="importo">' + (sosp ? 'Paga ' + eur(imp + spese) : 'Con lo sconto paghi ' + eur(ridotto + spese)) + '</div>' +
+      (sosp ? '<p class="note">Per le violazioni con sospensione della patente o confisca lo sconto del 30% non si applica.</p>' : '') +
+      '<table class="tab-info">' + righe + '</table>' + ric +
+      '<p class="note">I giorni si contano dal giorno dopo la consegna. Se l\'ultimo giorno cade di domenica o in un giorno festivo, si passa al primo giorno lavorativo.</p></div>' +
+      '<div class="card caffe-box"><img src="../img/tobia-base.svg" alt=""><div><b>Ti ho evitato di pagare il doppio?</b><p class="note" style="margin:4px 0 10px">Un caffè mi aiuta a tenere gratis questi strumenti.</p><a class="btn" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></div></div>' +
+      '<div class="card"><b>🚗 Altre spese dell\'auto:</b> <a href="../bollo/">Quanto costa il bollo</a> · <a href="../carburante/">Dove conviene fare benzina</a> · <a href="../scadenze/">Calendario delle scadenze</a></div>';
+    window.tobiaConta && tobiaConta('calcoli-multe');
+    $('esito').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
+<script src="../js/conta.js" defer></script>
+</body>
+</html>

@@ -2,6 +2,11 @@
 
 Le voci più nuove in alto. Ogni sessione lo legge all'inizio e aggiunge 2-3 righe alla fine.
 
+## 9 novembre 2026 · sessione su internet
+- Sito spostato su Cloudflare Pages: https://tobia-and-co.pages.dev (si pubblica da solo dal ramo main; il vecchio github.io rimanda lì con `js/conta.js`). Tutti i link canonici e la sitemap usano il nuovo indirizzo.
+- Nuovi: `multe/` e `bolletta-prescritta/` (in home, sitemap, Vera, Ugo, Pino, llms.txt).
+- Restano dal piano: pagine voli in inglese, farmaci carenti, bonus sociale, report carburanti, riquadro per altri siti, documenti in scadenza.
+
 ## 7 novembre 2026 · sessione su internet
 - Nuovi: `bagaglio/`, `tasse-aeroportuali/`, 45 pagine `voli/compagnia/<nome>/` + elenco + `voli/sciopero/` (generate da `scripts/compagnie_pagine.py`).
 - Poi: 28 pagine aeroporti, `carburante/prezzi-medi/` (workflow benny-statistiche.yml, storico in data/carburanti/storico.json), llms.txt + FAQ strutturate.

@@ -24,6 +24,8 @@ const PROVE = {
   'treno/': [{ '#prezzo': '59,90', '#ritardo': '75' }, /14,98 €/],
   'tasse-aeroportuali/': [{ '#data': '2026-10-20', '#tasse': '38,20' }, /38,20 €/],
   'affitto-istat/': [{ '#canone': '800', '#var': '2' }, /812,00 €/],
+  'multe/': [{ '#importo': '42', '#notifica': '2026-11-03' }, /29,40 €/],
+  'bolletta-prescritta/': [{ '#emissione': '2026-11-01', '#dal': '2024-01-01', '#al': '2026-09-30', '#importo': '1.000' }, /303,78 €/],
   'bagaglio/': [{ '#atterraggio': '2026-11-03', '#consegna': '2026-11-05', '#spese': 'Spazzolino 8,50' }, /Entro .*2026/],
 };
 
