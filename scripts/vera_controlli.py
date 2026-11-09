@@ -9,7 +9,7 @@ link = 0
 for f in pagine:
     s = f.read_text(encoding="utf-8", errors="ignore")
     for u in re.findall(r'(?:href|src)="([^"#?]+)', s):
-        if re.match(r"^(https?:|mailto:|data:|javascript:|//|tel:)", u) or "{" in u or "'" in u: continue
+        if re.match(r"^(https?:|mailto:|data:|javascript:|//|tel:|webcal:)", u) or "{" in u or "'" in u: continue
         link += 1
         t = (f.parent / urllib.parse.unquote(u)).resolve()
         if u.endswith("/") or t.is_dir(): t = t / "index.html"

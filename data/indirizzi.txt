@@ -16,6 +16,7 @@ https://tobia-and-co.pages.dev/bollo/
 https://tobia-and-co.pages.dev/assegno-unico/
 https://tobia-and-co.pages.dev/carburante/
 https://tobia-and-co.pages.dev/carburante/prezzi-medi/
+https://tobia-and-co.pages.dev/carburante/report/
 https://tobia-and-co.pages.dev/bagaglio/
 https://tobia-and-co.pages.dev/treno/
 https://tobia-and-co.pages.dev/agenti/

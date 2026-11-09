@@ -1,0 +1,204 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tobia & Co.//Calendari tobia-and-co.pages.dev//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Scadenze di casa e tasse · Tobia & Co.
+X-WR-TIMEZONE:Europe/Rome
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:20260115-isee-rinnovo@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20260115
+DTEND;VALUE=DATE:20260116
+SUMMARY:ISEE: da rinnovare
+DESCRIPTION:L'ISEE scade il 31 dicembre: ora puoi rifare la DSU (dal CAF\, 
+ da INPS online o con un commercialista) per avere bonus e agevolazioni.\n\
+ n— Tobia & Co. · https://tobia-and-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ISEE: da rinnovare
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20260228-isee-assegno-unico@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20260228
+DTEND;VALUE=DATE:20260301
+SUMMARY:Assegno unico: ISEE entro oggi
+DESCRIPTION:Entro fine febbraio presenta l'ISEE aggiornato: senza\, da marz
+ o l'Assegno unico scende all'importo minimo. Se lo presenti entro il 30 gi
+ ugno ricevi comunque gli arretrati da marzo.\n\n— Tobia & Co. · https:/
+ /tobia-and-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Assegno unico: ISEE entro oggi
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20260616-imu-acconto@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20260616
+DTEND;VALUE=DATE:20260617
+SUMMARY:IMU: acconto da pagare
+DESCRIPTION:Scade l'acconto IMU (metà dell'imposta annua)\, con il modello
+  F24. Non serve per l'abitazione principale non di lusso.\n\n— Tobia & C
+ o. · https://tobia-and-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:IMU: acconto da pagare
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20260930-730-precompilato@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:730 precompilato: ultimo giorno per l'invio
+DESCRIPTION:Ultimo giorno per inviare il modello 730 (anche precompilato) a
+ ll'Agenzia delle Entrate.\n\n— Tobia & Co. · https://tobia-and-co.pages
+ .dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:730 precompilato: ultimo giorno per l'invio
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20261130-acconto-irpef@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Secondo acconto IRPEF
+DESCRIPTION:Scade il secondo acconto delle imposte sui redditi\, se lo devi
+  pagare (lo trovi nel tuo 730 o nel modello Redditi).\n\n— Tobia & Co. 
+ · https://tobia-and-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Secondo acconto IRPEF
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20261216-imu-saldo@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20261216
+DTEND;VALUE=DATE:20261217
+SUMMARY:IMU: saldo da pagare
+DESCRIPTION:Scade il saldo IMU\, con conguaglio dell'anno. Non serve per l'
+ abitazione principale non di lusso.\n\n— Tobia & Co. · https://tobia-an
+ d-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:IMU: saldo da pagare
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270115-isee-rinnovo@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+SUMMARY:ISEE: da rinnovare
+DESCRIPTION:L'ISEE scade il 31 dicembre: ora puoi rifare la DSU (dal CAF\, 
+ da INPS online o con un commercialista) per avere bonus e agevolazioni.\n\
+ n— Tobia & Co. · https://tobia-and-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ISEE: da rinnovare
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270228-isee-assegno-unico@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20270228
+DTEND;VALUE=DATE:20270301
+SUMMARY:Assegno unico: ISEE entro oggi
+DESCRIPTION:Entro fine febbraio presenta l'ISEE aggiornato: senza\, da marz
+ o l'Assegno unico scende all'importo minimo. Se lo presenti entro il 30 gi
+ ugno ricevi comunque gli arretrati da marzo.\n\n— Tobia & Co. · https:/
+ /tobia-and-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Assegno unico: ISEE entro oggi
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270616-imu-acconto@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20270616
+DTEND;VALUE=DATE:20270617
+SUMMARY:IMU: acconto da pagare
+DESCRIPTION:Scade l'acconto IMU (metà dell'imposta annua)\, con il modello
+  F24. Non serve per l'abitazione principale non di lusso.\n\n— Tobia & C
+ o. · https://tobia-and-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:IMU: acconto da pagare
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270930-730-precompilato@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20270930
+DTEND;VALUE=DATE:20271001
+SUMMARY:730 precompilato: ultimo giorno per l'invio
+DESCRIPTION:Ultimo giorno per inviare il modello 730 (anche precompilato) a
+ ll'Agenzia delle Entrate.\n\n— Tobia & Co. · https://tobia-and-co.pages
+ .dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:730 precompilato: ultimo giorno per l'invio
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20271130-acconto-irpef@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20271130
+DTEND;VALUE=DATE:20271201
+SUMMARY:Secondo acconto IRPEF
+DESCRIPTION:Scade il secondo acconto delle imposte sui redditi\, se lo devi
+  pagare (lo trovi nel tuo 730 o nel modello Redditi).\n\n— Tobia & Co. 
+ · https://tobia-and-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Secondo acconto IRPEF
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20271216-imu-saldo@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20271216
+DTEND;VALUE=DATE:20271217
+SUMMARY:IMU: saldo da pagare
+DESCRIPTION:Scade il saldo IMU\, con conguaglio dell'anno. Non serve per l'
+ abitazione principale non di lusso.\n\n— Tobia & Co. · https://tobia-an
+ d-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:IMU: saldo da pagare
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -22,6 +22,7 @@ GRUPPI = [
    ("💱", "Quanto costa il cambio", "La commissione nascosta all'estero", "cambio/", "cambio valuta dollaro sterlina estero")]),
  ("salute", "💊", "Salute", "Farmaci e promemoria", [
    ("💊", "Il tuo farmaco costa meno?", "Gli equivalenti AIFA e quanto risparmi in un anno", "farmaci/", "farmaco medicina generico equivalente aifa"),
+   ("🚫", "Farmaco introvabile?", "La lista ufficiale AIFA dei farmaci carenti", "farmaci/carenti/", "farmaco carente introvabile mancante farmacia aifa carenza"),
    ("⏰", "Quando finisce la scatola?", "Il telefono ti ricorda di chiedere la ricetta", "scatola/", "medicina scatola promemoria ricetta")]),
  ("auto", "⛽", "Auto e benzina", "Carburante, bollo e scadenze", [
    ("⛽", "Dove conviene fare benzina", "Prezzo + viaggio: la mappa dei distributori", "carburante/", "benzina gasolio distributore carburante gpl metano"),

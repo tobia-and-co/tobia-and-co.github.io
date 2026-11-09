@@ -14,11 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/benny_statistiche.py
+      - run: python3 scripts/benny_report.py
       - name: Salva le medie
         run: |
           git config user.name "Benny il Benzinaio (Tobia & Co.)"
           git config user.email "tobia.and.co@proton.me"
-          git add data/carburanti/storico.json data/carburanti/medie.json carburante/prezzi-medi
+          git add data/carburanti/storico.json data/carburanti/medie.json carburante/prezzi-medi carburante/report data/carburanti/report.json
           git diff --cached --quiet && exit 0
           git commit -m "Benny: prezzi medi per regione aggiornati [CF-Pages-Skip]"
           for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done

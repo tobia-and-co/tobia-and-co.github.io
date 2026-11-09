@@ -1,0 +1,136 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tobia & Co.//Calendari tobia-and-co.pages.dev//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cambio gomme · Tobia & Co.
+X-WR-TIMEZONE:Europe/Rome
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:20260415-gomme-estive@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20260415
+DTEND;VALUE=DATE:20260416
+SUMMARY:Gomme: si possono rimettere le estive
+DESCRIPTION:Da oggi puoi rimontare le gomme estive. Prenota il gommista pri
+ ma della coda.\n\n— Tobia & Co. · https://tobia-and-co.pages.dev/scaden
+ ze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Gomme: si possono rimettere le estive
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20260515-gomme-termine@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20260515
+DTEND;VALUE=DATE:20260516
+SUMMARY:Gomme: ultimo giorno per le estive
+DESCRIPTION:Dove c'è l'obbligo di invernali\, oggi scade il termine per mo
+ ntare le estive.\n\n— Tobia & Co. · https://tobia-and-co.pages.dev/scad
+ enze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Gomme: ultimo giorno per le estive
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20261015-gomme-invernali@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:Gomme: si possono montare le invernali
+DESCRIPTION:Da oggi puoi montare le invernali: conviene prenotare ora il go
+ mmista.\n\n— Tobia & Co. · https://tobia-and-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Gomme: si possono montare le invernali
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20261115-gomme-obbligo@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Gomme: obbligo invernali dove previsto
+DESCRIPTION:Da oggi\, dove c'è l'ordinanza\, servono gomme invernali o cat
+ ene a bordo (fino al 15 aprile).\n\n— Tobia & Co. · https://tobia-and-c
+ o.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Gomme: obbligo invernali dove previsto
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270415-gomme-estive@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20270415
+DTEND;VALUE=DATE:20270416
+SUMMARY:Gomme: si possono rimettere le estive
+DESCRIPTION:Da oggi puoi rimontare le gomme estive. Prenota il gommista pri
+ ma della coda.\n\n— Tobia & Co. · https://tobia-and-co.pages.dev/scaden
+ ze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Gomme: si possono rimettere le estive
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270515-gomme-termine@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:Gomme: ultimo giorno per le estive
+DESCRIPTION:Dove c'è l'obbligo di invernali\, oggi scade il termine per mo
+ ntare le estive.\n\n— Tobia & Co. · https://tobia-and-co.pages.dev/scad
+ enze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Gomme: ultimo giorno per le estive
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20271015-gomme-invernali@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20271015
+DTEND;VALUE=DATE:20271016
+SUMMARY:Gomme: si possono montare le invernali
+DESCRIPTION:Da oggi puoi montare le invernali: conviene prenotare ora il go
+ mmista.\n\n— Tobia & Co. · https://tobia-and-co.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Gomme: si possono montare le invernali
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20271115-gomme-obbligo@tobia-and-co.pages.dev
+DTSTAMP:20261101T000000Z
+DTSTART;VALUE=DATE:20271115
+DTEND;VALUE=DATE:20271116
+SUMMARY:Gomme: obbligo invernali dove previsto
+DESCRIPTION:Da oggi\, dove c'è l'ordinanza\, servono gomme invernali o cat
+ ene a bordo (fino al 15 aprile).\n\n— Tobia & Co. · https://tobia-and-c
+ o.pages.dev/scadenze/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Gomme: obbligo invernali dove previsto
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
