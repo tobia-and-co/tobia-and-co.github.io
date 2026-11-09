@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farmaco introvabile? La lista ufficiale dei farmaci carenti (AIFA) | Tobia &amp; Co.</title>
+<meta name="description" content="Non trovi il tuo farmaco in farmacia? Cerca nella lista ufficiale AIFA dei medicinali carenti e scopri cosa fare: equivalente con lo stesso principio attivo o importazione dall'estero. Gratis.">
+<link rel="canonical" href="https://tobia-and-co.pages.dev/farmaci/carenti/">
+<link rel="icon" href="../../img/tobia-base.svg">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cosa fare se il mio farmaco è introvabile in farmacia?","acceptedAnswer":{"@type":"Answer","text":"Chiedi al farmacista o al medico un medicinale equivalente, cioè con lo stesso principio attivo e lo stesso dosaggio. Spesso è disponibile anche se la tua marca è carente. Non cambiare terapia da solo."}},{"@type":"Question","name":"Cosa significa che un farmaco è carente?","acceptedAnswer":{"@type":"Answer","text":"Significa che l'azienda segnala all'AIFA che per un periodo non riesce a fornire abbastanza confezioni. L'AIFA pubblica l'elenco dei medicinali carenti e lo aggiorna con regolarità."}},{"@type":"Question","name":"Si può avere un farmaco carente importato dall'estero?","acceptedAnswer":{"@type":"Answer","text":"In alcuni casi sì: per certi medicinali carenti l'AIFA autorizza l'importazione da altri Paesi. La richiesta di solito la fanno la farmacia, l'ospedale o l'ASL: chiedi informazioni al tuo farmacista."}}]}</script>
+<style>
+.carenza{border-left:4px solid var(--accent,#c0562b);margin:12px 0;padding-left:12px}
+.carenza h3{margin:0 0 4px;overflow-wrap:anywhere}
+.carenza p{margin:3px 0;overflow-wrap:anywhere}
+.carenza .dati{font-size:.92em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../../img/tobia-base.svg" alt=""><a href="../../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../../#strumenti">Strumenti</a><a class="nasc" href="../../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../../">🏠 Home</a> › <a href="../">Farmaci</a> › Farmaci carenti</nav>
+  <span class="occhiello">Elenco ufficiale AIFA</span>
+  <h1>💊 Farmaco introvabile? La lista dei farmaci carenti</h1>
+  <p class="lead">Scrivi il nome del farmaco o il principio attivo e controlla se è nella <b>lista ufficiale AIFA</b> dei medicinali carenti. Sotto trovi cosa fare.</p>
+
+  <div class="card">
+    <label for="q">Nome del farmaco o principio attivo</label>
+    <input id="q" type="search" placeholder="Es. amoxicillina" autocomplete="off">
+    <p class="note" id="stato" aria-live="polite">Carico la lista…</p>
+  </div>
+  <div id="risultati"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">🧭 Cosa fare se il tuo farmaco è carente</h2>
+    <ol>
+      <li><b>Chiedi un equivalente.</b> Al farmacista o al medico chiedi un medicinale con lo <b>stesso principio attivo</b> e lo stesso dosaggio: spesso c'è, anche se la tua marca manca.</li>
+      <li><b>Guarda quanto costa.</b> Gli equivalenti di solito costano meno: con <a href="../">Il tuo farmaco costa meno?</a> confronti i prezzi delle liste AIFA.</li>
+      <li><b>Importazione dall'estero.</b> Per alcune carenze l'AIFA autorizza l'importazione da altri Paesi: la richiesta la fanno la farmacia o l'ASL, chiedi al tuo farmacista.</li>
+      <li><b>Non cambiare terapia da solo</b> e non dimezzare le dosi: parlane sempre col medico.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">❓ Domande frequenti</h2>
+    <p><b>Cosa significa «carente»?</b><br>L'azienda ha segnalato all'AIFA che per un periodo non riesce a fornire abbastanza confezioni. Il farmaco può comunque trovarsi in alcune farmacie.</p>
+    <p><b>Ogni quanto si aggiorna la lista?</b><br>Il mio robottino Fabio la ricontrolla ogni mattina sul sito dell'AIFA.</p>
+  </div>
+
+  <div class="card"><p class="note">⚠️ Informazioni tratte dall'elenco pubblicato dall'AIFA (<a href="https://www.aifa.gov.it/farmaci-carenti" rel="noopener">aifa.gov.it/farmaci-carenti</a>). Non sono un consiglio medico e possono essere cambiate nel frattempo: <b>chiedi sempre al medico o al farmacista</b>. <span id="agg"></span></p></div>
+
+  <footer><a href="../../">← Tutti gli strumenti</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Dati aggiornati automaticamente da Fabio il Farmacista, il robottino di Tobia (un'intelligenza artificiale, Claude). Non collegato ad AIFA.</footer>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var LISTA = [], contato = false;
+  var norm = function (s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var dt = function (s) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ''); return m ? m[3] + '/' + m[2] + '/' + m[1] : (s || ''); };
+  function riga(c) {
+    var h = '<div class="carenza"><h3>' + esc(c.nome || c.principio) + '</h3>';
+    if (c.principio && c.nome) h += '<p class="dati">Principio attivo: <b>' + esc(c.principio) + '</b></p>';
+    if (c.confezione) h += '<p class="dati">Confezione: ' + esc(c.confezione) + '</p>';
+    if (c.inizio) h += '<p class="dati">Carente dal: ' + esc(dt(c.inizio)) + '</p>';
+    if (c.fine) h += '<p class="dati">Fine prevista: ' + esc(dt(c.fine)) + '</p>';
+    if (c.motivo) h += '<p class="dati">Motivo: ' + esc(c.motivo) + '</p>';
+    if (c.suggerimenti) h += '<p class="dati">💡 Suggerimento AIFA: ' + esc(c.suggerimenti) + '</p>';
+    if (c.titolare) h += '<p class="note">Titolare: ' + esc(c.titolare) + '</p>';
+    return h + '</div>';
+  }
+  function mostra() {
+    var q = norm($('q').value).trim(), out = $('risultati');
+    if (!LISTA.length) return;
+    if (q.length < 2) { out.innerHTML = ''; $('stato').textContent = 'Nella lista ci sono ' + LISTA.length + ' medicinali carenti. Scrivi almeno 2 lettere per cercare.'; return; }
+    var t = q.split(/\s+/), trovati = LISTA.filter(function (c) { var s = norm(c.nome + ' ' + c.principio); return t.every(function (w) { return s.indexOf(w) >= 0; }); });
+    $('stato').textContent = trovati.length ? 'Trovati ' + trovati.length + (trovati.length > 50 ? ' (mostro i primi 50)' : '') + '.' : 'Non lo trovo nella lista dei carenti: buon segno. Se in farmacia manca, chiedi un equivalente.';
+    out.innerHTML = trovati.length ? '<div class="card">' + trovati.slice(0, 50).map(riga).join('') + '</div>' : '';
+    if (!contato) { contato = true; window.tobiaConta && tobiaConta('ricerche-carenze'); }
+  }
+  $('q').addEventListener('input', mostra);
+  fetch('../../data/carenze.json').then(function (r) { return r.json(); }).then(function (d) {
+    LISTA = d.carenze || [];
+    if (d.aggiornato) $('agg').textContent = 'Lista aggiornata il ' + dt(d.aggiornato) + '.';
+    if (!LISTA.length) { $('stato').textContent = '⏳ La lista è in aggiornamento: Fabio la sta scaricando dall\'AIFA, riprova tra poco. Intanto, se un farmaco manca in farmacia, chiedi un equivalente.'; $('q').disabled = true; return; }
+    mostra();
+  }).catch(function () { $('stato').textContent = 'Non riesco a caricare la lista in questo momento, riprova tra poco.'; $('q').disabled = true; });
+})();
+</script>
+<script src="../../js/conta.js" defer></script>
+</body>
+</html>

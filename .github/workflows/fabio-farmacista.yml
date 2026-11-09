@@ -1,0 +1,21 @@
+name: Fabio il Farmacista
+on:
+  schedule:
+    - cron: "27 5 * * *"   # ogni mattina
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  carenze:
+    if: github.repository == 'tobia-and-co/tobia-and-co.github.io'   # solo sul sito vero, mai nelle copie
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q openpyxl   # serve solo se AIFA pubblica il file in formato Excel
+      - run: python3 scripts/fabio_carenze.py
+      - name: Salva la lista dei farmaci carenti
+        run: |
+          git config user.name "Fabio il Farmacista (Tobia & Co.)"
+          git config user.email "tobia.and.co@proton.me"
+          git add data/carenze.json
+          git diff --cached --quiet || (git commit -m "Fabio: farmaci carenti AIFA aggiornati [CF-Pages-Skip]" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)

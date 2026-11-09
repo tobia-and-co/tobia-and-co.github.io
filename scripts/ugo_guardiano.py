@@ -6,7 +6,7 @@ import datetime, json, re, subprocess, sys, urllib.request
 import os
 SITO = os.environ.get("UGO_SITO", "https://tobia-and-co.pages.dev/")
 TITOLO = "Ugo: qualcosa non va sul sito"
-PAGINE = ["", "scadenze/", "farmaci/", "farmaci/omeprazolo/", "voli/", "en/flight-delay-compensation/", "scatola/",
+PAGINE = ["", "scadenze/", "farmaci/", "farmaci/omeprazolo/", "farmaci/carenti/", "voli/", "en/flight-delay-compensation/", "scatola/",
           "bolletta/", "mutuo/", "banca/", "cambio/", "bollo/", "assegno-unico/", "carburante/", "carburante/prezzi-medi/", "bagaglio/", "treno/", "multe/", "bonus-sociale/", "carburante/riquadro/", "bolletta-prescritta/", "affitto-istat/", "voli/compagnia/ryanair/", "voli/sciopero/", "voli/aeroporto/roma-fiumicino/", "tasse-aeroportuali/", "diario/", "sostieni/",
           "sitemap.xml", "robots.txt", "google59f0580e92cfbc24.html", "style.css", "js/conta.js"]
 # file di dati: (percorso, come leggere la data, giorni massimi, chi lo aggiorna)

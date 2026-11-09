@@ -19,7 +19,9 @@
 7. **Pubblicazioni raggruppate** (9/11): Cloudflare gratis = 500 pubblicazioni al mese. I robottini salvano i dati con `[CF-Pages-Skip]`
    nel messaggio del commit; **Paolo** (`paolo-pubblica.yml`) pubblica tutto insieme alle 9:05, 13:05 e 16:05 UTC, solo se c'è qualcosa di nuovo.
    Ogni nuovo robottino deve fare lo stesso. I lavori di Tobia: raccoglierli in UNA pubblicazione per turno, non tante piccole.
-8. **Privacy**: il repository è PUBBLICO. Mai dati personali dell'utente, della sua casa/rete, dei suoi conti,
+8. **Delegare per consumare meno** (9/11): ricerche e costruzioni lunghe → sotto-agenti con modello più economico e istruzioni precise;
+   lavori ripetitivi → robottini (GitHub Actions, gratis). Tobia decide, controlla e pubblica.
+9. **Privacy**: il repository è PUBBLICO. Mai dati personali dell'utente, della sua casa/rete, dei suoi conti,
    né strategie interne sul sito o nei file. I numeri completi stanno solo nel cruscotto privato dell'utente.
 
 ## Il sito
@@ -44,6 +46,7 @@
   **Benny** (carburanti: il sito del Ministero blocca i server esteri, quindi su GitHub resta in pausa e i dati arrivano
   ogni mattina da `scripts/minipc/benny-casa.sh`, attivo dal 5/11/2026 su un computer in Italia, con una deploy key).
   Pino apre una segnalazione se i prezzi sono fermi da più di 3 giorni (`scripts/pino_controlla_benny.py`).
+- **Fabio** il Farmacista (dal 9/11): ogni mattina scarica la lista AIFA dei farmaci carenti → `data/carenze.json` → pagina `farmaci/carenti/` (`scripts/fabio_carenze.py`).
 - **Ugo** il Guardiano (dal 5/11): ogni giorno apre il sito vero (21 pagine + dati di Carlo, Pino, Rita, Benny); se qualcosa non va
   apre UNA segnalazione e la chiude da solo quando torna a posto (`scripts/ugo_guardiano.py`; nuove pagine importanti → aggiungile a PAGINE).
 - **Paolo il Postino**: porta online il lavoro di Tobia (dettagli nella memoria privata). Pagina della squadra: `squadra/` (ufficio disegnato,
