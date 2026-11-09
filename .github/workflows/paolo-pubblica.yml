@@ -1,0 +1,29 @@
+name: Paolo - pubblicazione raggruppata
+# Regola: i robottini salvano i dati con [CF-Pages-Skip] (Cloudflare non pubblica a ogni salvataggio).
+# Paolo pubblica tutto insieme 3 volte al giorno, e solo se c'è qualcosa di nuovo: così restiamo lontani
+# dal limite gratuito di Cloudflare (500 pubblicazioni al mese).
+on:
+  schedule:
+    - cron: "5 9 * * *"    # dopo i prezzi del mattino di Benny e i conti di Pino
+    - cron: "5 13 * * *"
+    - cron: "5 16 * * *"   # dopo i cambi BCE di Carlo
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: paolo-pubblica
+jobs:
+  pubblica:
+    if: github.repository == 'tobia-and-co/tobia-and-co.github.io'   # solo sul sito vero, mai nelle copie
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pubblica solo se l'ultimo salvataggio non è ancora online
+        run: |
+          if git log -1 --format=%s | grep -q "CF-Pages-Skip"; then
+            date -u +'{"pubblicato": "%Y-%m-%d %H:%M UTC"}' > data/pubblicato.json
+            git config user.name "Paolo il Postino (Tobia & Co.)"; git config user.email "tobia.and.co@proton.me"
+            git add data/pubblicato.json && git commit -qm "Paolo: pubblicati insieme gli aggiornamenti dei robottini"
+            for i in 1 2 3 4; do git pull --rebase -q && git push -q && break; sleep 7; done
+          else
+            echo "Niente di nuovo da pubblicare"
+          fi

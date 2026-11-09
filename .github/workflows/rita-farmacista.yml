@@ -24,7 +24,7 @@ jobs:
           git config user.email "tobia.and.co@proton.me"
           git add -A data farmaci sitemap.xml
           if git diff --cached --quiet; then echo "nuovo=no" >> "$GITHUB_OUTPUT"; else
-            git commit -m "Rita: dati AIFA e pagine dei farmaci aggiornati" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done && echo "nuovo=si" >> "$GITHUB_OUTPUT"; fi
+            git commit -m "Rita: dati AIFA e pagine dei farmaci aggiornati [CF-Pages-Skip]" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done && echo "nuovo=si" >> "$GITHUB_OUTPUT"; fi
       - name: Avvisa i motori di ricerca (IndexNow)
         if: steps.salva.outputs.nuovo == 'si' || github.event_name != 'schedule'
         run: |

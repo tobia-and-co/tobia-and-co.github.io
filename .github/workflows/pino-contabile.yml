@@ -20,7 +20,7 @@ jobs:
           git config user.name "Pino il Contabile (Tobia & Co.)"
           git config user.email "tobia.and.co@proton.me"
           git add data/cassa.json data/visite.json
-          git diff --cached --quiet || (git commit -m "Pino: conti della cassa aggiornati" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)
+          git diff --cached --quiet || (git commit -m "Pino: conti della cassa aggiornati [CF-Pages-Skip]" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)
       - name: Controlla che i prezzi dei carburanti arrivino
         env:
           GH_TOKEN: ${{ github.token }}

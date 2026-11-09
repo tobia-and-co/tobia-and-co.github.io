@@ -19,4 +19,4 @@ jobs:
           git config user.name "Carlo il Cambiavalute (Tobia & Co.)"
           git config user.email "tobia.and.co@proton.me"
           git add data/cambi.json
-          git diff --cached --quiet || (git commit -m "Carlo: cambi BCE aggiornati" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)
+          git diff --cached --quiet || (git commit -m "Carlo: cambi BCE aggiornati [CF-Pages-Skip]" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)

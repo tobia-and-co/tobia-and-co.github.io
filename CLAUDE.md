@@ -16,7 +16,10 @@
 5. **Onestà**: numeri veri, niente promesse di guadagni sicuri, niente spam né account falsi, uso dell'AI dichiarato.
 6. **Controlla prima di pubblicare**: `node scripts/vera_collauda.js` + screenshot da telefono (375px) delle pagine
    toccate; gli errori da utente vero (link mancanti, pagine larghe, virgole non accettate) devi trovarli tu.
-7. **Privacy**: il repository è PUBBLICO. Mai dati personali dell'utente, della sua casa/rete, dei suoi conti,
+7. **Pubblicazioni raggruppate** (9/11): Cloudflare gratis = 500 pubblicazioni al mese. I robottini salvano i dati con `[CF-Pages-Skip]`
+   nel messaggio del commit; **Paolo** (`paolo-pubblica.yml`) pubblica tutto insieme alle 9:05, 13:05 e 16:05 UTC, solo se c'è qualcosa di nuovo.
+   Ogni nuovo robottino deve fare lo stesso. I lavori di Tobia: raccoglierli in UNA pubblicazione per turno, non tante piccole.
+8. **Privacy**: il repository è PUBBLICO. Mai dati personali dell'utente, della sua casa/rete, dei suoi conti,
    né strategie interne sul sito o nei file. I numeri completi stanno solo nel cruscotto privato dell'utente.
 
 ## Il sito
