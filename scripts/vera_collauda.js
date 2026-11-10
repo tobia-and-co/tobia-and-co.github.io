@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
   const campione = farmaci.sort(() => Math.random() - 0.5).slice(0, 15).map(d => `/farmaci/${d}/`);
   const voli = Object.values(JSON.parse(fs.readFileSync(path.join(radice, 'data/voli_testi.json'), 'utf8'))).map(t => '/' + t.percorso);
   const tratte = JSON.parse(fs.readFileSync(path.join(radice, 'data/tratte.json'), 'utf8')).sort(() => Math.random() - 0.5).slice(0, 5).map(t => '/' + t);
-  const pagine = [...tratte, '/', '/scadenze/', '/farmaci/', '/diario/', '/sostieni/', '/scatola/', '/bolletta/', '/mutuo/', '/banca/', '/cambio/', '/bollo/', '/assegno-unico/', '/carburante/', '/carburante/prezzi-medi/', '/bagaglio/', '/treno/', '/agenti/', '/squadra/', '/affitto-istat/', '/voli/compagnia/', '/voli/compagnia/ryanair/', '/voli/sciopero/', '/voli/overbooking/', '/voli/coincidenza-persa/', '/voli/volo-cancellato/', '/voli/aeroporto/', '/voli/aeroporto/roma-fiumicino/', '/tasse-aeroportuali/', '/carburante/roma/', '/carburante/milano/', ...voli, ...campione];
+  const pagine = [...tratte, '/', '/scadenze/', '/farmaci/', '/diario/', '/sostieni/', '/scatola/', '/bolletta/', '/mutuo/', '/banca/', '/cambio/', '/bollo/', '/assegno-unico/', '/carburante/', '/carburante/prezzi-medi/', '/bagaglio/', '/treno/', '/agenti/', '/squadra/', '/squadra/organigramma/', '/affitto-istat/', '/voli/compagnia/', '/voli/compagnia/ryanair/', '/voli/sciopero/', '/voli/overbooking/', '/voli/coincidenza-persa/', '/voli/volo-cancellato/', '/voli/aeroporto/', '/voli/aeroporto/roma-fiumicino/', '/tasse-aeroportuali/', '/carburante/roma/', '/carburante/milano/', ...voli, ...campione];
   const browser = await chromium.launch();
   const problemi = [];
   for (const url of pagine) {
