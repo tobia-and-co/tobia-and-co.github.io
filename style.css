@@ -5,6 +5,7 @@
   --blu:#2f74bd; --blu-soft:#e7f0fa; --oro:#e3a73b; --oro-soft:#fbf0d8;
   --verde:#2b8a57; --verde-soft:#e4f3ea; --rosso:#c2452d; --rosso-soft:#fbe8e3;
   --viola:#7b5cc7; --viola-soft:#efeafb;
+  --grid:rgba(29,39,51,.05);
   --ombra:0 1px 2px rgba(29,39,51,.05),0 8px 28px rgba(29,39,51,.07);
   --raggio:22px;
   --titoli:'Fraunces',Georgia,serif;
@@ -15,12 +16,14 @@
   --blu:#6aa8ec; --blu-soft:#1d2d40; --oro:#f0b955; --oro-soft:#3a2f1a;
   --verde:#5cc28b; --verde-soft:#183326; --rosso:#ff8a73; --rosso-soft:#3b221d;
   --viola:#a993ec; --viola-soft:#2a2440;
+  --grid:rgba(255,255,255,.04);
   --ombra:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35);
 }}
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--testo)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--testo);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
 .wrap{max-width:860px;margin:0 auto;padding:0 18px 56px}
 a{color:var(--blu)}
 td,.sub,h1,h2,h3,p{overflow-wrap:anywhere}
