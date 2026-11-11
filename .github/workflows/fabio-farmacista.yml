@@ -2,6 +2,7 @@ name: Fabio il Farmacista
 on:
   schedule:
     - cron: "27 5 * * *"   # ogni mattina
+    - cron: "47 11 * * *"  # secondo giro, se al mattino AIFA non rispondeva
   workflow_dispatch:
 permissions:
   contents: write

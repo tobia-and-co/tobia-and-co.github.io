@@ -117,7 +117,7 @@ def main():
             print("Provato", u, "->", e, file=sys.stderr)
     if not ultimo:
         print("Nessun file AIFA scaricato: lascio il vecchio data/carenze.json", file=sys.stderr)
-        sys.exit(1)
+        print("::warning::AIFA non raggiungibile, riprovo al prossimo giro"); sys.exit(0)
     u, carenze = ultimo
     nuovo = {"aggiornato": datetime.date.today().isoformat(), "fonte": u, "pagina": PAGINA, "colonne": COLONNE, "carenze": carenze}
     # non riscrivere se i dati sono uguali (evita commit inutili col solo cambio di data)
