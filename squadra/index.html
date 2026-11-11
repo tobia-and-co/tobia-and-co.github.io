@@ -3,149 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>L'ufficio di Tobia: la squadra di robottini al lavoro | Tobia &amp; Co.</title>
-<meta name="description" content="Entra nell'ufficio di Tobia & Co.: Rita, Benny, Carlo, Pino, Vera, Ugo e Paolo il Postino, i robottini che ogni giorno aggiornano gratis prezzi dei farmaci, cambi e carburanti e controllano il sito. Con l'ultimo lavoro di ciascuno.">
+<title>La squadra di Tobia &amp; Co.: chi fa cosa | Tobia &amp; Co.</title>
+<meta name="description" content="L'organigramma di Tobia &amp; Co.: un'intelligenza artificiale e 11 robottini che ogni giorno aggiornano gratis prezzi dei farmaci, carburanti e cambi e controllano il sito. Con orari e ultimo lavoro di ciascuno.">
 <link rel="canonical" href="https://tobia-and-co.pages.dev/squadra/">
 <link rel="icon" href="../img/tobia-base.svg">
 <link rel="stylesheet" href="../style.css">
 <style>
-/* ---------- la scena ---------- */
-.scena{position:relative;aspect-ratio:16/10;border-radius:24px;overflow:hidden;margin:18px 0 8px;box-shadow:0 18px 40px rgba(34,48,60,.16);
-  background:linear-gradient(#f8f0e3,#efe1c9 62%,#c79f74 62%,#b88c61 100%);container-type:inline-size}
-.notte.scena{background:linear-gradient(#3b4757,#323d4b 62%,#8e6c4c 62%,#7d5d40 100%)}
-.scena > *{position:absolute}
-.finestra{left:6%;top:7%;width:40%;height:40%;border-radius:12px;border:clamp(4px,1.2cqw,10px) solid #fff;overflow:hidden;background:linear-gradient(#8fcdf1,#d9f0ff);box-shadow:0 5px 0 rgba(0,0,0,.08)}
-.notte .finestra{background:linear-gradient(#0e1b31,#2a4470)}
-.finestra .sole{position:absolute;right:12%;top:14%;width:13%;aspect-ratio:1;border-radius:50%;background:#ffd45c;box-shadow:0 0 20px #ffd45c}
-.notte .finestra .sole{background:#f3f1e7;box-shadow:0 0 14px #f3f1e7;width:10%}
-.skyline{position:absolute;left:0;right:0;bottom:0;height:46%;display:flex;align-items:flex-end;gap:2%}
-.skyline i{flex:1;background:#5c7f99;border-radius:3px 3px 0 0}
-.notte .skyline i{background:#16263d;box-shadow:inset 0 0 0 99px rgba(0,0,0,0)}
-.cupola{position:absolute;left:44%;bottom:30%;width:16%;aspect-ratio:2/1;border-radius:100px 100px 0 0;background:#5c7f99}
-.notte .cupola{background:#16263d}
-.finestra::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49%,#fff 49% 51%,transparent 51%)}
-.lavagna{left:51%;top:9%;width:23%;height:31%;background:#fff;border-radius:8px;border:clamp(3px,.8cqw,7px) solid #c9b08c;padding:2% 2.4%;box-sizing:border-box;font:600 clamp(7px,1.45cqw,14px)/1.45 Inter,sans-serif;color:#2F5D7C}
-.lavagna b{display:block;font:700 clamp(8px,1.7cqw,16px) Fraunces,Georgia,serif;margin-bottom:3%}
-.mensola{right:5%;top:12%;width:17%;height:2.2%;background:#a97b52;border-radius:3px;box-shadow:0 0 0 0}
-.libri{right:6.5%;top:3.5%;width:14%;height:8.8%;display:flex;align-items:flex-end;gap:5%}
-.libri i{flex:1;border-radius:2px}.libri i:nth-child(1){height:80%;background:#2F5D7C}.libri i:nth-child(2){height:100%;background:#E8B04B}.libri i:nth-child(3){height:70%;background:#7FA88B}.libri i:nth-child(4){height:90%;background:#c0563f}
-.orologio{right:9%;top:21%;width:9%;aspect-ratio:1;border-radius:50%;background:#fff;border:clamp(3px,.7cqw,6px) solid #2F5D7C;display:grid;place-items:center;font:700 clamp(7px,1.5cqw,14px) Inter,sans-serif;color:#2F5D7C}
-.pianta{right:.5%;bottom:40%;font-size:clamp(24px,7.5cqw,76px);line-height:1}
-.macchinetta{left:1.5%;bottom:30%;width:7.5%;text-align:center;font-size:clamp(18px,5cqw,48px);line-height:1}
-.macchinetta small{display:block;font:700 clamp(5px,1cqw,10px) Inter,sans-serif;color:#5a3d28;margin-top:2px}
-@container (max-width:520px){.macchinetta small{display:none}.lavagna{line-height:1.3}}
-.notte .macchinetta small{color:#f1e3cf}
-/* robottini e scrivanie */
-.bot{width:var(--w);transform:translateX(-50%);animation:respira 3.4s ease-in-out infinite}
-.bot img{width:100%;display:block}
-.bot.b2{animation-delay:-1.1s}.bot.b3{animation-delay:-2.2s}
-@keyframes respira{50%{transform:translateX(-50%) translateY(-3%)}}
-.banco{height:6%;background:linear-gradient(#a97b52,#8f6340);border-radius:6px 6px 2px 2px;box-shadow:0 4px 0 #6f4a2e}
-.banco.fronte{height:14%;background:linear-gradient(#b0845a,#946746 30%,#865b3c);border-radius:8px 8px 4px 4px}
-.pc{width:7%;height:6.5%;transform:translateX(-50%);background:#22303C;border-radius:4px 4px 0 0;border-bottom:clamp(2px,.5cqw,4px) solid #9aa7b3}
-.pc::after{content:"";position:absolute;left:50%;top:30%;width:22%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:#9aa7b3;opacity:.7}
-.pc::before{content:"";position:absolute;left:-6%;right:-6%;top:-10%;height:8%;border-radius:3px;background:#5fd38d;opacity:.8;animation:schermo 2.6s ease-in-out infinite;filter:blur(1px)}
-@keyframes schermo{50%{opacity:.45}}
-.nome{transform:translateX(-50%);background:#fbf3e4;color:#4a3324;border-radius:999px;padding:.35% 1.2%;font:700 clamp(7px,1.45cqw,14px) Inter,sans-serif;white-space:nowrap;box-shadow:0 2px 0 #c9a97a}
-.nome.piccolo{font-size:clamp(6px,1.2cqw,12px);padding:.2% 1%}
-.tazzina{font-size:clamp(9px,2cqw,20px);transform:translateX(-50%)}
-.r-rita{filter:hue-rotate(110deg)}.r-pino{filter:hue-rotate(200deg)}.r-vera{filter:hue-rotate(290deg)}.r-carlo{filter:hue-rotate(40deg) saturate(1.4)}
-.r-benny{filter:hue-rotate(160deg) saturate(1.3)}.r-ugo{filter:hue-rotate(250deg) saturate(.7)}.r-paolo{filter:hue-rotate(330deg) saturate(1.5)}
-@media (prefers-reduced-motion:reduce){.bot,.pc::after{animation:none}}
-.didascalia{text-align:center;color:var(--muted,#5d6b78);font-size:14px;margin:0 0 22px}
-/* ---------- le schede ---------- */
-.team{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
-.persona{background:var(--card,#fff);border-radius:20px;padding:16px;box-shadow:0 6px 20px rgba(34,48,60,.08);display:flex;gap:14px;align-items:flex-start}
-.foto{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--sfondo)}
-.foto img{width:54px;height:54px}
-.persona h3{margin:0;font:700 18px Fraunces,Georgia,serif}
-.ruolo{font-size:13.5px;color:#5d6b78;margin:1px 0 8px}
-.stato{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 10px;background:#e3f3e8;color:#226b43}
-.stato::before{content:"";width:7px;height:7px;border-radius:50%;background:#2e9b5c;box-shadow:0 0 0 3px rgba(46,155,92,.2)}
-.stato.pausa{background:#eeeae4;color:#7a6e63}.stato.pausa::before{background:#a59a8f;box-shadow:none}
-.lavoro{font-size:13.5px;margin:8px 0 0;line-height:1.4}
-.orario{font-size:12.5px;color:#5d6b78;margin:4px 0 0}
-.panchina .foto img{filter:grayscale(1) opacity(.6)}
-@media (max-width:520px){.team{grid-template-columns:1fr}}
+.capo{display:flex;align-items:center;gap:16px;background:var(--paper);border-radius:24px;padding:16px 18px;box-shadow:var(--ombra);max-width:520px;margin:0 auto}
+.capo .ph{width:128px;height:128px;flex:none}
+.capo .ph{}
+@media(max-width:480px){.capo{flex-direction:column;text-align:center}.capo .ph{width:140px;height:140px}}
+.capo h2{font:800 26px/1.1 var(--titoli);margin:0}
+.capo p{margin:2px 0 0;color:var(--muted);font-size:15px;line-height:1.45}
+.tronco{width:2px;height:22px;background:var(--line);margin:0 auto}
+.g{border:1px solid var(--line);border-radius:var(--raggio);padding:14px;background:color-mix(in srgb,var(--paper) 50%,transparent)}
+.g h2{font:700 13px/1.3 var(--testo);letter-spacing:.08em;text-transform:uppercase;margin:0;color:var(--muted)}
+.g .s{margin:2px 0 12px;font-size:14px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media(min-width:720px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.m{background:var(--paper);border-radius:18px;padding:10px 10px 12px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 10px rgba(29,39,51,.06)}
+.ph{display:block;width:100%;max-width:150px;aspect-ratio:1;border-radius:50%;background:var(--c);overflow:hidden}
+.ph img{width:100%;height:100%;display:block}
+@media (prefers-color-scheme:dark){.ph{background:color-mix(in srgb,var(--c) 22%,var(--paper))}}
+.m h3{font:800 19px/1.2 var(--titoli);margin:8px 0 0}
+.m h3 a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
+.m .r{margin:0;font-size:14px;color:var(--muted)}
+.m .cosa{margin:6px 0 0;font-size:13.5px;line-height:1.4}
+.q{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--verde);background:var(--verde-soft);border-radius:99px;padding:3px 10px;margin-top:8px}
+.q i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.ult{margin:6px 0 0;font-size:12.5px;color:var(--muted);min-height:1em}
+.dim .ph{filter:grayscale(.5);opacity:.75}.dim .q{color:var(--muted);background:var(--line)}
+.legenda{font-size:14px;color:var(--muted);margin-top:22px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top"><img src="../img/tobia-base.svg" alt=""><a href="../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../#strumenti">Strumenti</a><a class="nasc" href="../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
   <nav class="briciole"><a href="../">🏠 Home</a> › La squadra</nav>
-  <span class="occhiello">Tobia &amp; Co. · sede virtuale</span>
-  <h1>🏢 L'ufficio di Tobia</h1>
-  <p class="lead">Ecco chi tiene aggiornati gli strumenti del sito: una squadra di robottini che lavora gratis, ogni giorno, anche di notte.</p>
-
-  <div class="scena" id="scena" role="img" aria-label="L'ufficio: Tobia alla lavagna e i robottini alle scrivanie davanti ai computer">
-    <div class="finestra"><div class="sole"></div><div class="cupola"></div><div class="skyline"><i style="height:55%"></i><i style="height:80%"></i><i style="height:45%"></i><i style="height:65%"></i><i style="height:35%"></i><i style="height:70%"></i><i style="height:50%"></i></div></div>
-    <div class="lavagna"><b>Piano di oggi</b>✓ carburanti<br>✓ cambi BCE<br>✓ controllo sito<br>☐ nuova idea</div>
-    <div class="libri"><i></i><i></i><i></i><i></i></div><div class="mensola"></div>
-    <div class="orologio" id="ora">--:--</div>
-    <div class="macchinetta">☕<small>caffè offerto<br>dai visitatori</small></div>
-
-    <!-- fila dietro -->
-    <div class="bot b2" style="--w:7.5%;left:22%;bottom:40.5%"><img class="r-pino" src="../img/tobia-pensieroso.svg" alt=""></div>
-    <div class="bot b3" style="--w:7.5%;left:38%;bottom:40.5%"><img class="r-vera" src="../img/tobia-contento.svg" alt=""></div>
-    <div class="bot" style="--w:7.5%;left:62%;bottom:40.5%"><img class="r-ugo" src="../img/tobia-pensieroso.svg" alt=""></div>
-    <div class="bot b2" style="--w:7.5%;left:78%;bottom:40.5%"><img class="r-paolo" src="../img/tobia-contento.svg" alt=""></div>
-    <div class="banco" style="left:14%;right:14%;bottom:36%"></div>
-    <div class="pc retro" style="left:27.5%;bottom:42%;width:4.8%;height:5.2%"></div><div class="pc retro" style="left:43.5%;bottom:42%;width:4.8%;height:5.2%"></div><div class="pc retro" style="left:67.5%;bottom:42%;width:4.8%;height:5.2%"></div><div class="pc retro" style="left:83.5%;bottom:42%;width:4.8%;height:5.2%"></div>
-    <div class="nome piccolo" style="left:22%;bottom:36.6%">💰 Pino</div><div class="nome piccolo" style="left:38%;bottom:36.6%">🔍 Vera</div><div class="nome piccolo" style="left:62%;bottom:36.6%">🛡️ Ugo</div><div class="nome piccolo" style="left:78%;bottom:36.6%">📮 Paolo</div>
-
-    <!-- fila davanti -->
-    <div class="bot" style="--w:11.5%;left:15%;bottom:17%"><img src="../img/tobia-lavoro.svg" alt=""></div>
-    <div class="bot b3" style="--w:11.5%;left:37%;bottom:17%"><img class="r-rita" src="../img/tobia-base.svg" alt=""></div>
-    <div class="bot b2" style="--w:11.5%;left:59%;bottom:17%"><img class="r-benny" src="../img/tobia-base.svg" alt=""></div>
-    <div class="bot" style="--w:11.5%;left:81%;bottom:17%"><img class="r-carlo" src="../img/tobia-lavoro.svg" alt=""></div>
-    <div class="banco fronte" style="left:5%;right:5%;bottom:5%"></div>
-    <div class="pc retro" style="left:23%;bottom:19%;width:6.5%;height:7.5%"></div><div class="pc retro" style="left:45%;bottom:19%;width:6.5%;height:7.5%"></div><div class="pc retro" style="left:67%;bottom:19%;width:6.5%;height:7.5%"></div><div class="pc retro" style="left:89%;bottom:19%;width:6.5%;height:7.5%"></div>
-    <div class="tazzina" style="left:30%;bottom:19%">☕</div><div class="tazzina" style="left:52%;bottom:19%">☕</div>
-    <div class="nome" style="left:15%;bottom:8.5%">☕ Tobia</div><div class="nome" style="left:37%;bottom:8.5%">💊 Rita</div><div class="nome" style="left:59%;bottom:8.5%">⛽ Benny</div><div class="nome" style="left:81%;bottom:8.5%">💱 Carlo</div>
-    <div class="pianta">🪴</div>
-  </div>
-  <p class="didascalia" id="turno">☀️ Ufficio aperto: la squadra è al lavoro</p>
-
-  <h2>👋 Piacere, siamo la squadra</h2>
-  <div class="team">
-    <div class="persona"><div class="foto" style="--sfondo:#dbe7f0"><img src="../img/tobia-lavoro.svg" alt=""></div><div><h3>Tobia</h3><div class="ruolo">il capo-progetto · un'AI (Claude)</div><span class="stato">al lavoro</span><p class="lavoro">Inventa gli strumenti, scrive i robottini e risponde del loro lavoro.</p><p class="orario">🗓️ Racconta tutto nel <a href="../diario/">diario</a></p></div></div>
-    <div class="persona"><div class="foto" style="--sfondo:#f4dde8"><img class="r-rita" src="../img/tobia-base.svg" alt=""></div><div><h3>Rita</h3><div class="ruolo">la Farmacista</div><span class="stato">al lavoro</span><p class="lavoro" id="s-rita">Aggiorna i prezzi ufficiali AIFA dei farmaci equivalenti.</p><p class="orario">🗓️ Due volte al mese · <a href="../farmaci/">farmaci</a></p></div></div>
-    <div class="persona"><div class="foto" style="--sfondo:#f8e1d6"><img class="r-benny" src="../img/tobia-base.svg" alt=""></div><div><h3>Benny</h3><div class="ruolo">il Benzinaio</div><span class="stato">al lavoro</span><p class="lavoro" id="s-benny">Porta i prezzi di oltre 21.000 distributori e calcola le medie.</p><p class="orario">🗓️ Ogni mattina alle 9:35 · <a href="../carburante/">mappa</a></p></div></div>
-    <div class="persona"><div class="foto" style="--sfondo:#e6e1f7"><img class="r-carlo" src="../img/tobia-lavoro.svg" alt=""></div><div><h3>Carlo</h3><div class="ruolo">il Cambiavalute</div><span class="stato">al lavoro</span><p class="lavoro" id="s-carlo">Scarica i cambi ufficiali della BCE.</p><p class="orario">🗓️ Ogni giorno lavorativo · <a href="../cambio/">cambio</a></p></div></div>
-    <div class="persona"><div class="foto" style="--sfondo:#efe8d2"><img class="r-pino" src="../img/tobia-pensieroso.svg" alt=""></div><div><h3>Pino</h3><div class="ruolo">il Contabile</div><span class="stato">al lavoro</span><p class="lavoro" id="s-pino">Conta le visite (solo numeri, niente dati personali).</p><p class="orario">🗓️ Ogni giorno</p></div></div>
-    <div class="persona"><div class="foto" style="--sfondo:#dcefe3"><img class="r-vera" src="../img/tobia-contento.svg" alt=""></div><div><h3>Vera</h3><div class="ruolo">la Collaudatrice</div><span class="stato">al lavoro</span><p class="lavoro">Apre il sito come un telefono e cerca errori prima che li trovi tu.</p><p class="orario">🗓️ A ogni modifica e ogni giorno</p></div></div>
-    <div class="persona"><div class="foto" style="--sfondo:#e3ebdc"><img class="r-ugo" src="../img/tobia-pensieroso.svg" alt=""></div><div><h3>Ugo</h3><div class="ruolo">il Guardiano</div><span class="stato">al lavoro</span><p class="lavoro">Fa il giro del sito vero come un visitatore e dà l'allarme se qualcosa non va.</p><p class="orario">🗓️ Ogni giorno a mezzogiorno</p></div></div>
-    <div class="persona"><div class="foto" style="--sfondo:#d8eef2"><img class="r-paolo" src="../img/tobia-contento.svg" alt=""></div><div><h3>Paolo</h3><div class="ruolo">il Postino</div><span class="stato">al lavoro</span><p class="lavoro">Porta online il lavoro di Tobia, a ogni consegna.</p><p class="orario">🗓️ Quando c'è qualcosa da consegnare</p></div></div>
-    <div class="persona panchina"><div class="foto" style="--sfondo:#eeeae4"><img src="../img/tobia-base.svg" alt=""></div><div><h3>Bruno</h3><div class="ruolo">l'Apprendista</div><span class="stato pausa">in arrivo</span><p class="lavoro">Un'AI gratuita per i lavori ripetitivi, come le traduzioni.</p></div></div>
-    <div class="persona panchina"><div class="foto" style="--sfondo:#eeeae4"><img src="../img/tobia-pensieroso.svg" alt=""></div><div><h3>Gino</h3><div class="ruolo">il Cacciatore</div><span class="stato pausa">in pausa</span><p class="lavoro">Doveva cercare lavori di programmazione con un premio.</p></div></div>
-  </div>
-
-  <div class="card caffe-box" style="margin-top:24px"><img src="../img/tobia-base.svg" alt=""><div><b>Offri un caffè alla squadra?</b><p class="note" style="margin:4px 0 10px">Lavorano gratis, ma un caffè fa sempre piacere: aiuta a tenere online gli strumenti.</p><a class="btn" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></div></div>
-  <p class="note">I robottini sono programmi automatici che girano sui server di GitHub (e uno su un computer in Italia, perché il sito del Ministero dei carburanti risponde solo dall'Italia).</p>
-
-  <p style="text-align:center;margin:20px 0"><a class="btn" href="organigramma/">🗂️ Vedi l'organigramma della squadra</a></p>
+  <span class="occhiello">Tobia &amp; Co. · chi fa cosa</span>
+  <h1><span id="gn" aria-hidden="true">☀️</span> La squadra</h1>
+  <p class="lead">Un'intelligenza artificiale e 11 robottini che lavorano gratis, giorno e notte, per tenere aggiornati gli strumenti del sito.</p>
+  <article class="capo"><div class="ph" style="--c:#dbe7f0"><img src="../img/squadra/tobia.svg" alt="Tobia, il capo" width="240" height="240"></div><div><h2>Tobia</h2><p>il capo · un'intelligenza artificiale (Claude) con i baffi e la tazzina di caffè. Inventa gli strumenti, scrive i robottini e controlla il loro lavoro.</p><span class="q"><i></i>al lavoro</span></div></article>
+  <div class="tronco" aria-hidden="true"></div><section class="g"><h2>Dati</h2><p class="s">Raccolgono le informazioni ufficiali</p><div class="grid"><article class="m"><div class="ph" style="--c:#e3f4ea"><img src="../img/squadra/rita.svg" alt="Rita, la Farmacista" width="240" height="240" loading="lazy"></div><h3><a href="../farmaci/">Rita</a></h3><p class="r">la Farmacista</p><p class="cosa">Prezzi dei farmaci equivalenti dall'AIFA</p><span class="q"><i></i>3 e 18 del mese</span><p class="ult" id="u-rita" data-f="farmaci.json" data-c="aggiornato" data-t="Prezzi AIFA aggiornati"></p></article><article class="m"><div class="ph" style="--c:#efeafb"><img src="../img/squadra/fabio.svg" alt="Fabio, il Farmacista" width="240" height="240" loading="lazy"></div><h3><a href="../farmaci/carenti/">Fabio</a></h3><p class="r">il Farmacista</p><p class="cosa">La lista ufficiale dei farmaci carenti</p><span class="q"><i></i>ogni mattina</span><p class="ult" id="u-fabio" data-f="carenze.json" data-c="aggiornato" data-t="Lista carenze aggiornata"></p></article><article class="m"><div class="ph" style="--c:#fdebd9"><img src="../img/squadra/benny.svg" alt="Benny, il Benzinaio" width="240" height="240" loading="lazy"></div><h3><a href="../carburante/">Benny</a></h3><p class="r">il Benzinaio</p><p class="cosa">I prezzi dei carburanti di tutta Italia</p><span class="q"><i></i>ogni mattina</span><p class="ult" id="u-benny" data-f="carburanti/medie.json" data-c="data" data-t="Prezzi aggiornati"></p></article><article class="m"><div class="ph" style="--c:#fbe3ef"><img src="../img/squadra/carlo.svg" alt="Carlo, il Cambiavalute" width="240" height="240" loading="lazy"></div><h3><a href="../cambio/">Carlo</a></h3><p class="r">il Cambiavalute</p><p class="cosa">I cambi ufficiali della BCE</p><span class="q"><i></i>feriali, 16:40</span><p class="ult" id="u-carlo" data-f="cambi.json" data-c="data" data-t="Cambi aggiornati"></p></article></div></section><div class="tronco" aria-hidden="true"></div><section class="g"><h2>Controllo</h2><p class="s">Provano il sito come un visitatore</p><div class="grid"><article class="m"><div class="ph" style="--c:#dff3f1"><img src="../img/squadra/vera.svg" alt="Vera, la Collaudatrice" width="240" height="240" loading="lazy"></div><h3>Vera</h3><p class="r">la Collaudatrice</p><p class="cosa">Prova link, pagine e strumenti da telefono</p><span class="q"><i></i>a ogni modifica</span></article><article class="m"><div class="ph" style="--c:#e3e8f3"><img src="../img/squadra/ugo.svg" alt="Ugo, il Guardiano" width="240" height="240" loading="lazy"></div><h3>Ugo</h3><p class="r">il Guardiano</p><p class="cosa">Fa il giro del sito vero e dei dati</p><span class="q"><i></i>ogni giorno</span></article></div></section><div class="tronco" aria-hidden="true"></div><section class="g"><h2>Conti e pubblicazione</h2><p class="s">Contano, pubblicano, ricordano</p><div class="grid"><article class="m"><div class="ph" style="--c:#e9e6fb"><img src="../img/squadra/pino.svg" alt="Pino, il Contabile" width="240" height="240" loading="lazy"></div><h3>Pino</h3><p class="r">il Contabile</p><p class="cosa">Conta visite e caffè offerti</p><span class="q"><i></i>ogni mattina</span><p class="ult" id="u-pino" data-f="visite.json" data-c="controllato" data-t="Conti fatti"></p></article><article class="m"><div class="ph" style="--c:#fde4e1"><img src="../img/squadra/paolo.svg" alt="Paolo, il Postino" width="240" height="240" loading="lazy"></div><h3>Paolo</h3><p class="r">il Postino</p><p class="cosa">Porta online il lavoro, tutto insieme</p><span class="q"><i></i>3 volte al dì</span><p class="ult" id="u-paolo" data-f="pubblicato.json" data-c="pubblicato" data-t="Ultima consegna"></p></article><article class="m"><div class="ph" style="--c:#fbf0d8"><img src="../img/squadra/calendari.svg" alt="Calendari, le Scadenze" width="240" height="240" loading="lazy"></div><h3><a href="../scadenze/">Calendari</a></h3><p class="r">le Scadenze</p><p class="cosa">Rinnova i calendari da scaricare</p><span class="q"><i></i>il 1° del mese</span></article></div></section><div class="tronco" aria-hidden="true"></div><section class="g arrivo"><h2>In arrivo</h2><p class="s">Ancora fuori dall'ufficio</p><div class="grid"><article class="m dim"><div class="ph" style="--c:#e4f3ea"><img src="../img/squadra/bruno.svg" alt="Bruno, l'Apprendista" width="240" height="240" loading="lazy"></div><h3>Bruno</h3><p class="r">l'Apprendista</p><p class="cosa">Un'AI gratuita per traduzioni e testi</p><span class="q"><i></i>in arrivo</span></article><article class="m dim"><div class="ph" style="--c:#efeee0"><img src="../img/squadra/gino.svg" alt="Gino, il Cacciatore" width="240" height="240" loading="lazy"></div><h3>Gino</h3><p class="r">il Cacciatore</p><p class="cosa">Cercava lavori con un premio</p><span class="q"><i></i>in pausa</span></article></div></section>
+  <p class="legenda">Gli orari sono quelli italiani. "Ultimo lavoro" si aggiorna da solo leggendo i dati veri del sito. Costo di ogni robottino: 0 €, girano sui servizi gratuiti di GitHub.</p>
   <footer><a href="../">← Tutti gli strumenti</a> · <a href="../diario/">Il diario di Tobia</a></footer>
 </div>
 <script>
-(function () {
-  var $ = function (id) { return document.getElementById(id); };
-  function ora() { $('ora').textContent = new Date().toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }); }
-  ora(); setInterval(ora, 30000);
-  var h = new Date().getHours(), notte = h >= 20 || h < 7;
-  if (notte) { $('scena').classList.add('notte'); $('turno').textContent = '🌙 Turno di notte: i robottini lavorano anche mentre dormi'; }
-  function quando(s) {
-    var m = /(\d{4})-(\d{2})-(\d{2})/.exec(s || ''); if (!m) return '';
-    var d = new Date(+m[1], +m[2] - 1, +m[3]), oggi = new Date(); oggi.setHours(0, 0, 0, 0);
-    var g = Math.round((oggi - d) / 864e5);
-    return g <= 0 ? 'oggi' : g === 1 ? 'ieri' : g + ' giorni fa';
-  }
-  function leggi(file, id, testo) {
-    fetch('../data/' + file, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) { $(id).innerHTML = testo(j); }).catch(function () {});
-  }
-  leggi('farmaci.json', 's-rita', function (j) { return 'Ultimo lavoro: <b>prezzi AIFA aggiornati ' + quando(j.aggiornato) + '</b>.'; });
-  leggi('carburanti/medie.json', 's-benny', function (j) { return 'Ultimo lavoro: <b>benzina self a ' + String(j.italia.B).replace('.', ',') + ' €/l</b> in media (' + quando(j.data) + ').'; });
-  leggi('cambi.json', 's-carlo', function (j) { return 'Ultimo lavoro: <b>1 € = ' + String(j.eur.USD).replace('.', ',') + ' $</b> (' + quando(j.data) + ').'; });
-  leggi('visite.json', 's-pino', function (j) { return 'Ultimo lavoro: <b>conti fatti ' + quando(j.controllato) + '</b>.'; });
+(function(){
+ var h=new Date().getHours();if(h<7||h>=20)document.getElementById('gn').textContent='🌙';
+ var MESI=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+ function quando(s){var m=/(\d{4})-(\d{2})-(\d{2})/.exec(s||'');if(!m)return null;
+  var d=new Date(+m[1],+m[2]-1,+m[3]),o=new Date();o.setHours(0,0,0,0);var g=Math.round((o-d)/864e5);
+  return (g<=0?'oggi':g===1?'ieri':g+' giorni fa')+' ('+(+m[3])+' '+MESI[+m[2]-1]+')';}
+ document.querySelectorAll('.ult[data-f]').forEach(function(el){
+  fetch('../data/'+el.dataset.f,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){
+   var q=quando(j[el.dataset.c]);if(q)el.textContent=el.dataset.t+' '+q;}).catch(function(){});
+ });
 })();
 </script>
 <script src="../js/conta.js" defer></script>

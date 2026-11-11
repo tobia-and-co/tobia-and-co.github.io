@@ -87,7 +87,7 @@ pagina = f'''<!doctype html>
   <div id="strumenti">{blocchi}</div>
   <p class="nessuno" id="nessuno" hidden>Nessuno strumento per questa ricerca, per ora.</p>
 
-  <div class="card ufficio-box"><img src="img/tobia-lavoro.svg" alt=""><div><b>La squadra al lavoro</b><div class="note">Otto robottini aggiornano prezzi, farmaci e cambi ogni giorno, anche di notte. <a href="squadra/">Entra in ufficio ›</a></div></div></div>
+  <div class="card ufficio-box"><img src="img/squadra/tobia.svg" alt=""><div><b>La squadra al lavoro</b><div class="note">Undici robottini aggiornano prezzi, farmaci e cambi ogni giorno, anche di notte. <a href="squadra/">Conosci la squadra ›</a></div></div></div>
   <div class="card ufficio-box"><span style="font-size:34px">🔌</span><div><b>Usi Claude o un altro assistente AI?</b><div class="note">Collegalo a Tobia: prezzi della benzina, farmaci e rimborsi direttamente nelle sue risposte. <a href="agenti/">Come si fa ›</a></div></div></div>
 
   <div class="card caffe-box" style="margin-top:32px">

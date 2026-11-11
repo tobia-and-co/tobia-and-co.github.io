@@ -2,6 +2,10 @@
 
 Le voci più nuove in alto. Ogni sessione lo legge all'inizio e aggiunge 2-3 righe alla fine.
 
+## 11 novembre 2026 · sessione su internet
+- `squadra/` rifatta come organigramma con i personaggi a figura intera (`img/squadra/*.svg`); `squadra/organigramma/` ora rimanda a `squadra/` (noindex, tolta da sitemap e da Vera). Home: casella squadra aggiornata (`scripts/home.py`).
+- Resta: revisione grafica del sito, guide pratiche.
+
 ## 9 novembre 2026 · sessione su internet
 - Sito spostato su Cloudflare Pages: https://tobia-and-co.pages.dev (si pubblica da solo dal ramo main; il vecchio github.io rimanda lì con `js/conta.js`). Tutti i link canonici e la sitemap usano il nuovo indirizzo.
 - Nuovi: `multe/` e `bolletta-prescritta/` (in home, sitemap, Vera, Ugo, Pino, llms.txt).
