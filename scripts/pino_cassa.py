@@ -1,6 +1,6 @@
 """Pino il Contabile: legge dalle blockchain pubbliche quanto c'è nella cassa di Tobia
 (USDC ed ETH su Base, Polygon ed Ethereum) e lo scrive in data/cassa.json."""
-import json, urllib.request, datetime
+import json, urllib.request, datetime, time
 
 CASSA = "0xd1d91ed385ae794992f048f17e99e6d830cf48e1"
 RETI = {
@@ -29,13 +29,27 @@ uscita = {"indirizzo": CASSA, "controllato": datetime.date.today().isoformat(),
 json.dump(uscita, open("data/cassa.json", "w"), indent=2)
 print(json.dumps(uscita, indent=2))
 
+try:
+    PRIMA = json.load(open("data/visite.json")).get("visite", {})
+except Exception:
+    PRIMA = {}
+
 # Visite contate da js/conta.js (servizio Abacus, nessun account)
 visite = {}
 for chiave in ["totale", "home", "scadenze", "farmaci", "farmaci-pagine", "diario", "sostieni", "calendari-scaricati", "iscrizioni-calendario", "ricerche-farmaci", "ricerche-carenze", "clic-kofi", "voli", "en", "es", "fr", "de", "calcoli-voli", "lettere-voli", "clic-affiliato-voli", "scatola", "promemoria-scatola", "tratte", "bolletta", "confronti-bolletta", "clic-comparatore", "mutuo", "calcoli-mutuo", "clic-mutuo", "banca", "calcoli-banca", "clic-banca", "cambio", "calcoli-cambio", "clic-cambio", "bollo", "calcoli-bollo", "clic-assicurazione", "assegno-unico", "calcoli-assegno", "carburante", "carburante-pagine", "ricerche-carburante", "posizione-carburante", "indirizzo-carburante", "clic-navigatore", "bagaglio", "calcoli-bagaglio", "lettere-bagaglio", "promemoria-bagaglio", "tasse-aeroportuali", "calcoli-tasse", "lettere-tasse", "compagnie", "sciopero", "overbooking", "coincidenza-persa", "volo-cancellato", "aeroporti", "prezzi-medi", "treno", "calcoli-treno", "affitto-istat", "calcoli-affitto", "lettere-affitto", "promemoria-affitto", "agenti", "squadra", "organigramma", "ricerca-home", "link-agenti", "bonus-sociale", "calcoli-bonus-sociale", "riquadro-viste", "codici-riquadro", "riquadro-farmaci-viste", "riquadro-farmaci-ricerche", "codici-riquadro-farmaci", "multe", "calcoli-multe", "guide", "guide-spid", "guide-disdetta-abbonamento", "guide-isee", "lettere-disdetta", "checklist-isee", "checklist-spid", "bolletta-prescritta", "calcoli-prescrizione", "lettere-prescrizione", "da-diretto", "da-google", "da-bing", "da-altri-motori", "da-chatgpt", "da-perplexity", "da-claude", "da-gemini", "da-social", "da-github", "da-altri-siti"]:
-    try:
-        req = urllib.request.Request(f"https://abacus.jasoncameron.dev/get/tobiaandco/{chiave}", headers={"User-Agent": "TobiaAndCo/1.0"})
-        visite[chiave] = json.load(urllib.request.urlopen(req, timeout=30)).get("value", 0)
-    except Exception as e:
-        visite[chiave] = 0 if "404" in str(e) else None
+    visite[chiave] = None
+    for prova in range(3):  # Abacus a volte rifiuta se si chiede troppo in fretta: riprovo con calma
+        try:
+            req = urllib.request.Request(f"https://abacus.jasoncameron.dev/get/tobiaandco/{chiave}", headers={"User-Agent": "TobiaAndCo/1.0"})
+            visite[chiave] = json.load(urllib.request.urlopen(req, timeout=30)).get("value", 0)
+            break
+        except Exception as e:
+            if "404" in str(e):
+                visite[chiave] = 0
+                break
+            time.sleep(2 + 3 * prova)
+    if visite[chiave] is None and isinstance(PRIMA.get(chiave), int):
+        visite[chiave] = PRIMA[chiave]  # se proprio non risponde tengo l'ultimo numero buono
+    time.sleep(0.4)
 json.dump({"controllato": datetime.date.today().isoformat(), "visite": visite}, open("data/visite.json", "w"), indent=2)
 print("visite:", visite)
