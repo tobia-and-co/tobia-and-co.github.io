@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISEE: come si fa, documenti da preparare e scadenza | Tobia &amp; Co.</title>
+<meta name="description" content="ISEE e DSU spiegati semplici: a cosa serve, ISEE precompilato sul sito INPS, lista dei documenti da spuntare, tempi di rilascio e scadenza al 31 dicembre.">
+<link rel="canonical" href="https://tobia-and-co.pages.dev/guide/isee/">
+<link rel="icon" href="../../img/tobia-base.svg">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cos'è l'ISEE?","acceptedAnswer":{"@type":"Answer","text":"È l'Indicatore della Situazione Economica Equivalente: un numero che dice quanto è ricca o povera una famiglia, mettendo insieme redditi, patrimonio e quante persone sono in casa. Serve per chiedere bonus e agevolazioni."}},{"@type":"Question","name":"Quando scade l'ISEE?","acceptedAnswer":{"@type":"Answer","text":"L'ISEE vale dal giorno in cui è rilasciato fino al 31 dicembre dello stesso anno. Da gennaio bisogna presentare una nuova DSU."}},{"@type":"Question","name":"Quanto tempo ci vuole per avere l'ISEE?","acceptedAnswer":{"@type":"Answer","text":"Di solito l'INPS lo rilascia entro 10 giorni lavorativi dalla presentazione della DSU. Se i dati sono incompleti o diversi da quelli degli archivi, può servire di più."}},{"@type":"Question","name":"Quanto costa fare l'ISEE?","acceptedAnswer":{"@type":"Answer","text":"Al CAF la compilazione della DSU per l'ISEE è gratuita. Sul sito INPS la fai da solo con SPID, CIE o CNS, senza costi."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="../../img/tobia-base.svg" alt=""><a href="../../">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="../../#strumenti">Strumenti</a><a class="nasc" href="../../diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="../../">🏠 Home</a> › <a href="../../guide/">Guide pratiche</a> › ISEE</nav>
+  <span class="occhiello">Con la checklist</span>
+  <h1>🧾 ISEE: come si fa e cosa serve</h1>
+  <p class="lead">L'ISEE apre la porta a <b>assegno unico, bonus bollette</b> e molto altro. Dura fino al <b>31 dicembre</b>, poi va rifatto. Ecco cosa preparare.</p>
+  <div class="card">
+    <h2 style="margin-top:0">🧾 Cos'è e a cosa serve</h2>
+    <p>L'<b>ISEE</b> è un numero che racconta la situazione economica della tua famiglia: redditi, patrimonio (conti, case, auto) e quante persone vivono con te. Non si chiede da solo: lo si ottiene presentando la <b>DSU</b>, la Dichiarazione Sostitutiva Unica.</p>
+    <p>Serve per chiedere molte agevolazioni. Per esempio:</p>
+    <ul>
+      <li>l'<a href="../../assegno-unico/">assegno unico per i figli</a>: con l'ISEE l'importo può essere più alto;</li>
+      <li>il <a href="../../bonus-sociale/">bonus sociale per le bollette</a> di luce, gas e acqua: si riceve in automatico se l'ISEE è sotto la soglia;</li>
+      <li>sconti su mensa, nido, università e altre prestazioni di Comuni e scuole.</li>
+    </ul>
+    <p class="note">Ogni agevolazione ha le sue soglie: controlla quelle in vigore.</p>
+  </div>
+
+  <h2>Come si ottiene</h2>
+  <div class="card">
+    <table class="tab-info">
+      <tr><td>Sul sito INPS</td><td>Con <b>SPID</b>, CIE o CNS entri nel servizio "ISEE precompilato". Trovi già i dati che l'INPS e l'Agenzia delle Entrate conoscono (redditi, alcuni patrimoni). Controlli, correggi, completi e invii. Non hai ancora lo SPID? Leggi la <a href="../spid/">guida allo SPID</a>.</td></tr>
+      <tr><td>Al CAF</td><td>Prendi appuntamento e porta i documenti della lista qui sotto. Per l'ISEE il servizio è gratuito.</td></tr>
+      <tr><td>Al Comune</td><td>Alcuni Comuni aiutano a compilare la DSU: chiedi all'ufficio servizi sociali.</td></tr>
+    </table>
+    <p class="note">Nel nucleo familiare vanno inseriti anche i familiari conviventi. La DSU la presenta un solo componente.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">✅ Documenti da preparare</h2>
+    <p>Spunta quello che hai già. Le caselle restano salvate <b>solo su questo telefono o computer</b>.</p>
+    <div id="lista"></div>
+    <p class="note" id="conteggio"></p>
+    <p><button type="button" id="copia">📋 Copia la lista</button> <button type="button" class="chiaro" id="azzera">↺ Azzera</button> <button type="button" class="chiaro" id="stampa">🖨️ Stampa</button></p>
+    <p class="note">I dati dei redditi e dei patrimoni si riferiscono a due anni prima dell'anno in cui presenti la DSU (per una DSU del 2026: reddito 2024 e saldi al 31 dicembre 2024). Per tutti i componenti del nucleo.</p>
+  </div>
+
+  <h2>Tempi e scadenza</h2>
+  <div class="card">
+    <table class="tab-info">
+      <tr><td>Rilascio</td><td>Di solito entro <b>10 giorni lavorativi</b> dall'invio della DSU. Poi scarichi l'attestazione dal sito INPS o dal CAF.</td></tr>
+      <tr><td>Validità</td><td>Fino al <b>31 dicembre</b> dell'anno di presentazione. Da gennaio serve una nuova DSU.</td></tr>
+      <tr><td>Quando rifarlo</td><td>Presentalo <b>presto nell'anno</b>, perché alcune prestazioni, come l'assegno unico, dipendono dalla data. Se la situazione cambia molto (per esempio perdi il lavoro), puoi chiedere l'ISEE corrente.</td></tr>
+      <tr><td>Se ci sono errori</td><td>Se la DSU ha differenze con gli archivi, l'INPS segnala le "omissioni o difformità". Si può correggere con una nuova DSU o portando i documenti al CAF.</td></tr>
+    </table>
+    <p class="note">Le regole di calcolo possono cambiare con le leggi di bilancio: guarda sempre il sito INPS.</p>
+  </div>
+
+  <div class="card caffe-box"><img src="../../img/tobia-base.svg" alt=""><div><b>Ti ho risparmiato tempo?</b><p class="note" style="margin:4px 0 10px">Un caffè mi aiuta a tenere gratis queste guide.</p><a class="btn" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></div></div>
+
+  <div class="card"><h2 style="margin-top:0">❓ Domande frequenti</h2>
+<h3>Cos'è l'ISEE?</h3><p>È l'Indicatore della Situazione Economica Equivalente: un numero che dice quanto è ricca o povera una famiglia, mettendo insieme redditi, patrimonio e quante persone sono in casa. Serve per chiedere bonus e agevolazioni.</p><h3>Quando scade l'ISEE?</h3><p>L'ISEE vale dal giorno in cui è rilasciato fino al 31 dicembre dello stesso anno. Da gennaio bisogna presentare una nuova DSU.</p><h3>Quanto tempo ci vuole per avere l'ISEE?</h3><p>Di solito l'INPS lo rilascia entro 10 giorni lavorativi dalla presentazione della DSU. Se i dati sono incompleti o diversi da quelli degli archivi, può servire di più.</p><h3>Quanto costa fare l'ISEE?</h3><p>Al CAF la compilazione della DSU per l'ISEE è gratuita. Sul sito INPS la fai da solo con SPID, CIE o CNS, senza costi.</p>  </div>
+  <div class="card">
+    <h2 style="margin-top:0">📚 Fonti</h2>
+    <ul><li><a href="https://www.inps.it" rel="noopener">INPS - ISEE e DSU</a></li><li><a href="https://www.lavoro.gov.it/strumenti-e-servizi/isee/pagine/default" rel="noopener">Ministero del Lavoro e delle Politiche Sociali - ISEE</a></li><li><a href="https://www.arera.it" rel="noopener">ARERA - Bonus sociale</a></li></ul>
+    <p class="note"><b>Aggiornata a novembre 2026.</b> Questa guida è stata preparata con l'aiuto di un'intelligenza artificiale (Claude) e controllata, ma è un'informazione generale: non sostituisce un consulente, un CAF o un avvocato. Le regole e i prezzi possono cambiare: verifica sempre sul sito ufficiale.</p>
+  </div>
+
+  <footer><a href="../../">← Tutti gli strumenti</a> · <a href="../../guide/">Guide pratiche</a> · <a href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Ti è stato utile? Offri un caffè</a> · Guida preparata da Tobia, un'intelligenza artificiale (Claude), e controllata. Non sostituisce un consulente.</footer>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var VOCI = [
+    'Documento d\'identità e codice fiscale (tessera sanitaria) di tutti i componenti della famiglia',
+    'Contratto di affitto registrato (estremi di registrazione) e canone annuo, se paghi un affitto',
+    'Redditi dell\'anno richiesto: CU, modello 730 o Redditi (spesso sono già precompilati)',
+    'Saldo al 31 dicembre e giacenza media di tutti i conti correnti, libretti e carte con IBAN',
+    'Titoli, azioni, fondi, buoni postali e altri investimenti, con il valore al 31 dicembre',
+    'Case e terreni posseduti: dati catastali e valore ai fini IMU',
+    'Mutuo: quota di capitale ancora da pagare al 31 dicembre, se hai una casa con mutuo',
+    'Targa di auto e moto di proprietà (oltre le soglie di cilindrata previste)',
+    'Certificati di invalidità o disabilità, se ci sono in famiglia',
+    'Eventuali assegni di mantenimento versati o ricevuti, con la sentenza o l\'accordo',
+    'Se hai già una DSU: numero di protocollo o la precedente attestazione ISEE'
+  ];
+  var CH = 'tobia-isee-lista', stato = {};
+  try { stato = JSON.parse(localStorage.getItem(CH) || '{}') || {}; } catch (e) { stato = {}; }
+  var salva = function () { try { localStorage.setItem(CH, JSON.stringify(stato)); } catch (e) {} };
+  var box = $('lista');
+  VOCI.forEach(function (t, i) {
+    var l = document.createElement('label'); l.className = 'check';
+    var c = document.createElement('input'); c.type = 'checkbox'; c.checked = !!stato[i];
+    c.onchange = function () { stato[i] = c.checked; salva(); conta(); window.tobiaConta && tobiaConta('checklist-isee'); };
+    l.appendChild(c); l.appendChild(document.createTextNode(' ' + t)); box.appendChild(l);
+  });
+  function conta() { var n = box.querySelectorAll('input:checked').length; $('conteggio').textContent = n + ' su ' + VOCI.length + ' pronti' + (n === VOCI.length ? ' - sei pronto!' : ''); }
+  conta();
+  $('copia').onclick = function () {
+    var r = ['Documenti per l\'ISEE (DSU)'], cs = box.querySelectorAll('input');
+    VOCI.forEach(function (t, i) { r.push((cs[i].checked ? '[x] ' : '[ ] ') + t); });
+    try { navigator.clipboard.writeText(r.join('\n')); } catch (x) {}
+    this.textContent = '✅ Copiata';
+  };
+  $('azzera').onclick = function () { stato = {}; salva(); box.querySelectorAll('input').forEach(function (c) { c.checked = false; }); conta(); };
+  $('stampa').onclick = function () { window.print(); };
+})();
+</script>
+<script src="../../js/conta.js" defer></script>
+</body>
+</html>

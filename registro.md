@@ -4,7 +4,8 @@ Le voci più nuove in alto. Ogni sessione lo legge all'inizio e aggiunge 2-3 rig
 
 ## 11 novembre 2026 · sessione su internet
 - `squadra/` rifatta come organigramma con i personaggi a figura intera (`img/squadra/*.svg`); `squadra/organigramma/` ora rimanda a `squadra/` (noindex, tolta da sitemap e da Vera). Home: casella squadra aggiornata (`scripts/home.py`).
-- Resta: revisione grafica del sito, guide pratiche.
+- Poi: guide pratiche (`guide/`: SPID, disdetta abbonamento con lettera, ISEE con checklist; js/conta.js conta `guide-<x>`), riquadro farmaci per altri siti (`farmaci/riquadro/` iframe noindex + `farmaci/riquadro-per-siti/`; Rita ora non cancella quelle cartelle), colori di Ugo, Pino e Bruno più distinti.
+- Resta: revisione grafica della home; farmaci Spagna (serve un robottino: i dati CIMA non si leggono da qui).
 
 ## 9 novembre 2026 · sessione su internet
 - Sito spostato su Cloudflare Pages: https://tobia-and-co.pages.dev (si pubblica da solo dal ramo main; il vecchio github.io rimanda lì con `js/conta.js`). Tutti i link canonici e la sitemap usano il nuovo indirizzo.

@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
   const campione = farmaci.sort(() => Math.random() - 0.5).slice(0, 15).map(d => `/farmaci/${d}/`);
   const voli = Object.values(JSON.parse(fs.readFileSync(path.join(radice, 'data/voli_testi.json'), 'utf8'))).map(t => '/' + t.percorso);
   const tratte = JSON.parse(fs.readFileSync(path.join(radice, 'data/tratte.json'), 'utf8')).sort(() => Math.random() - 0.5).slice(0, 5).map(t => '/' + t);
-  const pagine = [...tratte, '/', '/scadenze/', '/farmaci/', '/diario/', '/sostieni/', '/scatola/', '/bolletta/', '/mutuo/', '/banca/', '/cambio/', '/bollo/', '/assegno-unico/', '/carburante/', '/carburante/prezzi-medi/', '/bagaglio/', '/treno/', '/agenti/', '/squadra/', '/affitto-istat/', '/voli/compagnia/', '/voli/compagnia/ryanair/', '/voli/sciopero/', '/voli/overbooking/', '/voli/coincidenza-persa/', '/voli/volo-cancellato/', '/voli/aeroporto/', '/voli/aeroporto/roma-fiumicino/', '/tasse-aeroportuali/', '/carburante/roma/', '/carburante/milano/', ...voli, ...campione];
+  const pagine = [...tratte, '/', '/scadenze/', '/farmaci/', '/diario/', '/sostieni/', '/scatola/', '/bolletta/', '/mutuo/', '/banca/', '/cambio/', '/bollo/', '/assegno-unico/', '/carburante/', '/carburante/prezzi-medi/', '/bagaglio/', '/treno/', '/guide/', '/guide/spid/', '/guide/disdetta-abbonamento/', '/guide/isee/', '/agenti/', '/squadra/', '/affitto-istat/', '/voli/compagnia/', '/voli/compagnia/ryanair/', '/voli/sciopero/', '/voli/overbooking/', '/voli/coincidenza-persa/', '/voli/volo-cancellato/', '/voli/aeroporto/', '/voli/aeroporto/roma-fiumicino/', '/tasse-aeroportuali/', '/farmaci/riquadro/', '/farmaci/riquadro-per-siti/', '/carburante/roma/', '/carburante/milano/', ...voli, ...campione];
   const browser = await chromium.launch();
   const problemi = [];
   for (const url of pagine) {
@@ -30,7 +30,7 @@ const server = http.createServer((req, res) => {
     await page.goto('http://localhost:8811' + url, { waitUntil: 'networkidle' });
     const esito = await page.evaluate(() => ({
       larga: document.documentElement.scrollWidth > window.innerWidth + 1,
-      haHome: location.pathname === '/' || !!document.querySelector('nav.briciole a'),
+      haHome: location.pathname === '/' || /\/riquadro\/$/.test(location.pathname) || !!document.querySelector('nav.briciole a'),
       link: [...document.querySelectorAll('a[href]')].map(a => a.getAttribute('href')).filter(h => !/^(https?:|mailto:|#)/.test(h)),
       titolo: document.title,
     }));

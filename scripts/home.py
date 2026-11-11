@@ -15,6 +15,7 @@ GRUPPI = [
    ("⚡", "La bolletta è cara?", "Confronto con il prezzo all'ingrosso ufficiale", "bolletta/", "bolletta luce gas energia"),
    ("🧾", "Maxi conguaglio in bolletta?", "I consumi di più di 2 anni fa non si pagano", "bolletta-prescritta/", "bolletta prescritta conguaglio prescrizione due anni luce gas acqua"),
    ("💡", "Bonus sociale bollette", "Con ISEE basso lo sconto arriva da solo", "bonus-sociale/", "bonus sociale bollette isee sconto luce gas acqua disagio"),
+   ("📘", "Guide pratiche", "SPID, ISEE e disdetta abbonamenti, con il modulo pronto", "guide/", "guide spid isee disdetta abbonamento recesso lettera dsu"),
    ("🏠", "Aggiornamento ISTAT affitto", "Il nuovo canone e la lettera per l'inquilino", "affitto-istat/", "affitto istat canone inquilino cedolare"),
    ("🏦", "Quanto costa la tua banca", "Canone, carte e bonifici in un anno", "banca/", "banca conto corrente costi"),
    ("🏡", "La rata del mutuo è alta?", "Quanto risparmi con la surroga", "mutuo/", "mutuo surroga rata tasso"),

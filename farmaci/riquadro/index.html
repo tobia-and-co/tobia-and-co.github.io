@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trova il farmaco equivalente | Tobia &amp; Co.</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://tobia-and-co.pages.dev/farmaci/">
+<style>
+:root{--bg:#fff;--ink:#1d2733;--muted:#5f6b77;--line:#ece3d3;--blu:#2f74bd;--oro:#fbf0d8;--ok:#1f7a45;--extra:#b3261e}
+@media (prefers-color-scheme:dark){:root:not(.chiaro){--bg:#1b232d;--ink:#eef2f6;--muted:#a3afbb;--line:#2a3440;--blu:#6aa8ec;--oro:#3a2f1a;--ok:#5fcf8d;--extra:#ff8a80}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.r{border:1px solid var(--line);border-radius:14px;padding:12px;max-width:520px;min-width:0}
+h1{font-size:15px;margin:0 0 8px}
+input{width:100%;font:inherit;font-size:16px;padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.ris{margin-top:8px}
+.c{background:var(--oro);border-radius:10px;padding:8px 10px;margin-top:7px;overflow-wrap:anywhere}
+.c b{font-size:14px}
+.s{font-size:12px;color:var(--muted)}
+.ok{color:var(--ok);font-weight:600}.ex{color:var(--extra);font-weight:600}
+.v{font-size:13px}
+.m{margin:7px 0 0;font-size:12px;color:var(--muted)}
+.f{margin-top:9px;font-size:11.5px;color:var(--muted)}
+.f p{margin:3px 0}
+a{color:var(--blu);font-weight:600;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="r">
+  <h1>💊 Trova il farmaco equivalente</h1>
+  <input id="q" type="search" placeholder="Nome del farmaco o principio attivo" aria-label="Nome del farmaco o principio attivo" autocomplete="off" disabled>
+  <div class="ris" id="ris" aria-live="polite"><p class="s" id="info">Caricamento dei dati…</p></div>
+  <div class="f">
+    <p id="fonte">Fonte: liste di trasparenza AIFA.</p>
+    <p>⚠️ Non sostituisce il consiglio del medico o del farmacista.</p>
+    <p><a href="https://tobia-and-co.pages.dev/farmaci/?utm_source=riquadro-farmaci" target="_blank" rel="noopener">Tobia &amp; Co. · tutti i farmaci ›</a></p>
+  </div>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var SITO = 'https://tobia-and-co.pages.dev/';
+  if (new URLSearchParams(location.search).get('tema') === 'chiaro') document.documentElement.className = 'chiaro';
+  // contatore anonimo (nessun cookie): conta solo quante volte il riquadro viene mostrato e usato
+  var fatti = {};
+  window.tobiaConta = function (nome) {
+    if (fatti[nome] || /localhost|127\.0\.0\.1/.test(location.hostname)) return;
+    fatti[nome] = true;
+    try { fetch('https://abacus.jasoncameron.dev/hit/tobiaandco/' + nome, { mode: 'cors', keepalive: true }).catch(function () {}); } catch (e) {}
+  };
+  window.tobiaConta('riquadro-farmaci-viste');
+  var eur = function (n) { return n.toFixed(2).replace('.', ',') + ' €'; };
+  var norm = function (s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
+  var slug = function (s) { return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 80); };
+  var h = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var G = [], t, primaRicerca = true;
+  fetch('../../data/farmaci.json').then(function (r) { return r.json(); }).then(function (d) {
+    G = d.gruppi;
+    G.forEach(function (g) { g.k = norm(g.p + ' ' + g.c + ' ' + g.f.map(function (f) { return f[0] + ' ' + f[1]; }).join(' ')); });
+    var ag = d.aggiornato.split('-');
+    $('fonte').innerHTML = 'Fonte: liste di trasparenza <b>AIFA</b>, prezzi al ' + h(d.prezzi_al) + ' (dati aggiornati il ' + ag[2] + '/' + ag[1] + '/' + ag[0] + ').';
+    $('info').textContent = 'Scrivi almeno 3 lettere, per esempio “eutirox” o “omeprazolo”.';
+    $('q').disabled = false;
+  }).catch(function () { $('info').textContent = 'Dati non disponibili in questo momento.'; });
+  $('q').addEventListener('input', function () { clearTimeout(t); t = setTimeout(cerca, 150); });
+  function cerca() {
+    var v = norm($('q').value.trim());
+    if (v.length < 3) { $('ris').innerHTML = '<p class="s">Scrivi almeno 3 lettere.</p>'; return; }
+    var parole = v.split(/\s+/);
+    var tutti = G.filter(function (g) { return parole.every(function (p) { return g.k.indexOf(p) >= 0; }); });
+    if (primaRicerca) { primaRicerca = false; window.tobiaConta('riquadro-farmaci-ricerche'); }
+    if (!tutti.length) { $('ris').innerHTML = '<p class="s">Nessun farmaco trovato tra quelli con equivalenti. Prova con il principio attivo (lo trovi sulla scatola).</p>'; return; }
+    var html = tutti.slice(0, 3).map(function (g) {
+      var mio = g.f.filter(function (f) { return parole.every(function (p) { return norm(f[0] + ' ' + f[1]).indexOf(p) >= 0; }); })[0] || g.f.slice().sort(function (a, b) { return b[3] - a[3]; })[0];
+      var min = g.f.slice().sort(function (a, b) { return a[3] - b[3]; })[0];
+      var risp = Math.round((mio[3] - min[3]) * 100) / 100;
+      var txt = '<div class="c"><b>' + h(g.p) + '</b><div class="s">' + h(g.c) + '</div>' +
+        '<div class="v">' + h(mio[0]) + ': <b>' + eur(mio[3]) + '</b>' + (mio[4] ? ' <span class="ex">(+' + eur(mio[4]) + ' a tuo carico)</span>' : '') + '</div>';
+      if (risp > 0.004) txt += '<div class="v">Equivalente più economico: ' + h(min[0]) + ' <b>' + eur(min[3]) + '</b> · <span class="ok">risparmi ' + eur(risp) + '</span></div>';
+      else txt += '<div class="v ok">✓ È già tra i più economici del gruppo.</div>';
+      return txt + '<div class="s"><a href="' + SITO + 'farmaci/' + slug(g.p) + '/?utm_source=riquadro-farmaci" target="_blank" rel="noopener">Vedi tutti i dettagli su Tobia &amp; Co. ›</a></div></div>';
+    }).join('');
+    if (tutti.length > 3) html += '<p class="m">Altri ' + (tutti.length - 3) + ' gruppi: <a href="' + SITO + 'farmaci/?q=' + encodeURIComponent($('q').value.trim()) + '&utm_source=riquadro-farmaci" target="_blank" rel="noopener">vedili tutti ›</a></p>';
+    $('ris').innerHTML = html;
+  }
+})();
+</script>
+</body>
+</html>

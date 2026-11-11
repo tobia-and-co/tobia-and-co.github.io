@@ -27,6 +27,7 @@ const PROVE = {
   'multe/': [{ '#importo': '42', '#notifica': '2026-11-03' }, /29,40 €/],
   'bolletta-prescritta/': [{ '#emissione': '2026-11-01', '#dal': '2024-01-01', '#al': '2026-09-30', '#importo': '1.000' }, /303,78 €/],
   'bonus-sociale/': [{ '#isee': '8.500' }, /Ti spetta il bonus sociale/],
+  'guide/disdetta-abbonamento/': [{ '#nome': 'Nome Cognome', '#fornitore': 'Fornitore Prova' }, /lettera è pronta/],
   'bagaglio/': [{ '#atterraggio': '2026-11-03', '#consegna': '2026-11-05', '#spese': 'Spazzolino 8,50' }, /Entro .*2026/],
 };
 
@@ -66,6 +67,14 @@ const PROVE = {
   { const p = await ctx.newPage(); await p.goto(B + 'farmaci/'); await p.waitForTimeout(1500);
     await p.fill('input', 'eutirox'); await p.waitForTimeout(1200);
     if (!/Levotiroxina/i.test(await p.evaluate(() => document.body.innerText))) problemi.push('farmaci/: la ricerca di "eutirox" non trova la levotiroxina');
+    await p.close(); }
+  // riquadro incorporabile dei farmaci
+  { const p = await ctx.newPage(); const errori = []; p.on('pageerror', e => errori.push(e.message));
+    await p.goto(B + 'farmaci/riquadro/'); await p.waitForSelector('#q:not([disabled])', { timeout: 8000 }).catch(() => {});
+    await p.fill('#q', 'eutirox'); await p.waitForTimeout(800);
+    const t = await p.evaluate(() => document.body.innerText);
+    if (!/Levotiroxina/i.test(t) || !/€/.test(t)) problemi.push('farmaci/riquadro/: la ricerca di "eutirox" non mostra risultati con il prezzo');
+    errori.forEach(m => problemi.push('farmaci/riquadro/: errore JavaScript: ' + m));
     await p.close(); }
   // calendari scaricabili
   for (const url of ['scadenze/', 'scatola/']) {
