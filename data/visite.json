@@ -2,7 +2,7 @@
   "controllato": "2026-11-14",
   "visite": {
     "totale": 138,
-    "home": 70,
+    "home": 71,
     "scadenze": 2,
     "farmaci": 2,
     "farmaci-pagine": 8,
@@ -72,6 +72,10 @@
     "squadra": 15,
     "organigramma": 1,
     "ricerca-home": 0,
+    "home-pulsante-voli": 0,
+    "home-pulsante-farmaci": 0,
+    "home-pulsante-carburante": 0,
+    "home-pulsante-bolletta": 0,
     "link-agenti": 1,
     "bonus-sociale": 0,
     "calcoli-bonus-sociale": 0,
@@ -101,7 +105,7 @@
     "da-claude": 0,
     "da-gemini": 0,
     "da-social": 0,
-    "da-github": 3,
+    "da-github": 4,
     "da-altri-siti": 0
   }
 }
