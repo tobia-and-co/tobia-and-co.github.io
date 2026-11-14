@@ -4,6 +4,7 @@ Le voci più nuove in alto. Ogni sessione lo legge all'inizio e aggiunge 2-3 rig
 
 ## 14 novembre 2026 · sessione su internet
 - Audit tecnico (privato). Una pagina per ogni farmaco carente: `farmaci/carenti/<nome>/` (1.573 pagine) generate da `scripts/fabio_pagine.py` dentro il workflow di Fabio; la data si legge da `data/carenze_data.json` così le pagine non cambiano tutte ogni giorno; Rita rimette in sitemap gli indirizzi di `data/carenti_pagine.txt`.
+- Home più semplice (approvata dall'utente): 4 pulsanti grandi con contatori `home-pulsante-*`, 3-4 strumenti per gruppo + "Vedi tutti", fonte e data sotto i numeri (`scripts/home.py`, `css/home.css`).
 - Benny di casa scarica anche la pagina ufficiale degli scioperi (MIT blocca i server esteri) in `data/grezzi/scioperi-mit.txt`: prossimo passo il lettore e le pagine scioperi.
 
 ## 11 novembre 2026 · sessione su internet

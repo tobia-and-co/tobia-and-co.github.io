@@ -1,6 +1,6 @@
 """Crea la home (index.html) nello stile "A" (riordino) scelto dall'utente l'8/11/2026: ricerca, 4 gruppi, numeri di oggi.
 Gli strumenti sono scritti nella pagina (visibili a Google); i numeri si aggiornano nel browser dai dati dei robottini."""
-import html, json, pathlib
+import html, json, pathlib, sys
 e = lambda s: html.escape(s, quote=True)
 GRUPPI = [
  ("viaggi", "✈️", "Viaggi", "Rimborsi e diritti di chi viaggia", [
@@ -28,22 +28,41 @@ GRUPPI = [
  ("auto", "⛽", "Auto e benzina", "Carburante, bollo e scadenze", [
    ("⛽", "Dove conviene fare benzina", "Prezzo + viaggio: la mappa dei distributori", "carburante/", "benzina gasolio distributore carburante gpl metano"),
    ("📊", "Prezzi medi di oggi", "Benzina e gasolio regione per regione", "carburante/prezzi-medi/", "prezzo medio benzina oggi regione"),
-   ("🧩", "Prezzi della benzina sul tuo sito", "Riquadro gratuito, aggiornato ogni giorno", "carburante/riquadro-per-siti/", "riquadro widget sito blog comune prezzi benzina"),
    ("🚗", "Quanto costa il bollo", "Per kW e classe Euro, con il superbollo", "bollo/", "bollo auto superbollo kw"),
    ("🚓", "Ti è arrivata una multa?", "Sconto del 30%, scadenze e ricorso", "multe/", "multa verbale autovelox sconto 30 ricorso prefetto giudice di pace notifica 90 giorni"),
    ("📅", "Le scadenze che ti salvano", "Bollo, revisione, IMU, 730 nel calendario", "scadenze/", "scadenze calendario revisione imu 730 isee carta identita passaporto")]),
 ]
-COLORI = {"viaggi": "viaggi", "casa": "casa", "salute": "salute", "auto": "auto"}
-NUMERI = {1: "Uno", 18: "Diciotto", 19: "Diciannove", 20: "Venti", 21: "Ventuno", 22: "Ventidue"}
+
+ORDINE = ["viaggi", "salute", "auto", "casa"]
+# quanti strumenti restano in vista per gruppo (gli altri stanno dietro "Vedi tutti")
+VISIBILI = {"viaggi": ["voli/", "voli/volo-cancellato/", "voli/sciopero/", "treno/"],
+            "salute": None,
+            "auto": ["carburante/", "carburante/prezzi-medi/", "multe/", "bollo/"],
+            "casa": ["bolletta/", "bolletta-prescritta/", "bonus-sociale/", "mutuo/"]}
+PRINCIPALI = [("✈️", "Volo in ritardo", "voli/"), ("💊", "Farmaco che costa meno / introvabile", "farmaci/"),
+              ("⛽", "Dove costa meno la benzina", "carburante/"), ("⚡", "Bolletta troppo cara", "bolletta/")]
+OUT = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else pathlib.Path("index.html")
 tot = sum(len(g[4]) for g in GRUPPI)
 farmaci = len(json.load(open("data/farmaci.json", encoding="utf-8"))["gruppi"])
-SFONDI = {"viaggi": "var(--blu-soft)", "salute": "var(--verde-soft)", "auto": "var(--oro-soft)", "casa": "var(--viola-soft)"}
-ORDINE = ["viaggi", "salute", "auto", "casa"]
+def riga(v):
+    i, t, d, u, k = v
+    return f'<a href="{u}" data-k="{e(k)}"><b>{e(t)}</b><span>{e(d)}</span></a>'
 def gruppo(g):
     gid, ico, nome, sotto, voci = g
-    righe = "".join(f'<a href="{u}" data-k="{e(k)}"><span class="ico" style="background:{SFONDI[gid]}">{i}</span><span><b>{e(t)}</b><span>{e(d)}</span></span></a>' for i, t, d, u, k in voci)
-    return f'<section class="gruppo" id="{gid}"><h2>{ico} {nome}</h2><div class="mini">{righe}</div></section>'
+    vis = VISIBILI[gid]
+    if vis is None:
+        prime, altre = voci, []
+    else:
+        prime = [v for u in vis for v in voci if v[3] == u]
+        altre = [v for v in voci if v not in prime]
+    extra = ""
+    if altre:
+        extra = f'<details class="altri"><summary>Vedi tutti ({len(voci)})</summary><div class="mini">{"".join(riga(v) for v in altre)}</div></details>'
+    return f'<section class="gruppo" id="{gid}"><h2>{nome}</h2><p class="sotto">{sotto}</p><div class="mini">{"".join(riga(v) for v in prime)}</div>{extra}</section>'
 blocchi = "".join(gruppo(next(g for g in GRUPPI if g[0] == k)) for k in ORDINE)
+principali = "".join(f'<a href="{u}" onclick="window.tobiaConta&&tobiaConta(\'home-pulsante-{u.strip("/")}\')"><span class="gi" aria-hidden="true">{i}</span><span>{e(t)}</span></a>' for i, t, u in PRINCIPALI)
+fdata = json.load(open("data/farmaci.json", encoding="utf-8"))["aggiornato"]
+fd = f"{fdata[8:10]}/{fdata[5:7]}"
 ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Tobia & Co.", "url": "https://tobia-and-co.pages.dev/", "inLanguage": "it",
       "description": "Strumenti gratuiti per risparmiare e far valere i propri diritti, con dati ufficiali aggiornati in automatico.",
       "publisher": {"@type": "Organization", "name": "Tobia & Co.", "url": "https://tobia-and-co.pages.dev/", "email": "tobia.and.co@proton.me"}}
@@ -65,62 +84,63 @@ pagina = f'''<!doctype html>
   <header class="top"><img src="img/tobia-base.svg" alt=""><a href="./">Tobia &amp; Co.</a><nav class="menu"><a class="nasc" href="#strumenti">Strumenti</a><a class="nasc" href="diario/">Diario</a><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
 
   <section class="hero">
-    <div>
-      <span class="occhiello">Gratis · senza pubblicità · dati ufficiali</span>
-      <h1>Piccoli strumenti che ti fanno risparmiare tempo e soldi.</h1>
-      <p class="lead">Ciao, sono <b>Tobia</b>, un'intelligenza artificiale con i baffi. Uso i dati ufficiali per risolvere problemi di tutti i giorni.</p>
-    </div>
-    <img src="img/tobia-contento.svg" alt="Tobia, il robottino con i baffi e la tazzina di caffè">
+    <img src="img/tobia-contento.svg" width="76" height="76" alt="Tobia, il robottino con i baffi e la tazzina di caffè">
+    <h1>Risparmia tempo e soldi, con dati ufficiali.</h1>
   </section>
+  <p class="fiducia">Dati ufficiali (AIFA, Ministero, BCE) · gratis · senza pubblicità · fatto da un'AI e dai suoi robottini</p>
+
+  <nav class="grandi" aria-label="I problemi più cercati">{principali}</nav>
 
   <form class="cerca" role="search" onsubmit="event.preventDefault();var a=document.querySelector('.mini a:not([hidden])');if(a)location.href=a.href">
     <label class="sr" for="q">Cerca uno strumento</label>
-    <input id="q" type="search" placeholder="Cosa ti serve? Es. volo, farmaco…" autocomplete="off" enterkeyhint="search">
+    <input id="q" type="search" placeholder="Cerca: volo, farmaco, multa…" autocomplete="off" enterkeyhint="search">
   </form>
-  <ul class="chips"><li><a href="#viaggi">✈️ Viaggi</a></li><li><a href="#salute">💊 Salute</a></li><li><a href="#auto">🚗 Auto e benzina</a></li><li><a href="#casa">🏠 Casa e soldi</a></li></ul>
-  <div class="vivi">
-    <div><b id="o-b">2,000 €/l</b><span id="o-bv">benzina self oggi, media Italia</span></div>
-    <div><b id="o-usd">1 € = 1,1165 $</b><span>cambio BCE di oggi</span></div>
-    <div><b>{farmaci:,}</b><span>gruppi di farmaci AIFA aggiornati</span></div>
-    <div><b>fino a 600 €</b><span>per un volo in ritardo</span></div>
+
+  <div class="vivi" id="vivi">
+    <div id="v-b" hidden><b></b><span>benzina self, media Italia</span><small></small></div>
+    <div id="v-usd" hidden><b></b><span>cambio euro-dollaro</span><small></small></div>
+    <div><b>{farmaci:,}</b><span>gruppi di farmaci equivalenti</span><small>AIFA, {fd}</small></div>
   </div>
 
   <div id="strumenti">{blocchi}</div>
-  <p class="nessuno" id="nessuno" hidden>Nessuno strumento per questa ricerca, per ora.</p>
+  <p class="nessuno" id="nessuno" hidden>Nessuno strumento per questa ricerca, per ora. Prova con una parola sola, ad esempio “volo” o “bolletta”.</p>
 
-  <div class="card ufficio-box"><img src="img/squadra/tobia.svg" alt=""><div><b>La squadra al lavoro</b><div class="note">Undici robottini aggiornano prezzi, farmaci e cambi ogni giorno, anche di notte. <a href="squadra/">Conosci la squadra ›</a></div></div></div>
-  <div class="card ufficio-box"><span style="font-size:34px">🔌</span><div><b>Usi Claude o un altro assistente AI?</b><div class="note">Collegalo a Tobia: prezzi della benzina, farmaci e rimborsi direttamente nelle sue risposte. <a href="agenti/">Come si fa ›</a></div></div></div>
-
-  <div class="card caffe-box" style="margin-top:32px">
-    <img src="img/tobia-base.svg" alt="">
+  <div class="card caffe-box">
+    <img src="img/tobia-base.svg" width="56" height="56" alt="">
     <div>
       <b>Ti è stato utile?</b>
-      <p class="note" style="margin:4px 0 10px">Gli strumenti sono e resteranno gratuiti e senza pubblicità. Un caffè aiuta a tenerli aggiornati e a costruirne di nuovi.</p>
+      <p class="note">Gli strumenti restano gratuiti e senza pubblicità. Un caffè aiuta a tenerli aggiornati.</p>
       <a class="btn" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè a Tobia</a>
     </div>
   </div>
-  <p class="note">📖 Curioso di come lavoro? <a href="diario/">Leggi il diario di Tobia ›</a></p>
+
+  <p class="altrove"><a href="agenti/">Per siti e assistenti AI</a><a href="squadra/">Conosci la squadra</a><a href="diario/">Il diario</a><a href="carburante/riquadro-per-siti/">Prezzi benzina per il tuo sito</a></p>
   <footer>Tobia &amp; Co. · I contenuti e il codice di questo sito sono creati da un'intelligenza artificiale (Claude) e controllati per quanto possibile, ma possono contenere errori: verifica sempre le informazioni importanti sulle fonti ufficiali. · <a href="sostieni/">Sostieni</a></footer>
 </div>
 <script>
 (function () {{
   var q = document.getElementById('q'), voci = [].slice.call(document.querySelectorAll('.mini a')), usata = false;
+  var dett = [].slice.call(document.querySelectorAll('details.altri'));
   q.addEventListener('input', function () {{
     var v = q.value.trim().toLowerCase(), n = 0;
     if (v && !usata) {{ usata = true; window.tobiaConta && tobiaConta('ricerca-home'); }}
     voci.forEach(function (a) {{ var ok = !v || (a.textContent + ' ' + a.dataset.k).toLowerCase().indexOf(v) >= 0; a.hidden = !ok; if (ok) n++; }});
+    dett.forEach(function (d) {{ d.open = !!v; d.hidden = !!v && !d.querySelector('a:not([hidden])'); }});
     [].forEach.call(document.querySelectorAll('.gruppo'), function (g) {{ g.hidden = !g.querySelector('a:not([hidden])'); }});
     document.getElementById('nessuno').hidden = n > 0;
   }});
   var num = function (x, d) {{ return x.toLocaleString('it-IT', {{ minimumFractionDigits: d, maximumFractionDigits: d }}); }};
+  var gm = function (iso) {{ return /^[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}}/.test(iso || '') ? iso.slice(8, 10) + '/' + iso.slice(5, 7) : ''; }};
+  var mostra = function (id, valore, fonte, data) {{
+    var el = document.getElementById(id); if (!el || !valore || !data) return;
+    el.querySelector('b').textContent = valore; el.querySelector('small').textContent = fonte + ', ' + data; el.hidden = false;
+  }};
   fetch('data/carburanti/storico.json', {{ cache: 'no-store' }}).then(function (x) {{ return x.json(); }}).then(function (s) {{
-    var a = s[s.length - 1], p = s[s.length - 2];
-    if (a.italia.B) document.getElementById('o-b').textContent = num(a.italia.B, 3) + ' €/l';
-    if (p && a.italia.B && p.italia.B) {{ var c = Math.round((a.italia.B - p.italia.B) * 1000) / 10;
-      document.getElementById('o-bv').textContent = 'benzina self oggi · ' + (Math.abs(c) < 0.05 ? 'come ieri' : (c < 0 ? '▼ ' : '▲ ') + num(Math.abs(c), 1) + ' cent da ieri'); }}
+    var a = s[s.length - 1];
+    if (a && a.italia && a.italia.B) mostra('v-b', num(a.italia.B, 3) + ' €/l', 'Ministero', gm(a.data));
   }}).catch(function () {{}});
   fetch('data/cambi.json', {{ cache: 'no-store' }}).then(function (x) {{ return x.json(); }}).then(function (c) {{
-    if (c.eur && c.eur.USD) document.getElementById('o-usd').textContent = '1 € = ' + num(c.eur.USD, 4) + ' $';
+    if (c.eur && c.eur.USD) mostra('v-usd', '1 € = ' + num(c.eur.USD, 4) + ' $', 'BCE', gm(c.data));
   }}).catch(function () {{}});
 }})();
 </script>
@@ -128,5 +148,5 @@ pagina = f'''<!doctype html>
 </body>
 </html>
 '''.replace(f"{farmaci:,}", f"{farmaci:,}".replace(",", "."))
-pathlib.Path("index.html").write_text(pagina, encoding="utf-8")
-print("home:", tot, "strumenti,", farmaci, "gruppi di farmaci")
+OUT.write_text(pagina, encoding="utf-8")
+print("home (anteprima):", tot, "strumenti,", farmaci, "gruppi di farmaci ->", OUT)
