@@ -1,4 +1,4 @@
-# Riassunto automatico dei numeri del sito, da dare ad altri assistenti AI (ChatGPT ecc.): data/numeri.txt
+# Riassunto automatico dei numeri del sito, da dare ad altri assistenti AI (ChatGPT ecc.): data/numeri.txt e data/numeri.json
 # Lo rifà Pino ogni mattina. Solo contatori pubblici del sito (già in data/visite.json): niente account, email, ricavi o strategie.
 import json, datetime
 v = json.load(open('data/visite.json')).get('visite', {})
@@ -26,6 +26,39 @@ righe = [
  f"visite alla pagina {v.get('budget-2027') or 0} → interessati {v.get('int-budget-2027') or 0} → clic dai riquadri negli strumenti {v.get('clic-budget-riquadro') or 0} → clic su Acquista {v.get('clic-budget-acquisto') or 0}",
  f"Clic su \"Offri un caffè\" (Ko-fi): {v.get('clic-kofi') or 0}",
  "Nota: i clic non sono vendite; vendite e ricavi non sono in questo file.",
+ "Gli stessi dati in formato JSON, con la storia giorno per giorno: https://tobia-and-co.pages.dev/data/numeri.json",
 ]
 open('data/numeri.txt', 'w').write("\n".join(righe) + "\n")
 print("\n".join(righe))
+
+# stessa cosa in JSON (formato stabile: versione 1), con la storia giornaliera per i confronti
+import os
+oggi = datetime.date.today().isoformat()
+canali = {'diretto': g('da-diretto'), 'motori_ricerca': g('da-google', 'da-bing', 'da-altri-motori'),
+          'assistenti_ai': g('da-chatgpt', 'da-claude', 'da-perplexity', 'da-gemini'),
+          'altri_siti_social': g('da-altri-siti', 'da-social', 'da-github'), 'vecchio_indirizzo': g('da-vecchio-indirizzo')}
+oggi_dati = {
+  'data': oggi,
+  'visite_totali': v.get('totale') or 0,
+  'canali': canali,
+  'pagine': {k: v.get(k) or 0 for k in NOMI},
+  'interessati': {k[4:]: x for k, x in v.items() if k.startswith('int-') and x},
+  'ingressi': {k[4:]: x for k, x in v.items() if k.startswith('ing-') and x},
+  'percorsi': {
+    'voli_airhelp': {'visite': g('voli', 'tratte', 'compagnie', 'aeroporti', 'sciopero', 'overbooking', 'coincidenza-persa', 'volo-cancellato', 'en'),
+                     'calcoli': v.get('calcoli-voli') or 0, 'clic_airhelp': v.get('clic-affiliato-voli') or 0},
+    'budget_2027': {'visite': v.get('budget-2027') or 0, 'interessati': v.get('int-budget-2027') or 0,
+                    'clic_riquadri': v.get('clic-budget-riquadro') or 0, 'clic_acquista': v.get('clic-budget-acquisto') or 0},
+    'kofi_caffe': {'clic': v.get('clic-kofi') or 0}},
+}
+f = 'data/numeri.json'
+prima = {}
+try: prima = json.load(open(f)) if os.path.exists(f) else {}
+except Exception: prima = {}
+storia = [x for x in prima.get('storia', []) if x.get('data') != oggi]
+storia.append({'data': oggi, 'visite_totali': oggi_dati['visite_totali'], **{'canale_' + k: c for k, c in canali.items()},
+               'clic_airhelp': oggi_dati['percorsi']['voli_airhelp']['clic_airhelp'], 'clic_acquista_budget': oggi_dati['percorsi']['budget_2027']['clic_acquista']})
+json.dump({'versione': 1, 'sito': 'https://tobia-and-co.pages.dev',
+           'descrizione': 'Contatori pubblici del sito Tobia & Co., aggiornati ogni mattina. Visite del proprietario e test automatici esclusi. I clic non sono vendite; vendite e ricavi non sono inclusi. Valori cumulativi dal 31/10/2026 (canali dall\'8/11, interessati e ingressi dal 14/11).',
+           'aggiornato': oggi, 'oggi': oggi_dati, 'storia': storia[-120:]},
+          open(f, 'w'), ensure_ascii=False, indent=1)

@@ -11,3 +11,4 @@ Percorso rimborsi voli (affiliazione AirHelp, paga solo a rimborso vinto): visit
 Percorso Budget 2027 (foglio di calcolo digitale, 3,90 €): visite alla pagina 0 → interessati 0 → clic dai riquadri negli strumenti 0 → clic su Acquista 0
 Clic su "Offri un caffè" (Ko-fi): 3
 Nota: i clic non sono vendite; vendite e ricavi non sono in questo file.
+Gli stessi dati in formato JSON, con la storia giorno per giorno: https://tobia-and-co.pages.dev/data/numeri.json
