@@ -32,7 +32,7 @@
       : /gemini\.google|bard\.google/.test(ref) ? 'gemini' : /copilot|bing/.test(ref) ? 'bing'
       : /google\./.test(ref) ? 'google' : /duckduckgo|ecosia|yahoo|qwant|brave|yandex/.test(ref) ? 'altri-motori'
       : /facebook|instagram|t\.co|twitter|x\.com|reddit|whatsapp|telegram|linkedin|youtube|tiktok/.test(ref) ? 'social'
-      : /github\./.test(ref) ? 'github' : 'altri-siti';
+      : ref === 'tobia-and-co.github.io' ? 'vecchio-indirizzo' : /github\./.test(ref) ? 'github' : 'altri-siti';
     window.tobiaConta('da-' + fonte);
   }
   // clic su "Offri un caffè" (Ko-fi)
