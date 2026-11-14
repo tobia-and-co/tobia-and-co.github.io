@@ -11,6 +11,10 @@
     if (/[?&]io=0/.test(location.search)) localStorage.removeItem('tobia-io');
     if (localStorage.getItem('tobia-io')) locale = true;
   } catch (e) {}
+  // visite fatte da programmi di prova (browser automatici): contate a parte come 'da-test', mai nei totali
+  var prova = false;
+  try { prova = navigator.webdriver === true || /HeadlessChrome|Playwright|Lighthouse/i.test(navigator.userAgent); } catch (e) {}
+  if (prova && !locale) { try { fetch('https://abacus.jasoncameron.dev/hit/tobiaandco/da-test', { mode: 'cors', keepalive: true }).catch(function () {}); } catch (e) {} locale = true; }
   var giaContati = {};
   // tobiaConta('nome'): conta un'azione al massimo una volta per pagina aperta
   window.tobiaConta = function (nome) {
@@ -34,7 +38,15 @@
       : /facebook|instagram|t\.co|twitter|x\.com|reddit|whatsapp|telegram|linkedin|youtube|tiktok/.test(ref) ? 'social'
       : ref === 'tobia-and-co.github.io' ? 'vecchio-indirizzo' : /github\./.test(ref) ? 'github' : 'altri-siti';
     window.tobiaConta('da-' + fonte);
+    // pagina d'ingresso per canale: 'org' = motori di ricerca, 'ref' = altri siti, social, assistenti AI (le dirette no)
+    var canale = fonte === 'diretto' ? '' : /^(google|bing|altri-motori)$/.test(fonte) ? 'org' : 'ref';
+    if (canale) window.tobiaConta('ing-' + canale + '-' + sezione);
   }
+  // visita "interessata": il visitatore usa la pagina (clic, scrive in un campo) o ci resta almeno 30 secondi
+  var interessato = function () { window.tobiaConta('int-' + sezione); };
+  document.addEventListener('input', interessato, { once: true });
+  document.addEventListener('click', function (e) { if (!(e.target.closest && e.target.closest('header'))) interessato(); });
+  setTimeout(function () { if (!document.hidden) interessato(); }, 30000);
   // clic su "Offri un caffè" (Ko-fi)
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href*="ko-fi.com"]:not([href*="ko-fi.com/s/"])');
