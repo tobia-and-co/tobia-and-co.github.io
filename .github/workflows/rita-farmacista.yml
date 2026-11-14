@@ -21,7 +21,7 @@ jobs:
         id: salva
         run: |
           git config user.name "Rita la Farmacista (Tobia & Co.)"
-          git config user.email "tobia.and.co@proton.me"
+          git config user.email "350758677+tobia-and-co@users.noreply.github.com"
           git add -A data farmaci sitemap.xml
           if git diff --cached --quiet; then echo "nuovo=no" >> "$GITHUB_OUTPUT"; else
             git commit -m "Rita: dati AIFA e pagine dei farmaci aggiornati [CF-Pages-Skip]" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done && echo "nuovo=si" >> "$GITHUB_OUTPUT"; fi

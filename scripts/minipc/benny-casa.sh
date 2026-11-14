@@ -13,6 +13,6 @@ curl -s -m 40 -A "Mozilla/5.0 (TobiaAndCo; dati pubblici)" -o data/grezzi/sciope
 git add data/carburanti
 git add data/grezzi 2>/dev/null || true
 if ! git diff --cached --quiet; then
-  git -c user.name="Benny il Benzinaio (Tobia & Co.)" -c user.email="tobia.and.co@proton.me" commit -qm "Benny: prezzi dei carburanti aggiornati [CF-Pages-Skip]"
+  git -c user.name="Benny il Benzinaio (Tobia & Co.)" -c user.email="350758677+tobia-and-co@users.noreply.github.com" commit -qm "Benny: prezzi dei carburanti aggiornati [CF-Pages-Skip]"
   git push -q
 fi

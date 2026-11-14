@@ -18,6 +18,6 @@ jobs:
       - name: Salva la lista dei farmaci carenti
         run: |
           git config user.name "Fabio il Farmacista (Tobia & Co.)"
-          git config user.email "tobia.and.co@proton.me"
+          git config user.email "350758677+tobia-and-co@users.noreply.github.com"
           git add -A data/carenze.json data/carenti_pagine.txt data/indirizzi.txt sitemap.xml farmaci/carenti
           git diff --cached --quiet || (git commit -m "Fabio: farmaci carenti AIFA aggiornati [CF-Pages-Skip]" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)

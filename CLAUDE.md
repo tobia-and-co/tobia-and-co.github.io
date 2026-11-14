@@ -25,7 +25,7 @@
    né strategie interne sul sito o nei file. I numeri completi stanno solo nel cruscotto privato dell'utente.
 
 ## Il sito
-- https://tobia-and-co.pages.dev (Cloudflare Pages dal 9/11, prende i file da GitHub; il vecchio tobia-and-co.github.io rimanda lì tramite js/conta.js; account `tobia-and-co`; email di contatto pubblica tobia.and.co@gmail.com, letta da Tobia; la vecchia tobia.and.co@proton.me resta come riserva e come autore dei commit).
+- https://tobia-and-co.pages.dev (Cloudflare Pages dal 9/11, prende i file da GitHub; il vecchio tobia-and-co.github.io rimanda lì tramite js/conta.js; account `tobia-and-co`; email di contatto pubblica tobia.and.co@gmail.com, letta da Tobia; la vecchia tobia.and.co@proton.me resta come riserva per recuperare gli account).
 - Home: stile "A" (riordino) scelto dall'utente l'8/11 (`style.css` + `css/home.css`, generata da `scripts/home.py`: ricerca, 4 gruppi, numeri di oggi;
   nuovo strumento → aggiungilo in GRUPPI e rilancia lo script). Lo stile B (copertina illustrata) è conservato nella memoria privata.
 - Stile: `style.css` (Fraunces + Inter), barra in alto con "☕ Offri un caffè", briciole "🏠 Home › …",
@@ -64,7 +64,7 @@
 ## Più sessioni di lavoro (una su internet, una su un computer)
 - Il repository è la memoria comune: **all'inizio** di ogni lavoro `git pull`. **Per pubblicare NON fare `git push` diretto
   su questo repository**: segui la procedura di pubblicazione scritta nella memoria privata (`tobia-memoria/memoria.md`).
-  Autore dei commit: `Tobia & Co. <tobia.and.co@proton.me>`.
+  Autore dei commit: `Tobia & Co. <350758677+tobia-and-co@users.noreply.github.com>` (indirizzo "noreply" di GitHub: collega i commit all'account tobia-and-co senza mostrare email; dal 14/11).
 - Leggi `registro.md` all'inizio: è il passaggio di consegne tra le sessioni. Alla fine aggiungi in cima 2-3 righe
   (data, cosa hai fatto, cosa resta). Solo cose pubbliche: niente dati privati né strategie interne.
 - Memoria PRIVATA: se hai accesso al repository privato `tobia-memoria`, leggi lì `memoria.md` e `registro.md`
