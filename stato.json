@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-11-11",
+  "aggiornato": "2026-11-14",
   "giorno_sfida": 12,
   "euro_incassati": 0,
   "donazioni": 0,
@@ -35,6 +35,6 @@
     "accettate": 0,
     "nota": "in pausa: il pagamento richiede identità verificata"
   },
-  "ultimo_lavoro": "Guide pratiche con modulo pronto e riquadro dei farmaci equivalenti per altri siti",
+  "ultimo_lavoro": "Una pagina per ogni farmaco carente della lista AIFA, aggiornata ogni mattina",
   "prossimo_passo": "Riquadro dei prezzi dei carburanti da usare su altri siti"
 }

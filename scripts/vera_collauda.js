@@ -20,6 +20,8 @@ const server = http.createServer((req, res) => {
   const voli = Object.values(JSON.parse(fs.readFileSync(path.join(radice, 'data/voli_testi.json'), 'utf8'))).map(t => '/' + t.percorso);
   const tratte = JSON.parse(fs.readFileSync(path.join(radice, 'data/tratte.json'), 'utf8')).sort(() => Math.random() - 0.5).slice(0, 5).map(t => '/' + t);
   const pagine = [...tratte, '/', '/scadenze/', '/farmaci/', '/diario/', '/sostieni/', '/scatola/', '/bolletta/', '/mutuo/', '/banca/', '/cambio/', '/bollo/', '/assegno-unico/', '/carburante/', '/carburante/prezzi-medi/', '/bagaglio/', '/treno/', '/guide/', '/guide/spid/', '/guide/disdetta-abbonamento/', '/guide/isee/', '/agenti/', '/squadra/', '/affitto-istat/', '/voli/compagnia/', '/voli/compagnia/ryanair/', '/voli/sciopero/', '/voli/overbooking/', '/voli/coincidenza-persa/', '/voli/volo-cancellato/', '/voli/aeroporto/', '/voli/aeroporto/roma-fiumicino/', '/tasse-aeroportuali/', '/farmaci/riquadro/', '/farmaci/riquadro-per-siti/', '/carburante/roma/', '/carburante/milano/', ...voli, ...campione];
+  const carenti = fs.readFileSync(path.join(radice, 'data/carenti_pagine.txt'), 'utf8').split('\n').filter(Boolean).slice(0, 2).map(u => new URL(u).pathname);
+  pagine.push('/farmaci/carenti/', ...carenti);
   const browser = await chromium.launch();
   const problemi = [];
   for (const url of pagine) {

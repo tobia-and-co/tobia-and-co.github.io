@@ -14,9 +14,10 @@ jobs:
       - uses: actions/checkout@v4
       - run: pip install -q openpyxl   # serve solo se AIFA pubblica il file in formato Excel
       - run: python3 scripts/fabio_carenze.py
+      - run: python3 scripts/fabio_pagine.py
       - name: Salva la lista dei farmaci carenti
         run: |
           git config user.name "Fabio il Farmacista (Tobia & Co.)"
           git config user.email "tobia.and.co@proton.me"
-          git add data/carenze.json
+          git add -A data/carenze.json data/carenti_pagine.txt data/indirizzi.txt sitemap.xml farmaci/carenti
           git diff --cached --quiet || (git commit -m "Fabio: farmaci carenti AIFA aggiornati [CF-Pages-Skip]" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)

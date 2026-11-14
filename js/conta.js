@@ -19,7 +19,7 @@
     try { fetch(base + String(nome).replace(/[^a-z0-9_-]/gi, '').slice(0, 40), { mode: 'cors', keepalive: true }).catch(function () {}); } catch (e) {}
   };
   var p = location.pathname.split('/').filter(Boolean);
-  var sezione = p.length === 0 ? 'home' : (p[0] === 'farmaci' && p.length > 1 ? 'farmaci-pagine' : (p[0] === 'guide' && p.length > 1 ? 'guide-' + p[1] : p[0] === 'voli' && p[1] === 'compagnia' ? 'compagnie' : p[0] === 'voli' && p[1] === 'aeroporto' ? 'aeroporti' : p[0] === 'voli' && /^(sciopero|overbooking|coincidenza-persa|volo-cancellato)$/.test(p[1] || '') ? p[1] : p[0] === 'voli' && p.length > 1 ? 'tratte' : (p[0] === 'carburante' && p[1] === 'prezzi-medi' ? 'prezzi-medi' : p[0] === 'carburante' && p.length > 1 ? 'carburante-pagine' : p[0])));
+  var sezione = p.length === 0 ? 'home' : (p[0] === 'farmaci' && p[1] === 'carenti' && p.length > 2 ? 'carenti-pagine' : p[0] === 'farmaci' && p.length > 1 ? 'farmaci-pagine' : (p[0] === 'guide' && p.length > 1 ? 'guide-' + p[1] : p[0] === 'voli' && p[1] === 'compagnia' ? 'compagnie' : p[0] === 'voli' && p[1] === 'aeroporto' ? 'aeroporti' : p[0] === 'voli' && /^(sciopero|overbooking|coincidenza-persa|volo-cancellato)$/.test(p[1] || '') ? p[1] : p[0] === 'voli' && p.length > 1 ? 'tratte' : (p[0] === 'carburante' && p[1] === 'prezzi-medi' ? 'prezzi-medi' : p[0] === 'carburante' && p.length > 1 ? 'carburante-pagine' : p[0])));
   window.tobiaConta('totale');
   window.tobiaConta(sezione);
   // da dove arriva la visita: solo il tipo di sito (Google, un assistente AI…), mai l'indirizzo completo

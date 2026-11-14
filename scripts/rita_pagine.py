@@ -103,6 +103,10 @@ testo = pag.read_text(encoding="utf-8")
 testo = re.sub(r"<!-- ELENCO -->.*?<!-- /ELENCO -->", lambda _: f'<!-- ELENCO --><div class="card"><h2 style="margin-top:0">📚 Tutti i farmaci</h2><ul>{voci}</ul></div><!-- /ELENCO -->', testo, flags=re.S)
 pag.write_text(testo, encoding="utf-8")
 
+# le pagine dei farmaci carenti le fa Fabio (fabio_pagine.py): qui si rimettono in sitemap
+_c = pathlib.Path("data/carenti_pagine.txt")
+if _c.exists():
+    indirizzi += [u for u in _c.read_text(encoding="utf-8").split() if u]
 indirizzi = list(dict.fromkeys(indirizzi))   # niente doppioni
 sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
     "".join(f"<url><loc>{u}</loc><lastmod>{oggi}</lastmod></url>\n" for u in indirizzi) + "</urlset>\n"

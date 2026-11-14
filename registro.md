@@ -2,6 +2,10 @@
 
 Le voci più nuove in alto. Ogni sessione lo legge all'inizio e aggiunge 2-3 righe alla fine.
 
+## 14 novembre 2026 · sessione su internet
+- Audit tecnico (privato). Una pagina per ogni farmaco carente: `farmaci/carenti/<nome>/` (1.573 pagine) generate da `scripts/fabio_pagine.py` dentro il workflow di Fabio; la data si legge da `data/carenze_data.json` così le pagine non cambiano tutte ogni giorno; Rita rimette in sitemap gli indirizzi di `data/carenti_pagine.txt`.
+- Benny di casa scarica anche la pagina ufficiale degli scioperi (MIT blocca i server esteri) in `data/grezzi/scioperi-mit.txt`: prossimo passo il lettore e le pagine scioperi.
+
 ## 11 novembre 2026 · sessione su internet
 - `squadra/` rifatta come organigramma con i personaggi a figura intera (`img/squadra/*.svg`); `squadra/organigramma/` ora rimanda a `squadra/` (noindex, tolta da sitemap e da Vera). Home: casella squadra aggiornata (`scripts/home.py`).
 - Poi: guide pratiche (`guide/`: SPID, disdetta abbonamento con lettera, ISEE con checklist; js/conta.js conta `guide-<x>`), riquadro farmaci per altri siti (`farmaci/riquadro/` iframe noindex + `farmaci/riquadro-per-siti/`; Rita ora non cancella quelle cartelle), colori di Ugo, Pino e Bruno più distinti.

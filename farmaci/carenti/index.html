@@ -59,7 +59,8 @@
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var dt = function (s) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ''); return m ? m[3] + '/' + m[2] + '/' + m[1] : (s || ''); };
   function riga(c) {
-    var h = '<div class="carenza"><h3>' + esc(c.nome || c.principio) + '</h3>';
+    var sl = norm(c.nome).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
+    var h = '<div class="carenza"><h3>' + (c.nome && sl ? '<a href="' + sl + '/">' + esc(c.nome) + '</a>' : esc(c.nome || c.principio)) + '</h3>';
     if (c.principio && c.nome) h += '<p class="dati">Principio attivo: <b>' + esc(c.principio) + '</b></p>';
     if (c.confezione) h += '<p class="dati">Confezione: ' + esc(c.confezione) + '</p>';
     if (c.inizio) h += '<p class="dati">Carente dal: ' + esc(dt(c.inizio)) + '</p>';
