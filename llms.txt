@@ -42,6 +42,7 @@ Apri lo strumento già compilato e calcolato (nessun invio di dati: tutto avvien
 - [Come disdire un abbonamento](https://tobia-and-co.pages.dev/guide/disdetta-abbonamento/): preavviso massimo 30 giorni e niente penali ingiustificate per telefonia e pay TV (L. 40/2007 art. 1 c. 3); generatore di lettera di disdetta nel browser.
 - [ISEE: come si fa](https://tobia-and-co.pages.dev/guide/isee/): DSU, ISEE precompilato INPS, lista documenti, validità fino al 31 dicembre.
 - [Bonus sociale bollette](https://tobia-and-co.pages.dev/bonus-sociale/): automatico per luce, gas e acqua con ISEE fino a 9.530 € (20.000 € con almeno 4 figli a carico); basta presentare la DSU; bonus disagio fisico indipendente dall'ISEE.
+- [Budget familiare 2027](https://tobia-and-co.pages.dev/budget-2027/): foglio .xlsx a 3,90 € per tenere entrate e spese di casa, con budget per categoria, riepilogo mensile e grafici; Excel, Google Fogli, LibreOffice; versione inglese inclusa.
 - [Riquadro cercafarmaci equivalenti per altri siti](https://tobia-and-co.pages.dev/farmaci/riquadro-per-siti/): iframe gratuito per cercare un farmaco e vedere l'equivalente più economico, con prezzi ufficiali AIFA.
 - [Riquadro prezzi carburanti per altri siti](https://tobia-and-co.pages.dev/carburante/riquadro-per-siti/): iframe gratuito con le medie self di benzina, gasolio, GPL e metano per regione, aggiornate ogni giorno.
 - [Bolletta luce e gas](https://tobia-and-co.pages.dev/bolletta/): confronto con PUN e prezzo del gas all'ingrosso (GME).

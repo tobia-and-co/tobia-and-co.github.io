@@ -37,7 +37,7 @@
   }
   // clic su "Offri un caffè" (Ko-fi)
   document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('a[href*="ko-fi.com"]');
+    var a = e.target.closest && e.target.closest('a[href*="ko-fi.com"]:not([href*="ko-fi.com/s/"])');
     if (a) window.tobiaConta('clic-kofi');
   });
 })();
