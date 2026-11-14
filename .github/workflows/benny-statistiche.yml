@@ -1,5 +1,5 @@
 name: Benny - prezzi medi
-# Quando arrivano i prezzi nuovi dal mini PC, calcola le medie per regione e aggiorna la pagina carburante/prezzi-medi/.
+# Quando arrivano i prezzi nuovi dal server in Italia, calcola le medie per regione e aggiorna la pagina carburante/prezzi-medi/.
 on:
   push:
     paths: ["data/carburanti/indice.json", "scripts/benny_statistiche.py", ".github/workflows/benny-statistiche.yml"]

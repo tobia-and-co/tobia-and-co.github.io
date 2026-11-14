@@ -1,4 +1,4 @@
-"""Crea la home (index.html) nello stile "A" (riordino) scelto dall'utente l'8/11/2026: ricerca, 4 gruppi, numeri di oggi.
+"""Crea la home (index.html): ricerca, 4 pulsanti principali, 4 gruppi di strumenti, numeri di oggi.
 Gli strumenti sono scritti nella pagina (visibili a Google); i numeri si aggiornano nel browser dai dati dei robottini."""
 import html, json, pathlib, sys
 e = lambda s: html.escape(s, quote=True)

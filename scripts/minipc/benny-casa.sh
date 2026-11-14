@@ -1,5 +1,5 @@
 #!/bin/bash
-# Benny "di casa": gira sul mini PC in Italia (il sito del Ministero blocca i server esteri).
+# Benny: gira su un server in Italia (il sito del Ministero blocca i server esteri).
 # Ogni mattina scarica i prezzi ufficiali dei carburanti, li prepara e li carica sul sito di Tobia.
 set -e
 cd /opt/tobia/sito

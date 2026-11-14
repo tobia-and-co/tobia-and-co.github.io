@@ -1,6 +1,6 @@
 name: Benny il Benzinaio
 # In pausa: il sito del Ministero non risponde ai server di GitHub (esteri).
-# I dati arriveranno dal mini PC in Italia; per ora si avvia solo a mano.
+# Il sito del Ministero blocca i server esteri: i prezzi arrivano da un server in Italia (scripts/minipc/benny-casa.sh); qui si avvia solo a mano.
 on:
   workflow_dispatch:
 permissions:
