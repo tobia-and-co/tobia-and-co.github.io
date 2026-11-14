@@ -4,7 +4,7 @@ on:
     - cron: "42 7 * * *"   # ogni giorno
   workflow_dispatch:
   push:
-    paths: [".github/workflows/pino-contabile.yml", "scripts/pino_cassa.py", "scripts/pino_controlla_benny.py"]
+    paths: [".github/workflows/pino-contabile.yml", "scripts/pino_cassa.py", "scripts/condividi.py", "scripts/pino_controlla_benny.py"]
 permissions:
   contents: write
   issues: write
@@ -15,11 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/pino_cassa.py
+      - run: python3 scripts/condividi.py
       - name: Salva i conti
         run: |
           git config user.name "Pino il Contabile (Tobia & Co.)"
           git config user.email "350758677+tobia-and-co@users.noreply.github.com"
-          git add data/cassa.json data/visite.json
+          git add data/cassa.json data/visite.json data/numeri.txt
           git diff --cached --quiet || (git commit -m "Pino: conti della cassa aggiornati [CF-Pages-Skip]" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)
       - name: Controlla che i prezzi dei carburanti arrivino
         env:
