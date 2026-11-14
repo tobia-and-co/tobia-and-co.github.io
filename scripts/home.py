@@ -65,7 +65,7 @@ fdata = json.load(open("data/farmaci.json", encoding="utf-8"))["aggiornato"]
 fd = f"{fdata[8:10]}/{fdata[5:7]}"
 ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Tobia & Co.", "url": "https://tobia-and-co.pages.dev/", "inLanguage": "it",
       "description": "Strumenti gratuiti per risparmiare e far valere i propri diritti, con dati ufficiali aggiornati in automatico.",
-      "publisher": {"@type": "Organization", "name": "Tobia & Co.", "url": "https://tobia-and-co.pages.dev/", "email": "tobia.and.co@proton.me"}}
+      "publisher": {"@type": "Organization", "name": "Tobia & Co.", "url": "https://tobia-and-co.pages.dev/", "email": "tobia.and.co@gmail.com"}}
 pagina = f'''<!doctype html>
 <html lang="it">
 <head>

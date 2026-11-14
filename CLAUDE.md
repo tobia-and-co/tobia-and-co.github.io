@@ -25,7 +25,7 @@
    né strategie interne sul sito o nei file. I numeri completi stanno solo nel cruscotto privato dell'utente.
 
 ## Il sito
-- https://tobia-and-co.pages.dev (Cloudflare Pages dal 9/11, prende i file da GitHub; il vecchio tobia-and-co.github.io rimanda lì tramite js/conta.js; account `tobia-and-co`, email del progetto tobia.and.co@proton.me).
+- https://tobia-and-co.pages.dev (Cloudflare Pages dal 9/11, prende i file da GitHub; il vecchio tobia-and-co.github.io rimanda lì tramite js/conta.js; account `tobia-and-co`; email di contatto pubblica tobia.and.co@gmail.com, letta da Tobia; la vecchia tobia.and.co@proton.me resta come riserva e come autore dei commit).
 - Home: stile "A" (riordino) scelto dall'utente l'8/11 (`style.css` + `css/home.css`, generata da `scripts/home.py`: ricerca, 4 gruppi, numeri di oggi;
   nuovo strumento → aggiungilo in GRUPPI e rilancia lo script). Lo stile B (copertina illustrata) è conservato nella memoria privata.
 - Stile: `style.css` (Fraunces + Inter), barra in alto con "☕ Offri un caffè", briciole "🏠 Home › …",
