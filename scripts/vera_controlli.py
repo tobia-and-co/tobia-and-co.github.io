@@ -11,7 +11,8 @@ for f in pagine:
     for u in re.findall(r'(?:href|src)="([^"#?]+)', s):
         if re.match(r"^(https?:|mailto:|data:|javascript:|//|tel:|webcal:)", u) or "{" in u or "'" in u: continue
         link += 1
-        t = (f.parent / urllib.parse.unquote(u)).resolve()
+        base = R if u.startswith('/') else f.parent  # i link che iniziano con / partono dalla radice del sito (es. 404.html)
+        t = (base / urllib.parse.unquote(u.lstrip('/'))).resolve()
         if u.endswith("/") or t.is_dir(): t = t / "index.html"
         if not t.exists(): problemi.append(f"{f.relative_to(R)}: link rotto verso {u}")
 sm = (R / "sitemap.xml").read_text(encoding="utf-8")

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagina non trovata | Tobia &amp; Co.</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/img/tobia-base.svg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img src="/img/tobia-base.svg" alt=""><a href="/">Tobia &amp; Co.</a><nav class="menu"><a class="caffe" href="https://ko-fi.com/tobiaandco" rel="noopener">☕ Offri un caffè</a></nav></header>
+  <nav class="briciole"><a href="/">🏠 Home</a> › Pagina non trovata</nav>
+  <h1>Questa pagina non c'è</h1>
+  <p class="lead">L'indirizzo è sbagliato oppure la pagina è stata spostata. Forse cercavi uno di questi strumenti:</p>
+  <div class="card">
+    <p><a href="/voli/">✈️ Volo in ritardo o cancellato: quanto ti spetta</a></p>
+    <p><a href="/farmaci/">💊 Farmaci equivalenti che costano meno</a> · <a href="/farmaci/carenti/">farmaci carenti</a></p>
+    <p><a href="/carburante/">⛽ Dove conviene fare benzina</a></p>
+    <p><a href="/bolletta/">⚡ La bolletta è cara?</a></p>
+    <p><a href="/guide/">📘 Guide pratiche</a></p>
+  </div>
+  <p><a class="btn" href="/">Vai alla home</a></p>
+</div>
+<script>
+// conta le pagine non trovate (una chiave sola), escluse le visite del proprietario, i test e le prove in locale
+(function () { try {
+  if (/localhost|127\.0\.0\.1/.test(location.hostname) || localStorage.getItem('tobia-io') || navigator.webdriver) return;
+  fetch('https://abacus.jasoncameron.dev/hit/tobiaandco/pagina-404', { mode: 'cors', keepalive: true }).catch(function () {});
+} catch (e) {} })();
+</script>
+</body>
+</html>
