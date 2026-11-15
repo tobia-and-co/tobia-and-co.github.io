@@ -2,31 +2,31 @@
  "versione": 1,
  "sito": "https://tobia-and-co.pages.dev",
  "descrizione": "Contatori pubblici del sito Tobia & Co., aggiornati ogni mattina. Visite del proprietario e test automatici esclusi. I clic non sono vendite; vendite e ricavi non sono inclusi. Valori cumulativi dal 31/10/2026 (canali dall'8/11, interessati e ingressi dal 14/11).",
- "aggiornato": "2026-11-14",
+ "aggiornato": "2026-11-15",
  "oggi": {
-  "data": "2026-11-14",
-  "visite_totali": 147,
+  "data": "2026-11-15",
+  "visite_totali": 153,
   "canali": {
-   "diretto": 29,
+   "diretto": 34,
    "motori_ricerca": 0,
    "assistenti_ai": 0,
    "altri_siti_social": 6,
    "vecchio_indirizzo": 0
   },
   "pagine": {
-   "home": 74,
-   "squadra": 17,
-   "diario": 17,
+   "home": 75,
+   "squadra": 18,
+   "diario": 18,
    "carburante": 3,
    "carburante-pagine": 9,
    "farmaci-pagine": 8,
    "carenti-pagine": 2,
-   "voli": 4,
+   "voli": 6,
    "tratte": 3,
    "compagnie": 0,
    "en": 0,
    "guide": 0,
-   "budget-2027": 0,
+   "budget-2027": 1,
    "scadenze": 2,
    "banca": 1,
    "bolletta": 0,
@@ -35,17 +35,21 @@
    "mutuo": 0,
    "bollo": 2
   },
-  "interessati": {},
+  "interessati": {
+   "home": 1,
+   "voli": 1,
+   "budget-2027": 1
+  },
   "ingressi": {},
   "percorsi": {
    "voli_airhelp": {
-    "visite": 8,
+    "visite": 10,
     "calcoli": 2,
     "clic_airhelp": 0
    },
    "budget_2027": {
-    "visite": 0,
-    "interessati": 0,
+    "visite": 1,
+    "interessati": 1,
     "clic_riquadri": 0,
     "clic_acquista": 0
    },
@@ -213,6 +217,17 @@
    "data": "2026-11-14",
    "visite_totali": 147,
    "canale_diretto": 29,
+   "canale_motori_ricerca": 0,
+   "canale_assistenti_ai": 0,
+   "canale_altri_siti_social": 6,
+   "canale_vecchio_indirizzo": 0,
+   "clic_airhelp": 0,
+   "clic_acquista_budget": 0
+  },
+  {
+   "data": "2026-11-15",
+   "visite_totali": 153,
+   "canale_diretto": 34,
    "canale_motori_ricerca": 0,
    "canale_assistenti_ai": 0,
    "canale_altri_siti_social": 6,
