@@ -1,5 +1,5 @@
 {
-  "controllato": "2026-11-15",
+  "controllato": "2026-11-16",
   "visite": {
     "totale": 153,
     "home": 75,
@@ -79,9 +79,9 @@
     "link-agenti": 1,
     "bonus-sociale": 0,
     "calcoli-bonus-sociale": 0,
-    "riquadro-viste": 1,
+    "riquadro-viste": 2,
     "codici-riquadro": 0,
-    "riquadro-farmaci-viste": 2,
+    "riquadro-farmaci-viste": 5,
     "riquadro-farmaci-ricerche": 0,
     "codici-riquadro-farmaci": 0,
     "multe": 0,
@@ -111,7 +111,7 @@
     "budget-2027": 1,
     "clic-budget-acquisto": 0,
     "clic-budget-riquadro": 0,
-    "da-test": 0,
+    "da-test": 221,
     "pagina-404": 0,
     "int-home": 1,
     "int-voli": 1,
