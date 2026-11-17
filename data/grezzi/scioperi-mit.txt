@@ -28,7 +28,7 @@
 <script type="text/javascript" src="/mit2/public/js/dataTables.tableTools.min.js"></script>    </head>
     <body>
         <script type="text/javascript">
-    dataOdierna="16/11/2026";
+    dataOdierna="17/11/2026";
         jQuery.extend(jQuery.fn.dataTableExt.oSort, {
         "date-euro-pre": function (a) {
             var x;
@@ -278,7 +278,7 @@
     <div class="titleScioperi">
         Prospetto degli scioperi dei trasporti aggiornato alla data: 
         <span class="dataAggiornamentoSciopero">
-            16/11/2026        </span>
+            17/11/2026        </span>
     </div>
 </div>
 <div class="emailTestoScioperi">
@@ -424,118 +424,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="details-control"></td>
-                        <td>
-                            16/11/2026                        </td>
-                        <td>
-                            16/11/2026                        </td>
-                        <td>
-                            OSR FILT-CGIL/FIT-CISL/UILT-UIL/UGL-FNA/FAISA-CISAL                        </td>
-                        <td> 
-                            Trasporto pubblico locale                        </td>                        
-                        <td> 
-                            PERSONALE SOC. ANM DI NAPOLI                        </td>                        
-                        <td>
-                            4 ORE: DALLE 11.00 ALLE 15.00                        </td>
-                        <td>
-                            Locale                        </td>
-                        <td>
-                                                    </td>
-                        <td>
-                            14/10/2026                        </td>
-                        <td>
-                            Campania                        </td>
-                        <td>
-                            Napoli                        </td>
-                        <td>
-14/10/2026 09:13
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="details-control"></td>
-                        <td>
-                            16/11/2026                        </td>
-                        <td>
-                            16/11/2026                        </td>
-                        <td>
-                            OSR USB LAVORO PRIVATO/ORSA TPL/FAISA-CONFAIL                        </td>
-                        <td> 
-                            Trasporto pubblico locale                        </td>                        
-                        <td> 
-                            PERSONALE SOC. ANM DI NAPOLI                        </td>                        
-                        <td>
-                            4 ORE: DALLE 11.00 ALLE 15.00                        </td>
-                        <td>
-                            Locale                        </td>
-                        <td>
-                                                    </td>
-                        <td>
-                            05/11/2026                        </td>
-                        <td>
-                            Campania                        </td>
-                        <td>
-                            Napoli                        </td>
-                        <td>
-05/11/2026 13:49
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="details-control"></td>
-                        <td>
-                            16/11/2026                        </td>
-                        <td>
-                            16/11/2026                        </td>
-                        <td>
-                            OSR FILT-CGIL/FIT-CISL/UILT-UIL/UGL-FNA/FAISA-CISAL                        </td>
-                        <td> 
-                            Trasporto pubblico locale                        </td>                        
-                        <td> 
-                            PERSONALE SOC. ANM DI NAPOLI                        </td>                        
-                        <td>
-                            4 ORE: DALLE 11.00 ALLE 15.00                        </td>
-                        <td>
-                            Locale                        </td>
-                        <td>
-                                                    </td>
-                        <td>
-                            06/11/2026                        </td>
-                        <td>
-                            Campania                        </td>
-                        <td>
-                            Napoli                        </td>
-                        <td>
-06/11/2026 12:34
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="details-control"></td>
-                        <td>
-                            16/11/2026                        </td>
-                        <td>
-                            16/11/2026                        </td>
-                        <td>
-                            OSR FIT-CISL                        </td>
-                        <td> 
-                            Trasporto pubblico locale                        </td>                        
-                        <td> 
-                            PERSONALE SOC. ANM DI NAPOLI                        </td>                        
-                        <td>
-                            4 ORE: DALLE 11.00 ALLE 15.00                        </td>
-                        <td>
-                            Locale                        </td>
-                        <td>
-                                                    </td>
-                        <td>
-                            20/10/2026                        </td>
-                        <td>
-                            Campania                        </td>
-                        <td>
-                            Napoli                        </td>
-                        <td>
-20/10/2026 12:05
-                        </td>
-                    </tr>
                     <tr>
                         <td class="details-control"></td>
                         <td>
@@ -819,6 +707,34 @@
                     <tr>
                         <td class="details-control"></td>
                         <td>
+                            27/11/2026                        </td>
+                        <td>
+                            27/11/2026                        </td>
+                        <td>
+                            FILT-CGIL/FIT-CISL//UILT-UIL/ANPAC/ANP                        </td>
+                        <td> 
+                            Aereo                        </td>                        
+                        <td> 
+                            PERSONALE NAVIGANTE TECNICO DELLA SOC. POSTE AIR CARGO                        </td>                        
+                        <td>
+                            24 ORE: DALLE 00.01 ALLE 24.00                        </td>
+                        <td>
+                            Nazionale                        </td>
+                        <td>
+                                                    </td>
+                        <td>
+                            14/11/2026                        </td>
+                        <td>
+                             Italia                        </td>
+                        <td>
+                            Tutte                        </td>
+                        <td>
+14/11/2026 19:54
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="details-control"></td>
+                        <td>
                             04/12/2026                        </td>
                         <td>
                             04/12/2026                        </td>
@@ -926,6 +842,34 @@
                             Crotone                        </td>
                         <td>
 12/11/2026 22:52
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="details-control"></td>
+                        <td>
+                            14/12/2026                        </td>
+                        <td>
+                            14/12/2026                        </td>
+                        <td>
+                            OSR/OSP FAISA-CISAL                        </td>
+                        <td> 
+                            Trasporto pubblico locale                        </td>                        
+                        <td> 
+                            PERSONALE SOC. FASA DI RENDE (CS)                        </td>                        
+                        <td>
+                            4 ORE: DALLE 10.59 ALLE 14.59                        </td>
+                        <td>
+                            Locale                        </td>
+                        <td>
+                                                    </td>
+                        <td>
+                            14/11/2026                        </td>
+                        <td>
+                            Calabria                        </td>
+                        <td>
+                            Cosenza                        </td>
+                        <td>
+16/11/2026 10:50
                         </td>
                     </tr>
                     <tr>
@@ -1275,558 +1219,6 @@
         <div class="col-sm-12 " >
             <div class="listaScioperi">
                 <ol>            
-                        <li>
-                            <table class="table-responsive table-bordered table-striped">
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data inizio
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            16/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data fine
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            16/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Sindacati
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            OSR FILT-CGIL/FIT-CISL/UILT-UIL/UGL-FNA/FAISA-CISAL                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Settore dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Trasporto pubblico locale                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Categoria dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            PERSONALE SOC. ANM DI NAPOLI                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Modalità dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            4 ORE: DALLE 11.00 ALLE 15.00                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Rilevanza dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Locale                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Note:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                                                                    </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data proclamazione
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            14/10/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Regione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Campania                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Provincia:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Napoli                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data ricezione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                                            
-                                            <span class="eleDatoTd">                                                                          
-                                                14/10/2026 09:00                                            </span>
-                                        
-                                    </td>
-                                </tr>
-                            </table>
-                        </li>                                            
-                        <li>
-                            <table class="table-responsive table-bordered table-striped">
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data inizio
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            16/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data fine
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            16/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Sindacati
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            OSR USB LAVORO PRIVATO/ORSA TPL/FAISA-CONFAIL                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Settore dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Trasporto pubblico locale                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Categoria dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            PERSONALE SOC. ANM DI NAPOLI                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Modalità dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            4 ORE: DALLE 11.00 ALLE 15.00                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Rilevanza dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Locale                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Note:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                                                                    </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data proclamazione
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            05/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Regione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Campania                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Provincia:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Napoli                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data ricezione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                                            
-                                            <span class="eleDatoTd">                                                                          
-                                                05/11/2026 13:00                                            </span>
-                                        
-                                    </td>
-                                </tr>
-                            </table>
-                        </li>                                            
-                        <li>
-                            <table class="table-responsive table-bordered table-striped">
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data inizio
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            16/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data fine
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            16/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Sindacati
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            OSR FILT-CGIL/FIT-CISL/UILT-UIL/UGL-FNA/FAISA-CISAL                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Settore dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Trasporto pubblico locale                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Categoria dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            PERSONALE SOC. ANM DI NAPOLI                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Modalità dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            4 ORE: DALLE 11.00 ALLE 15.00                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Rilevanza dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Locale                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Note:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                                                                    </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data proclamazione
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            06/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Regione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Campania                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Provincia:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Napoli                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data ricezione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                                            
-                                            <span class="eleDatoTd">                                                                          
-                                                06/11/2026 12:00                                            </span>
-                                        
-                                    </td>
-                                </tr>
-                            </table>
-                        </li>                                            
-                        <li>
-                            <table class="table-responsive table-bordered table-striped">
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data inizio
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            16/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data fine
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            16/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Sindacati
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            OSR FIT-CISL                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Settore dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Trasporto pubblico locale                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Categoria dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            PERSONALE SOC. ANM DI NAPOLI                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Modalità dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            4 ORE: DALLE 11.00 ALLE 15.00                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Rilevanza dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Locale                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Note:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                                                                    </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data proclamazione
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            20/10/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Regione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Campania                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Provincia:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Napoli                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data ricezione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                                            
-                                            <span class="eleDatoTd">                                                                          
-                                                20/10/2026 12:00                                            </span>
-                                        
-                                    </td>
-                                </tr>
-                            </table>
-                        </li>                                            
                         <li>
                             <table class="table-responsive table-bordered table-striped">
                                 <tr>
@@ -3217,6 +2609,144 @@
                                     </td>
                                     <td>
                                         <span class="eleDatoTd">
+                                            27/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data fine
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            27/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Sindacati
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            FILT-CGIL/FIT-CISL//UILT-UIL/ANPAC/ANP                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Settore dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Aereo                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Categoria dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            PERSONALE NAVIGANTE TECNICO DELLA SOC. POSTE AIR CARGO                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Modalità dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            24 ORE: DALLE 00.01 ALLE 24.00                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Rilevanza dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Nazionale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Note:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                                                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data proclamazione
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            14/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Regione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                             Italia                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Provincia:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Tutte                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data ricezione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                                            
+                                            <span class="eleDatoTd">                                                                          
+                                                14/11/2026 19:00                                            </span>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>                                            
+                        <li>
+                            <table class="table-responsive table-bordered table-striped">
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data inizio
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
                                             04/12/2026                                        </span>                            
                                     </td>
                                 </tr>
@@ -3754,6 +3284,144 @@
                                                             
                                             <span class="eleDatoTd">                                                                          
                                                 12/11/2026 22:00                                            </span>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>                                            
+                        <li>
+                            <table class="table-responsive table-bordered table-striped">
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data inizio
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            14/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data fine
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            14/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Sindacati
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            OSR/OSP FAISA-CISAL                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Settore dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Trasporto pubblico locale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Categoria dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            PERSONALE SOC. FASA DI RENDE (CS)                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Modalità dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            4 ORE: DALLE 10.59 ALLE 14.59                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Rilevanza dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Locale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Note:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                                                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data proclamazione
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            14/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Regione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Calabria                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Provincia:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Cosenza                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data ricezione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                                            
+                                            <span class="eleDatoTd">                                                                          
+                                                16/11/2026 10:00                                            </span>
                                         
                                     </td>
                                 </tr>
