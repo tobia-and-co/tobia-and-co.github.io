@@ -1,6 +1,6 @@
 """Crea la home (index.html): ricerca, 4 pulsanti principali, 4 gruppi di strumenti, numeri di oggi.
 Gli strumenti sono scritti nella pagina (visibili a Google); i numeri si aggiornano nel browser dai dati dei robottini."""
-import html, json, pathlib, sys
+import html, json, pathlib, re, sys
 e = lambda s: html.escape(s, quote=True)
 GRUPPI = [
  ("viaggi", "✈️", "Viaggi", "Rimborsi e diritti di chi viaggia", [
@@ -60,6 +60,11 @@ def gruppo(g):
         extra = f'<details class="altri"><summary>Vedi tutti ({len(voci)})</summary><div class="mini">{"".join(riga(v) for v in altre)}</div></details>'
     return f'<section class="gruppo" id="{gid}"><h2>{nome}</h2><p class="sotto">{sotto}</p><div class="mini">{"".join(riga(v) for v in prime)}</div>{extra}</section>'
 blocchi = "".join(gruppo(next(g for g in GRUPPI if g[0] == k)) for k in ORDINE)
+# Riquadro del Budget 2027: compare da solo quando nella pagina di vendita c'è il link Ko-fi (KOFI_BUDGET non vuota)
+_b = open('budget-2027/index.html', encoding='utf-8').read() if pathlib.Path('budget-2027/index.html').exists() else ''
+BUDGET_ATTIVO = bool(re.search(r"KOFI_BUDGET\s*=\s*'[^']+'", _b))
+budget_box = ('<a class="budget-home" href="budget-2027/" onclick="window.tobiaConta&&tobiaConta(\'clic-budget-home\')">'
+              '<span><b>Budget familiare 2027</b><small>Il foglio di calcolo per sapere dove vanno i soldi di casa · 3,90 €</small></span><span aria-hidden="true">›</span></a>') if BUDGET_ATTIVO else ''
 principali = "".join(f'<a href="{u}" onclick="window.tobiaConta&&tobiaConta(\'home-pulsante-{u.strip("/")}\')"><span class="gi" aria-hidden="true">{i}</span><span>{e(t)}</span></a>' for i, t, u in PRINCIPALI)
 fdata = json.load(open("data/farmaci.json", encoding="utf-8"))["aggiornato"]
 fd = f"{fdata[8:10]}/{fdata[5:7]}"
@@ -90,6 +95,7 @@ pagina = f'''<!doctype html>
   <p class="fiducia">Dati ufficiali (AIFA, Ministero, BCE) · gratis · senza pubblicità · fatto da un'AI e dai suoi robottini</p>
 
   <nav class="grandi" aria-label="I problemi più cercati">{principali}</nav>
+  {budget_box}
 
   <form class="cerca" role="search" onsubmit="event.preventDefault();var a=document.querySelector('.mini a:not([hidden])');if(a)location.href=a.href">
     <label class="sr" for="q">Cerca uno strumento</label>
