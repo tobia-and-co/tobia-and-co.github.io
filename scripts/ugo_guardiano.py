@@ -7,7 +7,7 @@ import os
 SITO = os.environ.get("UGO_SITO", "https://tobia-and-co.pages.dev/")
 TITOLO = "Ugo: qualcosa non va sul sito"
 PAGINE = ["", "scadenze/", "farmaci/", "farmaci/omeprazolo/", "farmaci/carenti/", "voli/", "en/flight-delay-compensation/", "scatola/",
-          "bolletta/", "mutuo/", "banca/", "cambio/", "bollo/", "assegno-unico/", "carburante/", "carburante/prezzi-medi/", "bagaglio/", "treno/", "multe/", "bonus-sociale/", "carburante/riquadro/", "bolletta-prescritta/", "affitto-istat/", "voli/compagnia/ryanair/", "voli/sciopero/", "voli/aeroporto/roma-fiumicino/", "tasse-aeroportuali/", "diario/", "sostieni/",
+          "bolletta/", "mutuo/", "banca/", "cambio/", "bollo/", "assegno-unico/", "carburante/", "carburante/prezzi-medi/", "bagaglio/", "treno/", "multe/", "bonus-sociale/", "carburante/riquadro/", "bolletta-prescritta/", "affitto-istat/", "voli/compagnia/ryanair/", "voli/sciopero/", "voli/aeroporto/roma-fiumicino/", "tasse-aeroportuali/", "diario/", "sostieni/", "budget-2027/", "data/numeri.json",
           "sitemap.xml", "robots.txt", "google59f0580e92cfbc24.html", "style.css", "js/conta.js"]
 # file di dati: (percorso, come leggere la data, giorni massimi, chi lo aggiorna)
 DATI = [("data/cambi.json", lambda d: d["data"], 5, "Carlo"),
@@ -30,6 +30,18 @@ for p in PAGINE:
             problemi.append(f"`/{p}` non sembra una pagina del sito")
     except Exception as e:
         problemi.append(f"`/{p}` non si apre: {e}")
+# il prodotto in vendita: il link Ko-fi della pagina del Budget deve aprire il prodotto
+try:
+    _, corpo = scarica("budget-2027/")
+    m = re.search(rb"KOFI_BUDGET = '(https://ko-fi\.com/s/[0-9a-z]+)'", corpo)
+    if m:
+        req = urllib.request.Request(m.group(1).decode(), headers={"User-Agent": "Mozilla/5.0 (Ugo-il-Guardiano; Tobia & Co.)"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            pagina = r.read()
+            if r.status != 200 or b"Budget" not in pagina:
+                problemi.append(f"il prodotto Budget su Ko-fi non risponde bene ({r.status})")
+except Exception as e:
+    problemi.append(f"il prodotto Budget su Ko-fi non si apre: {e}")
 for percorso, leggi, massimo, chi in DATI:
     try:
         data = datetime.date.fromisoformat(leggi(json.loads(scarica(percorso)[1])))
