@@ -2,19 +2,19 @@
  "versione": 1,
  "sito": "https://tobia-and-co.pages.dev",
  "descrizione": "Contatori pubblici del sito Tobia & Co., aggiornati ogni mattina. Visite del proprietario e test automatici esclusi. I clic non sono vendite; vendite e ricavi non sono inclusi. Valori cumulativi dal 31/10/2026 (canali dall'8/11, interessati e ingressi dal 14/11).",
- "aggiornato": "2026-11-16",
+ "aggiornato": "2026-11-17",
  "oggi": {
-  "data": "2026-11-16",
-  "visite_totali": 153,
+  "data": "2026-11-17",
+  "visite_totali": 157,
   "canali": {
-   "diretto": 34,
+   "diretto": 38,
    "motori_ricerca": 0,
    "assistenti_ai": 0,
    "altri_siti_social": 6,
    "vecchio_indirizzo": 0
   },
   "pagine": {
-   "home": 75,
+   "home": 78,
    "squadra": 18,
    "diario": 18,
    "carburante": 3,
@@ -239,6 +239,17 @@
    "data": "2026-11-16",
    "visite_totali": 153,
    "canale_diretto": 34,
+   "canale_motori_ricerca": 0,
+   "canale_assistenti_ai": 0,
+   "canale_altri_siti_social": 6,
+   "canale_vecchio_indirizzo": 0,
+   "clic_airhelp": 0,
+   "clic_acquista_budget": 0
+  },
+  {
+   "data": "2026-11-17",
+   "visite_totali": 157,
+   "canale_diretto": 38,
    "canale_motori_ricerca": 0,
    "canale_assistenti_ai": 0,
    "canale_altri_siti_social": 6,
