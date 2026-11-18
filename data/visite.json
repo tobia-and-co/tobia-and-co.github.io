@@ -1,5 +1,5 @@
 {
-  "controllato": "2026-11-17",
+  "controllato": "2026-11-18",
   "visite": {
     "totale": 157,
     "home": 78,
@@ -234,7 +234,7 @@
     "ing-ref-assegno-unico": 0,
     "ing-ref-multe": 0,
     "ing-ref-treno": 0,
-    "ing-ref-affitto-istat": 0,
+    "ing-ref-affitto-istat": 1,
     "ing-ref-bagaglio": 0,
     "ing-ref-tasse-aeroportuali": 0,
     "ing-ref-scadenze": 0,
