@@ -28,7 +28,7 @@
 <script type="text/javascript" src="/mit2/public/js/dataTables.tableTools.min.js"></script>    </head>
     <body>
         <script type="text/javascript">
-    dataOdierna="17/11/2026";
+    dataOdierna="18/11/2026";
         jQuery.extend(jQuery.fn.dataTableExt.oSort, {
         "date-euro-pre": function (a) {
             var x;
@@ -278,7 +278,7 @@
     <div class="titleScioperi">
         Prospetto degli scioperi dei trasporti aggiornato alla data: 
         <span class="dataAggiornamentoSciopero">
-            17/11/2026        </span>
+            18/11/2026        </span>
     </div>
 </div>
 <div class="emailTestoScioperi">
@@ -493,11 +493,11 @@
                         <td> 
                             SCIOPERO GENERALE CATEGORIE PUBBLICHE E PRIVATE CON ESCLUSIONE TRASPORTO FERROVIARIO, MERCI SU ROTAIA E VARIE AZIENDE TPL                        </td>                        
                         <td>
-                            INTERA GIORNATA - ESCLUSO TRASPORTO FERROVIARIO, MERCI SU ROTAIA E VARIE AZIENDE TPL                        </td>
+                            INTERA GIORNATA - ESCLUSO SERVIZIO TRASPORTO PASSEGGERI                        </td>
                         <td>
                             Nazionale                        </td>
                         <td>
-                            ADESIONE DELLE OO.SS CUB E ADL VARESE CON ESCLUSIONE INTERO COMPARTO TRASPORTI                        </td>
+                            ESCLUSO SERVIZIO TRASPORTO PASSEGGERI - ADESIONE DELLE OO.SS CUB E ADL VARESE                        </td>
                         <td>
                             05/11/2026                        </td>
                         <td>
@@ -1560,7 +1560,7 @@
                                     </td>
                                     <td>
                                         <span class="eleDatoTd">
-                                            INTERA GIORNATA - ESCLUSO TRASPORTO FERROVIARIO, MERCI SU ROTAIA E VARIE AZIENDE TPL                                        </span>
+                                            INTERA GIORNATA - ESCLUSO SERVIZIO TRASPORTO PASSEGGERI                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1582,7 +1582,7 @@
                                     </td>
                                     <td>
                                         <span class="eleDatoTd">
-                                            ADESIONE DELLE OO.SS CUB E ADL VARESE CON ESCLUSIONE INTERO COMPARTO TRASPORTI                                        </span>
+                                            ESCLUSO SERVIZIO TRASPORTO PASSEGGERI - ADESIONE DELLE OO.SS CUB E ADL VARESE                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
