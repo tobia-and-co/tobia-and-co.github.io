@@ -28,7 +28,7 @@
 <script type="text/javascript" src="/mit2/public/js/dataTables.tableTools.min.js"></script>    </head>
     <body>
         <script type="text/javascript">
-    dataOdierna="18/11/2026";
+    dataOdierna="19/11/2026";
         jQuery.extend(jQuery.fn.dataTableExt.oSort, {
         "date-euro-pre": function (a) {
             var x;
@@ -278,7 +278,7 @@
     <div class="titleScioperi">
         Prospetto degli scioperi dei trasporti aggiornato alla data: 
         <span class="dataAggiornamentoSciopero">
-            18/11/2026        </span>
+            19/11/2026        </span>
     </div>
 </div>
 <div class="emailTestoScioperi">
@@ -661,7 +661,7 @@
                         <td> 
                             PERSONALE SOC. ENAV AEROPORTO DI MILANO MALPENSA                        </td>                        
                         <td>
-                            24 ORE: DALLE 00.01 ALLE 24.00                        </td>
+                            4 ORE: DALLE 13.00 ALLE 17.00                        </td>
                         <td>
                             Nazionale                        </td>
                         <td>
@@ -735,6 +735,34 @@
                     <tr>
                         <td class="details-control"></td>
                         <td>
+                            30/11/2026                        </td>
+                        <td>
+                            30/11/2026                        </td>
+                        <td>
+                            CSE-FNILT/UGL VIABILITA' E LOGISTICA                        </td>
+                        <td> 
+                            Trasporto merci                        </td>                        
+                        <td> 
+                            PERSONALE SOC. VINCENZO MIELE TRASPORTI DI VOLLA (NA)                        </td>                        
+                        <td>
+                            4 ORE: DALLE 7.00 ALLE 11.00                        </td>
+                        <td>
+                            Locale                        </td>
+                        <td>
+                                                    </td>
+                        <td>
+                            18/11/2026                        </td>
+                        <td>
+                            Campania                        </td>
+                        <td>
+                            Napoli                        </td>
+                        <td>
+18/11/2026 15:09
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="details-control"></td>
+                        <td>
                             04/12/2026                        </td>
                         <td>
                             04/12/2026                        </td>
@@ -745,7 +773,7 @@
                         <td> 
                             SCIOPERO GENERALE CATEGORIE PUBBLICHE E PRIVATE                        </td>                        
                         <td>
-                            INTERA GIORNATA - AEREO: MODALITA' NON COMUNICATE; FERROVIARIO DALLE 21.00 DEL 3/12 ALLE 21.00 DEL 4/12; AUTOSTRADE: DALLE 22.00 DEL 3/12 ALLE 22.00 DEL 4/12, TPL: MODALITA' TERRITORIALI                        </td>
+                            INTERA GIORNATA - AEREO: MODALITA' NON COMUNICATE; FERROVIARIO DALLE 21.00 DEL 3/12 ALLE 21.00 DEL 4/12; AUTOSTRADE: DALLE 22.00 DEL 3/12 ALLE 22.00 DEL 4/12, TPL: MODALITA' TERRITORIALI; MARITTIMO ( ADESIONE ORSA CON MODALITA' NON COMUNICATE )                        </td>
                         <td>
                             Nazionale                        </td>
                         <td>
@@ -1010,6 +1038,34 @@
                             Lecce                        </td>
                         <td>
 05/11/2026 18:28
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="details-control"></td>
+                        <td>
+                            18/12/2026                        </td>
+                        <td>
+                            18/12/2026                        </td>
+                        <td>
+                            USB LAVORO PRIVATO                        </td>
+                        <td> 
+                            Trasporto merci                        </td>                        
+                        <td> 
+                            PERSONALE DIPENDENTE IMPRESE AUTOTRASPORTO MERCI                        </td>                        
+                        <td>
+                            24 ORE: DALLE 00.00 ALLE 24.00                        </td>
+                        <td>
+                            Nazionale                        </td>
+                        <td>
+                            BLOCCO DELLE PRESTAZIONI DI LAVORO STRAORDINARIO DAL 15 12 2026 AL 19 12 2026                        </td>
+                        <td>
+                            17/11/2026                        </td>
+                        <td>
+                             Italia                        </td>
+                        <td>
+                            Tutte                        </td>
+                        <td>
+17/11/2026 18:53
                         </td>
                     </tr>
                     <tr>
@@ -2388,7 +2444,7 @@
                                     </td>
                                     <td>
                                         <span class="eleDatoTd">
-                                            24 ORE: DALLE 00.01 ALLE 24.00                                        </span>
+                                            4 ORE: DALLE 13.00 ALLE 17.00                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -2747,6 +2803,144 @@
                                     </td>
                                     <td>
                                         <span class="eleDatoTd">
+                                            30/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data fine
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            30/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Sindacati
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            CSE-FNILT/UGL VIABILITA' E LOGISTICA                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Settore dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Trasporto merci                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Categoria dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            PERSONALE SOC. VINCENZO MIELE TRASPORTI DI VOLLA (NA)                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Modalità dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            4 ORE: DALLE 7.00 ALLE 11.00                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Rilevanza dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Locale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Note:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                                                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data proclamazione
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            18/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Regione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Campania                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Provincia:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Napoli                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data ricezione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                                            
+                                            <span class="eleDatoTd">                                                                          
+                                                18/11/2026 15:00                                            </span>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>                                            
+                        <li>
+                            <table class="table-responsive table-bordered table-striped">
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data inizio
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
                                             04/12/2026                                        </span>                            
                                     </td>
                                 </tr>
@@ -2802,7 +2996,7 @@
                                     </td>
                                     <td>
                                         <span class="eleDatoTd">
-                                            INTERA GIORNATA - AEREO: MODALITA' NON COMUNICATE; FERROVIARIO DALLE 21.00 DEL 3/12 ALLE 21.00 DEL 4/12; AUTOSTRADE: DALLE 22.00 DEL 3/12 ALLE 22.00 DEL 4/12, TPL: MODALITA' TERRITORIALI                                        </span>
+                                            INTERA GIORNATA - AEREO: MODALITA' NON COMUNICATE; FERROVIARIO DALLE 21.00 DEL 3/12 ALLE 21.00 DEL 4/12; AUTOSTRADE: DALLE 22.00 DEL 3/12 ALLE 22.00 DEL 4/12, TPL: MODALITA' TERRITORIALI; MARITTIMO ( ADESIONE ORSA CON MODALITA' NON COMUNICATE )                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -4112,6 +4306,144 @@
                                                             
                                             <span class="eleDatoTd">                                                                          
                                                 05/11/2026 18:00                                            </span>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>                                            
+                        <li>
+                            <table class="table-responsive table-bordered table-striped">
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data inizio
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            18/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data fine
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            18/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Sindacati
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            USB LAVORO PRIVATO                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Settore dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Trasporto merci                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Categoria dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            PERSONALE DIPENDENTE IMPRESE AUTOTRASPORTO MERCI                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Modalità dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            24 ORE: DALLE 00.00 ALLE 24.00                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Rilevanza dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Nazionale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Note:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            BLOCCO DELLE PRESTAZIONI DI LAVORO STRAORDINARIO DAL 15 12 2026 AL 19 12 2026                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data proclamazione
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            17/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Regione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                             Italia                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Provincia:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Tutte                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data ricezione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                                            
+                                            <span class="eleDatoTd">                                                                          
+                                                17/11/2026 18:00                                            </span>
                                         
                                     </td>
                                 </tr>
