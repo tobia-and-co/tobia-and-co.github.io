@@ -1,5 +1,5 @@
 {
-  "controllato": "2026-11-18",
+  "controllato": "2026-11-19",
   "visite": {
     "totale": 157,
     "home": 78,
@@ -112,7 +112,7 @@
     "clic-budget-acquisto": 0,
     "clic-budget-riquadro": 0,
     "clic-budget-home": 0,
-    "da-test": 253,
+    "da-test": 255,
     "pagina-404": 0,
     "int-home": 1,
     "int-voli": 1,
@@ -225,7 +225,7 @@
     "ing-ref-guide-isee": 0,
     "ing-ref-guide-disdetta-abbonamento": 0,
     "ing-ref-bolletta": 0,
-    "ing-ref-bolletta-prescritta": 0,
+    "ing-ref-bolletta-prescritta": 1,
     "ing-ref-bonus-sociale": 0,
     "ing-ref-mutuo": 0,
     "ing-ref-banca": 0,
