@@ -28,7 +28,7 @@
 <script type="text/javascript" src="/mit2/public/js/dataTables.tableTools.min.js"></script>    </head>
     <body>
         <script type="text/javascript">
-    dataOdierna="19/11/2026";
+    dataOdierna="20/11/2026";
         jQuery.extend(jQuery.fn.dataTableExt.oSort, {
         "date-euro-pre": function (a) {
             var x;
@@ -278,7 +278,7 @@
     <div class="titleScioperi">
         Prospetto degli scioperi dei trasporti aggiornato alla data: 
         <span class="dataAggiornamentoSciopero">
-            19/11/2026        </span>
+            20/11/2026        </span>
     </div>
 </div>
 <div class="emailTestoScioperi">
@@ -702,34 +702,6 @@
                             Tutte                        </td>
                         <td>
 05/10/2026 20:33
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="details-control"></td>
-                        <td>
-                            27/11/2026                        </td>
-                        <td>
-                            27/11/2026                        </td>
-                        <td>
-                            FILT-CGIL/FIT-CISL//UILT-UIL/ANPAC/ANP                        </td>
-                        <td> 
-                            Aereo                        </td>                        
-                        <td> 
-                            PERSONALE NAVIGANTE TECNICO DELLA SOC. POSTE AIR CARGO                        </td>                        
-                        <td>
-                            24 ORE: DALLE 00.01 ALLE 24.00                        </td>
-                        <td>
-                            Nazionale                        </td>
-                        <td>
-                                                    </td>
-                        <td>
-                            14/11/2026                        </td>
-                        <td>
-                             Italia                        </td>
-                        <td>
-                            Tutte                        </td>
-                        <td>
-14/11/2026 19:54
                         </td>
                     </tr>
                     <tr>
@@ -2650,144 +2622,6 @@
                                                             
                                             <span class="eleDatoTd">                                                                          
                                                 05/10/2026 20:00                                            </span>
-                                        
-                                    </td>
-                                </tr>
-                            </table>
-                        </li>                                            
-                        <li>
-                            <table class="table-responsive table-bordered table-striped">
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data inizio
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            27/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data fine
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            27/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Sindacati
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            FILT-CGIL/FIT-CISL//UILT-UIL/ANPAC/ANP                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Settore dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Aereo                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Categoria dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            PERSONALE NAVIGANTE TECNICO DELLA SOC. POSTE AIR CARGO                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Modalità dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            24 ORE: DALLE 00.01 ALLE 24.00                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Rilevanza dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Nazionale                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Note:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                                                                    </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data proclamazione
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            14/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Regione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                             Italia                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Provincia:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Tutte                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data ricezione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                                            
-                                            <span class="eleDatoTd">                                                                          
-                                                14/11/2026 19:00                                            </span>
                                         
                                     </td>
                                 </tr>
