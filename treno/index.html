@@ -18,6 +18,36 @@
   <h1>🚆 Treno in ritardo? Ecco quanto ti rimborsano</h1>
   <p class="lead">Con <b>1 ora</b> di ritardo all'arrivo ti spetta il <b>25%</b> del biglietto, con <b>2 ore</b> il <b>50%</b>. Quasi nessuno lo chiede. Ti dico quanto ti spetta, entro quando e come.</p>
 
+  <div class="card" id="prossimi" hidden>
+    <h2 style="margin-top:0">📅 Prossimi scioperi treni</h2>
+    <ul id="prossimi-lista"></ul>
+    <p class="note" id="prossimi-fonte"></p>
+  </div>
+  <script>
+  (function () {
+    var MESI = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+    var fmt = function (iso) { var p = iso.split('-'); return +p[2] + ' ' + MESI[+p[1] - 1] + ' ' + p[0]; };
+    fetch('../data/scioperi.json').then(function (r) { return r.json(); }).then(function (d) {
+      var oggi = new Date(); var o = oggi.getFullYear() + '-' + ('0' + (oggi.getMonth() + 1)).slice(-2) + '-' + ('0' + oggi.getDate()).slice(-2);
+      var G = ['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'];
+      var conta = {};
+      (d.scioperi || []).forEach(function (s) { if (s.viaggio !== 'treni') return; (s.giorni || []).forEach(function (g) { if (g >= o) conta[g] = (conta[g] || 0) + 1; }); });
+      var giorni = Object.keys(conta).sort().slice(0, 5);
+      var ul = document.getElementById('prossimi-lista');
+      giorni.forEach(function (g) {
+        var li = document.createElement('li'); var a = document.createElement('a');
+        var p = g.split('-'); var dt = new Date(+p[0], +p[1] - 1, +p[2]);
+        a.href = 'sciopero/treni-' + g + '/'; a.textContent = G[dt.getDay()] + ' ' + fmt(g);
+        li.appendChild(a); li.appendChild(document.createTextNode(' — ' + conta[g] + (conta[g] === 1 ? ' sciopero' : ' scioperi')));
+        ul.appendChild(li);
+      });
+      if (!giorni.length) { var v = document.createElement('li'); v.textContent = 'Nessuno sciopero in programma nei dati del Ministero.'; ul.appendChild(v); }
+      var f = document.getElementById('prossimi-fonte');
+      f.textContent = 'Fonte: ' + d.fonte + ', dati aggiornati al ' + fmt(d.aggiornato) + '.';
+      document.getElementById('prossimi').hidden = false;
+    }).catch(function () {});
+  })();
+  </script>
   <form class="card" id="f" autocomplete="off">
     <label for="op">Che treno era?</label>
     <select id="op">

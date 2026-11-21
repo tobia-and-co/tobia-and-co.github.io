@@ -22,6 +22,13 @@ const server = http.createServer((req, res) => {
   const pagine = [...tratte, '/', '/scadenze/', '/farmaci/', '/diario/', '/sostieni/', '/scatola/', '/bolletta/', '/mutuo/', '/banca/', '/cambio/', '/bollo/', '/assegno-unico/', '/carburante/', '/carburante/prezzi-medi/', '/bagaglio/', '/treno/', '/guide/', '/guide/spid/', '/guide/disdetta-abbonamento/', '/guide/isee/', '/agenti/', '/squadra/', '/affitto-istat/', '/voli/compagnia/', '/voli/compagnia/ryanair/', '/voli/sciopero/', '/voli/overbooking/', '/voli/coincidenza-persa/', '/voli/volo-cancellato/', '/voli/aeroporto/', '/voli/aeroporto/roma-fiumicino/', '/tasse-aeroportuali/', '/budget-2027/', '/farmaci/riquadro/', '/farmaci/riquadro-per-siti/', '/carburante/roma/', '/carburante/milano/', ...voli, ...campione];
   const carenti = fs.readFileSync(path.join(radice, 'data/carenti_pagine.txt'), 'utf8').split('\n').filter(Boolean).slice(0, 2).map(u => new URL(u).pathname);
   pagine.push('/farmaci/carenti/', ...carenti);
+  // pagine degli scioperi (scioperi.py): una di aerei e una di treni, se ce ne sono
+  const fScioperi = path.join(radice, 'data/scioperi_pagine.txt');
+  if (fs.existsSync(fScioperi)) {
+    const sc = fs.readFileSync(fScioperi, 'utf8').split('\n').filter(Boolean).map(u => new URL(u).pathname);
+    const a = sc.find(u => u.startsWith('/voli/')), t = sc.find(u => u.startsWith('/treno/'));
+    pagine.push(...[a, t].filter(Boolean));
+  }
   const browser = await chromium.launch();
   const problemi = [];
   for (const url of pagine) {

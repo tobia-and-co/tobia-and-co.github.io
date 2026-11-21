@@ -1,0 +1,23 @@
+name: Scioperi (aerei e treni)
+on:
+  push:
+    paths:
+      - data/grezzi/scioperi-mit.txt
+  schedule:
+    - cron: "20 10 * * *"   # ogni giorno, dopo che il server in Italia ha salvato la pagina del Ministero
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  scioperi:
+    if: github.repository == 'tobia-and-co/tobia-and-co.github.io'   # solo sul sito vero, mai nelle copie
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/scioperi.py
+      - name: Salva scioperi e pagine del giorno
+        run: |
+          git config user.name "Tobia & Co."
+          git config user.email "350758677+tobia-and-co@users.noreply.github.com"
+          git add -A data/scioperi.json data/scioperi_pagine.txt data/indirizzi.txt sitemap.xml voli/sciopero treno/sciopero
+          git diff --cached --quiet || (git commit -m "Scioperi aerei e treni aggiornati dai dati ufficiali [CF-Pages-Skip]" && for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep 7; done)

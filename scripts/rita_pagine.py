@@ -107,6 +107,10 @@ pag.write_text(testo, encoding="utf-8")
 _c = pathlib.Path("data/carenti_pagine.txt")
 if _c.exists():
     indirizzi += [u for u in _c.read_text(encoding="utf-8").split() if u]
+# idem per le pagine degli scioperi (scioperi.py)
+_s = pathlib.Path("data/scioperi_pagine.txt")
+if _s.exists():
+    indirizzi += [u for u in _s.read_text(encoding="utf-8").split() if u]
 indirizzi = list(dict.fromkeys(indirizzi))   # niente doppioni
 sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
     "".join(f"<url><loc>{u}</loc><lastmod>{oggi}</lastmod></url>\n" for u in indirizzi) + "</urlset>\n"

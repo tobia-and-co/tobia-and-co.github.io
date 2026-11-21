@@ -30,6 +30,36 @@
     <p>Durante gli scioperi del trasporto aereo in Italia devono comunque partire i voli nelle <b>fasce orarie di garanzia, dalle 7 alle 10 e dalle 18 alle 21</b>, oltre ad alcuni collegamenti essenziali (per esempio con le isole). Controlla l'orario del tuo volo.</p>
     <p>Gli scioperi programmati sono pubblicati sul <a href="https://scioperi.mit.gov.it/" rel="noopener">calendario ufficiale del Ministero dei Trasporti</a>.</p>
   </div>
+  <div class="card" id="prossimi" hidden>
+    <h2 style="margin-top:0">📅 Prossimi scioperi aerei</h2>
+    <ul id="prossimi-lista"></ul>
+    <p class="note" id="prossimi-fonte"></p>
+  </div>
+  <script>
+  (function () {
+    var MESI = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+    var fmt = function (iso) { var p = iso.split('-'); return +p[2] + ' ' + MESI[+p[1] - 1] + ' ' + p[0]; };
+    fetch('../../data/scioperi.json').then(function (r) { return r.json(); }).then(function (d) {
+      var oggi = new Date(); var o = oggi.getFullYear() + '-' + ('0' + (oggi.getMonth() + 1)).slice(-2) + '-' + ('0' + oggi.getDate()).slice(-2);
+      var G = ['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'];
+      var conta = {};
+      (d.scioperi || []).forEach(function (s) { if (s.viaggio !== 'aerei') return; (s.giorni || []).forEach(function (g) { if (g >= o) conta[g] = (conta[g] || 0) + 1; }); });
+      var giorni = Object.keys(conta).sort().slice(0, 8);
+      var ul = document.getElementById('prossimi-lista');
+      giorni.forEach(function (g) {
+        var li = document.createElement('li'); var a = document.createElement('a');
+        var p = g.split('-'); var dt = new Date(+p[0], +p[1] - 1, +p[2]);
+        a.href = 'aerei-' + g + '/'; a.textContent = G[dt.getDay()] + ' ' + fmt(g);
+        li.appendChild(a); li.appendChild(document.createTextNode(' — ' + conta[g] + (conta[g] === 1 ? ' sciopero' : ' scioperi')));
+        ul.appendChild(li);
+      });
+      if (!giorni.length) { var v = document.createElement('li'); v.textContent = 'Nessuno sciopero in programma nei dati del Ministero.'; ul.appendChild(v); }
+      var f = document.getElementById('prossimi-fonte');
+      f.textContent = 'Fonte: ' + d.fonte + ', dati aggiornati al ' + fmt(d.aggiornato) + '.';
+      document.getElementById('prossimi').hidden = false;
+    }).catch(function () {});
+  })();
+  </script>
   <h2>Calcola il tuo caso</h2>
   <form class="card" id="modulo" autocomplete="off">
     <label for="da">Aeroporto di partenza</label><input id="da" placeholder="Città o codice (es. Roma, FCO)"><div id="da-lista" class="lista"></div>

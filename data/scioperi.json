@@ -1,0 +1,403 @@
+{
+ "aggiornato": "2026-11-21",
+ "fonte": "Ministero delle Infrastrutture e dei Trasporti – Osservatorio sui conflitti sindacali",
+ "url": "https://scioperi.mit.gov.it/mit2/public/scioperi",
+ "scioperi": [
+  {
+   "inizio": "2026-11-20",
+   "fine": "2026-11-21",
+   "sindacati": "ASSEMBLEA NAZIONALE PDM/PDB GRUPPO FSI",
+   "settore": "Ferroviario",
+   "categoria": "PERSONALE DI MACCHINA E DI BORDO DEL GRUPPO FERROVIE DELLO STATO ITALIANE",
+   "modalita": "23 ORE: DALLE 21.00 DEL 20/11 ALLE 20.00 DEL 21/11",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "treni",
+   "giorni": [
+    "2026-11-21"
+   ]
+  },
+  {
+   "inizio": "2026-11-20",
+   "fine": "2026-11-21",
+   "sindacati": "CUB TRASPORTI/SGB FERROVIE",
+   "settore": "Plurisettoriale",
+   "categoria": "PERSONALE IMPRESE CHE SVOLGONO ATTIVITA' FERROVIARIA",
+   "modalita": "SETTORE FERROVIARIO, TRASPORTO MERCI SU ROTAIA 23 ORE: DALLE 21.00 DEL 20/11 ALLE 20.00 DEL 21/11; *TPL: INTERA PRESTAZIONE DEL 21/11",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "*PER TPL SOCC. FER. SUD EST, GTT, SAD, TRENTINO TRASP., FER. UDINE C., SIST. TERRITORIALI, TFT, FERROTRAMVIARIA, FER.ADR. SANGRITANA-TUA, EAV, FER. GARGANO, FER. CALABRIA",
+   "viaggio": "treni",
+   "giorni": [
+    "2026-11-21"
+   ]
+  },
+  {
+   "inizio": "2026-11-20",
+   "fine": "2026-11-21",
+   "sindacati": "CAT",
+   "settore": "Plurisettoriale",
+   "categoria": "PERSONALE IMPRESE CHE SVOLGONO ATTIVITA' FERROVIARIA",
+   "modalita": "SETTORE FERROVIARIO, TRASPORTO MERCI SU ROTAIA 23 ORE: DALLE 21.00 DEL 20/11 ALLE 20.00 DEL 21/11",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "treni",
+   "giorni": [
+    "2026-11-21"
+   ]
+  },
+  {
+   "inizio": "2026-11-21",
+   "fine": "2026-11-21",
+   "sindacati": "OSR ORSA FERROVIE",
+   "settore": "Ferroviario",
+   "categoria": "PERSONALE MANUTENZIONE ED INGEGNERIA SOC. RFI DOIT VERONA UNITA' TERRITORIALE SUD",
+   "modalita": "8 ORE: DALLE 9.01 ALLE 17.00",
+   "rilevanza": "Locale",
+   "regione": "Veneto",
+   "provincia": "Verona",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-11-21",
+   "fine": "2026-11-21",
+   "sindacati": "CAT",
+   "settore": "Trasporto merci",
+   "categoria": "PERSONALE DI BORDO, DI MACCHINA E TECNICI POLIFUNZIONALI TRENO SOCC. SANGRITANA, EVM RAIL, ERMES RAIL, LTE, TX LOGISTIK, ALTMANN RAIL E BLS CARGO",
+   "modalita": "8 ORE: DALLE 09.00 ALLE 17.00",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-11-22",
+   "fine": "2026-11-22",
+   "sindacati": "RSA FAST-CONFSAL-AV",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. ENAV AEROPORTO DI MILANO MALPENSA",
+   "modalita": "4 ORE: DALLE 13.00 ALLE 17.00",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "GARANTITI I VOLI DA E PER L'AEROPORTO DI BARI",
+   "viaggio": "aerei",
+   "giorni": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "inizio": "2026-11-22",
+   "fine": "2026-11-22",
+   "sindacati": "OST FISASCAT-CISL",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. SICURITALIA IVRI AEROPORTO MARCO POLO DI VENEZIA",
+   "modalita": "24 ORE: DALLE 00.00 ALLE 23.59",
+   "rilevanza": "Interregionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "aerei",
+   "giorni": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "inizio": "2026-11-30",
+   "fine": "2026-11-30",
+   "sindacati": "CSE-FNILT/UGL VIABILITA' E LOGISTICA",
+   "settore": "Trasporto merci",
+   "categoria": "PERSONALE SOC. VINCENZO MIELE TRASPORTI DI VOLLA (NA)",
+   "modalita": "4 ORE: DALLE 7.00 ALLE 11.00",
+   "rilevanza": "Locale",
+   "regione": "Campania",
+   "provincia": "Napoli",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-12-04",
+   "fine": "2026-12-04",
+   "sindacati": "CUB/ADL VARESE/SGB/SBM/SGC/SI-COBAS",
+   "settore": "Generale",
+   "categoria": "SCIOPERO GENERALE CATEGORIE PUBBLICHE E PRIVATE",
+   "modalita": "INTERA GIORNATA - AEREO: MODALITA' NON COMUNICATE; FERROVIARIO DALLE 21.00 DEL 3/12 ALLE 21.00 DEL 4/12; AUTOSTRADE: DALLE 22.00 DEL 3/12 ALLE 22.00 DEL 4/12, TPL: MODALITA' TERRITORIALI; MARITTIMO ( ADESIONE ORSA CON MODALITA' NON COMUNICATE )",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "ADESIONE OO.SS. AL-COBAS, LMO, ORSA E USB LAVORO PRIVATO",
+   "viaggio": "treni",
+   "giorni": [
+    "2026-12-04"
+   ]
+  },
+  {
+   "inizio": "2026-12-04",
+   "fine": "2026-12-04",
+   "sindacati": "UNIONE SINDACALE ITALIANA USI 1912",
+   "settore": "Generale",
+   "categoria": "SCIOPERO GENERALE PERS. A TEMPO DETERMINATO E INDETERMINATO CON CONTRATTI PRECARI E ATIPICI DI TUTTI I COMPARTI CON ESCLUSIONE DEL SETTORE TRASPORTI",
+   "modalita": "INTERA GIORNATA",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "treni",
+   "giorni": [
+    "2026-12-04"
+   ]
+  },
+  {
+   "inizio": "2026-12-14",
+   "fine": "2026-12-14",
+   "sindacati": "OSR FAST-CONFSAL",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. AVIATION SERVICES AEROPORTI DI ROMA FIUMICINO E CIAMPINO",
+   "modalita": "24 ORE: DALLE 00.00 ALLE 24.00",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "aerei",
+   "giorni": [
+    "2026-12-14"
+   ]
+  },
+  {
+   "inizio": "2026-12-14",
+   "fine": "2026-12-14",
+   "sindacati": "OST FILT-CGIL/UILT-UIL/FAISA-CISAL/UGL-FNA + RSA",
+   "settore": "Trasporto pubblico locale",
+   "categoria": "PERSONALE SOCC.AUTOLINEE ROMANO REGIONALI E FRATELLI ROMANO DI CROTONE",
+   "modalita": "4 ORE: DALLE 10.59 ALLE 14.59",
+   "rilevanza": "Locale",
+   "regione": "Calabria",
+   "provincia": "Crotone",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-12-14",
+   "fine": "2026-12-14",
+   "sindacati": "OSR/OSP FAISA-CISAL",
+   "settore": "Trasporto pubblico locale",
+   "categoria": "PERSONALE SOC. FASA DI RENDE (CS)",
+   "modalita": "4 ORE: DALLE 10.59 ALLE 14.59",
+   "rilevanza": "Locale",
+   "regione": "Calabria",
+   "provincia": "Cosenza",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-12-15",
+   "fine": "2026-12-15",
+   "sindacati": "RSA UILT-UIL",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. ENAV APT BOLOGNA",
+   "modalita": "24 ORE: DALLE 00.00 ALLE 24.00",
+   "rilevanza": "Interregionale",
+   "regione": "Emilia-Romagna",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "aerei",
+   "giorni": [
+    "2026-12-15"
+   ]
+  },
+  {
+   "inizio": "2026-12-15",
+   "fine": "2026-12-15",
+   "sindacati": "CLAAI/URITAXI/UTI/UNIMPRESA/ORSA TAXI/UGL TAXI/FEDERTAXI CISAL/SITAN/FAST CONFSAL TAXI/SATAM/TAM/USB TAXI/FILT CGIL TAXI/UILTRASPORTI/ATLT/CONSULTAXI/SUL TAXI/ATITAXI",
+   "settore": "Taxi",
+   "categoria": "ADDETTI AL SERVIZIO TAXI",
+   "modalita": "14 ORE: DALLE 08.00 ALLE 22.00",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-12-15",
+   "fine": "2026-12-15",
+   "sindacati": "OSP FILT-CGIL",
+   "settore": "Trasporto pubblico locale",
+   "categoria": "PERSONALE SOC. AMC DI CASALE MONFERRATO (AL)",
+   "modalita": "2 ORE E 30 MIN.: DALLE 9.00 ALLE 11.30",
+   "rilevanza": "Locale",
+   "regione": "Piemonte",
+   "provincia": "Alessandria",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-12-16",
+   "fine": "2026-12-16",
+   "sindacati": "OSP/OSR FILCAMS-CGIL/UILT-UIL",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. LA LUCENTE, APPALTO PULIZIE PRESSO AEROPORTO DI BOLOGNA",
+   "modalita": "4 ORE: DALLE 11.00 ALLE 15.00",
+   "rilevanza": "Interregionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "aerei",
+   "giorni": [
+    "2026-12-16"
+   ]
+  },
+  {
+   "inizio": "2026-12-16",
+   "fine": "2026-12-16",
+   "sindacati": "OSP FILT-CGIL/FIT-CISL/UILT-UIL/FAISA-CISAL",
+   "settore": "Trasporto pubblico locale",
+   "categoria": "PERSONALE FERROVIARIO (PDM E PV) DELLA SOC. FS SUD EST BACINO DI LECCE",
+   "modalita": "4 ORE: DALLE 8.30 ALLE 12.29",
+   "rilevanza": "Locale",
+   "regione": "Puglia",
+   "provincia": "Lecce",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-12-18",
+   "fine": "2026-12-18",
+   "sindacati": "USB LAVORO PRIVATO",
+   "settore": "Trasporto merci",
+   "categoria": "PERSONALE DIPENDENTE IMPRESE AUTOTRASPORTO MERCI",
+   "modalita": "24 ORE: DALLE 00.00 ALLE 24.00",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "BLOCCO DELLE PRESTAZIONI DI LAVORO STRAORDINARIO DAL 15 12 2026 AL 19 12 2026",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2027-01-12",
+   "fine": "2027-01-13",
+   "sindacati": "OSR ORSA FERROVIE",
+   "settore": "Trasporto merci",
+   "categoria": "PERSONALE SOC. SBB CARGO ITALIA",
+   "modalita": "24 ORE: DALLE 06.00 DEL 12/01 ALLE 05.59 DEL 13/01",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2027-01-15",
+   "fine": "2027-01-15",
+   "sindacati": "UILT-UIL",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. ENAV",
+   "modalita": "24 ORE",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "aerei",
+   "giorni": [
+    "2027-01-15"
+   ]
+  },
+  {
+   "inizio": "2027-01-15",
+   "fine": "2027-01-15",
+   "sindacati": "UILT-UIL",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. TECHNO SKY",
+   "modalita": "24 ORE",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "aerei",
+   "giorni": [
+    "2027-01-15"
+   ]
+  },
+  {
+   "inizio": "2027-01-15",
+   "fine": "2027-01-15",
+   "sindacati": "RSA UILT-UIL",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. ENAV APT NAPOLI",
+   "modalita": "24 ORE: DALLE 00.00 ALLE 24.00",
+   "rilevanza": "Interregionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "aerei",
+   "giorni": [
+    "2027-01-15"
+   ]
+  },
+  {
+   "inizio": "2027-01-15",
+   "fine": "2027-01-15",
+   "sindacati": "RSA UILT-UIL",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. ENAV APT BARI",
+   "modalita": "24 ORE: DALLE 00.00 ALLE 24.00",
+   "rilevanza": "Interregionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "aerei",
+   "giorni": [
+    "2027-01-15"
+   ]
+  },
+  {
+   "inizio": "2027-01-15",
+   "fine": "2027-01-15",
+   "sindacati": "RSA UILT-UIL",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. ENAV APT LINATE",
+   "modalita": "24 ORE: DALLE 00.00 ALLE 24.00",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "aerei",
+   "giorni": [
+    "2027-01-15"
+   ]
+  },
+  {
+   "inizio": "2027-01-15",
+   "fine": "2027-01-15",
+   "sindacati": "RSA UILT-UIL",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. ENAV ACC PADOVA",
+   "modalita": "4 ORE: DALLE 13.00 ALLE 17.00",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "aerei",
+   "giorni": [
+    "2027-01-15"
+   ]
+  }
+ ]
+}
