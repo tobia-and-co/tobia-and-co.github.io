@@ -11,7 +11,7 @@
    "motori_ricerca": 1,
    "assistenti_ai": 0,
    "altri_siti_social": 6,
-   "vecchio_indirizzo": 4
+   "vecchio_indirizzo": 6
   },
   "pagine": {
    "home": 83,
@@ -43,7 +43,7 @@
   "ingressi": {
    "org-home": 1,
    "ref-home": 3,
-   "ref-farmaci": 1,
+   "ref-farmaci": 2,
    "ref-bolletta-prescritta": 1,
    "ref-affitto-istat": 1
   },
@@ -303,7 +303,7 @@
    "canale_motori_ricerca": 1,
    "canale_assistenti_ai": 0,
    "canale_altri_siti_social": 6,
-   "canale_vecchio_indirizzo": 4,
+   "canale_vecchio_indirizzo": 6,
    "clic_airhelp": 0,
    "clic_acquista_budget": 0
   }
