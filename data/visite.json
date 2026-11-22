@@ -1,5 +1,5 @@
 {
-  "controllato": "2026-11-21",
+  "controllato": "2026-11-22",
   "visite": {
     "totale": 165,
     "home": 83,
@@ -63,7 +63,7 @@
     "aeroporti": 0,
     "prezzi-medi": 0,
     "treno": 0,
-    "sciopero-treni": null,
+    "sciopero-treni": 0,
     "calcoli-treno": 0,
     "affitto-istat": 0,
     "calcoli-affitto": 0,
@@ -113,7 +113,7 @@
     "clic-budget-acquisto": 0,
     "clic-budget-riquadro": 0,
     "clic-budget-home": 0,
-    "da-test": 259,
+    "da-test": 260,
     "pagina-404": 0,
     "int-home": 1,
     "int-voli": 1,
@@ -149,7 +149,7 @@
     "int-assegno-unico": 0,
     "int-multe": 0,
     "int-treno": 0,
-    "int-sciopero-treni": null,
+    "int-sciopero-treni": 0,
     "int-affitto-istat": 0,
     "int-bagaglio": 0,
     "int-tasse-aeroportuali": 0,
