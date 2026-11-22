@@ -1,84 +1,8 @@
 {
- "aggiornato": "2026-11-21",
+ "aggiornato": "2026-11-22",
  "fonte": "Ministero delle Infrastrutture e dei Trasporti – Osservatorio sui conflitti sindacali",
  "url": "https://scioperi.mit.gov.it/mit2/public/scioperi",
  "scioperi": [
-  {
-   "inizio": "2026-11-20",
-   "fine": "2026-11-21",
-   "sindacati": "ASSEMBLEA NAZIONALE PDM/PDB GRUPPO FSI",
-   "settore": "Ferroviario",
-   "categoria": "PERSONALE DI MACCHINA E DI BORDO DEL GRUPPO FERROVIE DELLO STATO ITALIANE",
-   "modalita": "23 ORE: DALLE 21.00 DEL 20/11 ALLE 20.00 DEL 21/11",
-   "rilevanza": "Nazionale",
-   "regione": "Italia",
-   "provincia": "Tutte",
-   "note": "",
-   "viaggio": "treni",
-   "giorni": [
-    "2026-11-21"
-   ]
-  },
-  {
-   "inizio": "2026-11-20",
-   "fine": "2026-11-21",
-   "sindacati": "CUB TRASPORTI/SGB FERROVIE",
-   "settore": "Plurisettoriale",
-   "categoria": "PERSONALE IMPRESE CHE SVOLGONO ATTIVITA' FERROVIARIA",
-   "modalita": "SETTORE FERROVIARIO, TRASPORTO MERCI SU ROTAIA 23 ORE: DALLE 21.00 DEL 20/11 ALLE 20.00 DEL 21/11; *TPL: INTERA PRESTAZIONE DEL 21/11",
-   "rilevanza": "Nazionale",
-   "regione": "Italia",
-   "provincia": "Tutte",
-   "note": "*PER TPL SOCC. FER. SUD EST, GTT, SAD, TRENTINO TRASP., FER. UDINE C., SIST. TERRITORIALI, TFT, FERROTRAMVIARIA, FER.ADR. SANGRITANA-TUA, EAV, FER. GARGANO, FER. CALABRIA",
-   "viaggio": "treni",
-   "giorni": [
-    "2026-11-21"
-   ]
-  },
-  {
-   "inizio": "2026-11-20",
-   "fine": "2026-11-21",
-   "sindacati": "CAT",
-   "settore": "Plurisettoriale",
-   "categoria": "PERSONALE IMPRESE CHE SVOLGONO ATTIVITA' FERROVIARIA",
-   "modalita": "SETTORE FERROVIARIO, TRASPORTO MERCI SU ROTAIA 23 ORE: DALLE 21.00 DEL 20/11 ALLE 20.00 DEL 21/11",
-   "rilevanza": "Nazionale",
-   "regione": "Italia",
-   "provincia": "Tutte",
-   "note": "",
-   "viaggio": "treni",
-   "giorni": [
-    "2026-11-21"
-   ]
-  },
-  {
-   "inizio": "2026-11-21",
-   "fine": "2026-11-21",
-   "sindacati": "OSR ORSA FERROVIE",
-   "settore": "Ferroviario",
-   "categoria": "PERSONALE MANUTENZIONE ED INGEGNERIA SOC. RFI DOIT VERONA UNITA' TERRITORIALE SUD",
-   "modalita": "8 ORE: DALLE 9.01 ALLE 17.00",
-   "rilevanza": "Locale",
-   "regione": "Veneto",
-   "provincia": "Verona",
-   "note": "",
-   "viaggio": "",
-   "giorni": []
-  },
-  {
-   "inizio": "2026-11-21",
-   "fine": "2026-11-21",
-   "sindacati": "CAT",
-   "settore": "Trasporto merci",
-   "categoria": "PERSONALE DI BORDO, DI MACCHINA E TECNICI POLIFUNZIONALI TRENO SOCC. SANGRITANA, EVM RAIL, ERMES RAIL, LTE, TX LOGISTIK, ALTMANN RAIL E BLS CARGO",
-   "modalita": "8 ORE: DALLE 09.00 ALLE 17.00",
-   "rilevanza": "Nazionale",
-   "regione": "Italia",
-   "provincia": "Tutte",
-   "note": "",
-   "viaggio": "",
-   "giorni": []
-  },
   {
    "inizio": "2026-11-22",
    "fine": "2026-11-22",
