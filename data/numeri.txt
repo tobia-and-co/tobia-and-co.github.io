@@ -1,11 +1,11 @@
-Tobia & Co. — numeri del sito https://tobia-and-co.pages.dev (aggiornati il 22/11/2026, ogni mattina in automatico)
+Tobia & Co. — numeri del sito https://tobia-and-co.pages.dev (aggiornati il 23/11/2026, ogni mattina in automatico)
 Sito di strumenti gratuiti con dati ufficiali italiani (rimborsi voli, farmaci, benzina, bollette, guide). Le visite del proprietario e i test automatici sono esclusi.
 
-Visite totali dal 31/10/2026: 165
-Canali: dirette 41 · motori di ricerca 1 · assistenti AI 0 · altri siti e social 6 · vecchio indirizzo 6
+Visite totali dal 31/10/2026: 166
+Canali: dirette 41 · motori di ricerca 1 · assistenti AI 0 · altri siti e social 6 · vecchio indirizzo 7
 Pagine più viste: Home 83, Squadra 18, Diario 18, Farmaci 10, Benzina città 9, Voli 6, Benzina 3, Tratte voli 3, Farmaci carenti 2, Scadenze 2
 Pagine con visitatori interessati (usano lo strumento o restano 30 secondi, dal 14/11): home 1, voli 1, budget-2027 1
-Pagine d'ingresso da motori (org) e altri siti (ref), dal 14/11: ref-home 3, ref-farmaci 2, org-home 1, ref-bolletta-prescritta 1, ref-affitto-istat 1
+Pagine d'ingresso da motori (org) e altri siti (ref), dal 14/11: ref-home 3, ref-farmaci 2, org-home 1, ref-prezzi-medi 1, ref-bolletta-prescritta 1, ref-affitto-istat 1
 
 Percorso rimborsi voli (affiliazione AirHelp, paga solo a rimborso vinto): visite pagine voli 10 → calcoli del rimborso 2 → clic su AirHelp 0
 Percorso Budget 2027 (foglio di calcolo digitale, 3,90 €): visite alla pagina 1 → interessati 1 → clic dai riquadri negli strumenti 0 → clic su Acquista 0
