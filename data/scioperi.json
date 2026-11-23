@@ -1,40 +1,8 @@
 {
- "aggiornato": "2026-11-22",
+ "aggiornato": "2026-11-23",
  "fonte": "Ministero delle Infrastrutture e dei Trasporti – Osservatorio sui conflitti sindacali",
  "url": "https://scioperi.mit.gov.it/mit2/public/scioperi",
  "scioperi": [
-  {
-   "inizio": "2026-11-22",
-   "fine": "2026-11-22",
-   "sindacati": "RSA FAST-CONFSAL-AV",
-   "settore": "Aereo",
-   "categoria": "PERSONALE SOC. ENAV AEROPORTO DI MILANO MALPENSA",
-   "modalita": "4 ORE: DALLE 13.00 ALLE 17.00",
-   "rilevanza": "Nazionale",
-   "regione": "Italia",
-   "provincia": "Tutte",
-   "note": "GARANTITI I VOLI DA E PER L'AEROPORTO DI BARI",
-   "viaggio": "aerei",
-   "giorni": [
-    "2026-11-22"
-   ]
-  },
-  {
-   "inizio": "2026-11-22",
-   "fine": "2026-11-22",
-   "sindacati": "OST FISASCAT-CISL",
-   "settore": "Aereo",
-   "categoria": "PERSONALE SOC. SICURITALIA IVRI AEROPORTO MARCO POLO DI VENEZIA",
-   "modalita": "24 ORE: DALLE 00.00 ALLE 23.59",
-   "rilevanza": "Interregionale",
-   "regione": "Italia",
-   "provincia": "Tutte",
-   "note": "",
-   "viaggio": "aerei",
-   "giorni": [
-    "2026-11-22"
-   ]
-  },
   {
    "inizio": "2026-11-30",
    "fine": "2026-11-30",
