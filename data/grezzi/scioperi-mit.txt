@@ -28,7 +28,7 @@
 <script type="text/javascript" src="/mit2/public/js/dataTables.tableTools.min.js"></script>    </head>
     <body>
         <script type="text/javascript">
-    dataOdierna="23/11/2026";
+    dataOdierna="24/11/2026";
         jQuery.extend(jQuery.fn.dataTableExt.oSort, {
         "date-euro-pre": function (a) {
             var x;
@@ -278,7 +278,7 @@
     <div class="titleScioperi">
         Prospetto degli scioperi dei trasporti aggiornato alla data: 
         <span class="dataAggiornamentoSciopero">
-            23/11/2026        </span>
+            24/11/2026        </span>
     </div>
 </div>
 <div class="emailTestoScioperi">
@@ -424,34 +424,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="details-control"></td>
-                        <td>
-                            30/11/2026                        </td>
-                        <td>
-                            30/11/2026                        </td>
-                        <td>
-                            CSE-FNILT/UGL VIABILITA' E LOGISTICA                        </td>
-                        <td> 
-                            Trasporto merci                        </td>                        
-                        <td> 
-                            PERSONALE SOC. VINCENZO MIELE TRASPORTI DI VOLLA (NA)                        </td>                        
-                        <td>
-                            4 ORE: DALLE 7.00 ALLE 11.00                        </td>
-                        <td>
-                            Locale                        </td>
-                        <td>
-                                                    </td>
-                        <td>
-                            18/11/2026                        </td>
-                        <td>
-                            Campania                        </td>
-                        <td>
-                            Napoli                        </td>
-                        <td>
-18/11/2026 15:09
-                        </td>
-                    </tr>
                     <tr>
                         <td class="details-control"></td>
                         <td>
@@ -735,6 +707,90 @@
                     <tr>
                         <td class="details-control"></td>
                         <td>
+                            16/12/2026                        </td>
+                        <td>
+                            17/12/2026                        </td>
+                        <td>
+                            UILT-UIL                        </td>
+                        <td> 
+                            Ferroviario                        </td>                        
+                        <td> 
+                            PERSONALE OPERATIVO EQUIPAGGI SOC. ITALO NTV                        </td>                        
+                        <td>
+                            23 ORE: DALLE 3.00 DEL 16/12 ALLE 2.00 DEL 17/12                        </td>
+                        <td>
+                            Nazionale                        </td>
+                        <td>
+                                                    </td>
+                        <td>
+                            22/11/2026                        </td>
+                        <td>
+                             Italia                        </td>
+                        <td>
+                            Tutte                        </td>
+                        <td>
+22/11/2026 00:00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="details-control"></td>
+                        <td>
+                            16/12/2026                        </td>
+                        <td>
+                            16/12/2026                        </td>
+                        <td>
+                            FILT-CGIL/FIT-CISL/UGL FERROVIERI                        </td>
+                        <td> 
+                            Ferroviario                        </td>                        
+                        <td> 
+                            PERSONALE SOC. ITALO NTV                        </td>                        
+                        <td>
+                            8 ORE: DALLE 9.01 ALLE 16.59                        </td>
+                        <td>
+                            Nazionale                        </td>
+                        <td>
+                                                    </td>
+                        <td>
+                            22/11/2026                        </td>
+                        <td>
+                             Italia                        </td>
+                        <td>
+                            Tutte                        </td>
+                        <td>
+22/11/2026 00:02
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="details-control"></td>
+                        <td>
+                            17/12/2026                        </td>
+                        <td>
+                            17/12/2026                        </td>
+                        <td>
+                            FILT-CGIL/FIT-CISL/UILT-UIL/UGL/ORSA FERROVIE                        </td>
+                        <td> 
+                            Appalti ferroviari                        </td>                        
+                        <td> 
+                            PERSONALE AZIENDE GAM E PS SERVIZI ( CONSORZIO STABILE IMPERO )                        </td>                        
+                        <td>
+                            MEZZO TURNO PER OGNI TURNO DI LAVORO                        </td>
+                        <td>
+                            Nazionale                        </td>
+                        <td>
+                                                    </td>
+                        <td>
+                            21/11/2026                        </td>
+                        <td>
+                             Italia                        </td>
+                        <td>
+                            Tutte                        </td>
+                        <td>
+21/11/2026 09:33
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="details-control"></td>
+                        <td>
                             18/12/2026                        </td>
                         <td>
                             18/12/2026                        </td>
@@ -758,6 +814,34 @@
                             Tutte                        </td>
                         <td>
 17/11/2026 18:53
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="details-control"></td>
+                        <td>
+                            18/12/2026                        </td>
+                        <td>
+                            18/12/2026                        </td>
+                        <td>
+                            CSE-FNILT/UGL VIABILITA' E LOGISTICA                        </td>
+                        <td> 
+                            Trasporto merci                        </td>                        
+                        <td> 
+                            PERSONALE SOC. VINCENZO MIELE TRASPORTI DI VOLLA (NA)                        </td>                        
+                        <td>
+                            4 ORE: DALLE 7.00 ALLE 11.00                        </td>
+                        <td>
+                            Locale                        </td>
+                        <td>
+                                                    </td>
+                        <td>
+                            20/11/2026                        </td>
+                        <td>
+                            Campania                        </td>
+                        <td>
+                            Napoli                        </td>
+                        <td>
+23/11/2026 11:27
                         </td>
                     </tr>
                     <tr>
@@ -956,6 +1040,34 @@
 10/11/2026 09:35
                         </td>
                     </tr>
+                    <tr>
+                        <td class="details-control"></td>
+                        <td>
+                            01/02/2027                        </td>
+                        <td>
+                            01/02/2027                        </td>
+                        <td>
+                            USB LAVORO PRIVATO                        </td>
+                        <td> 
+                            Plurisettoriale                        </td>                        
+                        <td> 
+                            PERSONALE AZIENDE ATTIVITA' FERROVIARIE, TRASPORTO PUBBLICO LOCALE, MARITTIMO ED AEREO                        </td>                        
+                        <td>
+                            1/2 FERROVIARIO 8 ORE: DALLE 9.00 ALLE 17.00 - 2/2 TPL E MARITTIMO 4 ORE CON MODALITA' TERRITORIALI - 3/2 AEREO: 4 ORE: DALLE 10.00 ALLE 14.00                        </td>
+                        <td>
+                            Nazionale                        </td>
+                        <td>
+                                                    </td>
+                        <td>
+                            22/11/2026                        </td>
+                        <td>
+                             Italia                        </td>
+                        <td>
+                            Tutte                        </td>
+                        <td>
+22/11/2026 00:17
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>    
@@ -967,144 +1079,6 @@
         <div class="col-sm-12 " >
             <div class="listaScioperi">
                 <ol>            
-                        <li>
-                            <table class="table-responsive table-bordered table-striped">
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data inizio
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            30/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data fine
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            30/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Sindacati
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            CSE-FNILT/UGL VIABILITA' E LOGISTICA                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Settore dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Trasporto merci                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Categoria dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            PERSONALE SOC. VINCENZO MIELE TRASPORTI DI VOLLA (NA)                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Modalità dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            4 ORE: DALLE 7.00 ALLE 11.00                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Rilevanza dello sciopero:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Locale                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Note:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                                                                    </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data proclamazione
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            18/11/2026                                        </span>                            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Regione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Campania                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Provincia:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="eleDatoTd">
-                                            Napoli                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="eleLblTd">
-                                            Data ricezione:
-                                        </span>
-                                    </td>
-                                    <td>
-                                                            
-                                            <span class="eleDatoTd">                                                                          
-                                                18/11/2026 15:00                                            </span>
-                                        
-                                    </td>
-                                </tr>
-                            </table>
-                        </li>                                            
                         <li>
                             <table class="table-responsive table-bordered table-striped">
                                 <tr>
@@ -2495,6 +2469,420 @@
                                     </td>
                                     <td>
                                         <span class="eleDatoTd">
+                                            16/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data fine
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            17/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Sindacati
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            UILT-UIL                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Settore dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Ferroviario                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Categoria dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            PERSONALE OPERATIVO EQUIPAGGI SOC. ITALO NTV                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Modalità dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            23 ORE: DALLE 3.00 DEL 16/12 ALLE 2.00 DEL 17/12                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Rilevanza dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Nazionale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Note:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                                                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data proclamazione
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            22/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Regione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                             Italia                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Provincia:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Tutte                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data ricezione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                                            
+                                            <span class="eleDatoTd">                                                                          
+                                                22/11/2026 00:00                                            </span>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>                                            
+                        <li>
+                            <table class="table-responsive table-bordered table-striped">
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data inizio
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            16/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data fine
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            16/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Sindacati
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            FILT-CGIL/FIT-CISL/UGL FERROVIERI                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Settore dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Ferroviario                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Categoria dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            PERSONALE SOC. ITALO NTV                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Modalità dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            8 ORE: DALLE 9.01 ALLE 16.59                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Rilevanza dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Nazionale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Note:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                                                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data proclamazione
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            22/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Regione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                             Italia                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Provincia:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Tutte                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data ricezione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                                            
+                                            <span class="eleDatoTd">                                                                          
+                                                22/11/2026 00:00                                            </span>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>                                            
+                        <li>
+                            <table class="table-responsive table-bordered table-striped">
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data inizio
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            17/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data fine
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            17/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Sindacati
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            FILT-CGIL/FIT-CISL/UILT-UIL/UGL/ORSA FERROVIE                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Settore dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Appalti ferroviari                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Categoria dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            PERSONALE AZIENDE GAM E PS SERVIZI ( CONSORZIO STABILE IMPERO )                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Modalità dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            MEZZO TURNO PER OGNI TURNO DI LAVORO                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Rilevanza dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Nazionale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Note:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                                                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data proclamazione
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            21/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Regione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                             Italia                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Provincia:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Tutte                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data ricezione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                                            
+                                            <span class="eleDatoTd">                                                                          
+                                                21/11/2026 09:00                                            </span>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>                                            
+                        <li>
+                            <table class="table-responsive table-bordered table-striped">
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data inizio
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
                                             18/12/2026                                        </span>                            
                                     </td>
                                 </tr>
@@ -2618,6 +3006,144 @@
                                                             
                                             <span class="eleDatoTd">                                                                          
                                                 17/11/2026 18:00                                            </span>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>                                            
+                        <li>
+                            <table class="table-responsive table-bordered table-striped">
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data inizio
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            18/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data fine
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            18/12/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Sindacati
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            CSE-FNILT/UGL VIABILITA' E LOGISTICA                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Settore dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Trasporto merci                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Categoria dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            PERSONALE SOC. VINCENZO MIELE TRASPORTI DI VOLLA (NA)                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Modalità dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            4 ORE: DALLE 7.00 ALLE 11.00                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Rilevanza dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Locale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Note:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                                                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data proclamazione
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            20/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Regione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Campania                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Provincia:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Napoli                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data ricezione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                                            
+                                            <span class="eleDatoTd">                                                                          
+                                                23/11/2026 11:00                                            </span>
                                         
                                     </td>
                                 </tr>
@@ -3584,6 +4110,144 @@
                                                             
                                             <span class="eleDatoTd">                                                                          
                                                 10/11/2026 09:00                                            </span>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>                                            
+                        <li>
+                            <table class="table-responsive table-bordered table-striped">
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data inizio
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            01/02/2027                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data fine
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            01/02/2027                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Sindacati
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            USB LAVORO PRIVATO                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Settore dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Plurisettoriale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Categoria dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            PERSONALE AZIENDE ATTIVITA' FERROVIARIE, TRASPORTO PUBBLICO LOCALE, MARITTIMO ED AEREO                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Modalità dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            1/2 FERROVIARIO 8 ORE: DALLE 9.00 ALLE 17.00 - 2/2 TPL E MARITTIMO 4 ORE CON MODALITA' TERRITORIALI - 3/2 AEREO: 4 ORE: DALLE 10.00 ALLE 14.00                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Rilevanza dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Nazionale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Note:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                                                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data proclamazione
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            22/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Regione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                             Italia                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Provincia:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Tutte                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data ricezione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                                            
+                                            <span class="eleDatoTd">                                                                          
+                                                22/11/2026 00:00                                            </span>
                                         
                                     </td>
                                 </tr>
