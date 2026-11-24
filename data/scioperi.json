@@ -1,22 +1,8 @@
 {
- "aggiornato": "2026-11-23",
+ "aggiornato": "2026-11-24",
  "fonte": "Ministero delle Infrastrutture e dei Trasporti – Osservatorio sui conflitti sindacali",
  "url": "https://scioperi.mit.gov.it/mit2/public/scioperi",
  "scioperi": [
-  {
-   "inizio": "2026-11-30",
-   "fine": "2026-11-30",
-   "sindacati": "CSE-FNILT/UGL VIABILITA' E LOGISTICA",
-   "settore": "Trasporto merci",
-   "categoria": "PERSONALE SOC. VINCENZO MIELE TRASPORTI DI VOLLA (NA)",
-   "modalita": "4 ORE: DALLE 7.00 ALLE 11.00",
-   "rilevanza": "Locale",
-   "regione": "Campania",
-   "provincia": "Napoli",
-   "note": "",
-   "viaggio": "",
-   "giorni": []
-  },
   {
    "inizio": "2026-12-04",
    "fine": "2026-12-04",
@@ -156,6 +142,22 @@
   {
    "inizio": "2026-12-16",
    "fine": "2026-12-16",
+   "sindacati": "FILT-CGIL/FIT-CISL/UGL FERROVIERI",
+   "settore": "Ferroviario",
+   "categoria": "PERSONALE SOC. ITALO NTV",
+   "modalita": "8 ORE: DALLE 9.01 ALLE 16.59",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "treni",
+   "giorni": [
+    "2026-12-16"
+   ]
+  },
+  {
+   "inizio": "2026-12-16",
+   "fine": "2026-12-16",
    "sindacati": "OSP FILT-CGIL/FIT-CISL/UILT-UIL/FAISA-CISAL",
    "settore": "Trasporto pubblico locale",
    "categoria": "PERSONALE FERROVIARIO (PDM E PV) DELLA SOC. FS SUD EST BACINO DI LECCE",
@@ -163,6 +165,37 @@
    "rilevanza": "Locale",
    "regione": "Puglia",
    "provincia": "Lecce",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-12-16",
+   "fine": "2026-12-17",
+   "sindacati": "UILT-UIL",
+   "settore": "Ferroviario",
+   "categoria": "PERSONALE OPERATIVO EQUIPAGGI SOC. ITALO NTV",
+   "modalita": "23 ORE: DALLE 3.00 DEL 16/12 ALLE 2.00 DEL 17/12",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "treni",
+   "giorni": [
+    "2026-12-16",
+    "2026-12-17"
+   ]
+  },
+  {
+   "inizio": "2026-12-17",
+   "fine": "2026-12-17",
+   "sindacati": "FILT-CGIL/FIT-CISL/UILT-UIL/UGL/ORSA FERROVIE",
+   "settore": "Appalti ferroviari",
+   "categoria": "PERSONALE AZIENDE GAM E PS SERVIZI ( CONSORZIO STABILE IMPERO )",
+   "modalita": "MEZZO TURNO PER OGNI TURNO DI LAVORO",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
    "note": "",
    "viaggio": "",
    "giorni": []
@@ -178,6 +211,20 @@
    "regione": "Italia",
    "provincia": "Tutte",
    "note": "BLOCCO DELLE PRESTAZIONI DI LAVORO STRAORDINARIO DAL 15 12 2026 AL 19 12 2026",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-12-18",
+   "fine": "2026-12-18",
+   "sindacati": "CSE-FNILT/UGL VIABILITA' E LOGISTICA",
+   "settore": "Trasporto merci",
+   "categoria": "PERSONALE SOC. VINCENZO MIELE TRASPORTI DI VOLLA (NA)",
+   "modalita": "4 ORE: DALLE 7.00 ALLE 11.00",
+   "rilevanza": "Locale",
+   "regione": "Campania",
+   "provincia": "Napoli",
+   "note": "",
    "viaggio": "",
    "giorni": []
   },
@@ -290,6 +337,20 @@
    "giorni": [
     "2027-01-15"
    ]
+  },
+  {
+   "inizio": "2027-02-01",
+   "fine": "2027-02-01",
+   "sindacati": "USB LAVORO PRIVATO",
+   "settore": "Plurisettoriale",
+   "categoria": "PERSONALE AZIENDE ATTIVITA' FERROVIARIE, TRASPORTO PUBBLICO LOCALE, MARITTIMO ED AEREO",
+   "modalita": "1/2 FERROVIARIO 8 ORE: DALLE 9.00 ALLE 17.00 - 2/2 TPL E MARITTIMO 4 ORE CON MODALITA' TERRITORIALI - 3/2 AEREO: 4 ORE: DALLE 10.00 ALLE 14.00",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "treni",
+   "giorni": []
   }
  ]
 }
