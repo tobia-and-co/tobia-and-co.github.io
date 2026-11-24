@@ -2,16 +2,16 @@
  "versione": 1,
  "sito": "https://tobia-and-co.pages.dev",
  "descrizione": "Contatori pubblici del sito Tobia & Co., aggiornati ogni mattina. Visite del proprietario e test automatici esclusi. I clic non sono vendite; vendite e ricavi non sono inclusi. Valori cumulativi dal 31/10/2026 (canali dall'8/11, interessati e ingressi dal 14/11).",
- "aggiornato": "2026-11-23",
+ "aggiornato": "2026-11-24",
  "oggi": {
-  "data": "2026-11-23",
+  "data": "2026-11-24",
   "visite_totali": 166,
   "canali": {
    "diretto": 41,
    "motori_ricerca": 1,
    "assistenti_ai": 0,
    "altri_siti_social": 6,
-   "vecchio_indirizzo": 7
+   "vecchio_indirizzo": 9
   },
   "pagine": {
    "home": 83,
@@ -30,8 +30,8 @@
    "scadenze": 2,
    "banca": 1,
    "bolletta": 0,
-   "treno": 0,
-   "multe": 0,
+   "treno": 2,
+   "multe": 1,
    "mutuo": 0,
    "bollo": 2
   },
@@ -46,6 +46,8 @@
    "ref-farmaci": 2,
    "ref-prezzi-medi": 1,
    "ref-bolletta-prescritta": 1,
+   "ref-multe": 1,
+   "ref-treno": 1,
    "ref-affitto-istat": 1
   },
   "percorsi": {
@@ -327,6 +329,17 @@
    "canale_assistenti_ai": 0,
    "canale_altri_siti_social": 6,
    "canale_vecchio_indirizzo": 7,
+   "clic_airhelp": 0,
+   "clic_acquista_budget": 0
+  },
+  {
+   "data": "2026-11-24",
+   "visite_totali": 166,
+   "canale_diretto": 41,
+   "canale_motori_ricerca": 1,
+   "canale_assistenti_ai": 0,
+   "canale_altri_siti_social": 6,
+   "canale_vecchio_indirizzo": 9,
    "clic_airhelp": 0,
    "clic_acquista_budget": 0
   }
