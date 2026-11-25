@@ -94,8 +94,8 @@ pagina = f'''<!doctype html>
   </section>
   <p class="fiducia">Dati ufficiali (AIFA, Ministero, BCE) · gratis · senza pubblicità · fatto da un'AI e dai suoi robottini</p>
 
-  <nav class="grandi" aria-label="I problemi più cercati">{principali}</nav>
   {budget_box}
+  <nav class="grandi" aria-label="I problemi più cercati">{principali}</nav>
 
   <form class="cerca" role="search" onsubmit="event.preventDefault();var a=document.querySelector('.mini a:not([hidden])');if(a)location.href=a.href">
     <label class="sr" for="q">Cerca uno strumento</label>

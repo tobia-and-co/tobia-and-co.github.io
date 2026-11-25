@@ -44,6 +44,6 @@ details.altri .mini{margin-top:10px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 footer a{display:inline-block;padding:10px 4px}
 /* riquadro del Budget 2027 sotto i 4 pulsanti (compare solo quando il prodotto è in vendita) */
-.budget-home{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;margin:10px 0 0;padding:10px 16px;border:1px dashed var(--line);border-radius:16px;color:inherit;text-decoration:none;background:var(--paper)}
+.budget-home{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;margin:14px 0 4px;padding:10px 16px;border:2px solid var(--blu);border-radius:16px;color:inherit;text-decoration:none;background:var(--paper)}
 .budget-home b{display:block;font-size:15px}.budget-home small{display:block;color:var(--muted);font-size:13px}
 .budget-home:hover,.budget-home:focus-visible{border-color:var(--blu);outline:none}
