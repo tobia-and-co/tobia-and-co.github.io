@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-24",
+ "aggiornato": "2026-11-25",
  "fonte": "Ministero delle Infrastrutture e dei Trasporti – Osservatorio sui conflitti sindacali",
  "url": "https://scioperi.mit.gov.it/mit2/public/scioperi",
  "scioperi": [
@@ -9,7 +9,7 @@
    "sindacati": "CUB/ADL VARESE/SGB/SBM/SGC/SI-COBAS",
    "settore": "Generale",
    "categoria": "SCIOPERO GENERALE CATEGORIE PUBBLICHE E PRIVATE",
-   "modalita": "INTERA GIORNATA - AEREO: MODALITA' NON COMUNICATE; FERROVIARIO DALLE 21.00 DEL 3/12 ALLE 21.00 DEL 4/12; AUTOSTRADE: DALLE 22.00 DEL 3/12 ALLE 22.00 DEL 4/12, TPL: MODALITA' TERRITORIALI; MARITTIMO ( ADESIONE ORSA CON MODALITA' NON COMUNICATE )",
+   "modalita": "INTERA GIORNATA - AEREO: DALLE 00.00 ALLE 23.59; FERROVIARIO DALLE 21.00 DEL 3/12 ALLE 21.00 DEL 4/12; AUTOSTRADE: DALLE 22.00 DEL 3/12 ALLE 22.00 DEL 4/12, TPL: MODALITA' TERRITORIALI; MARITTIMO ( ADESIONE ORSA CON MODALITA' NON COMUNICATE )",
    "rilevanza": "Nazionale",
    "regione": "Italia",
    "provincia": "Tutte",
@@ -42,6 +42,22 @@
    "settore": "Aereo",
    "categoria": "PERSONALE SOC. AVIATION SERVICES AEROPORTI DI ROMA FIUMICINO E CIAMPINO",
    "modalita": "24 ORE: DALLE 00.00 ALLE 24.00",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "aerei",
+   "giorni": [
+    "2026-12-14"
+   ]
+  },
+  {
+   "inizio": "2026-12-14",
+   "fine": "2026-12-14",
+   "sindacati": "FAST-CONFSAL",
+   "settore": "Aereo",
+   "categoria": "PERSONALE SOC. ADR SECURITY AEROPORTI DI ROMA (FIUMICINO E CIAMPINO)",
+   "modalita": "8 ORE: DALLE 10.00 ALLE 18.00",
    "rilevanza": "Nazionale",
    "regione": "Italia",
    "provincia": "Tutte",
@@ -171,6 +187,34 @@
   },
   {
    "inizio": "2026-12-16",
+   "fine": "2026-12-16",
+   "sindacati": "OSR FILT-CGIL/FIT-CISL/UILT-UIL/UGL/FAISA-CISAL",
+   "settore": "Trasporto pubblico locale",
+   "categoria": "PERSONALE SOC. AIR CAMPANIA DI NAPOLI",
+   "modalita": "24 ORE",
+   "rilevanza": "Locale",
+   "regione": "Campania",
+   "provincia": "Napoli",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-12-16",
+   "fine": "2026-12-16",
+   "sindacati": "OST UGL AUTOFERRO + RSA",
+   "settore": "Trasporto pubblico locale",
+   "categoria": "PERSONALE SOC. AMT DI GENOVA",
+   "modalita": "4 ORE VARIE MODALITA'",
+   "rilevanza": "Territoriale",
+   "regione": "Liguria",
+   "provincia": "Genova",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2026-12-16",
    "fine": "2026-12-17",
    "sindacati": "UILT-UIL",
    "settore": "Ferroviario",
@@ -224,6 +268,20 @@
    "rilevanza": "Locale",
    "regione": "Campania",
    "provincia": "Napoli",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2027-01-10",
+   "fine": "2027-01-10",
+   "sindacati": "OSP CUB TRASPORTI",
+   "settore": "Trasporto pubblico locale",
+   "categoria": "PERSONALE SOC. AMAT DI PALERMO",
+   "modalita": "8 ORE: DALLE 9.30 ALLE 17.30",
+   "rilevanza": "Locale",
+   "regione": "Sicilia",
+   "provincia": "Palermo",
    "note": "",
    "viaggio": "",
    "giorni": []
@@ -337,6 +395,34 @@
    "giorni": [
     "2027-01-15"
    ]
+  },
+  {
+   "inizio": "2027-01-15",
+   "fine": "2027-01-15",
+   "sindacati": "OSR FILT-CGIL/FIT-CISL/UILT-UIL/UGL-FNA/FAISA-CISAL",
+   "settore": "Trasporto pubblico locale",
+   "categoria": "PERSONALE SOC. ANM DI NAPOLI",
+   "modalita": "4 ORE: DALLE 11.00 ALLE 15.00",
+   "rilevanza": "Locale",
+   "regione": "Campania",
+   "provincia": "Napoli",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
+  },
+  {
+   "inizio": "2027-01-15",
+   "fine": "2027-01-15",
+   "sindacati": "OSR FILT-CGIL/FIT-CISL/UILT-UIL/UGL-FNA/FAISA-CISAL",
+   "settore": "Trasporto pubblico locale",
+   "categoria": "PERSONALE SOC. ANM DI NAPOLI",
+   "modalita": "4 ORE: DALLE 11.00 ALLE 15.00",
+   "rilevanza": "Locale",
+   "regione": "Campania",
+   "provincia": "Napoli",
+   "note": "",
+   "viaggio": "",
+   "giorni": []
   },
   {
    "inizio": "2027-02-01",
