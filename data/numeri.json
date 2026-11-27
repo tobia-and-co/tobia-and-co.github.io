@@ -2,38 +2,38 @@
  "versione": 1,
  "sito": "https://tobia-and-co.pages.dev",
  "descrizione": "Contatori pubblici del sito Tobia & Co., aggiornati ogni mattina. Visite del proprietario e test automatici esclusi. I clic non sono vendite; vendite e ricavi non sono inclusi. Valori cumulativi dal 31/10/2026 (canali dall'8/11, interessati e ingressi dal 14/11).",
- "aggiornato": "2026-11-26",
+ "aggiornato": "2026-11-27",
  "oggi": {
-  "data": "2026-11-26",
-  "visite_totali": 170,
+  "data": "2026-11-27",
+  "visite_totali": 188,
   "canali": {
-   "diretto": 45,
+   "diretto": 63,
    "motori_ricerca": 1,
    "assistenti_ai": 0,
    "altri_siti_social": 6,
-   "vecchio_indirizzo": 9
+   "vecchio_indirizzo": 10
   },
   "pagine": {
-   "home": 84,
-   "squadra": 18,
-   "diario": 18,
+   "home": 85,
+   "squadra": 19,
+   "diario": 19,
    "carburante": 3,
-   "carburante-pagine": 9,
-   "farmaci-pagine": 10,
+   "carburante-pagine": 10,
+   "farmaci-pagine": 11,
    "carenti-pagine": 2,
    "voli": 7,
    "tratte": 3,
    "compagnie": 0,
    "en": 0,
-   "guide": 0,
+   "guide": 1,
    "budget-2027": 1,
    "scadenze": 2,
-   "banca": 1,
-   "bolletta": 0,
-   "treno": 2,
+   "banca": 2,
+   "bolletta": 1,
+   "treno": 3,
    "multe": 1,
-   "mutuo": 0,
-   "bollo": 2
+   "mutuo": 1,
+   "bollo": 3
   },
   "interessati": {
    "home": 1,
@@ -43,7 +43,9 @@
   "ingressi": {
    "org-home": 1,
    "ref-home": 3,
-   "ref-farmaci": 2,
+   "ref-volo-cancellato": 1,
+   "ref-farmaci": 3,
+   "ref-carburante-pagine": 1,
    "ref-prezzi-medi": 1,
    "ref-bolletta-prescritta": 1,
    "ref-multe": 1,
@@ -52,7 +54,7 @@
   },
   "percorsi": {
    "voli_airhelp": {
-    "visite": 11,
+    "visite": 14,
     "calcoli": 2,
     "clic_airhelp": 0
    },
@@ -362,6 +364,17 @@
    "canale_assistenti_ai": 0,
    "canale_altri_siti_social": 6,
    "canale_vecchio_indirizzo": 9,
+   "clic_airhelp": 0,
+   "clic_acquista_budget": 0
+  },
+  {
+   "data": "2026-11-27",
+   "visite_totali": 188,
+   "canale_diretto": 63,
+   "canale_motori_ricerca": 1,
+   "canale_assistenti_ai": 0,
+   "canale_altri_siti_social": 6,
+   "canale_vecchio_indirizzo": 10,
    "clic_airhelp": 0,
    "clic_acquista_budget": 0
   }
