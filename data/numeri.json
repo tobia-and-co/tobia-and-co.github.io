@@ -2,23 +2,23 @@
  "versione": 1,
  "sito": "https://tobia-and-co.pages.dev",
  "descrizione": "Contatori pubblici del sito Tobia & Co., aggiornati ogni mattina. Visite del proprietario e test automatici esclusi. I clic non sono vendite; vendite e ricavi non sono inclusi. Valori cumulativi dal 31/10/2026 (canali dall'8/11, interessati e ingressi dal 14/11).",
- "aggiornato": "2026-11-27",
+ "aggiornato": "2026-11-28",
  "oggi": {
-  "data": "2026-11-27",
-  "visite_totali": 188,
+  "data": "2026-11-28",
+  "visite_totali": 192,
   "canali": {
-   "diretto": 63,
+   "diretto": 67,
    "motori_ricerca": 1,
    "assistenti_ai": 0,
    "altri_siti_social": 6,
    "vecchio_indirizzo": 10
   },
   "pagine": {
-   "home": 85,
+   "home": 86,
    "squadra": 19,
-   "diario": 19,
-   "carburante": 3,
-   "carburante-pagine": 10,
+   "diario": 20,
+   "carburante": 5,
+   "carburante-pagine": 11,
    "farmaci-pagine": 11,
    "carenti-pagine": 2,
    "voli": 7,
@@ -42,15 +42,17 @@
   },
   "ingressi": {
    "org-home": 1,
-   "ref-home": 3,
+   "ref-home": 4,
    "ref-volo-cancellato": 1,
    "ref-farmaci": 3,
+   "ref-carburante": 1,
    "ref-carburante-pagine": 1,
    "ref-prezzi-medi": 1,
    "ref-bolletta-prescritta": 1,
    "ref-multe": 1,
    "ref-treno": 1,
-   "ref-affitto-istat": 1
+   "ref-affitto-istat": 2,
+   "ref-diario": 1
   },
   "percorsi": {
    "voli_airhelp": {
@@ -371,6 +373,17 @@
    "data": "2026-11-27",
    "visite_totali": 188,
    "canale_diretto": 63,
+   "canale_motori_ricerca": 1,
+   "canale_assistenti_ai": 0,
+   "canale_altri_siti_social": 6,
+   "canale_vecchio_indirizzo": 10,
+   "clic_airhelp": 0,
+   "clic_acquista_budget": 0
+  },
+  {
+   "data": "2026-11-28",
+   "visite_totali": 192,
+   "canale_diretto": 67,
    "canale_motori_ricerca": 1,
    "canale_assistenti_ai": 0,
    "canale_altri_siti_social": 6,
