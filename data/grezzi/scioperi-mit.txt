@@ -28,7 +28,7 @@
 <script type="text/javascript" src="/mit2/public/js/dataTables.tableTools.min.js"></script>    </head>
     <body>
         <script type="text/javascript">
-    dataOdierna="27/11/2026";
+    dataOdierna="28/11/2026";
         jQuery.extend(jQuery.fn.dataTableExt.oSort, {
         "date-euro-pre": function (a) {
             var x;
@@ -278,7 +278,7 @@
     <div class="titleScioperi">
         Prospetto degli scioperi dei trasporti aggiornato alla data: 
         <span class="dataAggiornamentoSciopero">
-            27/11/2026        </span>
+            28/11/2026        </span>
     </div>
 </div>
 <div class="emailTestoScioperi">
@@ -1290,6 +1290,34 @@
                             Tutte                        </td>
                         <td>
 22/11/2026 00:17
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="details-control"></td>
+                        <td>
+                            12/02/2027                        </td>
+                        <td>
+                            13/02/2027                        </td>
+                        <td>
+                            OSR FILT-CGIL                        </td>
+                        <td> 
+                            Trasporto merci                        </td>                        
+                        <td> 
+                            PERSONALE SOC. SBB CARGO ITALIA                        </td>                        
+                        <td>
+                            24 ORE: DALLE 18.00 DEL 12/2 ALLE 17.59 DEL 13/2                        </td>
+                        <td>
+                            Nazionale                        </td>
+                        <td>
+                                                    </td>
+                        <td>
+                            27/11/2026                        </td>
+                        <td>
+                             Italia                        </td>
+                        <td>
+                            Tutte                        </td>
+                        <td>
+27/11/2026 17:00
                         </td>
                     </tr>
                 </tbody>
@@ -5576,6 +5604,144 @@
                                                             
                                             <span class="eleDatoTd">                                                                          
                                                 22/11/2026 00:00                                            </span>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>                                            
+                        <li>
+                            <table class="table-responsive table-bordered table-striped">
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data inizio
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            12/02/2027                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data fine
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            13/02/2027                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Sindacati
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            OSR FILT-CGIL                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Settore dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Trasporto merci                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Categoria dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            PERSONALE SOC. SBB CARGO ITALIA                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Modalità dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            24 ORE: DALLE 18.00 DEL 12/2 ALLE 17.59 DEL 13/2                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Rilevanza dello sciopero:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Nazionale                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Note:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                                                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data proclamazione
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            27/11/2026                                        </span>                            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Regione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                             Italia                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Provincia:
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="eleDatoTd">
+                                            Tutte                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="eleLblTd">
+                                            Data ricezione:
+                                        </span>
+                                    </td>
+                                    <td>
+                                                            
+                                            <span class="eleDatoTd">                                                                          
+                                                27/11/2026 17:00                                            </span>
                                         
                                     </td>
                                 </tr>
