@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-27",
+ "aggiornato": "2026-11-28",
  "fonte": "Ministero delle Infrastrutture e dei Trasporti – Osservatorio sui conflitti sindacali",
  "url": "https://scioperi.mit.gov.it/mit2/public/scioperi",
  "scioperi": [
@@ -464,6 +464,20 @@
    "provincia": "Tutte",
    "note": "",
    "viaggio": "treni",
+   "giorni": []
+  },
+  {
+   "inizio": "2027-02-12",
+   "fine": "2027-02-13",
+   "sindacati": "OSR FILT-CGIL",
+   "settore": "Trasporto merci",
+   "categoria": "PERSONALE SOC. SBB CARGO ITALIA",
+   "modalita": "24 ORE: DALLE 18.00 DEL 12/2 ALLE 17.59 DEL 13/2",
+   "rilevanza": "Nazionale",
+   "regione": "Italia",
+   "provincia": "Tutte",
+   "note": "",
+   "viaggio": "",
    "giorni": []
   }
  ]
